@@ -4,23 +4,27 @@ import { createGlobalStyle } from "styled-components";
 
 const pageStyles = {
     "404": {
-        "padding": "0px 50px 0px 50px",
+        "padding": "",
         "margin": ""
     },
     "index": {
-        "padding": "0px 50px 0px 50px",
+        "padding": "",
         "margin": ""
     },
     "formspree": {
-        "padding": "0px 50px 0px 50px",
+        "padding": "",
         "margin": ""
     },
     "picture": {
-        "padding": "0px 50px 0px 50px",
+        "padding": "",
         "margin": ""
     },
     "audio": {
-        "padding": "0px 50px 0px 50px",
+        "padding": "",
+        "margin": ""
+    },
+    "audio1": {
+        "padding": "",
         "margin": ""
     }
 };

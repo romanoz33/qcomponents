@@ -6,7 +6,7 @@ import { GlobalQuarklyPageStyles } from "global-page-styles";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
-		<GlobalQuarklyPageStyles pageUrl={"audio"} />
+		<GlobalQuarklyPageStyles pageUrl={"audio1"} />
 		<Helmet>
 			<title>
 				Quarkly export
@@ -17,16 +17,10 @@ export default (() => {
 		<Box padding="0px 30px 0px 30px">
 			<Box margin="50px 0px 100px 0px">
 				<Text text-align="center" font="--headline1">
-					Audio
+					Video
 				</Text>
 			</Box>
-			<Components.Audio
-				text-align="center"
-				controls
-				autoPlay={false}
-				muted={false}
-				loop={false}
-			/>
+			<Components.Video />
 			<Box margin="50px 0px 0px 0px">
 				<Text font="600 24px sans-serif">
 					Пропсы:
@@ -70,6 +64,33 @@ export default (() => {
 					border-style="solid"
 					border-color="#eaeaea"
 				>
+					PlayOnHover
+				</Text>
+				<Text
+					width="100%"
+					font="18px sans-serif"
+					padding="15px 15px 15px 15px"
+					margin="0 0 0 0"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+				>
+					Воспроизводить при наведении на видео{" "}
+				</Text>
+				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+					off
+				</Text>
+			</Box>
+			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
+				<Text
+					width="100%"
+					font="18px sans-serif"
+					padding="15px 15px 15px 15px"
+					margin="0 0 0 0"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+				>
 					Src
 				</Text>
 				<Text
@@ -81,7 +102,34 @@ export default (() => {
 					border-style="solid"
 					border-color="#eaeaea"
 				>
-					Прямая ссылка на аудио-файл
+					Прямая ссылка на видеофайл
+				</Text>
+				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+					-
+				</Text>
+			</Box>
+			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
+				<Text
+					width="100%"
+					font="18px sans-serif"
+					padding="15px 15px 15px 15px"
+					margin="0 0 0 0"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+				>
+					Poster
+				</Text>
+				<Text
+					width="100%"
+					font="18px sans-serif"
+					padding="15px 15px 15px 15px"
+					margin="0 0 0 0"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+				>
+					Ссылка на изображение постера
 				</Text>
 				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 					-
@@ -189,12 +237,18 @@ export default (() => {
 					border-style="solid"
 					border-color="#eaeaea"
 				>
-					Зацикливает воспроизведение аудио, чтобы оно повторялось с начала после завершения.{"\n\n"}
+					Зацикливает воспроизведение аудио, чтобы оно повторялось с начала после завершения.
 				</Text>
 				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 					off
 				</Text>
 			</Box>
+			<Box margin="50px 0px 30px 0px">
+				<Text font="600 24px sans-serif">
+					Пример с постером:
+				</Text>
+			</Box>
+			<Components.Video poster="https://images.pexels.com/photos/571169/pexels-photo-571169.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
 			<Box height="100px" />
 		</Box>
 		<Link
