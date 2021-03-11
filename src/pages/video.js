@@ -256,7 +256,7 @@ export default (() => {
 				</Text>
 				<Hr border-color="#c4c4c4" margin="16px 0px 40px 0px" />
 				<Components.Video src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4" poster="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4">
-					<Components.Track isDefault kind="descriptions" label="Английский" src="https://interactive-examples.mdn.mozilla.net/media/examples/friday.vtt" />
+					<Components.Track isDefault={false} kind="captions" label="Английский" src="https://interactive-examples.mdn.mozilla.net/media/examples/friday.vtt" />
 				</Components.Video>
 			</Box>
 			<Box height="100px" />
