@@ -22,7 +22,7 @@ export default (() => {
 		<Components.Audio
 			text-align="center"
 			controls
-			autoPlay={false}
+			autoPlay
 			muted={false}
 			loop={false}
 		/>
