@@ -12,7 +12,9 @@ export default {
 				"604a09b8c30680001e0766bc",
 				"604a1c6f627982001eb72614",
 				"604a2ace501e5800228d0183",
-				"604a2cc88afb1c0023b5490d"
+				"604a2cc88afb1c0023b5490d",
+				"604a32b9627982001eb726eb",
+				"604a33d5627982001eb72705"
 			]
 		},
 		"60474504627982001eb71a54": {
@@ -54,6 +56,16 @@ export default {
 			"id": "604a2cc88afb1c0023b5490d",
 			"pageUrl": "mobilemenu",
 			"name": "Mobilemenu"
+		},
+		"604a32b9627982001eb726eb": {
+			"id": "604a32b9627982001eb726eb",
+			"pageUrl": "popup",
+			"name": "Popup"
+		},
+		"604a33d5627982001eb72705": {
+			"id": "604a33d5627982001eb72705",
+			"pageUrl": "tooltip",
+			"name": "Tooltip"
 		}
 	},
 	"mode": "production",

@@ -6,7 +6,7 @@ import { GlobalQuarklyPageStyles } from "global-page-styles";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
-		<GlobalQuarklyPageStyles pageUrl={"mobilemenu"} />
+		<GlobalQuarklyPageStyles pageUrl={"popup"} />
 		<Helmet>
 			<title>
 				Quarkly export
@@ -17,13 +17,13 @@ export default (() => {
 		<Box padding="0px 30px 0px 30px">
 			<Box margin="50px 0px 100px 0px">
 				<Text text-align="center" font="--headline1">
-					Popup
+					Video
 				</Text>
 			</Box>
-			<Components.MobileMenu />
+			<Components.Popup text-align="center" />
 			<Box margin="50px 0px 0px 0px">
 				<Text font="600 24px sans-serif">
-					Пропсы:
+					Вложенный элемент "Menu" имеет пропсы:
 				</Text>
 			</Box>
 			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
@@ -54,47 +54,6 @@ export default (() => {
 				</Text>
 			</Box>
 			<Box />
-			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Mobile version breakpoint
-				</Text>
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Брейкпоинт, меньше которого меню сворачивается в бургер
-				</Text>
-				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-					md
-				</Text>
-			</Box>
-			<Box />
-			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					При добавлении автоматически подтягиваются все имеющиеся страницы сайта
-				</Text>
-			</Box>
 			<Box height="100px" />
 		</Box>
 		<Link

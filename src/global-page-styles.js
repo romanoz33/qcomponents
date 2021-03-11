@@ -34,6 +34,14 @@ const pageStyles = {
     "mobilemenu": {
         "padding": "",
         "margin": ""
+    },
+    "popup": {
+        "padding": "",
+        "margin": ""
+    },
+    "tooltip": {
+        "padding": "",
+        "margin": ""
     }
 };
 

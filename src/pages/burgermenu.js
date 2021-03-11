@@ -18,7 +18,7 @@ export default (() => {
 		<Box padding="0px 30px 0px 30px">
 			<Box margin="50px 0px 100px 0px">
 				<Text text-align="center" font="--headline1">
-					Burger Menu
+					Mobile Menu
 				</Text>
 			</Box>
 			<Components.BurgerMenu>
