@@ -23,11 +23,7 @@ const pageStyles = {
         "padding": "",
         "margin": ""
     },
-    "audio1": {
-        "padding": "",
-        "margin": ""
-    },
-    "audio11": {
+    "video": {
         "padding": "",
         "margin": ""
     }

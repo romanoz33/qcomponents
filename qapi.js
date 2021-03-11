@@ -10,7 +10,6 @@ export default {
 				"604a0588627982001eb72530",
 				"604a06fa627982001eb7254b",
 				"604a09b8c30680001e0766bc",
-				"604a18c1c30680001e076714",
 				"604a1c6f627982001eb72614"
 			]
 		},
@@ -39,14 +38,9 @@ export default {
 			"pageUrl": "audio",
 			"name": "Audio"
 		},
-		"604a18c1c30680001e076714": {
-			"id": "604a18c1c30680001e076714",
-			"pageUrl": "audio1",
-			"name": "Video"
-		},
 		"604a1c6f627982001eb72614": {
 			"id": "604a1c6f627982001eb72614",
-			"pageUrl": "audio11",
+			"pageUrl": "video",
 			"name": "Video"
 		}
 	},
