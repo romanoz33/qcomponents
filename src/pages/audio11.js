@@ -1,12 +1,12 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Link, Text, Box } from "@quarkly/widgets";
+import { Theme, Link, Text, Box, Hr } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
-		<GlobalQuarklyPageStyles pageUrl={"audio1"} />
+		<GlobalQuarklyPageStyles pageUrl={"audio11"} />
 		<Helmet>
 			<title>
 				Quarkly export
@@ -247,8 +247,18 @@ export default (() => {
 				<Text font="600 24px sans-serif">
 					Пример с постером:
 				</Text>
+				<Hr border-color="#c4c4c4" margin="16px 0px 40px 0px" />
+				<Components.Video poster="https://images.pexels.com/photos/571169/pexels-photo-571169.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
 			</Box>
-			<Components.Video poster="https://images.pexels.com/photos/571169/pexels-photo-571169.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+			<Box margin="50px 0px 30px 0px">
+				<Text font="600 24px sans-serif">
+					Пример с вложенным компонентом Track
+				</Text>
+				<Hr border-color="#c4c4c4" margin="16px 0px 40px 0px" />
+				<Components.Video>
+					<Components.Track isDefault kind="descriptions" label="dfgdfgdf" />
+				</Components.Video>
+			</Box>
 			<Box height="100px" />
 		</Box>
 		<Link
