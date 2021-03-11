@@ -1,12 +1,13 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Link, Text, Box, Hr } from "@quarkly/widgets";
+import { Theme, Link, Text, Box } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
+import { Override } from "@quarkly/components";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
-		<GlobalQuarklyPageStyles pageUrl={"video"} />
+		<GlobalQuarklyPageStyles pageUrl={"burgermenu"} />
 		<Helmet>
 			<title>
 				Quarkly export
@@ -17,13 +18,15 @@ export default (() => {
 		<Box padding="0px 30px 0px 30px">
 			<Box margin="50px 0px 100px 0px">
 				<Text text-align="center" font="--headline1">
-					Video
+					Burger Menu
 				</Text>
 			</Box>
-			<Components.Video />
+			<Components.BurgerMenu>
+				<Override slot="menu" exact-active-match />
+			</Components.BurgerMenu>
 			<Box margin="50px 0px 0px 0px">
 				<Text font="600 24px sans-serif">
-					Пропсы:
+					Вложенный элемент "Menu" имеет пропсы:
 				</Text>
 			</Box>
 			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
@@ -64,7 +67,7 @@ export default (() => {
 					border-style="solid"
 					border-color="#eaeaea"
 				>
-					PlayOnHover
+					Depth
 				</Text>
 				<Text
 					width="100%"
@@ -74,11 +77,9 @@ export default (() => {
 					border-width="1px"
 					border-style="solid"
 					border-color="#eaeaea"
-				>
-					Воспроизводить при наведении на видео{" "}
-				</Text>
+				/>
 				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-					off
+					1
 				</Text>
 			</Box>
 			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
@@ -91,7 +92,7 @@ export default (() => {
 					border-style="solid"
 					border-color="#eaeaea"
 				>
-					Src
+					Rootid
 				</Text>
 				<Text
 					width="100%"
@@ -101,11 +102,9 @@ export default (() => {
 					border-width="1px"
 					border-style="solid"
 					border-color="#eaeaea"
-				>
-					Прямая ссылка на видеофайл
-				</Text>
+				/>
 				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-					-
+					root
 				</Text>
 			</Box>
 			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
@@ -118,7 +117,7 @@ export default (() => {
 					border-style="solid"
 					border-color="#eaeaea"
 				>
-					Poster
+					Exact active match
 				</Text>
 				<Text
 					width="100%"
@@ -128,67 +127,12 @@ export default (() => {
 					border-width="1px"
 					border-style="solid"
 					border-color="#eaeaea"
-				>
-					Ссылка на изображение постера
-				</Text>
-				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-					-
-				</Text>
-			</Box>
-			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Autoplay
-				</Text>
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Автоматическое воспроизведение видео, после загрузки страницы
-				</Text>
-				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-					off
-				</Text>
-			</Box>
-			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Show controls
-				</Text>
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Показать плеер
-				</Text>
+				/>
 				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 					on
 				</Text>
 			</Box>
+			<Box />
 			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
 				<Text
 					width="100%"
@@ -199,66 +143,8 @@ export default (() => {
 					border-style="solid"
 					border-color="#eaeaea"
 				>
-					Muted
+					При добавлении автоматически подтягиваются все имеющиеся страницы сайта{"\n\n"}
 				</Text>
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Отключить звук{" "}
-				</Text>
-				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-					off
-				</Text>
-			</Box>
-			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Loop
-				</Text>
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Зацикливает воспроизведение видео, чтобы оно повторялось с начала после завершения.
-				</Text>
-				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-					off
-				</Text>
-				{" "}
-			</Box>
-			<Box margin="50px 0px 30px 0px">
-				<Text font="600 24px sans-serif">
-					Пример с постером:
-				</Text>
-				<Hr border-color="#c4c4c4" margin="16px 0px 40px 0px" />
-				<Components.Video poster="https://images.pexels.com/photos/571169/pexels-photo-571169.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
-			</Box>
-			<Box margin="50px 0px 30px 0px">
-				<Text font="600 24px sans-serif">
-					Пример с вложенным компонентом Track
-				</Text>
-				<Hr border-color="#c4c4c4" margin="16px 0px 40px 0px" />
-				<Components.Video src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4" poster=" ">
-					<Components.Track isDefault={false} kind="captions" label="Английский" src="https://interactive-examples.mdn.mozilla.net/media/examples/friday.vtt" />
-				</Components.Video>
 			</Box>
 			<Box height="100px" />
 		</Box>

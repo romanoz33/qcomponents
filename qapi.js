@@ -10,7 +10,9 @@ export default {
 				"604a0588627982001eb72530",
 				"604a06fa627982001eb7254b",
 				"604a09b8c30680001e0766bc",
-				"604a1c6f627982001eb72614"
+				"604a1c6f627982001eb72614",
+				"604a2ace501e5800228d0183",
+				"604a2cc88afb1c0023b5490d"
 			]
 		},
 		"60474504627982001eb71a54": {
@@ -42,6 +44,16 @@ export default {
 			"id": "604a1c6f627982001eb72614",
 			"pageUrl": "video",
 			"name": "Video"
+		},
+		"604a2ace501e5800228d0183": {
+			"id": "604a2ace501e5800228d0183",
+			"pageUrl": "burgermenu",
+			"name": "Burgermenu"
+		},
+		"604a2cc88afb1c0023b5490d": {
+			"id": "604a2cc88afb1c0023b5490d",
+			"pageUrl": "mobilemenu",
+			"name": "Mobilemenu"
 		}
 	},
 	"mode": "production",

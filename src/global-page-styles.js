@@ -26,6 +26,14 @@ const pageStyles = {
     "video": {
         "padding": "",
         "margin": ""
+    },
+    "burgermenu": {
+        "padding": "",
+        "margin": ""
+    },
+    "mobilemenu": {
+        "padding": "",
+        "margin": ""
     }
 };
 
