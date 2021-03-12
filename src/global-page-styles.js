@@ -75,7 +75,23 @@ const pageStyles = {
         "padding": "",
         "margin": ""
     },
-    "sfsd1111111": {
+    "card": {
+        "padding": "",
+        "margin": ""
+    },
+    "youtube": {
+        "padding": "",
+        "margin": ""
+    },
+    "yandexmap": {
+        "padding": "",
+        "margin": ""
+    },
+    "sfsd111111111": {
+        "padding": "",
+        "margin": ""
+    },
+    "sfsd1111111111": {
         "padding": "",
         "margin": ""
     }

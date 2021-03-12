@@ -187,7 +187,7 @@ export default (() => {
 					Back to top
 				</Link>
 				<Link
-					href="/backtotop"
+					href="/vkpage"
 					height="auto"
 					box-shadow="0px 3px 2px 3px rgba(3, 3, 3, 0.07)"
 					text-decoration-line="initial"
@@ -202,7 +202,7 @@ export default (() => {
 					VK Page{" "}
 				</Link>
 				<Link
-					href="/backtotop"
+					href="/vkcomments"
 					height="auto"
 					box-shadow="0px 3px 2px 3px rgba(3, 3, 3, 0.07)"
 					text-decoration-line="initial"
@@ -217,7 +217,7 @@ export default (() => {
 					VK Comments
 				</Link>
 				<Link
-					href="/backtotop"
+					href="/fbcomments"
 					height="auto"
 					box-shadow="0px 3px 2px 3px rgba(3, 3, 3, 0.07)"
 					text-decoration-line="initial"
@@ -227,12 +227,12 @@ export default (() => {
 					hover-background="#99fff6"
 					transition="all 0.2s ease-in 0s"
 					target="_blank"
-					quarkly-title="FB Like"
+					quarkly-title="FB Comments"
 				>
-					Back to top
+					FB Comments
 				</Link>
 				<Link
-					href="/backtotop"
+					href="/fblike"
 					height="auto"
 					box-shadow="0px 3px 2px 3px rgba(3, 3, 3, 0.07)"
 					text-decoration-line="initial"
@@ -247,7 +247,7 @@ export default (() => {
 					FB Like
 				</Link>
 				<Link
-					href="/backtotop"
+					href="/vimeo"
 					height="auto"
 					box-shadow="0px 3px 2px 3px rgba(3, 3, 3, 0.07)"
 					text-decoration-line="initial"
@@ -260,6 +260,51 @@ export default (() => {
 					quarkly-title="Vimeo"
 				>
 					Vimeo
+				</Link>
+				<Link
+					href="/youtube"
+					height="auto"
+					box-shadow="0px 3px 2px 3px rgba(3, 3, 3, 0.07)"
+					text-decoration-line="initial"
+					color="#4d4d4d"
+					margin="10px 10px 10px 10px"
+					padding="10px 10px 10px 10px"
+					hover-background="#99fff6"
+					transition="all 0.2s ease-in 0s"
+					target="_blank"
+					quarkly-title="YouTube"
+				>
+					YouTube
+				</Link>
+				<Link
+					href="/card"
+					height="auto"
+					box-shadow="0px 3px 2px 3px rgba(3, 3, 3, 0.07)"
+					text-decoration-line="initial"
+					color="#4d4d4d"
+					margin="10px 10px 10px 10px"
+					padding="10px 10px 10px 10px"
+					hover-background="#99fff6"
+					transition="all 0.2s ease-in 0s"
+					target="_blank"
+					quarkly-title="Card"
+				>
+					Card
+				</Link>
+				<Link
+					href="/yandexmap"
+					height="auto"
+					box-shadow="0px 3px 2px 3px rgba(3, 3, 3, 0.07)"
+					text-decoration-line="initial"
+					color="#4d4d4d"
+					margin="10px 10px 10px 10px"
+					padding="10px 10px 10px 10px"
+					hover-background="#99fff6"
+					transition="all 0.2s ease-in 0s"
+					target="_blank"
+					quarkly-title="Yandex Map"
+				>
+					Yandex Map
 				</Link>
 			</Box>
 			<Box height="100px" quarkly-title="Space" />

@@ -35,6 +35,7 @@
         "easy-scroll": "latest",
         "react-facebook": "latest",
         "@u-wave/react-vimeo": "latest",
+        "react-yandex-maps": "latest",
         "react-dom": "^16.13.0",
         "react-router-dom": "^5.1.2",
         "react-router-hash-link": "^1.2.2",

@@ -23,7 +23,11 @@ export default {
 				"604b4c8e2b962f001e74291f",
 				"604b4d5b2b962f001e74293f",
 				"604b4f86652a1e001e075d2d",
-				"604b50ee88a644001fa9a872"
+				"604b6546652a1e001e075db3",
+				"604b50ee88a644001fa9a872",
+				"604b6938652a1e001e075df7",
+				"604b6b36652a1e001e075e27",
+				"604b6ebc2b962f001e742a67"
 			]
 		},
 		"60474504627982001eb71a54": {
@@ -118,7 +122,27 @@ export default {
 		},
 		"604b50ee88a644001fa9a872": {
 			"id": "604b50ee88a644001fa9a872",
-			"pageUrl": "sfsd1111111",
+			"pageUrl": "card",
+			"name": "Card"
+		},
+		"604b6546652a1e001e075db3": {
+			"id": "604b6546652a1e001e075db3",
+			"pageUrl": "youtube",
+			"name": "YouTube"
+		},
+		"604b6938652a1e001e075df7": {
+			"id": "604b6938652a1e001e075df7",
+			"pageUrl": "yandexmap",
+			"name": "Yandex Map"
+		},
+		"604b6b36652a1e001e075e27": {
+			"id": "604b6b36652a1e001e075e27",
+			"pageUrl": "sfsd111111111",
+			"name": "STANDART"
+		},
+		"604b6ebc2b962f001e742a67": {
+			"id": "604b6ebc2b962f001e742a67",
+			"pageUrl": "sfsd1111111111",
 			"name": "STANDART"
 		}
 	},
