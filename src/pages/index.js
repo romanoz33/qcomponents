@@ -20,7 +20,7 @@ export default (() => {
 					Components
 				</Text>
 			</Box>
-			<Box display="flex" margin="40px 0px 0px 0px" quarkly-title="Content">
+			<Box display="flex" margin="40px 0px 0px 0px" quarkly-title="Content" flex-wrap="wrap">
 				<Link
 					href="/audio"
 					height="auto"
@@ -185,6 +185,81 @@ export default (() => {
 					quarkly-title="Back to top"
 				>
 					Back to top
+				</Link>
+				<Link
+					href="/backtotop"
+					height="auto"
+					box-shadow="0px 3px 2px 3px rgba(3, 3, 3, 0.07)"
+					text-decoration-line="initial"
+					color="#4d4d4d"
+					margin="10px 10px 10px 10px"
+					padding="10px 10px 10px 10px"
+					hover-background="#99fff6"
+					transition="all 0.2s ease-in 0s"
+					target="_blank"
+					quarkly-title="VK Page "
+				>
+					VK Page{" "}
+				</Link>
+				<Link
+					href="/backtotop"
+					height="auto"
+					box-shadow="0px 3px 2px 3px rgba(3, 3, 3, 0.07)"
+					text-decoration-line="initial"
+					color="#4d4d4d"
+					margin="10px 10px 10px 10px"
+					padding="10px 10px 10px 10px"
+					hover-background="#99fff6"
+					transition="all 0.2s ease-in 0s"
+					target="_blank"
+					quarkly-title="VK Comments"
+				>
+					VK Comments
+				</Link>
+				<Link
+					href="/backtotop"
+					height="auto"
+					box-shadow="0px 3px 2px 3px rgba(3, 3, 3, 0.07)"
+					text-decoration-line="initial"
+					color="#4d4d4d"
+					margin="10px 10px 10px 10px"
+					padding="10px 10px 10px 10px"
+					hover-background="#99fff6"
+					transition="all 0.2s ease-in 0s"
+					target="_blank"
+					quarkly-title="FB Like"
+				>
+					Back to top
+				</Link>
+				<Link
+					href="/backtotop"
+					height="auto"
+					box-shadow="0px 3px 2px 3px rgba(3, 3, 3, 0.07)"
+					text-decoration-line="initial"
+					color="#4d4d4d"
+					margin="10px 10px 10px 10px"
+					padding="10px 10px 10px 10px"
+					hover-background="#99fff6"
+					transition="all 0.2s ease-in 0s"
+					target="_blank"
+					quarkly-title="FB COmments"
+				>
+					FB Like
+				</Link>
+				<Link
+					href="/backtotop"
+					height="auto"
+					box-shadow="0px 3px 2px 3px rgba(3, 3, 3, 0.07)"
+					text-decoration-line="initial"
+					color="#4d4d4d"
+					margin="10px 10px 10px 10px"
+					padding="10px 10px 10px 10px"
+					hover-background="#99fff6"
+					transition="all 0.2s ease-in 0s"
+					target="_blank"
+					quarkly-title="Vimeo"
+				>
+					Vimeo
 				</Link>
 			</Box>
 			<Box height="100px" quarkly-title="Space" />

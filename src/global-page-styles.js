@@ -55,7 +55,27 @@ const pageStyles = {
         "padding": "",
         "margin": ""
     },
-    "sfsd11": {
+    "vkpage": {
+        "padding": "",
+        "margin": ""
+    },
+    "vkcomments": {
+        "padding": "",
+        "margin": ""
+    },
+    "fblike": {
+        "padding": "",
+        "margin": ""
+    },
+    "fbcomments": {
+        "padding": "",
+        "margin": ""
+    },
+    "vimeo": {
+        "padding": "",
+        "margin": ""
+    },
+    "sfsd1111111": {
         "padding": "",
         "margin": ""
     }

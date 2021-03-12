@@ -18,7 +18,12 @@ export default {
 				"604b1e92c8e036001ed13069",
 				"604b2b0dc8e036001ed13107",
 				"604b2db0652a1e001e075bbe",
-				"604b30a888a644001fa9a72b"
+				"604b30a888a644001fa9a72b",
+				"604b47a4c8e036001ed1322b",
+				"604b4c8e2b962f001e74291f",
+				"604b4d5b2b962f001e74293f",
+				"604b4f86652a1e001e075d2d",
+				"604b50ee88a644001fa9a872"
 			]
 		},
 		"60474504627982001eb71a54": {
@@ -88,7 +93,32 @@ export default {
 		},
 		"604b30a888a644001fa9a72b": {
 			"id": "604b30a888a644001fa9a72b",
-			"pageUrl": "sfsd11",
+			"pageUrl": "vkpage",
+			"name": "VK Page"
+		},
+		"604b47a4c8e036001ed1322b": {
+			"id": "604b47a4c8e036001ed1322b",
+			"pageUrl": "vkcomments",
+			"name": "VK Comments"
+		},
+		"604b4c8e2b962f001e74291f": {
+			"id": "604b4c8e2b962f001e74291f",
+			"pageUrl": "fblike",
+			"name": "FB Like"
+		},
+		"604b4d5b2b962f001e74293f": {
+			"id": "604b4d5b2b962f001e74293f",
+			"pageUrl": "fbcomments",
+			"name": "FB Comments"
+		},
+		"604b4f86652a1e001e075d2d": {
+			"id": "604b4f86652a1e001e075d2d",
+			"pageUrl": "vimeo",
+			"name": "Vimeo"
+		},
+		"604b50ee88a644001fa9a872": {
+			"id": "604b50ee88a644001fa9a872",
+			"pageUrl": "sfsd1111111",
 			"name": "STANDART"
 		}
 	},
