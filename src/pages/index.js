@@ -13,14 +13,14 @@ export default (() => {
 			<meta name={"description"} content={"Web site created using quarkly.io"} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
-		<Box padding="0px 30px 0px 30px">
-			<Box height="100px" />
-			<Box height="100px">
+		<Box padding="0px 30px 0px 30px" quarkly-title="Components">
+			<Box height="100px" quarkly-title="Space" />
+			<Box height="100px" quarkly-title="Title">
 				<Text text-align="center" font="--headline1">
 					Components
 				</Text>
 			</Box>
-			<Box display="flex">
+			<Box display="flex" margin="40px 0px 0px 0px" quarkly-title="Content">
 				<Link
 					href="/audio"
 					height="auto"
@@ -32,6 +32,7 @@ export default (() => {
 					hover-background="#99fff6"
 					transition="all 0.2s ease-in 0s"
 					target="_blank"
+					quarkly-title="Audio"
 				>
 					Audio
 				</Link>
@@ -46,6 +47,7 @@ export default (() => {
 					hover-background="#99fff6"
 					transition="all 0.2s ease-in 0s"
 					target="_blank"
+					quarkly-title="Video"
 				>
 					Video
 				</Link>
@@ -60,6 +62,7 @@ export default (() => {
 					hover-background="#99fff6"
 					transition="all 0.2s ease-in 0s"
 					target="_blank"
+					quarkly-title="Mobile menu"
 				>
 					Mobile menu
 				</Link>
@@ -74,6 +77,7 @@ export default (() => {
 					hover-background="#99fff6"
 					transition="all 0.2s ease-in 0s"
 					target="_blank"
+					quarkly-title="Burger menu"
 				>
 					Burger menu
 				</Link>
@@ -88,6 +92,7 @@ export default (() => {
 					hover-background="#99fff6"
 					transition="all 0.2s ease-in 0s"
 					target="_blank"
+					quarkly-title="Popup"
 				>
 					Popup
 				</Link>
@@ -102,11 +107,87 @@ export default (() => {
 					hover-background="#99fff6"
 					transition="all 0.2s ease-in 0s"
 					target="_blank"
+					quarkly-title="Tooltip"
 				>
 					Tooltip
 				</Link>
+				<Link
+					href="/tooltip"
+					height="auto"
+					box-shadow="0px 3px 2px 3px rgba(3, 3, 3, 0.07)"
+					text-decoration-line="initial"
+					color="#4d4d4d"
+					margin="10px 10px 10px 10px"
+					padding="10px 10px 10px 10px"
+					hover-background="#99fff6"
+					transition="all 0.2s ease-in 0s"
+					target="_blank"
+					quarkly-title="Collapse"
+				>
+					Collapse
+				</Link>
+				<Link
+					href="/tooltip"
+					height="auto"
+					box-shadow="0px 3px 2px 3px rgba(3, 3, 3, 0.07)"
+					text-decoration-line="initial"
+					color="#4d4d4d"
+					margin="10px 10px 10px 10px"
+					padding="10px 10px 10px 10px"
+					hover-background="#99fff6"
+					transition="all 0.2s ease-in 0s"
+					target="_blank"
+					quarkly-title="Title"
+				>
+					Table{"\n\n"}
+				</Link>
+				<Link
+					href="/tooltip"
+					height="auto"
+					box-shadow="0px 3px 2px 3px rgba(3, 3, 3, 0.07)"
+					text-decoration-line="initial"
+					color="#4d4d4d"
+					margin="10px 10px 10px 10px"
+					padding="10px 10px 10px 10px"
+					hover-background="#99fff6"
+					transition="all 0.2s ease-in 0s"
+					target="_blank"
+					quarkly-title="Accordion"
+				>
+					Accordion{"\n\n"}
+				</Link>
+				<Link
+					href="/code"
+					height="auto"
+					box-shadow="0px 3px 2px 3px rgba(3, 3, 3, 0.07)"
+					text-decoration-line="initial"
+					color="#4d4d4d"
+					margin="10px 10px 10px 10px"
+					padding="10px 10px 10px 10px"
+					hover-background="#99fff6"
+					transition="all 0.2s ease-in 0s"
+					target="_blank"
+					quarkly-title="Code"
+				>
+					Code
+				</Link>
+				<Link
+					href="/backtotop"
+					height="auto"
+					box-shadow="0px 3px 2px 3px rgba(3, 3, 3, 0.07)"
+					text-decoration-line="initial"
+					color="#4d4d4d"
+					margin="10px 10px 10px 10px"
+					padding="10px 10px 10px 10px"
+					hover-background="#99fff6"
+					transition="all 0.2s ease-in 0s"
+					target="_blank"
+					quarkly-title="Back to top"
+				>
+					Back to top
+				</Link>
 			</Box>
-			<Box height="100px" />
+			<Box height="100px" quarkly-title="Space" />
 		</Box>
 		<Link
 			font={"--capture"}

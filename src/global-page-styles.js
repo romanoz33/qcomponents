@@ -42,6 +42,30 @@ const pageStyles = {
     "tooltip": {
         "padding": "",
         "margin": ""
+    },
+    "collapse": {
+        "padding": "",
+        "margin": ""
+    },
+    "table": {
+        "padding": "",
+        "margin": ""
+    },
+    "сode": {
+        "padding": "",
+        "margin": ""
+    },
+    "accordion": {
+        "padding": "",
+        "margin": ""
+    },
+    "backtotop": {
+        "padding": "",
+        "margin": ""
+    },
+    "sfsd11": {
+        "padding": "",
+        "margin": ""
     }
 };
 
