@@ -3,7 +3,6 @@ import theme from "theme";
 import { Theme, Link, Text, Box, Hr } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
-import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
 		<GlobalQuarklyPageStyles pageUrl={"pricelist"} />
@@ -20,7 +19,6 @@ export default (() => {
 					Pricelist{"\n\n"}
 				</Text>
 			</Box>
-			<Components.Pricelist design="horizontal" active="2" />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
@@ -231,7 +229,6 @@ export default (() => {
 				</Text>
 				<Hr border-color="#c4c4c4" margin="16px 0px 40px 0px" />
 			</Box>
-			<Components.Pricelist design="vertical" active="1" size="7" show="6" />
 		</Box>
 		<Link
 			font={"--capture"}
