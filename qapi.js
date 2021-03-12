@@ -7,8 +7,6 @@ export default {
 			"children": [
 				"60474504627982001eb71a54",
 				"60474504627982001eb71a56",
-				"604a0588627982001eb72530",
-				"604a06fa627982001eb7254b",
 				"604a09b8c30680001e0766bc",
 				"604a1c6f627982001eb72614",
 				"604a2ace501e5800228d0183",
@@ -33,16 +31,6 @@ export default {
 			"name": "index",
 			"pageUrl": "index"
 		},
-		"604a0588627982001eb72530": {
-			"id": "604a0588627982001eb72530",
-			"pageUrl": "formspree",
-			"name": "Formspree"
-		},
-		"604a06fa627982001eb7254b": {
-			"id": "604a06fa627982001eb7254b",
-			"pageUrl": "picture",
-			"name": "Picture"
-		},
 		"604a09b8c30680001e0766bc": {
 			"id": "604a09b8c30680001e0766bc",
 			"pageUrl": "audio",
@@ -56,12 +44,12 @@ export default {
 		"604a2ace501e5800228d0183": {
 			"id": "604a2ace501e5800228d0183",
 			"pageUrl": "burgermenu",
-			"name": "Burgermenu"
+			"name": "Burger Menu"
 		},
 		"604a2cc88afb1c0023b5490d": {
 			"id": "604a2cc88afb1c0023b5490d",
 			"pageUrl": "mobilemenu",
-			"name": "Mobilemenu"
+			"name": "Mobile Menu"
 		},
 		"604a32b9627982001eb726eb": {
 			"id": "604a32b9627982001eb726eb",

@@ -11,14 +11,6 @@ const pageStyles = {
         "padding": "",
         "margin": ""
     },
-    "formspree": {
-        "padding": "",
-        "margin": ""
-    },
-    "picture": {
-        "padding": "",
-        "margin": ""
-    },
     "audio": {
         "padding": "",
         "margin": ""
