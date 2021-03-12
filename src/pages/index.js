@@ -306,6 +306,21 @@ export default (() => {
 				>
 					Yandex Map
 				</Link>
+				<Link
+					href="/svgshape"
+					height="auto"
+					box-shadow="0px 3px 2px 3px rgba(3, 3, 3, 0.07)"
+					text-decoration-line="initial"
+					color="#4d4d4d"
+					margin="10px 10px 10px 10px"
+					padding="10px 10px 10px 10px"
+					hover-background="#99fff6"
+					transition="all 0.2s ease-in 0s"
+					target="_blank"
+					quarkly-title="Svg Shape"
+				>
+					Svg Shape
+				</Link>
 			</Box>
 			<Box height="100px" quarkly-title="Space" />
 		</Box>

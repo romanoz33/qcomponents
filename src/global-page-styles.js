@@ -87,7 +87,7 @@ const pageStyles = {
         "padding": "",
         "margin": ""
     },
-    "sfsd111111111": {
+    "svgshape": {
         "padding": "",
         "margin": ""
     },

@@ -137,8 +137,8 @@ export default {
 		},
 		"604b6b36652a1e001e075e27": {
 			"id": "604b6b36652a1e001e075e27",
-			"pageUrl": "sfsd111111111",
-			"name": "STANDART"
+			"pageUrl": "svgshape",
+			"name": "Svg Shape"
 		},
 		"604b6ebc2b962f001e742a67": {
 			"id": "604b6ebc2b962f001e742a67",
