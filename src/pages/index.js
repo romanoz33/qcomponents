@@ -112,7 +112,7 @@ export default (() => {
 					Tooltip
 				</Link>
 				<Link
-					href="/tooltip"
+					href="/collapse"
 					height="auto"
 					box-shadow="0px 3px 2px 3px rgba(3, 3, 3, 0.07)"
 					text-decoration-line="initial"
@@ -127,7 +127,7 @@ export default (() => {
 					Collapse
 				</Link>
 				<Link
-					href="/tooltip"
+					href="/table"
 					height="auto"
 					box-shadow="0px 3px 2px 3px rgba(3, 3, 3, 0.07)"
 					text-decoration-line="initial"
@@ -142,7 +142,7 @@ export default (() => {
 					Table{"\n\n"}
 				</Link>
 				<Link
-					href="/tooltip"
+					href="/accordion"
 					height="auto"
 					box-shadow="0px 3px 2px 3px rgba(3, 3, 3, 0.07)"
 					text-decoration-line="initial"
