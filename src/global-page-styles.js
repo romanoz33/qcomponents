@@ -91,7 +91,19 @@ const pageStyles = {
         "padding": "",
         "margin": ""
     },
-    "sfsd1111111111": {
+    "soundcloud": {
+        "padding": "",
+        "margin": ""
+    },
+    "slidersimple": {
+        "padding": "",
+        "margin": ""
+    },
+    "pricelist": {
+        "padding": "",
+        "margin": ""
+    },
+    "sfsd1111111111111": {
         "padding": "",
         "margin": ""
     }

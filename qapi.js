@@ -27,7 +27,10 @@ export default {
 				"604b50ee88a644001fa9a872",
 				"604b6938652a1e001e075df7",
 				"604b6b36652a1e001e075e27",
-				"604b6ebc2b962f001e742a67"
+				"604b6ebc2b962f001e742a67",
+				"604b7b15652a1e001e075e9f",
+				"604b7ce82b962f001e742a97",
+				"604b80a4c8e036001ed1345b"
 			]
 		},
 		"60474504627982001eb71a54": {
@@ -142,7 +145,22 @@ export default {
 		},
 		"604b6ebc2b962f001e742a67": {
 			"id": "604b6ebc2b962f001e742a67",
-			"pageUrl": "sfsd1111111111",
+			"pageUrl": "soundcloud",
+			"name": "Sound Cloud"
+		},
+		"604b7b15652a1e001e075e9f": {
+			"id": "604b7b15652a1e001e075e9f",
+			"pageUrl": "slidersimple",
+			"name": "Slider Simple"
+		},
+		"604b7ce82b962f001e742a97": {
+			"id": "604b7ce82b962f001e742a97",
+			"pageUrl": "pricelist",
+			"name": "Pricelist"
+		},
+		"604b80a4c8e036001ed1345b": {
+			"id": "604b80a4c8e036001ed1345b",
+			"pageUrl": "sfsd1111111111111",
 			"name": "STANDART"
 		}
 	},
