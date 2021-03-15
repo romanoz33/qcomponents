@@ -1,6 +1,6 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Link, Text, Box, Span } from "@quarkly/widgets";
+import { Theme, Link, Text, Strong, Box, Span } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
 import * as Components from "components";
@@ -20,8 +20,12 @@ export default (() => {
 				<Text text-align="center" font="--headline1">
 					LiveChat{"\n\n"}
 				</Text>
+				<Text color="#f90000" font="19px sans-serif">
+					<Strong>
+						Ошибка при публикации: https://app.netlify.com/sites/hungry-wozniak-7150fd/deploys/604f228b294def059836b1bc
+					</Strong>
+				</Text>
 			</Box>
-			<Components.LiveChat license="12685392" chatBetweenGroups="enable" />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
