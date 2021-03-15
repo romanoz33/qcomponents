@@ -30,7 +30,8 @@ export default {
 				"604b6ebc2b962f001e742a67",
 				"604b7b15652a1e001e075e9f",
 				"604b7ce82b962f001e742a97",
-				"604b80a4c8e036001ed1345b"
+				"604b80a4c8e036001ed1345b",
+				"604f08eac8e036001ed13605"
 			]
 		},
 		"60474504627982001eb71a54": {
@@ -160,7 +161,12 @@ export default {
 		},
 		"604b80a4c8e036001ed1345b": {
 			"id": "604b80a4c8e036001ed1345b",
-			"pageUrl": "sfsd1111111111111",
+			"pageUrl": "progressbar",
+			"name": "Progress Bar"
+		},
+		"604f08eac8e036001ed13605": {
+			"id": "604f08eac8e036001ed13605",
+			"pageUrl": "sfsd11111111111111",
 			"name": "STANDART"
 		}
 	},

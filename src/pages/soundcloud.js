@@ -3,7 +3,6 @@ import theme from "theme";
 import { Theme, Link, Text, Box } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
-import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
 		<GlobalQuarklyPageStyles pageUrl={"soundcloud"} />
@@ -20,7 +19,6 @@ export default (() => {
 					Sound Cloud
 				</Text>
 			</Box>
-			<Components.SoundCloud type="standart" url="https://soundcloud.com/lo-freq-1/bob-marley-no-women-no-cry-los-frequencies-bootleg" />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:

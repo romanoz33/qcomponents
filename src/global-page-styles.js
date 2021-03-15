@@ -103,7 +103,11 @@ const pageStyles = {
         "padding": "",
         "margin": ""
     },
-    "sfsd1111111111111": {
+    "progressbar": {
+        "padding": "",
+        "margin": ""
+    },
+    "sfsd11111111111111": {
         "padding": "",
         "margin": ""
     }
