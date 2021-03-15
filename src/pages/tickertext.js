@@ -108,7 +108,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Direction
+						Group number
 					</Text>
 					<Text
 						width="100%"

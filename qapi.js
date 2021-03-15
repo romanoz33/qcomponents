@@ -180,7 +180,7 @@ export default {
 		"604f0f292b962f001e742cae": {
 			"id": "604f0f292b962f001e742cae",
 			"pageUrl": "livechat",
-			"name": "STANDART"
+			"name": "LiveChat"
 		},
 		"604f129b652a1e001e0760d6": {
 			"id": "604f129b652a1e001e0760d6",

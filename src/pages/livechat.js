@@ -1,9 +1,8 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Link, Text, Box, Hr, Strong } from "@quarkly/widgets";
+import { Theme, Link, Text, Box, Span } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
-import { Override } from "@quarkly/components";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
@@ -109,7 +108,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Отступ стрелочки
+						Group number
 					</Text>
 					<Text
 						width="100%"
@@ -120,10 +119,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Отступ стрелочки от блока с контентом
+						Номер группы
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						4px
+						none{" \n\n"}
 					</Text>
 				</Box>
 				<Box
@@ -142,7 +141,18 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						ArroowStatusProp
+						Chat sessions between{" "}
+						<Span
+							data-q-widget-type="PRIMITIVE"
+							overflow-wrap="normal"
+							word-break="normal"
+							white-space="normal"
+							text-indent="0"
+							text-overflow="clip"
+							hyphens="manual"
+						>
+							groups
+						</Span>
 					</Text>
 					<Text
 						width="100%"
@@ -153,241 +163,26 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Показать / Скрыть стрелочку
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						on
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 4"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Положение Tooltip
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Положение стрелочки относительно блока с контентом. [top, bottom, left, right]
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						top
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 5"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Цвет Tooltip
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Цвет Tooltip, включая цвет стрелочки
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						--color-dark
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 6"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Отступ от краев
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Минимальное расстояние между Tooltip до любого края окна
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						0
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 7"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Показать Tooltip
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						:always - Отображать всегда.
+						Сеансы чата между группами [
+enable, disable]
 						<br />
-						:hover - Отображать только  при наведении на блок с контентом
+						{"\n\n"}
+						<Link
+							href="https://beta.quarkly.io/preview#/livechat"
+							data-q-widget-type="PRIMITIVE"
+							overflow-wrap="normal"
+							word-break="normal"
+							white-space="normal"
+							text-indent="0"
+							text-overflow="clip"
+							hyphens="manual"
+						/>
+						{"\n\n"}
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						:always{" \n\n"}
+						enable
 					</Text>
-					{" "}
 				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 8"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Автоматическая смена положения Tooltip
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Изменять положение Tolltip при нехватке места.{" "}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						on
-					</Text>
-					{" "}
-				</Box>
-			</Box>
-			<Box margin="50px 0px 30px 0px" quarkly-title="Example 1 ">
-				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пример с разными положениями:
-				</Text>
-				<Components.Tooltip
-					arrowStatusProp
-					tooltipStatusProp=":always"
-					width="600px"
-					text-align="left"
-					margin="0px auto 0px auto"
-				/>
-				<Components.Tooltip
-					arrowStatusProp
-					tooltipStatusProp=":always"
-					width="600px"
-					text-align="left"
-					margin="0px auto 0px auto"
-					tooltipDirectionProp="left"
-				/>
-				<Components.Tooltip
-					arrowStatusProp
-					tooltipStatusProp=":always"
-					width="600px"
-					text-align="left"
-					margin="0px auto 0px auto"
-					tooltipDirectionProp="right"
-				/>
-				<Components.Tooltip
-					arrowStatusProp
-					tooltipStatusProp=":always"
-					width="600px"
-					text-align="left"
-					margin="0px auto 0px auto"
-					tooltipDirectionProp="bottom"
-				/>
-				<Hr border-color="#c4c4c4" margin="16px 0px 40px 0px" />
-			</Box>
-			<Box margin="50px 0px 30px 0px" quarkly-title="Example 2">
-				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пример с другим цветом и размером
-				</Text>
-				<Hr border-color="#c4c4c4" margin="16px 0px 40px 0px" />
-				<Components.Tooltip
-					arrowStatusProp
-					tooltipStatusProp=":always"
-					width="600px"
-					text-align="left"
-					margin="0px auto 0px auto"
-					tooltipDirectionProp="left"
-					tooltipColorProp="#21b1f7"
-					arrowSizeProp="28"
-					tooltipOffsetProp="10"
-				>
-					<Override slot="Tooltip text">
-						<Strong>
-							Hello World!
-						</Strong>
-					</Override>
-				</Components.Tooltip>
 			</Box>
 		</Box>
 		<Link
