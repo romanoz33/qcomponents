@@ -31,7 +31,10 @@ export default {
 				"604b7b15652a1e001e075e9f",
 				"604b7ce82b962f001e742a97",
 				"604b80a4c8e036001ed1345b",
-				"604f08eac8e036001ed13605"
+				"604f08eac8e036001ed13605",
+				"604f0b61652a1e001e0760a2",
+				"604f0f292b962f001e742cae",
+				"604f129b652a1e001e0760d6"
 			]
 		},
 		"60474504627982001eb71a54": {
@@ -166,7 +169,22 @@ export default {
 		},
 		"604f08eac8e036001ed13605": {
 			"id": "604f08eac8e036001ed13605",
-			"pageUrl": "sfsd11111111111111",
+			"pageUrl": "looptext",
+			"name": "Loop Text"
+		},
+		"604f0b61652a1e001e0760a2": {
+			"id": "604f0b61652a1e001e0760a2",
+			"pageUrl": "tickertext",
+			"name": "Ticker Text"
+		},
+		"604f0f292b962f001e742cae": {
+			"id": "604f0f292b962f001e742cae",
+			"pageUrl": "sfsd1111111111111111",
+			"name": "STANDART"
+		},
+		"604f129b652a1e001e0760d6": {
+			"id": "604f129b652a1e001e0760d6",
+			"pageUrl": "sfsd11111111111111111",
 			"name": "STANDART"
 		}
 	},

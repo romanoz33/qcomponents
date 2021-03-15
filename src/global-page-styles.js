@@ -107,7 +107,19 @@ const pageStyles = {
         "padding": "",
         "margin": ""
     },
-    "sfsd11111111111111": {
+    "looptext": {
+        "padding": "",
+        "margin": ""
+    },
+    "tickertext": {
+        "padding": "",
+        "margin": ""
+    },
+    "sfsd1111111111111111": {
+        "padding": "",
+        "margin": ""
+    },
+    "sfsd11111111111111111": {
         "padding": "",
         "margin": ""
     }

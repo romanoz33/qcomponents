@@ -6,7 +6,7 @@ import { GlobalQuarklyPageStyles } from "global-page-styles";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
-		<GlobalQuarklyPageStyles pageUrl={"progressbar"} />
+		<GlobalQuarklyPageStyles pageUrl={"looptext"} />
 		<Helmet>
 			<title>
 				Quarkly export
@@ -17,10 +17,10 @@ export default (() => {
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
-					Progress Bar
+					Loop Text{"\n\n"}
 				</Text>
 			</Box>
-			<Components.ProgressBar />
+			<Components.LoopText fade mask noWrap />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
@@ -75,7 +75,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Угол начала отсчета
+						Интервал смены слайдеров
 					</Text>
 					<Text
 						width="100%"
@@ -86,10 +86,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Угол начала отсчета{"\n\n"}
+						Интервал смены слайдеров (в миллисекундах)
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						0
+						1500
 					</Text>
 				</Box>
 				<Box
@@ -108,7 +108,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Ширина трека
+						Задержка между началом анимации
 					</Text>
 					<Text
 						width="100%"
@@ -119,10 +119,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Ширина трека{"\n\n"}
+						Задержка между началом анимации{"\n\n"}
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						20
+						0
 					</Text>
 				</Box>
 				<Box
@@ -141,7 +141,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Начальный размер треков
+						Скорость смены слайдера
 					</Text>
 					<Text
 						width="100%"
@@ -152,10 +152,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Начальный размер треков{"\n\n"}
+						Скорость смены слайдера{"\n\n"}
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						100
+						150
 					</Text>
 				</Box>
 				<Box
@@ -174,7 +174,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Отступы между треками
+						Анимация появления и скрытия
 					</Text>
 					<Text
 						width="100%"
@@ -185,10 +185,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Отступы между треками{"\n\n"}
+						Показывать старый и новый слайдер
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						5
+						off
 					</Text>
 				</Box>
 				<Box
@@ -207,7 +207,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Цвет заливки отступов
+						Скрыть анимации на границе
 					</Text>
 					<Text
 						width="100%"
@@ -218,10 +218,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Цвет заливки отступов{"\n\n"}
+						-
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						-
+						off
 					</Text>
 				</Box>
 				<Box
@@ -240,7 +240,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Прогресс в процентах
+						Запретить перенос текста
 					</Text>
 					<Text
 						width="100%"
@@ -251,10 +251,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Прогресс в процентах{"\n\n"}
+						Запретить перенос текста{"\n\n"}
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						0
+						off
 					</Text>
 				</Box>
 				<Box
@@ -273,7 +273,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Цвет выполненого прогресса
+						Список слайдеров
 					</Text>
 					<Text
 						width="100%"
@@ -284,45 +284,9 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Цвет выполненого прогресса{"\n\n"}
+						Список названий слайдеров{"\n\n"}
 					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						-{"\n\n"}
-					</Text>
-					{" "}
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 8"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Цвет трека прогресса
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Цвет трека прогресса{"\n\n"}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						-
-					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0" />
 					{" "}
 				</Box>
 			</Box>

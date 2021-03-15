@@ -6,7 +6,7 @@ import { GlobalQuarklyPageStyles } from "global-page-styles";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
-		<GlobalQuarklyPageStyles pageUrl={"progressbar"} />
+		<GlobalQuarklyPageStyles pageUrl={"tickertext"} />
 		<Helmet>
 			<title>
 				Quarkly export
@@ -17,10 +17,10 @@ export default (() => {
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
-					Progress Bar
+					Ticker Text
 				</Text>
 			</Box>
-			<Components.ProgressBar />
+			<Components.TickerText move="enable" />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
@@ -75,7 +75,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Угол начала отсчета
+						Speed
 					</Text>
 					<Text
 						width="100%"
@@ -86,10 +86,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Угол начала отсчета{"\n\n"}
+						Скорость анимации
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						0
+						5
 					</Text>
 				</Box>
 				<Box
@@ -108,7 +108,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Ширина трека
+						Direction
 					</Text>
 					<Text
 						width="100%"
@@ -119,10 +119,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Ширина трека{"\n\n"}
+						Направления анимации [toLeft, toRight]
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						20
+						toLeft{"\n\n"}
 					</Text>
 				</Box>
 				<Box
@@ -141,7 +141,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Начальный размер треков
+						Mode
 					</Text>
 					<Text
 						width="100%"
@@ -152,10 +152,16 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Начальный размер треков{"\n\n"}
+						Тип отображения [
+						<br />
+						hain - бесконечная лента с дублированием текстов;
+						<br />
+						await -  бесконечная лента, с одиночным текстом;
+						<br />
+						smooth - ]
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						100
+						chain{" "}
 					</Text>
 				</Box>
 				<Box
@@ -174,7 +180,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Отступы между треками
+						Move
 					</Text>
 					<Text
 						width="100%"
@@ -185,145 +191,11 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Отступы между треками{"\n\n"}
+						Состояние анимации [enable, disable]
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						5
+						enable{"\n\n"}
 					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 5"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Цвет заливки отступов
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Цвет заливки отступов{"\n\n"}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						-
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 6"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Прогресс в процентах
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Прогресс в процентах{"\n\n"}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						0
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 7"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Цвет выполненого прогресса
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Цвет выполненого прогресса{"\n\n"}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						-{"\n\n"}
-					</Text>
-					{" "}
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 8"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Цвет трека прогресса
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Цвет трека прогресса{"\n\n"}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						-
-					</Text>
-					{" "}
 				</Box>
 			</Box>
 		</Box>
