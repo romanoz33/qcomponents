@@ -115,7 +115,7 @@ const pageStyles = {
         "padding": "",
         "margin": ""
     },
-    "sfsd1111111111111111": {
+    "livechat": {
         "padding": "",
         "margin": ""
     },
