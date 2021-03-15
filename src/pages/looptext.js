@@ -15,8 +15,8 @@ export default (() => {
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
-			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
-				<Components.HeadMenu />
+			<Components.HeadMenu />
+			<Box margin="0 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
 					Loop Text{"\n\n"}
 				</Text>

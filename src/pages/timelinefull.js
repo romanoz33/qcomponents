@@ -7,7 +7,7 @@ import * as Components from "components";
 import { MdKeyboardArrowRight } from "react-icons/md";
 export default (() => {
 	return <Theme theme={theme}>
-		<GlobalQuarklyPageStyles pageUrl={"bgimageparallax"} />
+		<GlobalQuarklyPageStyles pageUrl={"timelinefull"} />
 		<Helmet>
 			<title>
 				Quarkly export
@@ -19,10 +19,23 @@ export default (() => {
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
-					BgImage Parallax{"\n\n"}
+					TimeLine Full
 				</Text>
 			</Box>
-			<Components.BgImageParallax imageURL="https://i.pinimg.com/originals/a4/f8/f9/a4f8f91b31d2c63a015ed34ae8c13bbd.jpg" height="1500px" imageRepeat="no-repeat" imagePosition="center" />
+			<Components.TimelineFull alignMobile="to the right" />
+			<Box height="100px" />
+			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
+				<Text text-align="center" font="--headline1">
+					TimeLineList + 
+TimeLineItem
+				</Text>
+			</Box>
+			<Components.TimelineList alignDesktop="from the left">
+				<Components.TimelineItem />
+				<Components.TimelineItem />
+				<Components.TimelineItem />
+				<Components.TimelineItem />
+			</Components.TimelineList>
 			<Box margin="50px 0px 0px 0px" quarkly-title="Architecture">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Архитектура:
@@ -47,43 +60,31 @@ export default (() => {
 							height="auto"
 							min-height="20px"
 						>
-							BgImage Parallax{"\n\n"}
+							TimeLineList{" \n\n"}
 						</Text>
 						<Icon category="md" icon={MdKeyboardArrowRight} size="40px" color="#747272" />
 					</Box>
-					<Box width="100%" font="20px --fontFamily-sans" quarkly-title="Item">
-						<Box display="flex" align-items="center" min-height="52px">
-							<Text
-								width="100%"
-								font="18px sans-serif"
-								margin="0 0 0 0"
-								padding="15px 0px 15px 0px"
-								height="auto"
-								min-height="20px"
-							>
-								Bground
-							</Text>
-							<Icon category="md" icon={MdKeyboardArrowRight} size="40px" color="#747272" />
-						</Box>
-						<Box display="flex" align-items="center" min-height="52px">
-							<Text
-								width="100%"
-								font="18px sans-serif"
-								margin="0 0 0 0"
-								padding="15px 0px 15px 0px"
-								height="auto"
-								min-height="20px"
-							>
-								Content
-							</Text>
-							<Icon category="md" icon={MdKeyboardArrowRight} size="40px" color="#747272" />
-						</Box>
+					<Box display="flex" align-items="center" quarkly-title="Item" width="100%">
+						<Text
+							width="100%"
+							font="18px sans-serif"
+							margin="0 0 0 0"
+							padding="15px 0px 15px 0px"
+							height="auto"
+							min-height="20px"
+						>
+							TimeLineItem{"\n\n"}
+						</Text>
+						<Icon category="md" icon={MdKeyboardArrowRight} size="40px" color="#747272" />
 					</Box>
 				</Box>
 			</Box>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пропсы:
+					Пропсы 
+TimeLine Full
+
+:
 				</Text>
 				<Box
 					display="flex"
@@ -135,7 +136,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Ссылка на изображение
+						Number of items
 					</Text>
 					<Text
 						width="100%"
@@ -146,10 +147,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Ссылка на изображение{"\n\n"}
+						Количество элементов
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						none
+						4
 					</Text>
 				</Box>
 				<Box
@@ -168,7 +169,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Размер изображения
+						Alignment of items on the desctop
 					</Text>
 					<Text
 						width="100%"
@@ -179,10 +180,11 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Размер изображения
+						Способ выравнивания для десктоп from the left [from the left, 
+from the right, ti the left, to the right]
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						cover{" \n\n"}
+						from the left
 					</Text>
 				</Box>
 				<Box
@@ -201,7 +203,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Выравнивание изображения
+						Alignment of items on the mobile
 					</Text>
 					<Text
 						width="100%"
@@ -212,10 +214,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Выравнивание изображения, если оно меньше блока
+						Способ выравнивания для десктоп from the left [to the left, to the right]{"\n\n"}
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						center
+						to the left
 					</Text>
 				</Box>
 				<Box
@@ -234,7 +236,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Повтор изображения
+						Mobile starts with the breakpoint
 					</Text>
 					<Text
 						width="100%"
@@ -245,76 +247,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Повторять изображения по вертикали и горизонтали
+						С какого брейкпоинта изменять на мобильный вид
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						no-repeat
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 5"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Скорость прокрутки
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Скорость прокрутки изображения при скроле
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						0.5
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 6"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Инерция прокрутки
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						???????
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						1
+						sm
 					</Text>
 				</Box>
 			</Box>

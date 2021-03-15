@@ -1,13 +1,14 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Link, Text, Box, Icon } from "@quarkly/widgets";
+import { Theme, Link, Text, Box, Strong, Icon } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
+import { Override } from "@quarkly/components";
 import * as Components from "components";
 import { MdKeyboardArrowRight } from "react-icons/md";
 export default (() => {
 	return <Theme theme={theme}>
-		<GlobalQuarklyPageStyles pageUrl={"bgimageparallax"} />
+		<GlobalQuarklyPageStyles pageUrl={"tabssimpllist"} />
 		<Helmet>
 			<title>
 				Quarkly export
@@ -19,10 +20,44 @@ export default (() => {
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
-					BgImage Parallax{"\n\n"}
+					Tabs Simple List{"\n\n"}
 				</Text>
 			</Box>
-			<Components.BgImageParallax imageURL="https://i.pinimg.com/originals/a4/f8/f9/a4f8f91b31d2c63a015ed34ae8c13bbd.jpg" height="1500px" imageRepeat="no-repeat" imagePosition="center" />
+			<Components.TabsSimpleList>
+				<Override slot="Tab 604f529870ff0ce45c692989">
+					Вкладка 2
+				</Override>
+				<Override slot="Tab" disabled={false} />
+				<Override slot="Tab :active">
+					Вкладка 1
+				</Override>
+				<Components.TabsSimpleItem>
+					<Text font="18px/1.7 sans-serif">
+						<Strong
+							data-q-widget-type="PRIMITIVE"
+							overflow-wrap="normal"
+							word-break="normal"
+							white-space="normal"
+							text-indent="0"
+							text-overflow="clip"
+							hyphens="manual"
+						>
+							Lorem Ipsum
+						</Strong>
+						{" "}is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+						<br />
+						{"\n\n"}
+					</Text>
+				</Components.TabsSimpleItem>
+				<Components.TabsSimpleItem>
+					<Text font="18px/1.7 sans-serif">
+						Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+						<br />
+						<br />
+						The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.{"\n\n"}
+					</Text>
+				</Components.TabsSimpleItem>
+			</Components.TabsSimpleList>
 			<Box margin="50px 0px 0px 0px" quarkly-title="Architecture">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Архитектура:
@@ -47,43 +82,41 @@ export default (() => {
 							height="auto"
 							min-height="20px"
 						>
-							BgImage Parallax{"\n\n"}
+							TabsSimpleList{"\n\n"}
 						</Text>
 						<Icon category="md" icon={MdKeyboardArrowRight} size="40px" color="#747272" />
 					</Box>
-					<Box width="100%" font="20px --fontFamily-sans" quarkly-title="Item">
-						<Box display="flex" align-items="center" min-height="52px">
-							<Text
-								width="100%"
-								font="18px sans-serif"
-								margin="0 0 0 0"
-								padding="15px 0px 15px 0px"
-								height="auto"
-								min-height="20px"
-							>
-								Bground
-							</Text>
-							<Icon category="md" icon={MdKeyboardArrowRight} size="40px" color="#747272" />
-						</Box>
-						<Box display="flex" align-items="center" min-height="52px">
-							<Text
-								width="100%"
-								font="18px sans-serif"
-								margin="0 0 0 0"
-								padding="15px 0px 15px 0px"
-								height="auto"
-								min-height="20px"
-							>
-								Content
-							</Text>
-							<Icon category="md" icon={MdKeyboardArrowRight} size="40px" color="#747272" />
-						</Box>
+					<Box display="flex" align-items="center" quarkly-title="Item" width="100%">
+						<Text
+							width="100%"
+							font="18px sans-serif"
+							margin="0 0 0 0"
+							padding="15px 0px 15px 0px"
+							height="auto"
+							min-height="20px"
+						>
+							TabsSimpleItem
+						</Text>
+						<Icon category="md" icon={MdKeyboardArrowRight} size="40px" color="#747272" />
+					</Box>
+					<Box display="flex" align-items="center" quarkly-title="Item" width="100%">
+						<Text
+							width="100%"
+							font="18px sans-serif"
+							margin="0 0 0 0"
+							padding="15px 0px 15px 0px"
+							height="auto"
+							min-height="20px"
+						>
+							Вложенный текст
+						</Text>
+						<Icon category="md" icon={MdKeyboardArrowRight} size="40px" color="#747272" />
 					</Box>
 				</Box>
 			</Box>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пропсы:
+					Пропсы TabsSimpleList:
 				</Text>
 				<Box
 					display="flex"
@@ -135,7 +168,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Ссылка на изображение
+						Default Tab
 					</Text>
 					<Text
 						width="100%"
@@ -146,18 +179,23 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Ссылка на изображение{"\n\n"}
+						????
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 						none
 					</Text>
 				</Box>
+			</Box>
+			<Box quarkly-title="Props" height="auto" min-height="20px">
+				<Text font="600 24px sans-serif" quarkly-title="Title">
+					Пропсы TabsSimpleItem:
+				</Text>
 				<Box
 					display="flex"
 					border-width="1px"
 					border-style="solid"
 					border-color="#eaeaea"
-					quarkly-title="Row 2"
+					quarkly-title="Header row"
 				>
 					<Text
 						width="100%"
@@ -168,7 +206,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Размер изображения
+						Название
 					</Text>
 					<Text
 						width="100%"
@@ -179,18 +217,19 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Размер изображения
+						Описание
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						cover{" \n\n"}
+						Значение по дефолту
 					</Text>
 				</Box>
+				<Box quarkly-title="Space" />
 				<Box
 					display="flex"
 					border-width="1px"
 					border-style="solid"
 					border-color="#eaeaea"
-					quarkly-title="Row 3"
+					quarkly-title="Row 1"
 				>
 					<Text
 						width="100%"
@@ -201,7 +240,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Выравнивание изображения
+						Tab ID
 					</Text>
 					<Text
 						width="100%"
@@ -212,109 +251,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Выравнивание изображения, если оно меньше блока
+						????
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						center
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 4"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Повтор изображения
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Повторять изображения по вертикали и горизонтали
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						no-repeat
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 5"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Скорость прокрутки
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Скорость прокрутки изображения при скроле
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						0.5
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 6"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Инерция прокрутки
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						???????
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						1
+						none
 					</Text>
 				</Box>
 			</Box>

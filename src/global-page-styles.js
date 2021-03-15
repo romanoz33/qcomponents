@@ -127,7 +127,27 @@ const pageStyles = {
         "padding": "",
         "margin": ""
     },
-    "sfsd1111111111111111111": {
+    "gallery": {
+        "padding": "",
+        "margin": ""
+    },
+    "tabsfull": {
+        "padding": "",
+        "margin": ""
+    },
+    "tabssimpllist": {
+        "padding": "",
+        "margin": ""
+    },
+    "timelinefull": {
+        "padding": "",
+        "margin": ""
+    },
+    "form": {
+        "padding": "",
+        "margin": ""
+    },
+    "sfsd111111111111111111111111": {
         "padding": "",
         "margin": ""
     }
