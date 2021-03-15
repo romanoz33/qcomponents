@@ -34,7 +34,9 @@ export default {
 				"604f08eac8e036001ed13605",
 				"604f0b61652a1e001e0760a2",
 				"604f0f292b962f001e742cae",
-				"604f129b652a1e001e0760d6"
+				"604f129b652a1e001e0760d6",
+				"604f29dac8e036001ed136a3",
+				"604f2ab9c8e036001ed136b5"
 			]
 		},
 		"60474504627982001eb71a54": {
@@ -184,7 +186,17 @@ export default {
 		},
 		"604f129b652a1e001e0760d6": {
 			"id": "604f129b652a1e001e0760d6",
-			"pageUrl": "sfsd11111111111111111",
+			"pageUrl": "lightbox",
+			"name": "LightBox"
+		},
+		"604f29dac8e036001ed136a3": {
+			"id": "604f29dac8e036001ed136a3",
+			"pageUrl": "bgimageparallax",
+			"name": "BgImage Parallax"
+		},
+		"604f2ab9c8e036001ed136b5": {
+			"id": "604f2ab9c8e036001ed136b5",
+			"pageUrl": "sfsd1111111111111111111",
 			"name": "STANDART"
 		}
 	},

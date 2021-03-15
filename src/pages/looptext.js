@@ -16,6 +16,7 @@ export default (() => {
 		</Helmet>
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
+				<Components.HeadMenu />
 				<Text text-align="center" font="--headline1">
 					Loop Text{"\n\n"}
 				</Text>

@@ -15,6 +15,7 @@ export default (() => {
 			<meta name={"description"} content={"Web site created using quarkly.io"} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
+		<Components.HeadMenu />
 		<Box padding="0px 30px 0px 30px">
 			<Box margin="50px 0px 100px 0px">
 				<Text text-align="center" font="--headline1">
@@ -285,6 +286,7 @@ export default (() => {
 					width="600px"
 					text-align="left"
 					margin="0px auto 0px auto"
+					tooltipAutoChangeProp={false}
 				/>
 				<Components.Tooltip
 					arrowStatusProp
@@ -293,6 +295,7 @@ export default (() => {
 					text-align="left"
 					margin="0px auto 0px auto"
 					tooltipDirectionProp="left"
+					tooltipAutoChangeProp={false}
 				/>
 				<Components.Tooltip
 					arrowStatusProp
@@ -301,6 +304,7 @@ export default (() => {
 					text-align="left"
 					margin="0px auto 0px auto"
 					tooltipDirectionProp="right"
+					tooltipAutoChangeProp={false}
 				/>
 				<Components.Tooltip
 					arrowStatusProp
@@ -309,6 +313,7 @@ export default (() => {
 					text-align="left"
 					margin="0px auto 0px auto"
 					tooltipDirectionProp="bottom"
+					tooltipAutoChangeProp={false}
 				/>
 				<Hr border-color="#c4c4c4" margin="16px 0px 40px 0px" />
 			</Box>

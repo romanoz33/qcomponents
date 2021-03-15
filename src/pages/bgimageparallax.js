@@ -1,12 +1,14 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Link, Text, Box } from "@quarkly/widgets";
+import { Theme, Link, Text, Box, Icon } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
+import { Override } from "@quarkly/components";
 import * as Components from "components";
+import { MdKeyboardArrowRight } from "react-icons/md";
 export default (() => {
 	return <Theme theme={theme}>
-		<GlobalQuarklyPageStyles pageUrl={"progressbar"} />
+		<GlobalQuarklyPageStyles pageUrl={"bgimageparallax"} />
 		<Helmet>
 			<title>
 				Quarkly export
@@ -14,14 +16,74 @@ export default (() => {
 			<meta name={"description"} content={"Web site created using quarkly.io"} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
-		<Components.HeadMenu />
+		<Components.HeadMenu>
+			<Override slot="overrideOverride" active-background="#99fff6" />
+		</Components.HeadMenu>
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
-					Progress Bar
+					BgImage Parallax{"\n\n"}
 				</Text>
 			</Box>
-			<Components.ProgressBar />
+			<Components.BgImageParallax imageURL="https://i.pinimg.com/originals/a4/f8/f9/a4f8f91b31d2c63a015ed34ae8c13bbd.jpg" height="1500px" imageRepeat="no-repeat" imagePosition="center" />
+			<Box margin="50px 0px 0px 0px" quarkly-title="Architecture">
+				<Text font="600 24px sans-serif" quarkly-title="Title">
+					Архитектура:
+				</Text>
+				<Box
+					margin="0px 0px 50px 0px"
+					display="flex"
+					quarkly-title="Content"
+					align-items="center"
+					justify-content="center"
+					text-align="center"
+					border-width="2px"
+					border-style="solid"
+					border-color="#d3d3d3"
+				>
+					<Box display="flex" align-items="center" quarkly-title="Item" width="100%">
+						<Text
+							width="100%"
+							font="18px sans-serif"
+							margin="0 0 0 0"
+							padding="15px 0px 15px 0px"
+							height="auto"
+							min-height="20px"
+						>
+							BgImage Parallax{"\n\n"}
+						</Text>
+						<Icon category="md" icon={MdKeyboardArrowRight} size="40px" color="#747272" />
+					</Box>
+					<Box width="100%" font="20px --fontFamily-sans" quarkly-title="Item">
+						<Box display="flex" align-items="center" min-height="52px">
+							<Text
+								width="100%"
+								font="18px sans-serif"
+								margin="0 0 0 0"
+								padding="15px 0px 15px 0px"
+								height="auto"
+								min-height="20px"
+							>
+								Bground
+							</Text>
+							<Icon category="md" icon={MdKeyboardArrowRight} size="40px" color="#747272" />
+						</Box>
+						<Box display="flex" align-items="center" min-height="52px">
+							<Text
+								width="100%"
+								font="18px sans-serif"
+								margin="0 0 0 0"
+								padding="15px 0px 15px 0px"
+								height="auto"
+								min-height="20px"
+							>
+								Content
+							</Text>
+							<Icon category="md" icon={MdKeyboardArrowRight} size="40px" color="#747272" />
+						</Box>
+					</Box>
+				</Box>
+			</Box>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
@@ -76,7 +138,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Угол начала отсчета
+						Ссылка на изображение
 					</Text>
 					<Text
 						width="100%"
@@ -87,10 +149,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Угол начала отсчета{"\n\n"}
+						Ссылка на изображение{"\n\n"}
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						0
+						none
 					</Text>
 				</Box>
 				<Box
@@ -109,7 +171,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Ширина трека
+						Размер изображения
 					</Text>
 					<Text
 						width="100%"
@@ -120,10 +182,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Ширина трека{"\n\n"}
+						Размер изображения
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						20
+						cover{" \n\n"}
 					</Text>
 				</Box>
 				<Box
@@ -142,7 +204,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Начальный размер треков
+						Выравнивание изображения
 					</Text>
 					<Text
 						width="100%"
@@ -153,10 +215,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Начальный размер треков{"\n\n"}
+						Выравнивание изображения, если оно меньше блока
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						100
+						center
 					</Text>
 				</Box>
 				<Box
@@ -175,7 +237,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Отступы между треками
+						Повтор изображения
 					</Text>
 					<Text
 						width="100%"
@@ -186,10 +248,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Отступы между треками{"\n\n"}
+						Повторять изображения по вертикали и горизонтали
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						5
+						no-repeat
 					</Text>
 				</Box>
 				<Box
@@ -208,7 +270,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Цвет заливки отступов
+						Скорость прокрутки
 					</Text>
 					<Text
 						width="100%"
@@ -219,10 +281,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Цвет заливки отступов{"\n\n"}
+						Скорость прокрутки изображения при скроле
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						-
+						0.5
 					</Text>
 				</Box>
 				<Box
@@ -241,7 +303,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Прогресс в процентах
+						Инерция прокрутки
 					</Text>
 					<Text
 						width="100%"
@@ -252,79 +314,11 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Прогресс в процентах{"\n\n"}
+						???????
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						0
+						1
 					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 7"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Цвет выполненого прогресса
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Цвет выполненого прогресса{"\n\n"}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						-{"\n\n"}
-					</Text>
-					{" "}
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 8"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Цвет трека прогресса
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Цвет трека прогресса{"\n\n"}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						-
-					</Text>
-					{" "}
 				</Box>
 			</Box>
 		</Box>

@@ -1,8 +1,9 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Link, Text, Box } from "@quarkly/widgets";
+import { Theme, Link, Text, Strong, Box } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
+import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
 		<GlobalQuarklyPageStyles pageUrl={"soundcloud"} />
@@ -13,10 +14,28 @@ export default (() => {
 			<meta name={"description"} content={"Web site created using quarkly.io"} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
+		<Components.HeadMenu />
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
 					Sound Cloud
+				</Text>
+				<Text color="#ff0000" font="21px sans-serif">
+					<Strong>
+						Ошибка при публикации:{" "}
+						<Link
+							href="https://app.netlify.com/sites/hungry-wozniak-7150fd/deploys/604b8f9a39bba01cb86cdbc9"
+							data-q-widget-type="PRIMITIVE"
+							overflow-wrap="normal"
+							word-break="normal"
+							white-space="normal"
+							text-indent="0"
+							text-overflow="clip"
+							hyphens="manual"
+						>
+							ссылка{" "}
+						</Link>
+					</Strong>
 				</Text>
 			</Box>
 			<Box quarkly-title="Props" height="auto" min-height="20px">

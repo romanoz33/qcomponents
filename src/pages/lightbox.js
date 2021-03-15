@@ -1,13 +1,12 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Link, Text, Box } from "@quarkly/widgets";
+import { Theme, Link, Text, Strong, Box } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
-import { Override } from "@quarkly/components";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
-		<GlobalQuarklyPageStyles pageUrl={"сode"} />
+		<GlobalQuarklyPageStyles pageUrl={"lightbox"} />
 		<Helmet>
 			<title>
 				Quarkly export
@@ -19,14 +18,15 @@ export default (() => {
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
-					Code
+					LightBox{"\n\n"}
+				</Text>
+				<Text color="#ff0000" font="23px sans-serif">
+					<Strong>
+						Пустой компонент
+					</Strong>
 				</Text>
 			</Box>
-			<Components.Code>
-				<Override slot="Code Text" font="20px/18px Consolas, &quot;Andale Mono WT&quot;, &quot;Andale Mono&quot;, &quot;Lucida Console&quot;, &quot;Lucida Sans Typewriter&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Liberation Mono&quot;, &quot;Nimbus Mono L&quot;, Monaco, &quot;Courier New&quot;, Courier, monospace">
-					let timerId = setTimeout(() =&gt; alert("ничего не происходит"), 1000);{"\n"}
-				</Override>
-			</Components.Code>
+			<Components.LightBox />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:

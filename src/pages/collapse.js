@@ -14,6 +14,7 @@ export default (() => {
 			<meta name={"description"} content={"Web site created using quarkly.io"} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
+		<Components.HeadMenu />
 		<Box padding="0px 30px 0px 30px">
 			<Box margin="50px 0px 100px 0px">
 				<Text text-align="center" font="--headline1">
@@ -168,12 +169,6 @@ export default (() => {
 			</Box>
 			<Box height="100px" />
 		</Box>
-		<Text>
-			Some text
-		</Text>
-		<Text>
-			Some text
-		</Text>
 		<Link
 			font={"--capture"}
 			font-size={"10px"}
