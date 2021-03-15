@@ -120,6 +120,11 @@ export default (() => {
 						border-color="#eaeaea"
 					>
 						Номер группы
+						<br />
+						(Инструкция по созданию групп -{" "}
+						<Link href="https://www.livechat.com/help/dividing-live-chat-by-group/" target="_blank">
+							ссылка
+						</Link>
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 						none{" \n\n"}
@@ -166,7 +171,7 @@ export default (() => {
 						Сеансы чата между группами [
 enable, disable]
 						<br />
-						{"\n\n"}
+						(В случае, если установлены несколько чатов из разных групп, сеанс будет один)
 						<Link
 							href="https://beta.quarkly.io/preview#/livechat"
 							data-q-widget-type="PRIMITIVE"
@@ -177,7 +182,6 @@ enable, disable]
 							text-overflow="clip"
 							hyphens="manual"
 						/>
-						{"\n\n"}
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 						enable
