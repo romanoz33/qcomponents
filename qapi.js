@@ -18,16 +18,22 @@ export default {
 				"604b4c8e2b962f001e74291f",
 				"604b4d5b2b962f001e74293f",
 				"604f54e0652a1e001e076210",
+				"604f585788a644001fa9ad0e",
 				"604f2ab9c8e036001ed136b5",
+				"604f6898652a1e001e076270",
 				"604f0f292b962f001e742cae",
 				"604f129b652a1e001e0760d6",
 				"604f08eac8e036001ed13605",
+				"604f6b0d652a1e001e076286",
 				"604a2cc88afb1c0023b5490d",
 				"604b7ce82b962f001e742a97",
 				"604a32b9627982001eb726eb",
 				"604b80a4c8e036001ed1345b",
+				"604f6ca088a644001fa9ad6e",
 				"604b6ebc2b962f001e742a67",
+				"604f6ebec8e036001ed1385a",
 				"604b7b15652a1e001e075e9f",
+				"604f705488a644001fa9ad98",
 				"604b6b36652a1e001e075e27",
 				"604a1c6f627982001eb72614",
 				"604b1a532b962f001e7426cd",
@@ -41,7 +47,8 @@ export default {
 				"604b47a4c8e036001ed1322b",
 				"604b4f86652a1e001e075d2d",
 				"604b6938652a1e001e075df7",
-				"604f585788a644001fa9ad0e"
+				"604f7134c8e036001ed13876",
+				"604f722cc8e036001ed13882"
 			]
 		},
 		"60474504627982001eb71a54": {
@@ -227,7 +234,42 @@ export default {
 		},
 		"604f585788a644001fa9ad0e": {
 			"id": "604f585788a644001fa9ad0e",
-			"pageUrl": "sfsd111111111111111111111111",
+			"pageUrl": "formspree",
+			"name": "Formspree"
+		},
+		"604f6898652a1e001e076270": {
+			"id": "604f6898652a1e001e076270",
+			"pageUrl": "googlemap",
+			"name": "Google Map"
+		},
+		"604f6b0d652a1e001e076286": {
+			"id": "604f6b0d652a1e001e076286",
+			"pageUrl": "menu",
+			"name": "Menu"
+		},
+		"604f6ca088a644001fa9ad6e": {
+			"id": "604f6ca088a644001fa9ad6e",
+			"pageUrl": "section",
+			"name": "Section"
+		},
+		"604f6ebec8e036001ed1385a": {
+			"id": "604f6ebec8e036001ed1385a",
+			"pageUrl": "socialmedia",
+			"name": "Social Media"
+		},
+		"604f705488a644001fa9ad98": {
+			"id": "604f705488a644001fa9ad98",
+			"pageUrl": "stack",
+			"name": "Stack"
+		},
+		"604f7134c8e036001ed13876": {
+			"id": "604f7134c8e036001ed13876",
+			"pageUrl": "picture",
+			"name": "Picture"
+		},
+		"604f722cc8e036001ed13882": {
+			"id": "604f722cc8e036001ed13882",
+			"pageUrl": "sfsd1111111111111111111111111111111",
 			"name": "STANDART"
 		}
 	},

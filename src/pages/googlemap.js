@@ -1,13 +1,13 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Link, Text, Box, Input, Button } from "@quarkly/widgets";
+import { Theme, Link, Text, Box } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
-import { Formspree } from "@quarkly/components";
+import { GoogleMap } from "@quarkly/components";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
-		<GlobalQuarklyPageStyles pageUrl={"formspree"} />
+		<GlobalQuarklyPageStyles pageUrl={"googlemap"} />
 		<Helmet>
 			<title>
 				Quarkly export
@@ -19,15 +19,10 @@ export default (() => {
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
-					Formspree
+					GoogleMap{"\n\n"}
 				</Text>
 			</Box>
-			<Formspree endpoint="https://formspree.io/f/xnqoelje" text-align="center">
-				<Input name="email" placeholder="Email" margin-right="4px" />
-				<Button>
-					Submit
-				</Button>
-			</Formspree>
+			<GoogleMap />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
@@ -82,7 +77,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Endpoint
+						apiKey
 					</Text>
 					<Text
 						width="100%"
@@ -93,7 +88,20 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Ссылка. Получаем при создании формы
+						Индивидуальный ключ api (
+						<Link
+							href="https://developers.google.com/maps/documentation/javascript/get-api-key"
+							data-q-widget-type="PRIMITIVE"
+							overflow-wrap="normal"
+							word-break="normal"
+							white-space="normal"
+							text-indent="0"
+							text-overflow="clip"
+							hyphens="manual"
+						>
+							ссылка
+						</Link>
+						{" "})
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0" />
 				</Box>
@@ -102,7 +110,7 @@ export default (() => {
 					border-width="1px"
 					border-style="solid"
 					border-color="#eaeaea"
-					quarkly-title="Row 2"
+					quarkly-title="Row 1"
 				>
 					<Text
 						width="100%"
@@ -113,7 +121,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Complete text
+						query
 					</Text>
 					<Text
 						width="100%"
@@ -124,44 +132,12 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Текст при успешной отправке
+						Определяет места, которые нужно выделить на карте (
+название места, адрес или координаты широты и долготы через запятую
+
+)
 					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						Success
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 3"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Error text
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Текст при возникновении ошибки
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						-
-					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0" />
 				</Box>
 			</Box>
 		</Box>

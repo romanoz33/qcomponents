@@ -1,13 +1,13 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Link, Text, Box, Input, Button } from "@quarkly/widgets";
+import { Theme, Link, Text, Box } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
-import { Formspree } from "@quarkly/components";
+import { Menu } from "@quarkly/components";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
-		<GlobalQuarklyPageStyles pageUrl={"formspree"} />
+		<GlobalQuarklyPageStyles pageUrl={"menu"} />
 		<Helmet>
 			<title>
 				Quarkly export
@@ -19,15 +19,10 @@ export default (() => {
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
-					Formspree
+					Menu
 				</Text>
 			</Box>
-			<Formspree endpoint="https://formspree.io/f/xnqoelje" text-align="center">
-				<Input name="email" placeholder="Email" margin-right="4px" />
-				<Button>
-					Submit
-				</Button>
-			</Formspree>
+			<Menu exact-active-match />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
@@ -82,7 +77,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Endpoint
+						depth
 					</Text>
 					<Text
 						width="100%"
@@ -93,9 +88,11 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Ссылка. Получаем при создании формы
+						Глубина вложенности
 					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0" />
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						1
+					</Text>
 				</Box>
 				<Box
 					display="flex"
@@ -113,7 +110,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Complete text
+						rootid
 					</Text>
 					<Text
 						width="100%"
@@ -124,10 +121,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Текст при успешной отправке
+						???????{"\n\n"}
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						Success
+						root
 					</Text>
 				</Box>
 				<Box
@@ -146,7 +143,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Error text
+						exact active match
 					</Text>
 					<Text
 						width="100%"
@@ -157,10 +154,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Текст при возникновении ошибки
+						???????
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						-
+						off
 					</Text>
 				</Box>
 			</Box>

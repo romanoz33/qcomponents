@@ -1,13 +1,13 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Link, Text, Box, Input, Button } from "@quarkly/widgets";
+import { Theme, Link, Text, Box } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
-import { Formspree } from "@quarkly/components";
+import { Section } from "@quarkly/components";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
-		<GlobalQuarklyPageStyles pageUrl={"formspree"} />
+		<GlobalQuarklyPageStyles pageUrl={"section"} />
 		<Helmet>
 			<title>
 				Quarkly export
@@ -19,15 +19,21 @@ export default (() => {
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
-					Formspree
+					Section
 				</Text>
 			</Box>
-			<Formspree endpoint="https://formspree.io/f/xnqoelje" text-align="center">
-				<Input name="email" placeholder="Email" margin-right="4px" />
-				<Button>
-					Submit
-				</Button>
-			</Formspree>
+			<Section border-width=".5px" border-style="solid" border-color="rgba(0, 0, 0, 0.18)">
+				<Text font="--headline3">
+					Where can I get some?
+					<br />
+					{"\n\n"}
+				</Text>
+				<Text font="18px/1.7 sans-serif">
+					There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+					<br />
+					{"\n\n"}
+				</Text>
+			</Section>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
@@ -82,7 +88,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Endpoint
+						inner-width
 					</Text>
 					<Text
 						width="100%"
@@ -93,9 +99,11 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Ссылка. Получаем при создании формы
+						Ширина контейнера
 					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0" />
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						defaulr{"\n\n"}
+					</Text>
 				</Box>
 				<Box
 					display="flex"
@@ -113,7 +121,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Complete text
+						inner-min-width{"\n\n"}
 					</Text>
 					<Text
 						width="100%"
@@ -124,10 +132,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Текст при успешной отправке
+						Минимальная ширина контейнера
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						Success
+						defaulr{"\n\n"}
 					</Text>
 				</Box>
 				<Box
@@ -146,7 +154,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Error text
+						inner-max-width{"\n\n"}
 					</Text>
 					<Text
 						width="100%"
@@ -157,10 +165,43 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Текст при возникновении ошибки
+						Максимальная ширина контейнера
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						-
+						defaulr
+					</Text>
+				</Box>
+				<Box
+					display="flex"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+					quarkly-title="Row 4"
+				>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						lazy load
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Ленивая загрузка
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						on
 					</Text>
 				</Box>
 			</Box>

@@ -147,7 +147,35 @@ const pageStyles = {
         "padding": "",
         "margin": ""
     },
-    "sfsd111111111111111111111111": {
+    "formspree": {
+        "padding": "",
+        "margin": ""
+    },
+    "googlemap": {
+        "padding": "",
+        "margin": ""
+    },
+    "menu": {
+        "padding": "",
+        "margin": ""
+    },
+    "section": {
+        "padding": "",
+        "margin": ""
+    },
+    "socialmedia": {
+        "padding": "",
+        "margin": ""
+    },
+    "stack": {
+        "padding": "",
+        "margin": ""
+    },
+    "picture": {
+        "padding": "",
+        "margin": ""
+    },
+    "sfsd1111111111111111111111111111111": {
         "padding": "",
         "margin": ""
     }
