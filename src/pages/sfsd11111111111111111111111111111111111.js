@@ -1,13 +1,14 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Link, Text, Box, Button, Icon } from "@quarkly/widgets";
+import { Theme, Link, Text, Box, Strong, Icon, Hr } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
+import { Override } from "@quarkly/components";
 import * as Components from "components";
 import { MdKeyboardArrowRight } from "react-icons/md";
 export default (() => {
 	return <Theme theme={theme}>
-		<GlobalQuarklyPageStyles pageUrl={"sfsd111111111111111111111111111111111"} />
+		<GlobalQuarklyPageStyles pageUrl={"sfsd11111111111111111111111111111111111"} />
 		<Helmet>
 			<title>
 				Quarkly export
@@ -19,14 +20,42 @@ export default (() => {
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
-					Animation
+					Accordion{"\n\n"}
 				</Text>
 			</Box>
-			<Components.Animation iteration="infinite" test={false} trigger="Click">
-				<Button>
-					Button
-				</Button>
-			</Components.Animation>
+			<Components.Accordion>
+				<Components.AccordionItem>
+					<Components.AccordionItemSummary />
+					<Components.AccordionItemDetails>
+						<Text font="18px/1.7 sans-serif">
+							<Strong>
+								Lorem Ipsum
+							</Strong>
+							{" "}is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.{"\n\n"}
+						</Text>
+					</Components.AccordionItemDetails>
+				</Components.AccordionItem>
+				<Components.AccordionItem>
+					<Components.AccordionItemSummary />
+					<Components.AccordionItemDetails>
+						<Text font="18px/1.7 sans-serif">
+							It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+							<br />
+							{"\n\n"}
+						</Text>
+					</Components.AccordionItemDetails>
+				</Components.AccordionItem>
+				<Components.AccordionItem>
+					<Components.AccordionItemSummary />
+					<Components.AccordionItemDetails>
+						<Text font="18px/1.7 sans-serif">
+							Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+							<br />
+							{"\n\n"}
+						</Text>
+					</Components.AccordionItemDetails>
+				</Components.AccordionItem>
+			</Components.Accordion>
 			<Box margin="50px 0px 0px 0px" quarkly-title="Architecture">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Архитектура:
@@ -51,7 +80,7 @@ export default (() => {
 							height="auto"
 							min-height="20px"
 						>
-							Animation
+							Accordion{"\n\n"}
 						</Text>
 						<Icon category="md" icon={MdKeyboardArrowRight} size="40px" color="#747272" />
 					</Box>
@@ -64,15 +93,58 @@ export default (() => {
 							height="auto"
 							min-height="20px"
 						>
-							Animation Presets
+							Accordion Item{"\n\n"}
 						</Text>
 						<Icon category="md" icon={MdKeyboardArrowRight} size="40px" color="#747272" />
+					</Box>
+					<Box width="100%" font="20px --fontFamily-sans" quarkly-title="Item">
+						<Box display="flex" align-items="center" min-height="52px">
+							<Text
+								width="100%"
+								font="18px sans-serif"
+								margin="0 0 0 0"
+								padding="15px 0px 15px 0px"
+								height="auto"
+								min-height="20px"
+							>
+								Accordion Summary
+							</Text>
+							<Icon category="md" icon={MdKeyboardArrowRight} size="40px" color="#747272" />
+						</Box>
+						<Box display="flex" align-items="center" min-height="52px">
+							<Text
+								width="100%"
+								font="18px sans-serif"
+								margin="0 0 0 0"
+								padding="15px 0px 15px 0px"
+								height="auto"
+								min-height="20px"
+							>
+								Accordion Details
+							</Text>
+							<Icon category="md" icon={MdKeyboardArrowRight} size="40px" color="#747272" />
+						</Box>
+					</Box>
+					<Box width="100%" font="20px --fontFamily-sans" quarkly-title="Item">
+						<Box display="flex" align-items="center" min-height="52px" />
+						<Box display="flex" align-items="center" min-height="52px">
+							<Text
+								width="100%"
+								font="18px sans-serif"
+								margin="0 0 0 0"
+								padding="15px 0px 15px 0px"
+								height="auto"
+								min-height="20px"
+							>
+								Скрывающийся контент{"\n\n"}
+							</Text>
+						</Box>
 					</Box>
 				</Box>
 			</Box>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пропсы Animation:
+					Пропсы:
 				</Text>
 				<Box
 					display="flex"
@@ -124,7 +196,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Trigger
+						Размер стрелочки
 					</Text>
 					<Text
 						width="100%"
@@ -135,10 +207,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Действие, вызывающее анимацию
+						Размер стрелочки
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						-
+						8px
 					</Text>
 				</Box>
 				<Box
@@ -157,7 +229,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Animation type
+						Отступ стрелочки
 					</Text>
 					<Text
 						width="100%"
@@ -168,10 +240,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Тип анимации
+						Отступ стрелочки от блока с контентом
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						Fade Out
+						4px
 					</Text>
 				</Box>
 				<Box
@@ -190,7 +262,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Iteration Count
+						ArroowStatusProp
 					</Text>
 					<Text
 						width="100%"
@@ -201,10 +273,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Повторяемость анимации [once, infinity]
+						Показать / Скрыть стрелочку
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						once
+						on
 					</Text>
 				</Box>
 				<Box
@@ -223,7 +295,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Timing function
+						Положение Tooltip
 					</Text>
 					<Text
 						width="100%"
@@ -234,10 +306,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Cкорость течения анимации{"\n\n"}
+						Положение стрелочки относительно блока с контентом. [top, bottom, left, right]
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						none
+						top
 					</Text>
 				</Box>
 				<Box
@@ -256,7 +328,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Duration
+						Цвет Tooltip
 					</Text>
 					<Text
 						width="100%"
@@ -267,10 +339,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Продолжительность анимации
+						Цвет Tooltip, включая цвет стрелочки
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						1s{"\n\n"}
+						--color-dark
 					</Text>
 				</Box>
 				<Box
@@ -289,7 +361,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Delay before start
+						Отступ от краев
 					</Text>
 					<Text
 						width="100%"
@@ -300,10 +372,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Задержка перед началом анимации
+						Минимальное расстояние между Tooltip до любого края окна
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						0s
+						0
 					</Text>
 				</Box>
 				<Box
@@ -322,7 +394,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Play animation
+						Показать Tooltip
 					</Text>
 					<Text
 						width="100%"
@@ -333,13 +405,109 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Включить анимацию для теста.
+						:always - Отображать всегда.
+						<br />
+						:hover - Отображать только  при наведении на блок с контентом
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						off
+						:always{" \n\n"}
 					</Text>
 					{" "}
 				</Box>
+				<Box
+					display="flex"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+					quarkly-title="Row 8"
+				>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Автоматическая смена положения Tooltip
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Изменять положение Tolltip при нехватке места.{" "}
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						on
+					</Text>
+					{" "}
+				</Box>
+			</Box>
+			<Box margin="50px 0px 30px 0px" quarkly-title="Example 1 ">
+				<Text font="600 24px sans-serif" quarkly-title="Title">
+					Пример с разными положениями:
+				</Text>
+				<Components.Tooltip
+					arrowStatusProp
+					tooltipStatusProp=":always"
+					width="600px"
+					text-align="left"
+					margin="0px auto 0px auto"
+				/>
+				<Components.Tooltip
+					arrowStatusProp
+					tooltipStatusProp=":always"
+					width="600px"
+					text-align="left"
+					margin="0px auto 0px auto"
+					tooltipDirectionProp="left"
+				/>
+				<Components.Tooltip
+					arrowStatusProp
+					tooltipStatusProp=":always"
+					width="600px"
+					text-align="left"
+					margin="0px auto 0px auto"
+					tooltipDirectionProp="right"
+				/>
+				<Components.Tooltip
+					arrowStatusProp
+					tooltipStatusProp=":always"
+					width="600px"
+					text-align="left"
+					margin="0px auto 0px auto"
+					tooltipDirectionProp="bottom"
+				/>
+				<Hr border-color="#c4c4c4" margin="16px 0px 40px 0px" />
+			</Box>
+			<Box margin="50px 0px 30px 0px" quarkly-title="Example 2">
+				<Text font="600 24px sans-serif" quarkly-title="Title">
+					Пример с другим цветом и размером
+				</Text>
+				<Hr border-color="#c4c4c4" margin="16px 0px 40px 0px" />
+				<Components.Tooltip
+					arrowStatusProp
+					tooltipStatusProp=":always"
+					width="600px"
+					text-align="left"
+					margin="0px auto 0px auto"
+					tooltipDirectionProp="left"
+					tooltipColorProp="#21b1f7"
+					arrowSizeProp="28"
+					tooltipOffsetProp="10"
+				>
+					<Override slot="Tooltip text">
+						<Strong>
+							Hello World!
+						</Strong>
+					</Override>
+				</Components.Tooltip>
 			</Box>
 		</Box>
 		<Link

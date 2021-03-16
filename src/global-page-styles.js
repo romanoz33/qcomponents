@@ -187,7 +187,11 @@ const pageStyles = {
         "padding": "",
         "margin": ""
     },
-    "sfsd1111111111111111111111111111111111": {
+    "beforeafterimage": {
+        "padding": "",
+        "margin": ""
+    },
+    "sfsd11111111111111111111111111111111111": {
         "padding": "",
         "margin": ""
     }
