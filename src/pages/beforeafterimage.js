@@ -91,7 +91,7 @@ export default (() => {
 						Соотношение сторон [none, square, 4:3, 3:4, 16:9, 9:16]
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						8px
+						16:9
 					</Text>
 				</Box>
 				<Box

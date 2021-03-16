@@ -337,7 +337,7 @@ const propInfo = {
 };
 const defaultProps = {
 	width: 'auto',
-	aspectRatio: 'square',
+	aspectRatio: '16:9',
 	activationType: 'onDrag'
 };
 export default atomize(BeforeAfterImage)({
