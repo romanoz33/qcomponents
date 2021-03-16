@@ -1,12 +1,13 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Link, Text, Box } from "@quarkly/widgets";
+import { Theme, Link, Text, Box, Strong } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
+import { Menu } from "@quarkly/components";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
-		<GlobalQuarklyPageStyles pageUrl={"vkpage"} />
+		<GlobalQuarklyPageStyles pageUrl={"mobilesidepanel"} />
 		<Helmet>
 			<title>
 				Quarkly export
@@ -18,10 +19,27 @@ export default (() => {
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
-					VK Page
+					Mobile Side Panel
 				</Text>
-				<Components.VkPage />
 			</Box>
+			<Components.MobileSidePanel menuPosition="full">
+				<Text lg-font="18px/1.7 sans-serif" font="18px/1.7 sans-serif">
+					<Strong
+						data-q-widget-type="PRIMITIVE"
+						overflow-wrap="normal"
+						word-break="normal"
+						white-space="normal"
+						text-indent="0"
+						text-overflow="clip"
+						hyphens="manual"
+					>
+						Lorem Ipsum
+					</Strong>
+					{" "}is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+					<br />
+					{"\n\n"}
+				</Text>
+			</Components.MobileSidePanel>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
@@ -76,7 +94,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Color
+						Show/Hide duration
 					</Text>
 					<Text
 						width="100%"
@@ -87,10 +105,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Цвет кнопки
+						Продолжительность анимации показа и скрытия
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						#5181B8
+						0.3s{"\n\n"}
 					</Text>
 				</Box>
 				<Box
@@ -109,7 +127,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Element ID
+						Show/Hide duration Easing Function
 					</Text>
 					<Text
 						width="100%"
@@ -120,10 +138,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						??????????
+						Скорость течения анимации{"\n\n"}
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						vk_groups
+						ease{" "}
 					</Text>
 				</Box>
 				<Box
@@ -142,7 +160,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Group ID
+						Mobile version breackpoint
 					</Text>
 					<Text
 						width="100%"
@@ -153,10 +171,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						ID группы
+						Брейкпоинт с которого изменять на мобильный вид
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						-
+						on
 					</Text>
 				</Box>
 				<Box
@@ -175,7 +193,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Background color
+						Mobile panel position
 					</Text>
 					<Text
 						width="100%"
@@ -186,146 +204,22 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Фон компонента
+						Позиция панели в мобильной версии [full, left, right, near]
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						#fff
+						near
 					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 5"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Color
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Цвет текста
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						#000
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 6"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						View
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Что отображать [members, news, only name]
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						Members{"\n\n"}
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 7"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Dont use cover
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Не использовать обложку
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						off
-					</Text>
-					{" "}
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 8"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Extended mode
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					/>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						off
-					</Text>
-					{" "}
 				</Box>
 			</Box>
-			<Components.VkPage />
+			<Box quarkly-title="Props" height="auto" min-height="20px">
+				<Text font="600 24px sans-serif" quarkly-title="Title">
+					Вариант с вложенным menu
+				</Text>
+				<Box quarkly-title="Space" />
+			</Box>
+			<Components.MobileSidePanel menuPosition="full">
+				<Menu />
+			</Components.MobileSidePanel>
 		</Box>
 		<Link
 			font={"--capture"}

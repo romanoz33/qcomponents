@@ -175,7 +175,19 @@ const pageStyles = {
         "padding": "",
         "margin": ""
     },
-    "sfsd1111111111111111111111111111111": {
+    "mobilesidepanel": {
+        "padding": "",
+        "margin": ""
+    },
+    "menuwith": {
+        "padding": "",
+        "margin": ""
+    },
+    "sfsd111111111111111111111111111111111": {
+        "padding": "",
+        "margin": ""
+    },
+    "sfsd1111111111111111111111111111111111": {
         "padding": "",
         "margin": ""
     }

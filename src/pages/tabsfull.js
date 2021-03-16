@@ -22,6 +22,7 @@ export default (() => {
 					TabsFull
 				</Text>
 			</Box>
+			<Components.TabsFull defaultTab="1" align="center" />
 			<Components.TabsFull orientation="Horizontal">
 				<Components.TabsFullContent />
 				<Components.TabsFullBody />

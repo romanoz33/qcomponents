@@ -25,7 +25,9 @@ export default {
 				"604f129b652a1e001e0760d6",
 				"604f08eac8e036001ed13605",
 				"604f6b0d652a1e001e076286",
+				"60505fc588a644001fa9ae4c",
 				"604a2cc88afb1c0023b5490d",
+				"604f722cc8e036001ed13882",
 				"604b7ce82b962f001e742a97",
 				"604a32b9627982001eb726eb",
 				"604b80a4c8e036001ed1345b",
@@ -48,7 +50,8 @@ export default {
 				"604b4f86652a1e001e075d2d",
 				"604b6938652a1e001e075df7",
 				"604f7134c8e036001ed13876",
-				"604f722cc8e036001ed13882"
+				"6050687c2b962f001e742fad",
+				"60506bd688a644001fa9ae9a"
 			]
 		},
 		"60474504627982001eb71a54": {
@@ -269,7 +272,22 @@ export default {
 		},
 		"604f722cc8e036001ed13882": {
 			"id": "604f722cc8e036001ed13882",
-			"pageUrl": "sfsd1111111111111111111111111111111",
+			"pageUrl": "mobilesidepanel",
+			"name": "Mobile Side Panel"
+		},
+		"60505fc588a644001fa9ae4c": {
+			"id": "60505fc588a644001fa9ae4c",
+			"pageUrl": "menuwith",
+			"name": "Menu with Group | Dropdown"
+		},
+		"6050687c2b962f001e742fad": {
+			"id": "6050687c2b962f001e742fad",
+			"pageUrl": "sfsd111111111111111111111111111111111",
+			"name": "Animation"
+		},
+		"60506bd688a644001fa9ae9a": {
+			"id": "60506bd688a644001fa9ae9a",
+			"pageUrl": "sfsd1111111111111111111111111111111111",
 			"name": "STANDART"
 		}
 	},

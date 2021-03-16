@@ -22,228 +22,485 @@ export default (() => {
 				</Text>
 			</Box>
 			<Components.Video />
-			<Box margin="50px 0px 0px 0px">
-				<Text font="600 24px sans-serif">
-					Пропсы:
-				</Text>
+			<Box>
+				<Box margin="50px 0px 0px 0px">
+					<Text font="600 24px sans-serif">
+						Пропсы video:
+					</Text>
+				</Box>
+				<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Loop
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Зацикливает воспроизведение видео, чтобы оно повторялось с начала после завершения.
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						off
+					</Text>
+					{" "}
+				</Box>
+				<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Show controls
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Показать плеер
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						on
+					</Text>
+				</Box>
+				<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Muted
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Отключить звук{" "}
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						off
+					</Text>
+				</Box>
+				<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Autoplay
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Автоматическое воспроизведение видео, после загрузки страницы
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						off
+					</Text>
+				</Box>
+				<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Poster
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Ссылка на изображение постера
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						-
+					</Text>
+				</Box>
+				<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Src
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Прямая ссылка на видеофайл
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						-
+					</Text>
+				</Box>
+				<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						PlayOnHover
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Воспроизводить при наведении на видео{" "}
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						off
+					</Text>
+				</Box>
+				<Box />
+				<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Название
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Описание
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						Значение по дефолту
+					</Text>
+				</Box>
 			</Box>
-			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Название
-				</Text>
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Описание
-				</Text>
-				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-					Значение по дефолту
-				</Text>
-			</Box>
-			<Box />
-			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					PlayOnHover
-				</Text>
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Воспроизводить при наведении на видео{" "}
-				</Text>
-				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-					off
-				</Text>
-			</Box>
-			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Src
-				</Text>
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Прямая ссылка на видеофайл
-				</Text>
-				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-					-
-				</Text>
-			</Box>
-			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Poster
-				</Text>
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Ссылка на изображение постера
-				</Text>
-				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-					-
-				</Text>
-			</Box>
-			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Autoplay
-				</Text>
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Автоматическое воспроизведение видео, после загрузки страницы
-				</Text>
-				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-					off
-				</Text>
-			</Box>
-			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Show controls
-				</Text>
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Показать плеер
-				</Text>
-				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-					on
-				</Text>
-			</Box>
-			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Muted
-				</Text>
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Отключить звук{" "}
-				</Text>
-				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-					off
-				</Text>
-			</Box>
-			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Loop
-				</Text>
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Зацикливает воспроизведение видео, чтобы оно повторялось с начала после завершения.
-				</Text>
-				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-					off
-				</Text>
-				{" "}
+			<Box>
+				<Box margin="50px 0px 0px 0px">
+					<Text font="600 24px sans-serif">
+						Пропсы source:
+					</Text>
+				</Box>
+				<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Название
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Описание
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						Значение по дефолту
+					</Text>
+				</Box>
+				<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Src
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Ссылка на видео или аудио файл
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						-
+					</Text>
+					{" "}
+				</Box>
+				<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Type
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						MIME-тип видео или аудио
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						-
+					</Text>
+				</Box>
+				<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Codesc
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Кодеки
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						none
+					</Text>
+				</Box>
+				<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Srcset
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Одно или набор изображений, через запятую
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						none{" "}
+					</Text>
+				</Box>
+				<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Sizes
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Список размеров изображений для разных размеров страниц{"\n\n"}
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						none{" \n\n"}
+					</Text>
+				</Box>
+				<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Device
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Тип устройства для медиа запроса
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						all
+					</Text>
+				</Box>
+				<Box>
+					<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
+						<Text
+							width="100%"
+							font="18px sans-serif"
+							padding="15px 15px 15px 15px"
+							margin="0 0 0 0"
+							border-width="1px"
+							border-style="solid"
+							border-color="#eaeaea"
+						>
+							Media query
+						</Text>
+						<Text
+							width="100%"
+							font="18px sans-serif"
+							padding="15px 15px 15px 15px"
+							margin="0 0 0 0"
+							border-width="1px"
+							border-style="solid"
+							border-color="#eaeaea"
+						>
+							Mедиа-запрос, согласно которому будет выводиться изображение. (Работает только в элементе Picture.)
+						</Text>
+						<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+							none
+						</Text>
+					</Box>
+				</Box>
+				<Box>
+					<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
+						<Text
+							width="100%"
+							font="18px sans-serif"
+							padding="15px 15px 15px 15px"
+							margin="0 0 0 0"
+							border-width="1px"
+							border-style="solid"
+							border-color="#eaeaea"
+						>
+							Type
+						</Text>
+						<Text
+							width="100%"
+							font="18px sans-serif"
+							padding="15px 15px 15px 15px"
+							margin="0 0 0 0"
+							border-width="1px"
+							border-style="solid"
+							border-color="#eaeaea"
+						>
+							MIME-тип изображения{" "}
+						</Text>
+						<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+							none
+						</Text>
+					</Box>
+				</Box>
 			</Box>
 			<Box margin="50px 0px 30px 0px">
 				<Text font="600 24px sans-serif">
@@ -259,6 +516,15 @@ export default (() => {
 				<Hr border-color="#c4c4c4" margin="16px 0px 40px 0px" />
 				<Components.Video src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4" poster=" ">
 					<Components.Track isDefault={false} kind="captions" label="Английский" src="https://interactive-examples.mdn.mozilla.net/media/examples/friday.vtt" />
+				</Components.Video>
+			</Box>
+			<Box margin="50px 0px 30px 0px">
+				<Text font="600 24px sans-serif">
+					Пример с вложенным компонентом Source
+				</Text>
+				<Hr border-color="#c4c4c4" margin="16px 0px 40px 0px" />
+				<Components.Video poster=" ">
+					<Components.Source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4" typeMedia="video/mp4" />
 				</Components.Video>
 			</Box>
 			<Box height="100px" />

@@ -141,6 +141,7 @@ export default (() => {
 						border-width="1px"
 						border-style="solid"
 						border-color="#eaeaea"
+						color="#ff0000"
 					>
 						Скорость смены слайдера
 					</Text>
@@ -219,7 +220,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						-
+						??????????
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 						off

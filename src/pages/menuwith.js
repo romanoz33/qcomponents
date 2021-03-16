@@ -6,7 +6,7 @@ import { GlobalQuarklyPageStyles } from "global-page-styles";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
-		<GlobalQuarklyPageStyles pageUrl={"picture"} />
+		<GlobalQuarklyPageStyles pageUrl={"menuwith"} />
 		<Helmet>
 			<title>
 				Quarkly export
@@ -18,10 +18,11 @@ export default (() => {
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
-					Picture
+					Menu with Group | Dropdown
 				</Text>
 			</Box>
-			<Components.Picture />
+			<Components.MenuWithGroups />
+			<Components.MenuWithDropdown collapse={false} />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
@@ -60,6 +61,26 @@ export default (() => {
 					</Text>
 				</Box>
 				<Box quarkly-title="Space" />
+				<Box
+					display="flex"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+					quarkly-title="Row 8"
+				>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Все те же, что и у mobileMenu и burgerMenu{" "}
+					</Text>
+					{" "}
+				</Box>
 			</Box>
 		</Box>
 		<Link
