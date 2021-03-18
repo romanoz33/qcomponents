@@ -22,7 +22,15 @@ export default (() => {
 					BgImage Parallax{"\n\n"}
 				</Text>
 			</Box>
-			<Components.BgImageParallax imageURL="https://i.pinimg.com/originals/a4/f8/f9/a4f8f91b31d2c63a015ed34ae8c13bbd.jpg" height="1500px" imageRepeat="no-repeat" imagePosition="center" />
+			<Components.BgImageParallax
+				imageURL="https://i.pinimg.com/originals/a4/f8/f9/a4f8f91b31d2c63a015ed34ae8c13bbd.jpg"
+				height="500px"
+				imageRepeat="repeat"
+				imagePosition="center"
+				scrollSpeedProp="2"
+				imageSize="100%"
+				scrollInertiaProp="10"
+			/>
 			<Box margin="50px 0px 0px 0px" quarkly-title="Architecture">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Архитектура:

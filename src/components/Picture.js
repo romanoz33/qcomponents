@@ -5,13 +5,11 @@ const Picture = ({
 	children,
 	...props
 }) => {
-	return <div {...props}>
-		<picture width='100%' height='auto'>
-			{React.Children.map(children, child => React.isValidElement(child) ? React.cloneElement(child, {
-				container: 'picture'
-			}) : child)}
-		</picture>
-	</div>;
+	return <picture width='100%' height='auto' {...props}>
+		{React.Children.map(children, child => React.isValidElement(child) ? React.cloneElement(child, {
+			container: 'picture'
+		}) : child)}
+	</picture>;
 };
 
 export default atomize(Picture)({

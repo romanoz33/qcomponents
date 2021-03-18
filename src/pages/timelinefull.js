@@ -22,7 +22,7 @@ export default (() => {
 					TimeLine Full
 				</Text>
 			</Box>
-			<Components.TimelineFull alignMobile="to the right" />
+			<Components.TimelineFull />
 			<Box height="100px" />
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
@@ -30,7 +30,7 @@ export default (() => {
 TimeLineItem
 				</Text>
 			</Box>
-			<Components.TimelineList alignDesktop="from the left">
+			<Components.TimelineList>
 				<Components.TimelineItem />
 				<Components.TimelineItem />
 				<Components.TimelineItem />

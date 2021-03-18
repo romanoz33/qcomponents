@@ -1,12 +1,12 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Link, Text, Box } from "@quarkly/widgets";
+import { Theme, Link, Text, Box, Strong, Span } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
-		<GlobalQuarklyPageStyles pageUrl={"slidersimple"} />
+		<GlobalQuarklyPageStyles pageUrl={"disqus"} />
 		<Helmet>
 			<title>
 				Quarkly export
@@ -18,10 +18,10 @@ export default (() => {
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
-					Slider Simple
+					Discus
 				</Text>
 			</Box>
-			<Components.SliderSimple />
+			<Components.Disqus />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
@@ -76,7 +76,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Arrows color
+						Shortname
 					</Text>
 					<Text
 						width="100%"
@@ -87,10 +87,13 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Цвет стрелочек
+						Имя вашей ленты. Подробнее здесь:{" "}
+						<Link href="https://help.disqus.com/en/articles/1717111-what-s-a-shortname" target="_blank">
+							ссылка
+						</Link>
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						#eee
+						-
 					</Text>
 				</Box>
 				<Box
@@ -109,7 +112,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Arrows opacity{" "}
+						Language
 					</Text>
 					<Text
 						width="100%"
@@ -120,10 +123,43 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Прозрачность стрелочек
+						Язык
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						.75
+						ru
+					</Text>
+				</Box>
+				<Box
+					display="flex"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+					quarkly-title="Row 2"
+				>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Идентификатор обсуждения
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Идентификатор обсуждения{"\n\n"}
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						-
 					</Text>
 				</Box>
 				<Box
@@ -142,7 +178,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Points color
+						URL-адрес обсуждения
 					</Text>
 					<Text
 						width="100%"
@@ -153,10 +189,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Цвет точек навигации
+						URL-адрес обсуждения{"\n\n"}
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						#eee{"\n\n"}
+						-
 					</Text>
 				</Box>
 				<Box
@@ -175,7 +211,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Points opacity
+						Заголовок обсуждения{"\n\n"}
 					</Text>
 					<Text
 						width="100%"
@@ -186,10 +222,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Прозрачность точек навигации
+						Заголовок обсуждения{"\n\n"}
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						.5
+						-
 					</Text>
 				</Box>
 				<Box
@@ -197,7 +233,7 @@ export default (() => {
 					border-width="1px"
 					border-style="solid"
 					border-color="#eaeaea"
-					quarkly-title="Row 5"
+					quarkly-title="Row 4"
 				>
 					<Text
 						width="100%"
@@ -208,89 +244,56 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Height of the slider
+						<Strong
+							data-q-widget-type="PRIMITIVE"
+							overflow-wrap="normal"
+							word-break="normal"
+							white-space="normal"
+							text-indent="0"
+							text-overflow="clip"
+							hyphens="manual"
+						>
+							*
+						</Strong>
+						{" "}Идентификатор, URL-адрес и заголовок обсуждения создаются и сохраняются при первом комментарии. Далее не изменяются.{" "}
+						<br />
+						<br />
+						<Span
+							data-q-widget-type="PRIMITIVE"
+							overflow-wrap="normal"
+							word-break="normal"
+							white-space="normal"
+							text-indent="0"
+							text-overflow="clip"
+							hyphens="manual"
+						>
+							Подробнее тут:
+						</Span>
+						<Strong
+							data-q-widget-type="PRIMITIVE"
+							overflow-wrap="normal"
+							word-break="normal"
+							white-space="normal"
+							text-indent="0"
+							text-overflow="clip"
+							hyphens="manual"
+						>
+							{" "}
+							<Link
+								href="https://help.disqus.com/en/articles/1717084-javascript-configuration-variables"
+								target="_blank"
+								data-q-widget-type="PRIMITIVE"
+								overflow-wrap="normal"
+								word-break="normal"
+								white-space="normal"
+								text-indent="0"
+								text-overflow="clip"
+								hyphens="manual"
+							>
+								ссылка
+							</Link>
+						</Strong>
 					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Высота слайдера (процент от ширины слайдера)
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						62,5%
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 6"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Animation duration
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Продолжительность перехода слайда (в миллисекундах)
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						1000
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 7"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Image URLs
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Ссылки на изображения
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						-{"\n\n"}
-					</Text>
-					{" "}
 				</Box>
 			</Box>
 		</Box>

@@ -183,7 +183,7 @@ const pageStyles = {
         "padding": "",
         "margin": ""
     },
-    "sfsd111111111111111111111111111111111": {
+    "animation": {
         "padding": "",
         "margin": ""
     },
@@ -191,7 +191,15 @@ const pageStyles = {
         "padding": "",
         "margin": ""
     },
-    "sfsd11111111111111111111111111111111111": {
+    "disqus": {
+        "padding": "",
+        "margin": ""
+    },
+    "disquscomment": {
+        "padding": "",
+        "margin": ""
+    },
+    "sfsd1111111111111111111111111111111111111": {
         "padding": "",
         "margin": ""
     }

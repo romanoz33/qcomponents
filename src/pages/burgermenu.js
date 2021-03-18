@@ -23,7 +23,10 @@ export default (() => {
 				</Text>
 			</Box>
 			<Components.BurgerMenu>
-				<Override slot="menu" exact-active-match />
+				<Override slot="menu" exact-active-match>
+					<Override slot="item" color="#ff0404" />
+					<Override slot="link" color="#0083ff" />
+				</Override>
 			</Components.BurgerMenu>
 			<Box margin="50px 0px 0px 0px">
 				<Text font="600 24px sans-serif">

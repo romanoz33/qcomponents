@@ -21,7 +21,7 @@ export default (() => {
 					Loop Text{"\n\n"}
 				</Text>
 			</Box>
-			<Components.LoopText fade mask noWrap />
+			<Components.LoopText slides="coolest,fastest,sdfsd" fade mask />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:

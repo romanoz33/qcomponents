@@ -6,7 +6,7 @@ import { GlobalQuarklyPageStyles } from "global-page-styles";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
-		<GlobalQuarklyPageStyles pageUrl={"slidersimple"} />
+		<GlobalQuarklyPageStyles pageUrl={"disquscomment"} />
 		<Helmet>
 			<title>
 				Quarkly export
@@ -18,10 +18,10 @@ export default (() => {
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
-					Slider Simple
+					Disqus Some Comment
 				</Text>
 			</Box>
-			<Components.SliderSimple />
+			<Components.DisqusComment showParrent commentIDProp="5307041509" />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
@@ -76,7 +76,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Arrows color
+						ID Комментария
 					</Text>
 					<Text
 						width="100%"
@@ -87,10 +87,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Цвет стрелочек
+						ID определенного комментария{" "}
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						#eee
+						-
 					</Text>
 				</Box>
 				<Box
@@ -109,7 +109,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Arrows opacity{" "}
+						Отступ стрелочки
 					</Text>
 					<Text
 						width="100%"
@@ -120,10 +120,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Прозрачность стрелочек
+						Отступ стрелочки от блока с контентом
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						.75
+						4px
 					</Text>
 				</Box>
 				<Box
@@ -142,7 +142,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Points color
+						Show parrent comment
 					</Text>
 					<Text
 						width="100%"
@@ -153,10 +153,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Цвет точек навигации
+						Показать родительский комментарий
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						#eee{"\n\n"}
+						off
 					</Text>
 				</Box>
 				<Box
@@ -175,7 +175,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Points opacity
+						Ширина блока
 					</Text>
 					<Text
 						width="100%"
@@ -186,10 +186,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Прозрачность точек навигации
+						Ширина блока
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						.5
+						100%
 					</Text>
 				</Box>
 				<Box
@@ -208,7 +208,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Height of the slider
+						Высота блока
 					</Text>
 					<Text
 						width="100%"
@@ -219,78 +219,11 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Высота слайдера (процент от ширины слайдера)
+						Высота блока (Максимально 298px, ограничено встроенным компонентом)
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						62,5%
+						200px
 					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 6"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Animation duration
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Продолжительность перехода слайда (в миллисекундах)
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						1000
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 7"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Image URLs
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Ссылки на изображения
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						-{"\n\n"}
-					</Text>
-					{" "}
 				</Box>
 			</Box>
 		</Box>

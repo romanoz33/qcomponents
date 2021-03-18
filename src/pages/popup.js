@@ -3,6 +3,7 @@ import theme from "theme";
 import { Theme, Link, Text, Box } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
+import { Override } from "@quarkly/components";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
@@ -21,7 +22,9 @@ export default (() => {
 					Mobile menu
 				</Text>
 			</Box>
-			<Components.Popup text-align="center" />
+			<Components.Popup>
+				<Override slot="button" />
+			</Components.Popup>
 			<Box margin="50px 0px 0px 0px">
 				<Text font="600 24px sans-serif">
 					Вложенный элемент "Menu" имеет пропсы:

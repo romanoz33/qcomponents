@@ -21,7 +21,7 @@ export default (() => {
 					Table
 				</Text>
 			</Box>
-			<Components.Table margin="0px auto 0px auto" showHeader={false} summary="block" />
+			<Components.Table margin="0px auto 0px auto" showHeader={false} showFooter={false} />
 			<Box margin="50px 0px 0px 0px">
 				<Text font="600 24px sans-serif">
 					Пропсы:

@@ -21,7 +21,7 @@ export default (() => {
 					Before After Image
 				</Text>
 			</Box>
-			<Components.BeforeAfterImage aspectRatio="16:9" />
+			<Components.BeforeAfterImage aspectRatio="16:9" activationType="onDrag" />
 			<Box margin="50px 0px 0px 0px" quarkly-title="Architecture" />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">

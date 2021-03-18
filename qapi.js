@@ -52,7 +52,9 @@ export default {
 				"604b47a4c8e036001ed1322b",
 				"604b4f86652a1e001e075d2d",
 				"604b6938652a1e001e075df7",
-				"605073392b962f001e743029"
+				"605073392b962f001e743029",
+				"6051c4c3652a1e001e076677",
+				"6051d2d6c8e036001ed13bc6"
 			]
 		},
 		"60474504627982001eb71a54": {
@@ -283,7 +285,7 @@ export default {
 		},
 		"6050687c2b962f001e742fad": {
 			"id": "6050687c2b962f001e742fad",
-			"pageUrl": "sfsd111111111111111111111111111111111",
+			"pageUrl": "animation",
 			"name": "Animation"
 		},
 		"60506bd688a644001fa9ae9a": {
@@ -293,7 +295,17 @@ export default {
 		},
 		"605073392b962f001e743029": {
 			"id": "605073392b962f001e743029",
-			"pageUrl": "sfsd11111111111111111111111111111111111",
+			"pageUrl": "disqus",
+			"name": "Disqus"
+		},
+		"6051c4c3652a1e001e076677": {
+			"id": "6051c4c3652a1e001e076677",
+			"pageUrl": "disquscomment",
+			"name": "Disqus Some Comment"
+		},
+		"6051d2d6c8e036001ed13bc6": {
+			"id": "6051d2d6c8e036001ed13bc6",
+			"pageUrl": "sfsd1111111111111111111111111111111111111",
 			"name": "STANDART"
 		}
 	},
