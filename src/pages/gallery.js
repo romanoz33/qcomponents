@@ -370,7 +370,15 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						<Strong>
+						<Strong
+							data-q-widget-type="PRIMITIVE"
+							overflow-wrap="normal"
+							word-break="normal"
+							white-space="normal"
+							text-indent="0"
+							text-overflow="clip"
+							hyphens="manual"
+						>
 							В конструкторе:{" "}
 							<br />
 						</Strong>
@@ -378,7 +386,15 @@ export default (() => {
 						<br />
 						- При выборе "По клику" - Загружаются и показываются кол-во изображений, помещающиеся в полтора экрана. Снизу появляется кнопка "Загрузить еще". По клику, подгружаются столько же изображений.
 						<br />
-						<Strong>
+						<Strong
+							data-q-widget-type="PRIMITIVE"
+							overflow-wrap="normal"
+							word-break="normal"
+							white-space="normal"
+							text-indent="0"
+							text-overflow="clip"
+							hyphens="manual"
+						>
 							На сайте:{" "}
 						</Strong>
 						<br />
@@ -423,7 +439,15 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						<Strong>
+						<Strong
+							data-q-widget-type="PRIMITIVE"
+							overflow-wrap="normal"
+							word-break="normal"
+							white-space="normal"
+							text-indent="0"
+							text-overflow="clip"
+							hyphens="manual"
+						>
 							auto{" "}
 						</Strong>
 						- Пропорции изображений не меняются.

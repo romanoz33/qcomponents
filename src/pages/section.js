@@ -102,7 +102,7 @@ export default (() => {
 						Ширина контейнера
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						defaulr{"\n\n"}
+						default
 					</Text>
 				</Box>
 				<Box
@@ -135,7 +135,7 @@ export default (() => {
 						Минимальная ширина контейнера
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						defaulr{"\n\n"}
+						default{"\n\n"}
 					</Text>
 				</Box>
 				<Box
@@ -168,7 +168,7 @@ export default (() => {
 						Максимальная ширина контейнера
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						defaulr
+						default{"\n\n"}
 					</Text>
 				</Box>
 				<Box

@@ -22,7 +22,7 @@ export default (() => {
 					Animation
 				</Text>
 			</Box>
-			<Components.Animation iteration="infinite" test={false} trigger="Click">
+			<Components.Animation iteration="infinite" test={false}>
 				<Button>
 					Button
 				</Button>
