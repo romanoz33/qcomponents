@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import atomize from '@quarkly/atomize';
+const Video = atomize.video();
+const Content = atomize.div();
+const DropArea = atomize.div();
+const Empty = atomize.div();
 
-const Video = ({
+const VideoComponent = ({
 	src,
 	poster,
 	autoPlay,
@@ -12,24 +16,41 @@ const Video = ({
 	children,
 	...props
 }) => {
-	return <div {...props}>
-		<video
-			width='100%'
-			height='auto'
-			src={src}
-			poster={poster}
-			autoPlay={autoPlay}
-			controls={controls}
-			muted={muted}
-			loop={loop}
-			onMouseEnter={playOnHover ? e => e.target.play() : undefined}
-			onMouseLeave={playOnHover ? e => e.target.pause() : undefined}
-		>
-			{React.Children.map(children, child => React.isValidElement(child) ? React.cloneElement(child, {
+	const contentRef = useRef(null);
+	const [isEmpty, setEmpty] = useState(false);
+	useEffect(() => {
+		setEmpty(contentRef.current?.innerHTML === '<!--child placeholder-->');
+	}, [children]);
+	const Wrapper = !isEmpty || src ? Video : Empty;
+	return <Wrapper
+		width='100%'
+		height='auto'
+		src={src}
+		poster={poster}
+		autoPlay={autoPlay}
+		controls={controls}
+		muted={muted}
+		loop={loop}
+		onMouseEnter={playOnHover ? e => e.target.play() : undefined}
+		onMouseLeave={playOnHover ? e => e.target.pause() : undefined}
+		{...props}
+	>
+		<Content ref={contentRef}>
+			{React.Children.map(children, child => React.isValidElement(child) && React.cloneElement(child, {
 				container: 'video'
-			}) : child)}
-		</video>
-	</div>;
+			}))}
+		</Content>
+		{isEmpty && !src && <DropArea
+			padding="16px"
+			font="--font-base"
+			font-style="italic"
+			color="--color-grey"
+			background-color="--color-light"
+			border="1px dashed --color-lightD2"
+		>
+			Drag "Source" components here
+		</DropArea>}
+	</Wrapper>;
 };
 
 const propInfo = {
@@ -116,7 +137,7 @@ const defaultProps = {
 	poster: 'https://uploads.quarkly.io/molecules/default-video-poster.png',
 	controls: true
 };
-export default atomize(Video)({
+export default atomize(VideoComponent)({
 	name: 'Video',
 	description: {
 		en: 'Container for embedding video content',

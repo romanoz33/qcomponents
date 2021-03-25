@@ -1,9 +1,11 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Link, Text, Strong, Box } from "@quarkly/widgets";
+import { Theme, Link, Text, Box, Image, Button, Icon } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
+import { Override } from "@quarkly/components";
 import * as Components from "components";
+import { MdPlayCircleFilled } from "react-icons/md";
 export default (() => {
 	return <Theme theme={theme}>
 		<GlobalQuarklyPageStyles pageUrl={"lightbox"} />
@@ -18,15 +20,44 @@ export default (() => {
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
-					LightBox{"\n\n"}
-				</Text>
-				<Text color="#ff0000" font="23px sans-serif">
-					<Strong>
-						Пустой компонент
-					</Strong>
+					LightBox Image
 				</Text>
 			</Box>
-			<Components.LightBox />
+			<Components.LIghtBoxImage showImageProp={false} offLightboxProp={false}>
+				<Override slot="Lightbox image" src="https://images.unsplash.com/photo-1616628950295-d3288bd7a96d?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000" />
+				<Image width="300px" height="450px" src="https://images.unsplash.com/photo-1616628950295-d3288bd7a96d?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000" />
+			</Components.LIghtBoxImage>
+			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
+				<Text text-align="center" font="--headline1">
+					LightBox Map
+				</Text>
+			</Box>
+			<Components.LighBoxMap offLightboxProp={false}>
+				<Button>
+					Открыть карту
+				</Button>
+			</Components.LighBoxMap>
+			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
+				<Text text-align="center" font="--headline1">
+					LightBox Video
+				</Text>
+			</Box>
+			<Components.LightBoxVideo>
+				<Box>
+					<Icon
+						category="md"
+						icon={MdPlayCircleFilled}
+						size="50px"
+						display="flex"
+						width="300px"
+						text-align="center"
+						justify-content="center"
+					/>
+					<Text display="flex" width="300px" text-align="center" justify-content="center">
+						Click Play
+					</Text>
+				</Box>
+			</Components.LightBoxVideo>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
@@ -62,6 +93,105 @@ export default (() => {
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 						Значение по дефолту
+					</Text>
+				</Box>
+				<Box
+					display="flex"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+					quarkly-title="Item"
+				>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Показать изображение
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Показать полное изображение Lightbox{"\n\n"}
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						false
+					</Text>
+				</Box>
+				<Box
+					display="flex"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+					quarkly-title="Item"
+				>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Отключить скролл
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Запретить возможность прокрутки при открытии Lightbox
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						false{"\n\n"}
+					</Text>
+				</Box>
+				<Box
+					display="flex"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+					quarkly-title="Item"
+				>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Деактивировать Lightbox
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Запретить открытие Lightbox
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						false{"\n\n"}
 					</Text>
 				</Box>
 				<Box quarkly-title="Space" />

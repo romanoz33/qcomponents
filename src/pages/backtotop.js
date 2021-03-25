@@ -143,7 +143,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Sho button after (in pixel)
+						Show button after (in pixel)
 					</Text>
 					<Text
 						width="100%"

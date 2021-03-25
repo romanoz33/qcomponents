@@ -142,7 +142,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Вуышпт
+						Design
 					</Text>
 					<Text
 						width="100%"

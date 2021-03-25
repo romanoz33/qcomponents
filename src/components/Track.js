@@ -1,7 +1,11 @@
 import React from 'react';
 import atomize from '@quarkly/atomize';
+const Track = atomize.track();
+const Message = atomize.div();
+const Empty = atomize.div();
 
-const Track = ({
+const TrackComponent = ({
+	container,
 	src,
 	srclang,
 	kind,
@@ -10,14 +14,26 @@ const Track = ({
 	children,
 	...props
 }) => {
-	return <track
+	const Wrapper = container ? Track : Empty;
+	return <Wrapper
 		{...props}
 		default={isDefault || undefined}
 		src={src}
 		srclang={srclang}
 		kind={kind}
 		label={label}
-	/>;
+	>
+		{!container && <Message
+			padding="16px"
+			font="--font-base"
+			font-style="italic"
+			color="--color-grey"
+			background-color="--color-light"
+			border="1px dashed --color-lightD2"
+		>
+			Этот компонент должен быть внутри "Audio" или "Video"
+		</Message>}
+	</Wrapper>;
 };
 
 const propInfo = {
@@ -83,7 +99,7 @@ const defaultProps = {
 	srclang: 'en',
 	kind: 'subtitles'
 };
-export default atomize(Track)({
+export default atomize(TrackComponent)({
 	name: 'Track',
 	description: {
 		en: 'Indicates timed text tracks for Video, and Audio components',

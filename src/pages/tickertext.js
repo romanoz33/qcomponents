@@ -21,7 +21,7 @@ export default (() => {
 					Ticker Text
 				</Text>
 			</Box>
-			<Components.TickerText move="enable" />
+			<Components.TickerText move="enable" mode="chain" />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
@@ -109,7 +109,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Group number
+						Direction
 					</Text>
 					<Text
 						width="100%"
@@ -155,7 +155,9 @@ export default (() => {
 					>
 						Тип отображения [
 						<br />
-						hain - бесконечная лента с дублированием текстов;
+						{"\n"}chain 
+
+- бесконечная лента с дублированием текстов;
 						<br />
 						await -  бесконечная лента, с одиночным текстом;
 						<br />

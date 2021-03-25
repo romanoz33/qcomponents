@@ -15,21 +15,21 @@ export default (() => {
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
 		<Components.HeadMenu />
+		<Components.YandexMap
+			display="block"
+			fullscreenControl
+			searchControl
+			zoomControl
+			typeSelectorContol
+			trafficControl
+			zoomValue="6"
+		/>
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
 					Yandex Map
 				</Text>
 			</Box>
-			<Components.YandexMap
-				searchControl={false}
-				fullscreenControl={false}
-				geolocationControl={false}
-				zoomControl={false}
-				trafficControl={false}
-				rulerControl={false}
-				typeSelectorContol={false}
-			/>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
@@ -430,7 +430,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Изменять положение Tolltip при нехватке места.{" "}
+						-
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 						none

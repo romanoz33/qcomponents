@@ -21,7 +21,7 @@ export default (() => {
 					YouTube
 				</Text>
 			</Box>
-			<Components.YouTube variant="Fast and low traffic (recomended)" alt="dsfsdfsdfsdf" />
+			<Components.YouTube variant="Fast and low traffic (recomended)" alt="sdfsfsdfsdf" />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:

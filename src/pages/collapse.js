@@ -3,6 +3,7 @@ import theme from "theme";
 import { Theme, Link, Text, Box, Strong } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
+import { Override } from "@quarkly/components";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
@@ -21,9 +22,11 @@ export default (() => {
 					Collapse
 				</Text>
 			</Box>
-			<Components.Collapse />
-			<Box />
 			<Components.Collapse>
+				<Override slot="Button" disabled />
+			</Components.Collapse>
+			<Box />
+			<Components.Collapse animFunction="ease-in">
 				<Text font="18px/1.7 sans-serif" padding="10px 15px 10px 15px">
 					<Strong
 						data-q-widget-type="PRIMITIVE"
@@ -163,7 +166,9 @@ export default (() => {
 					border-style="solid"
 					border-color="#eaeaea"
 				>
-					Показать / Скрыть стрелочку
+					Cкорость течения анимации
+					<br />
+					{"\n\n"}
 				</Text>
 				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 					Linear

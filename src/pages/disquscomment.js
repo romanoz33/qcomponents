@@ -21,7 +21,7 @@ export default (() => {
 					Disqus Some Comment
 				</Text>
 			</Box>
-			<Components.DisqusComment showParrent commentIDProp="5307041509" />
+			<Components.DisqusComment showParrent />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
@@ -91,39 +91,6 @@ export default (() => {
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 						-
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 2"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Отступ стрелочки
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Отступ стрелочки от блока с контентом
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						4px
 					</Text>
 				</Box>
 				<Box

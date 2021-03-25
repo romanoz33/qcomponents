@@ -21,7 +21,7 @@ export default (() => {
 					Video
 				</Text>
 			</Box>
-			<Components.Video />
+			<Components.Video controls />
 			<Box>
 				<Box margin="50px 0px 0px 0px">
 					<Text font="600 24px sans-serif">

@@ -127,7 +127,17 @@ export default (() => {
 						Номер группы
 						<br />
 						(Инструкция по созданию групп -{" "}
-						<Link href="https://www.livechat.com/help/dividing-live-chat-by-group/" target="_blank">
+						<Link
+							href="https://www.livechat.com/help/dividing-live-chat-by-group/"
+							target="_blank"
+							data-q-widget-type="PRIMITIVE"
+							overflow-wrap="normal"
+							word-break="normal"
+							white-space="normal"
+							text-indent="0"
+							text-overflow="clip"
+							hyphens="manual"
+						>
 							ссылка
 						</Link>
 					</Text>

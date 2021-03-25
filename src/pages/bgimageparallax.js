@@ -3,6 +3,7 @@ import theme from "theme";
 import { Theme, Link, Text, Box, Icon } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
+import { Override } from "@quarkly/components";
 import * as Components from "components";
 import { MdKeyboardArrowRight } from "react-icons/md";
 export default (() => {
@@ -15,11 +16,13 @@ export default (() => {
 			<meta name={"description"} content={"Web site created using quarkly.io"} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
-		<Components.HeadMenu />
+		<Components.HeadMenu>
+			<Override slot="mobileMenu" align-items="flex-start" justify-content="flex-start" />
+		</Components.HeadMenu>
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
-					BgImage Parallax{"\n\n"}
+					BgImage Parallax
 				</Text>
 			</Box>
 			<Components.BgImageParallax
@@ -27,9 +30,7 @@ export default (() => {
 				height="500px"
 				imageRepeat="repeat"
 				imagePosition="center"
-				scrollSpeedProp="2"
-				imageSize="100%"
-				scrollInertiaProp="10"
+				scrollInertiaProp=".2"
 			/>
 			<Box margin="50px 0px 0px 0px" quarkly-title="Architecture">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
@@ -55,7 +56,7 @@ export default (() => {
 							height="auto"
 							min-height="20px"
 						>
-							BgImage Parallax{"\n\n"}
+							BgImage Parallax
 						</Text>
 						<Icon category="md" icon={MdKeyboardArrowRight} size="40px" color="#747272" />
 					</Box>
@@ -154,7 +155,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Ссылка на изображение{"\n\n"}
+						Ссылка на изображение
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 						none
@@ -190,7 +191,7 @@ export default (() => {
 						Размер изображения
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						cover{" \n\n"}
+						cover{" "}
 					</Text>
 				</Box>
 				<Box
@@ -286,7 +287,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Скорость прокрутки изображения при скроле
+						Скорость прокрутки изображения{" "}
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 						0.5
@@ -319,7 +320,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						???????
+						Прокрутка, после остановки
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 						1

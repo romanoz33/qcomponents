@@ -31,6 +31,7 @@ export default (() => {
 				<Override slot="Tab :active">
 					Вкладка 1
 				</Override>
+				<Components.TabsSimpleItem />
 				<Components.TabsSimpleItem>
 					<Text font="18px/1.7 sans-serif">
 						<Strong
@@ -179,7 +180,9 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						????
+						TabId вкладки, когда она не контролируется
+						<br />
+						{"\n\n\n\n"}
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 						none
@@ -251,7 +254,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						????
+						Идентификатор панели, отображаемый при нажатии{"\n\n"}
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 						none

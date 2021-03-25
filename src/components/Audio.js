@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import atomize from '@quarkly/atomize';
-import { Box } from '@quarkly/widgets';
+const Audio = atomize.audio();
+const Content = atomize.div();
+const DropArea = atomize.div();
+const Empty = atomize.div();
 
-const Audio = ({
+const AudioComponent = ({
 	src,
 	autoPlay,
 	controls,
@@ -11,21 +14,39 @@ const Audio = ({
 	children,
 	...props
 }) => {
-	return <Box {...props}>
-		<audio
-			width='100%'
-			height='auto'
-			src={src}
-			autoPlay={autoPlay}
-			controls={controls}
-			muted={muted}
-			loop={loop}
-		>
-			{React.Children.map(children, child => React.isValidElement(child) ? React.cloneElement(child, {
+	const contentRef = useRef(null);
+	const [isEmpty, setEmpty] = useState(false);
+	useEffect(() => {
+		setEmpty(contentRef.current?.innerHTML === '<!--child placeholder-->');
+	}, [children]);
+	const Wrapper = !isEmpty || src ? Audio : Empty;
+	return <Wrapper
+		width='100%'
+		height='auto'
+		min-height="48px"
+		src={src}
+		autoPlay={autoPlay}
+		controls={controls}
+		muted={muted}
+		loop={loop}
+		{...props}
+	>
+		<Content ref={contentRef}>
+			{React.Children.map(children, child => React.isValidElement(child) && React.cloneElement(child, {
 				container: 'audio'
-			}) : child)}
-		</audio>
-	</Box>;
+			}))}
+		</Content>
+		{isEmpty && !src && <DropArea
+			padding="16px"
+			font="--font-base"
+			font-style="italic"
+			color="--color-grey"
+			background-color="--color-light"
+			border="1px dashed --color-lightD2"
+		>
+			Drag "Source" components here
+		</DropArea>}
+	</Wrapper>;
 };
 
 const propInfo = {
@@ -89,7 +110,7 @@ const defaultProps = {
 	src: 'https://uploads.quarkly.io/molecules/default-audio.mp3',
 	controls: true
 };
-export default atomize(Audio)({
+export default atomize(AudioComponent)({
 	name: 'Audio',
 	description: {
 		en: 'Container for embedding audio content',

@@ -325,7 +325,7 @@ export default (() => {
 					{" "}
 				</Box>
 			</Box>
-			<Components.VkPage />
+			<Components.VkPage wide={false} viewMode="News" />
 		</Box>
 		<Link
 			font={"--capture"}

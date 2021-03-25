@@ -199,7 +199,11 @@ const pageStyles = {
         "padding": "",
         "margin": ""
     },
-    "sfsd1111111111111111111111111111111111111": {
+    "timer": {
+        "padding": "",
+        "margin": ""
+    },
+    "sfsd11111111111111111111111111111111111111": {
         "padding": "",
         "margin": ""
     }

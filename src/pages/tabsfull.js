@@ -22,12 +22,12 @@ export default (() => {
 					TabsFull
 				</Text>
 			</Box>
-			<Components.TabsFull defaultTab="1" align="center" />
 			<Components.TabsFull orientation="Horizontal">
-				<Components.TabsFullContent />
-				<Components.TabsFullBody />
-				<Components.TabsFullButton />
-				<Components.TabsFullHead />
+				<Components.TabsFullBody>
+					<Components.TabsFullButton />
+					<Components.TabsFullHead />
+					<Components.TabsFullContent />
+				</Components.TabsFullBody>
 			</Components.TabsFull>
 			<Box margin="50px 0px 0px 0px" quarkly-title="Architecture">
 				<Text font="600 24px sans-serif" quarkly-title="Title">

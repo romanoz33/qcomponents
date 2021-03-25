@@ -3,11 +3,10 @@ import theme from "theme";
 import { Theme, Link, Text, Box } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
-import { GoogleMap } from "@quarkly/components";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
-		<GlobalQuarklyPageStyles pageUrl={"googlemap"} />
+		<GlobalQuarklyPageStyles pageUrl={"timer"} />
 		<Helmet>
 			<title>
 				Quarkly export
@@ -19,10 +18,10 @@ export default (() => {
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
-					GoogleMap{"\n\n"}
+					Timer
 				</Text>
 			</Box>
-			<GoogleMap query="Москва, Пушкинская  1" />
+			<Components.Timer />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
@@ -61,84 +60,6 @@ export default (() => {
 					</Text>
 				</Box>
 				<Box quarkly-title="Space" />
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 1"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						apiKey
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Индивидуальный ключ api (
-						<Link
-							href="https://developers.google.com/maps/documentation/javascript/get-api-key"
-							data-q-widget-type="PRIMITIVE"
-							overflow-wrap="normal"
-							word-break="normal"
-							white-space="normal"
-							text-indent="0"
-							text-overflow="clip"
-							hyphens="manual"
-						>
-							ссылка
-						</Link>
-						{" "})
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0" />
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 1"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						query
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Определяет места, которые нужно выделить на карте (
-название места, адрес или координаты широты и долготы через запятую
-
-)
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0" />
-				</Box>
 			</Box>
 		</Box>
 		<Link

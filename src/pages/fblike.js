@@ -21,7 +21,7 @@ export default (() => {
 					FB Like
 				</Text>
 			</Box>
-			<Components.FbLike />
+			<Components.FbLike appId="2823809304549124" size="large" href="https://developers.facebook.com/docs/plugins/" />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
@@ -87,7 +87,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Реферал
+						Ярлык для отслеживания переходов (не более 50 символов)
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 						none
@@ -120,7 +120,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Цветовая схема
+						Цветовая схема [light, dark]
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 						light
@@ -152,7 +152,22 @@ export default (() => {
 						border-width="1px"
 						border-style="solid"
 						border-color="#eaeaea"
-					/>
+					>
+						Указывает, размещать ли{" "}
+						<Link
+							href="https://developers.facebook.com/docs/plugins/share-button/"
+							data-q-widget-type="PRIMITIVE"
+							overflow-wrap="normal"
+							word-break="normal"
+							white-space="normal"
+							text-indent="0"
+							text-overflow="clip"
+							hyphens="manual"
+						>
+							кнопку "Поделиться"
+						</Link>
+						{" "}рядом с кнопкой "Нравится"{"\n\n"}
+					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 						off
 					</Text>
@@ -183,7 +198,11 @@ export default (() => {
 						border-width="1px"
 						border-style="solid"
 						border-color="#eaeaea"
-					/>
+					>
+						URL веб-страницы, которой люди будут ставить отметки "Нравится".
+						<br />
+						{"\n\n"}
+					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 						none
 					</Text>
@@ -214,7 +233,10 @@ export default (() => {
 						border-width="1px"
 						border-style="solid"
 						border-color="#eaeaea"
-					/>
+					>
+						Макет [standart, 
+button_count, button, box_count]{"   "}
+					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 						standart
 					</Text>
@@ -245,7 +267,22 @@ export default (() => {
 						border-width="1px"
 						border-style="solid"
 						border-color="#eaeaea"
-					/>
+					>
+						Размер кнопки
+						<Link
+							href="https://developers.facebook.com/docs/plugins/like-button/#"
+							data-q-widget-type="PRIMITIVE"
+							overflow-wrap="normal"
+							word-break="normal"
+							white-space="normal"
+							text-indent="0"
+							text-overflow="clip"
+							hyphens="manual"
+						>
+							<br />
+							{"\n\n"}
+						</Link>
+					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 						small
 					</Text>
@@ -276,7 +313,9 @@ export default (() => {
 						border-width="1px"
 						border-style="solid"
 						border-color="#eaeaea"
-					/>
+					>
+						Тип действия [like, recommend]
+					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 						like
 					</Text>
@@ -308,7 +347,9 @@ export default (() => {
 						border-width="1px"
 						border-style="solid"
 						border-color="#eaeaea"
-					/>
+					>
+						Контент для детей
+					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 						off
 					</Text>
@@ -340,7 +381,9 @@ export default (() => {
 						border-width="1px"
 						border-style="solid"
 						border-color="#eaeaea"
-					/>
+					>
+						ID приложения FaceBook
+					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 						none
 					</Text>
@@ -373,7 +416,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Язык
+						Язык [Русский, English]
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 						English

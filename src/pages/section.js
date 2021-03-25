@@ -198,7 +198,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Ленивая загрузка
+						Отложенная загрузка контейнера
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 						on

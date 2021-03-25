@@ -21,7 +21,7 @@ export default (() => {
 					Svg Shape
 				</Text>
 			</Box>
-			<Components.SvgShape width="300px" height="200px" margin="0px auto 0px auto" />
+			<Components.SvgShape width="300px" height="200px" margin="0px auto 0px auto" strokeWidth="8" />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:

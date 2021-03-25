@@ -22,7 +22,13 @@ export default (() => {
 					Formspree
 				</Text>
 			</Box>
-			<Formspree endpoint="https://formspree.io/f/xnqoelje" text-align="center">
+			<Formspree errorMessage="Something went wrong" completeText="Success">
+				<Input name="email" placeholder="Email" margin-right="4px" />
+				<Button>
+					Submit
+				</Button>
+			</Formspree>
+			<Formspree text-align="center" endpoint="https://formspree.io/f/xnqoelje">
 				<Input name="email" placeholder="Email" margin-right="4px" />
 				<Button>
 					Submit

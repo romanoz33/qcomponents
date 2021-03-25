@@ -23,7 +23,7 @@ export default (() => {
 			</Box>
 			<Components.Disqus />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
-				<Text font="600 24px sans-serif" quarkly-title="Title">
+				<Text font="600 24px sans-serif" quarkly-title="Title" margin="76px 0px 16px 0px">
 					Пропсы:
 				</Text>
 				<Box
@@ -88,7 +88,17 @@ export default (() => {
 						border-color="#eaeaea"
 					>
 						Имя вашей ленты. Подробнее здесь:{" "}
-						<Link href="https://help.disqus.com/en/articles/1717111-what-s-a-shortname" target="_blank">
+						<Link
+							href="https://help.disqus.com/en/articles/1717111-what-s-a-shortname"
+							target="_blank"
+							data-q-widget-type="PRIMITIVE"
+							overflow-wrap="normal"
+							word-break="normal"
+							white-space="normal"
+							text-indent="0"
+							text-overflow="clip"
+							hyphens="manual"
+						>
 							ссылка
 						</Link>
 					</Text>

@@ -21,7 +21,7 @@ export default (() => {
 					VK Comments
 				</Text>
 			</Box>
-			<Components.VkComments />
+			<Components.VkComments apiId="7802278" />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
