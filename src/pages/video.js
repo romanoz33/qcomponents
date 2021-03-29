@@ -3,6 +3,7 @@ import theme from "theme";
 import { Theme, Link, Text, Box, Hr } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
+import { Override } from "@quarkly/components";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
@@ -14,7 +15,9 @@ export default (() => {
 			<meta name={"description"} content={"Web site created using quarkly.io"} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
-		<Components.HeadMenu />
+		<Components.HeadMenu sm-position="relative" sm-top={0}>
+			<Override slot="mobileMenu" sm-position="sticky" sm-top={0} />
+		</Components.HeadMenu>
 		<Box padding="0px 30px 0px 30px">
 			<Box margin="50px 0px 100px 0px">
 				<Text text-align="center" font="--headline1">
@@ -356,7 +359,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Кодеки
+						Значение видео или аудиокодека{"\n\n"}
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 						none
@@ -383,7 +386,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Одно или набор изображений, через запятую
+						Ссылка на изображение
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 						none{" "}
@@ -410,7 +413,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Список размеров изображений для разных размеров страниц{"\n\n"}
+						Размеры изображения при разных размерах экрана{"\n\n\n\n"}
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 						none{" \n\n"}
@@ -515,7 +518,7 @@ export default (() => {
 				</Text>
 				<Hr border-color="#c4c4c4" margin="16px 0px 40px 0px" />
 				<Components.Video src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4" poster=" ">
-					<Components.Track isDefault={false} kind="captions" label="Английский" src="https://interactive-examples.mdn.mozilla.net/media/examples/friday.vtt" />
+					<Components.Track isDefault={false} src="https://interactive-examples.mdn.mozilla.net/media/examples/friday.vtt" />
 				</Components.Video>
 			</Box>
 			<Box margin="50px 0px 30px 0px">
@@ -524,7 +527,7 @@ export default (() => {
 				</Text>
 				<Hr border-color="#c4c4c4" margin="16px 0px 40px 0px" />
 				<Components.Video poster=" ">
-					<Components.Source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4" typeMedia="video/mp4" />
+					<Components.Source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4" />
 				</Components.Video>
 			</Box>
 			<Box height="100px" />

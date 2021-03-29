@@ -20,7 +20,6 @@ export default (() => {
 				<Text text-align="center" font="--headline1">
 					Sound Cloud
 				</Text>
-				<Components.SoundCloud url="https://soundcloud.com/everythinggorillazp2/sets/d-sides" type="standart" />
 				<Text color="#ff0000" font="21px sans-serif">
 					<Strong>
 						Ошибка при публикации:{" "}

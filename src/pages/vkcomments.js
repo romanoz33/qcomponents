@@ -1,6 +1,6 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Link, Text, Box } from "@quarkly/widgets";
+import { Theme, Link, Text, Box, Strong, Em } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
 import * as Components from "components";
@@ -21,7 +21,14 @@ export default (() => {
 					VK Comments
 				</Text>
 			</Box>
-			<Components.VkComments apiId="7802278" />
+			<Components.VkComments
+				apiId="7802296"
+				attachGraffiti
+				attachAudio
+				attachVideo
+				attachPhoto
+				attachLink
+			/>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
@@ -75,7 +82,9 @@ export default (() => {
 						border-width="1px"
 						border-style="solid"
 						border-color="#eaeaea"
-					/>
+					>
+						Graffiti
+					</Text>
 					<Text
 						width="100%"
 						font="18px sans-serif"
@@ -84,8 +93,12 @@ export default (() => {
 						border-width="1px"
 						border-style="solid"
 						border-color="#eaeaea"
-					/>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0" />
+					>
+						Возможность прикрепления граффити
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						true{"\n\n"}
+					</Text>
 				</Box>
 				<Box
 					display="flex"
@@ -102,7 +115,9 @@ export default (() => {
 						border-width="1px"
 						border-style="solid"
 						border-color="#eaeaea"
-					/>
+					>
+						Photo
+					</Text>
 					<Text
 						width="100%"
 						font="18px sans-serif"
@@ -111,8 +126,12 @@ export default (() => {
 						border-width="1px"
 						border-style="solid"
 						border-color="#eaeaea"
-					/>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0" />
+					>
+						Возможность прикрепления изображений
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						true{"\n\n"}
+					</Text>
 				</Box>
 				<Box
 					display="flex"
@@ -129,7 +148,9 @@ export default (() => {
 						border-width="1px"
 						border-style="solid"
 						border-color="#eaeaea"
-					/>
+					>
+						Audio
+					</Text>
 					<Text
 						width="100%"
 						font="18px sans-serif"
@@ -138,8 +159,12 @@ export default (() => {
 						border-width="1px"
 						border-style="solid"
 						border-color="#eaeaea"
-					/>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0" />
+					>
+						Возможность прикрепления аудио
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						true{"\n\n"}
+					</Text>
 				</Box>
 				<Box
 					display="flex"
@@ -156,7 +181,9 @@ export default (() => {
 						border-width="1px"
 						border-style="solid"
 						border-color="#eaeaea"
-					/>
+					>
+						Video
+					</Text>
 					<Text
 						width="100%"
 						font="18px sans-serif"
@@ -165,8 +192,12 @@ export default (() => {
 						border-width="1px"
 						border-style="solid"
 						border-color="#eaeaea"
-					/>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0" />
+					>
+						Возможность прикрепления видео
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						true{"\n\n"}
+					</Text>
 				</Box>
 				<Box
 					display="flex"
@@ -183,7 +214,9 @@ export default (() => {
 						border-width="1px"
 						border-style="solid"
 						border-color="#eaeaea"
-					/>
+					>
+						Link
+					</Text>
 					<Text
 						width="100%"
 						font="18px sans-serif"
@@ -192,8 +225,12 @@ export default (() => {
 						border-width="1px"
 						border-style="solid"
 						border-color="#eaeaea"
-					/>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0" />
+					>
+						Возможность прикрепления ссылок
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						true
+					</Text>
 				</Box>
 				<Box
 					display="flex"
@@ -210,7 +247,9 @@ export default (() => {
 						border-width="1px"
 						border-style="solid"
 						border-color="#eaeaea"
-					/>
+					>
+						VK App ID
+					</Text>
 					<Text
 						width="100%"
 						font="18px sans-serif"
@@ -219,8 +258,12 @@ export default (() => {
 						border-width="1px"
 						border-style="solid"
 						border-color="#eaeaea"
-					/>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0" />
+					>
+						ID виджета{" "}
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						none
+					</Text>
 				</Box>
 				<Box
 					display="flex"
@@ -237,7 +280,9 @@ export default (() => {
 						border-width="1px"
 						border-style="solid"
 						border-color="#eaeaea"
-					/>
+					>
+						Page ID
+					</Text>
 					<Text
 						width="100%"
 						font="18px sans-serif"
@@ -246,8 +291,25 @@ export default (() => {
 						border-width="1px"
 						border-style="solid"
 						border-color="#eaeaea"
-					/>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0" />
+					>
+						Внутренний идентификатор страницы. 
+Используйте{" "}
+						<Strong
+							data-q-widget-type="PRIMITIVE"
+							overflow-wrap="normal"
+							word-break="normal"
+							white-space="normal"
+							text-indent="0"
+							text-overflow="clip"
+							hyphens="manual"
+						>
+							page_id
+						</Strong>
+						, чтобы разместить два и более независимых виджетов на одной странице{"\n\n"}
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						none
+					</Text>
 					{" "}
 				</Box>
 				<Box
@@ -265,7 +327,9 @@ export default (() => {
 						border-width="1px"
 						border-style="solid"
 						border-color="#eaeaea"
-					/>
+					>
+						Limit
+					</Text>
 					<Text
 						width="100%"
 						font="18px sans-serif"
@@ -274,8 +338,137 @@ export default (() => {
 						border-width="1px"
 						border-style="solid"
 						border-color="#eaeaea"
-					/>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0" />
+					>
+						Максимальное число комментариев на странице. (мин:{" "}
+						<Em
+							data-q-widget-type="PRIMITIVE"
+							overflow-wrap="normal"
+							word-break="normal"
+							white-space="normal"
+							text-indent="0"
+							text-overflow="clip"
+							hyphens="manual"
+						>
+							5
+						</Em>
+						, мак:{" "}
+						<Em
+							data-q-widget-type="PRIMITIVE"
+							overflow-wrap="normal"
+							word-break="normal"
+							white-space="normal"
+							text-indent="0"
+							text-overflow="clip"
+							hyphens="manual"
+						>
+							100)
+						</Em>
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						5
+					</Text>
+					{" "}
+				</Box>
+				<Box
+					display="flex"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+					quarkly-title="Row 8"
+				>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Auto Publish
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Aвтоматически публиковать комментарии на странице пользователя{"\n\n"}
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						false
+					</Text>
+					{" "}
+				</Box>
+				<Box
+					display="flex"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+					quarkly-title="Row 8"
+				>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						No Realtime
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Обновлять ленту комментариев в режиме реального времени.{"\n\n"}
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						false{"\n\n"}
+					</Text>
+					{" "}
+				</Box>
+				<Box
+					display="flex"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+					quarkly-title="Row 8"
+				>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Page URL
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						URL страницы, ссылка на которую будет прикреплена к комментарию при его публикации на странице ВКонтакте{"\n\n"}
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						none
+					</Text>
 					{" "}
 				</Box>
 			</Box>

@@ -745,7 +745,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Деактивировать поле
+						Деактивировать
 					</Text>
 					<Text
 						width="100%"

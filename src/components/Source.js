@@ -2,7 +2,6 @@ import React from 'react';
 import atomize from '@quarkly/atomize';
 const Source = atomize.source();
 const Message = atomize.div();
-const Empty = atomize.div();
 
 const SourceComponent = ({
 	container,
@@ -25,26 +24,24 @@ const SourceComponent = ({
 		type = typePicture || '';
 	}
 
-	const Wrapper = container ? Source : Empty;
-	return <Wrapper
+	return container ? <Source
 		{...props}
 		src={src}
 		srcSet={srcSet}
 		type={type}
 		media={container !== 'picture' ? mediaInput || mediaSelect : ''}
 		sizes={container !== 'picture' ? sizes : ''}
+	/> : <Message
+		padding="16px"
+		font="--font-base"
+		font-style="italic"
+		color="--color-grey"
+		background-color="--color-light"
+		border="1px dashed --color-lightD2"
+		{...props}
 	>
-		{!container && <Message
-			padding="16px"
-			font="--font-base"
-			font-style="italic"
-			color="--color-grey"
-			background-color="--color-light"
-			border="1px dashed --color-lightD2"
-		>
-			Этот компонент должен быть внутри "Picture", "Audio" или "Video"
-		</Message>}
-	</Wrapper>;
+		Этот компонент должен быть внутри "Picture", "Audio" или "Video"
+	</Message>;
 };
 
 const propInfo = {

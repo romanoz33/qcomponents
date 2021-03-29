@@ -89,67 +89,66 @@ const Timer = ({
 		min: '00',
 		sec: '00'
 	});
-	const isAlwaysTextDone = useMemo(() => showTextDone === 'always', [showTextDone]);
 	const [isDoneDate, setDoneDate] = useState(false);
+	const isAlways = useMemo(() => showTextDone === 'always', [showTextDone]);
+	const isComplete = useMemo(() => showTextDone === 'complete' && isDoneDate, [showTextDone, isDoneDate]);
 	useEffect(() => {
-		if (toDate !== '' || toTime !== '') {
-			const date = new Date();
-			let year, month, day, hour, min;
-			const regDateStatus = regDate.test(toDate.trim());
-			const regTimeStatus = regTime.test(toTime.trim());
+		const date = new Date();
+		let year, month, day, hour, min;
+		const regDateStatus = regDate.test(toDate.trim());
+		const regTimeStatus = regTime.test(toTime.trim());
 
-			if (regDateStatus) {
-				const targetArr = toDate.split(/[.,\/ -]/);
-				year = targetArr[2];
-				month = targetArr[1] - 1;
-				day = targetArr[0];
-			} else {
-				year = date.getFullYear();
-				month = date.getMonth();
-				day = date.getDate() + 1;
-			}
-
-			;
-
-			if (regTimeStatus) {
-				const targetArr = toTime.split(/[:]/);
-				hour = targetArr[0];
-				min = targetArr[1];
-			} else {
-				hour = date.getHours();
-				min = date.getMinutes();
-			}
-
-			;
-			const targetDate = new Date(year, month, day, hour, min);
-			const timerID = setInterval(() => {
-				const date = Date.now();
-
-				if (targetDate > date) {
-					setDateState(setDifferenceDate(targetDate, date));
-				} else {
-					setDateState({
-						day: '00',
-						hour: '00',
-						min: '00',
-						sec: '00'
-					});
-					clearInterval(timerID);
-				}
-			}, 1000);
-			return () => {
-				clearInterval(timerID);
-			};
+		if (regDateStatus) {
+			const targetArr = toDate.split(/[.,\/ -]/);
+			year = targetArr[2];
+			month = targetArr[1] - 1;
+			day = targetArr[0];
+		} else {
+			year = date.getFullYear();
+			month = date.getMonth();
+			day = date.getDate() + 1;
 		}
 
 		;
+
+		if (regTimeStatus) {
+			const targetArr = toTime.split(/[:]/);
+			hour = targetArr[0];
+			min = targetArr[1];
+		} else {
+			hour = date.getHours();
+			min = date.getMinutes();
+		}
+
+		;
+		const targetDate = new Date(year, month, day, hour, min);
+		setDoneDate(false);
+		const timerID = setInterval(() => {
+			const date = Date.now();
+
+			if (targetDate > date) {
+				setDateState(setDifferenceDate(targetDate, date));
+			} else {
+				setDateState({
+					day: '00',
+					hour: '00',
+					min: '00',
+					sec: '00'
+				});
+				clearInterval(timerID);
+				setDoneDate(true);
+			}
+		}, 1000);
+		return () => {
+			clearInterval(timerID);
+		};
 	}, [toDate, toTime]);
 	const {
 		override,
 		rest
 	} = useOverrides(props, overrides);
 	return <Box {...rest} width='100%' display='flex' flex-wrap='wrap'>
-		{isAlwaysTextDone || showDays && <Box {...override('Timer Item')}>
+		{!isAlways && !isComplete && showDays && <Box {...override('Timer Item')}>
 			<Text {...override('Timer Value', 'Timer Value Days')}>
 				{dateState.day}
 			</Text>
@@ -158,7 +157,7 @@ const Timer = ({
 			</Text>
 			 
 		</Box>}
-		{isAlwaysTextDone || showHours && <Box {...override('Timer Item')}>
+		{!isAlways && !isComplete && showHours && <Box {...override('Timer Item')}>
 			<Text {...override('Timer Value', 'Timer Value Hours')}>
 				{dateState.hour}
 			</Text>
@@ -167,7 +166,7 @@ const Timer = ({
 			</Text>
 			 
 		</Box>}
-		{isAlwaysTextDone || showMinutes && <Box {...override('Timer Item')}>
+		{!isAlways && !isComplete && showMinutes && <Box {...override('Timer Item')}>
 			<Text {...override('Timer Value', 'Timer Value Minutes')}>
 				{dateState.min}
 			</Text>
@@ -176,7 +175,7 @@ const Timer = ({
 			</Text>
 			 
 		</Box>}
-		{isAlwaysTextDone || showSeconds && <Box {...override('Timer Item')}>
+		{!isAlways && !isComplete && showSeconds && <Box {...override('Timer Item')}>
 			<Text {...override('Timer Value', 'Timer Value Seconds')}>
 				{dateState.sec}
 			</Text>
@@ -185,8 +184,7 @@ const Timer = ({
 			</Text>
 			 
 		</Box>}
-		 
-		{isAlwaysTextDone && <Text {...override('Timer Text Done')} />}
+		{(isAlways || isComplete) && <Text {...override('Timer Text Done')} />}
 		{!showDays && !showHours && !showMinutes && !showSeconds && <Text flex='1 0 100%' text-align='center'>
 			Чувак, ты все выключил
 		</Text>}

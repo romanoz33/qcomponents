@@ -18,6 +18,12 @@ export default {
 				"type": "max-width",
 				"value": 992
 			}
+		],
+		"xl": [
+			{
+				"type": "min-width",
+				"value": "1440"
+			}
 		]
 	},
 	"color": {
@@ -151,5 +157,5 @@ export default {
 			}
 		}
 	},
-	"version": 1
+	"version": 3
 }
