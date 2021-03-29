@@ -21,7 +21,13 @@ export default (() => {
 					Timer
 				</Text>
 			</Box>
-			<Components.Timer showDays />
+			<Components.Timer
+				showDays
+				showHours
+				showTextDone="complete"
+				showMinutes
+				showSeconds
+			/>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
@@ -273,7 +279,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						When Show Text Done
+						When Show Text
 					</Text>
 					<Text
 						width="100%"

@@ -517,9 +517,6 @@ export default (() => {
 					Пример с вложенным компонентом Track
 				</Text>
 				<Hr border-color="#c4c4c4" margin="16px 0px 40px 0px" />
-				<Components.Video src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4" poster=" ">
-					<Components.Track isDefault={false} src="https://interactive-examples.mdn.mozilla.net/media/examples/friday.vtt" />
-				</Components.Video>
 			</Box>
 			<Box margin="50px 0px 30px 0px">
 				<Text font="600 24px sans-serif">
