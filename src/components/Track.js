@@ -1,8 +1,7 @@
 import React from 'react';
 import atomize from '@quarkly/atomize';
+import ComponentNotice from './ComponentNotice';
 const Track = atomize.track();
-const Message = atomize.div();
-const Empty = atomize.div();
 
 const TrackComponent = ({
 	container,
@@ -14,26 +13,14 @@ const TrackComponent = ({
 	children,
 	...props
 }) => {
-	const Wrapper = container ? Track : Empty;
-	return <Wrapper
+	return container ? <Track
 		{...props}
 		default={isDefault || undefined}
 		src={src}
 		srclang={srclang}
 		kind={kind}
 		label={label}
-	>
-		{!container && <Message
-			padding="16px"
-			font="--font-base"
-			font-style="italic"
-			color="--color-grey"
-			background-color="--color-light"
-			border="1px dashed --color-lightD2"
-		>
-			Этот компонент должен быть внутри "Audio" или "Video"
-		</Message>}
-	</Wrapper>;
+	/> : <ComponentNotice message={'Этот компонент должен быть внутри "Audio" или "Video"'} {...props} />;
 };
 
 const propInfo = {

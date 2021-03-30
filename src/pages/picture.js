@@ -25,7 +25,6 @@ export default (() => {
 				<Image width="364px" height="564px" hover-width="200px" hover-height="200px" />
 			</Components.Picture>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
-				<Components.ComponentNotice />
 				<Components.Picture />
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:

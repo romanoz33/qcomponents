@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import atomize from '@quarkly/atomize';
+import ComponentNotice from './ComponentNotice';
 const Audio = atomize.audio();
 const Content = atomize.div();
-const DropArea = atomize.div();
 const Empty = atomize.div();
 
 const AudioComponent = ({
@@ -16,15 +16,16 @@ const AudioComponent = ({
 }) => {
 	const contentRef = useRef(null);
 	const [isEmpty, setEmpty] = useState(false);
+	const srcVal = src.trim();
 	useEffect(() => {
 		setEmpty(contentRef.current?.innerHTML === '<!--child placeholder-->');
 	}, [children]);
-	const Wrapper = !isEmpty || src ? Audio : Empty;
+	const Wrapper = !isEmpty || srcVal ? Audio : Empty;
 	return <Wrapper
 		width='100%'
 		height='auto'
 		min-height="48px"
-		src={src}
+		src={srcVal}
 		autoPlay={autoPlay}
 		controls={controls}
 		muted={muted}
@@ -36,16 +37,7 @@ const AudioComponent = ({
 				container: 'audio'
 			}))}
 		</Content>
-		{isEmpty && !src && <DropArea
-			padding="16px"
-			font="--font-base"
-			font-style="italic"
-			color="--color-grey"
-			background-color="--color-light"
-			border="1px dashed --color-lightD2"
-		>
-			Drag "Source" components here
-		</DropArea>}
+		{isEmpty && !srcVal && <ComponentNotice message={'Добавьте свойство SRC или перетащите сюда компонент "Source"'} />}
 	</Wrapper>;
 };
 

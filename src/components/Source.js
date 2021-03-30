@@ -1,7 +1,7 @@
 import React from 'react';
 import atomize from '@quarkly/atomize';
+import ComponentNotice from './ComponentNotice';
 const Source = atomize.source();
-const Message = atomize.div();
 
 const SourceComponent = ({
 	container,
@@ -31,17 +31,7 @@ const SourceComponent = ({
 		type={type}
 		media={container !== 'picture' ? mediaInput || mediaSelect : ''}
 		sizes={container !== 'picture' ? sizes : ''}
-	/> : <Message
-		padding="16px"
-		font="--font-base"
-		font-style="italic"
-		color="--color-grey"
-		background-color="--color-light"
-		border="1px dashed --color-lightD2"
-		{...props}
-	>
-		Этот компонент должен быть внутри "Picture", "Audio" или "Video"
-	</Message>;
+	/> : <ComponentNotice message={'Этот компонент должен быть внутри "Picture", "Audio" или "Video"'} {...props} />;
 };
 
 const propInfo = {

@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import atomize from '@quarkly/atomize';
+import ComponentNotice from './ComponentNotice';
 const Picture = atomize.picture();
 const Content = atomize.div();
-const DropArea = atomize.div();
 const Empty = atomize.div();
 
 const PictureComponent = ({
@@ -15,22 +15,14 @@ const PictureComponent = ({
 		setEmpty(contentRef.current?.innerHTML === '<!--child placeholder-->');
 	}, [children]);
 	const Wrapper = !isEmpty ? Picture : Empty;
+	console.log(ComponentNotice);
 	return <Wrapper width='100%' height='auto' {...props}>
 		<Content ref={contentRef}>
 			{React.Children.map(children, child => React.isValidElement(child) && React.cloneElement(child, {
 				container: 'picture'
 			}))}
 		</Content>
-		{isEmpty && <DropArea
-			padding="16px"
-			font="--font-base"
-			font-style="italic"
-			color="--color-grey"
-			background-color="--color-light"
-			border="1px dashed --color-lightD2"
-		>
-			Drag "Image" and "Source" (опционально) components here
-		</DropArea>}
+		{isEmpty && <ComponentNotice message={'Перетащите сюда компоненты "Image" и "Source" (опционально)'} />}
 	</Wrapper>;
 };
 

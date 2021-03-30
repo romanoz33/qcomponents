@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import atomize from '@quarkly/atomize';
+import ComponentNotice from './ComponentNotice';
 const Video = atomize.video();
 const Content = atomize.div();
-const DropArea = atomize.div();
 const Empty = atomize.div();
 
 const VideoComponent = ({
@@ -18,14 +18,15 @@ const VideoComponent = ({
 }) => {
 	const contentRef = useRef(null);
 	const [isEmpty, setEmpty] = useState(false);
+	const srcVal = src.trim();
 	useEffect(() => {
 		setEmpty(contentRef.current?.innerHTML === '<!--child placeholder-->');
 	}, [children]);
-	const Wrapper = !isEmpty || src ? Video : Empty;
+	const Wrapper = !isEmpty || srcVal ? Video : Empty;
 	return <Wrapper
 		width='100%'
 		height='auto'
-		src={src}
+		src={srcVal}
 		poster={poster}
 		autoPlay={autoPlay}
 		controls={controls}
@@ -40,16 +41,7 @@ const VideoComponent = ({
 				container: 'video'
 			}))}
 		</Content>
-		{isEmpty && !src && <DropArea
-			padding="16px"
-			font="--font-base"
-			font-style="italic"
-			color="--color-grey"
-			background-color="--color-light"
-			border="1px dashed --color-lightD2"
-		>
-			Drag "Source" components here
-		</DropArea>}
+		{isEmpty && !srcVal && <ComponentNotice message={'Добавьте свойство SRC или перетащите сюда компонент "Source"'} />}
 	</Wrapper>;
 };
 
