@@ -1,18 +1,28 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useOverrides } from '@quarkly/components';
 import { Box, Button } from '@quarkly/widgets';
+import ComponentNotice from './ComponentNotice';
 const overrides = {
 	'Button': {
 		kind: 'Button',
 		props: {
-			children: 'Toggle'
+			children: 'Toggle',
+			'focus-box-shadow': 'none'
 		}
 	},
 	'Content': {
-		kind: 'Box'
+		kind: 'Box',
+		props: {
+			'padding-top': '8px',
+			'min-height': '0'
+		}
 	},
 	'Wrapper': {
-		kind: 'Box'
+		kind: 'Box',
+		props: {
+			'min-height': '0',
+			'overflow': 'hidden'
+		}
 	},
 	'Wrapper :open': {
 		kind: 'Box',
@@ -102,37 +112,19 @@ const Collapse = ({
 	}, [contentRef.current]);
 	useEffect(() => {
 		if (!contentRef.current) return;
-		const {
-			innerHTML
-		} = contentRef.current;
-		const isEmpty = innerHTML === '<!--child placeholder-->';
+		const isEmpty = contentRef.current?.innerHTML === '<!--child placeholder-->';
 		updateParams({
 			isOpen: params.isOpen || isEmpty,
 			isEmpty
 		});
 	}, [children.length]);
-	return <Box padding="8px" border="1px solid --color-lightD2" border-radius="4px" {...rest}>
-		<Button focus-box-shadow="none" disabled={params.isEmpty} {...override('Button')} onPointerDown={toggleOpen} />
-		<Box
-			min-height="0"
-			max-height={params.height}
-			transition={params.transition}
-			overflow="hidden"
-			{...override('Wrapper', `Wrapper ${params.isOpen ? ':open' : ':close'}`)}
-		>
-			<Box ref={contentRef} padding-top="8px" min-height="0" {...override('Content')}>
+	return <Box {...rest}>
+		<Button {...override('Button')} onPointerDown={toggleOpen} disabled={params.isEmpty} />
+		<Box {...override('Wrapper', `Wrapper ${params.isOpen ? ':open' : ':close'}`)} max-height={params.height} transition={params.transition}>
+			<Box {...override('Content')} ref={contentRef}>
 				{children}
 			</Box>
-			{params.isEmpty && <Box
-				padding="16px"
-				font="--font-base"
-				font-style="italic"
-				color="--color-grey"
-				background-color="--color-light"
-				border="1px dashed --color-lightD2"
-			>
-				Drag component here
-			</Box>}
+			{params.isEmpty && <ComponentNotice message="Drag component here" />}
 		</Box>
 	</Box>;
 };
@@ -140,21 +132,24 @@ const Collapse = ({
 const propInfo = {
 	minDuration: {
 		title: 'Min animation duration (in seconds)',
-		control: 'text',
-		type: 'number',
+		control: 'input',
+		variants: ['0s', '0.1s', '0.2s', '0.3s', '0.5s', '1s'],
+		type: 'text',
 		category: 'Main',
 		weight: 1
 	},
 	maxDuration: {
 		title: 'Max animation duration (in seconds)',
-		control: 'text',
-		type: 'number',
+		control: 'input',
+		variants: ['1s', '1.5s', '2s', '2.5s', '3s', '4s', '5s'],
+		type: 'text',
 		category: 'Main',
 		weight: 1
 	},
 	animFunction: {
 		title: 'Animation function',
-		control: 'text',
+		control: 'input',
+		variants: ['linear', 'ease', 'ease-in', 'ease-out', 'ease-in-out', 'step-start', 'step-end'],
 		type: 'text',
 		category: 'Main',
 		weight: 1
@@ -163,7 +158,10 @@ const propInfo = {
 const defaultProps = {
 	minDuration: '0.5s',
 	maxDuration: '1s',
-	animFunction: 'linear'
+	animFunction: 'linear',
+	'padding': '8px',
+	'border': '1px solid --color-lightD2',
+	'border-radius': '4px'
 };
 Object.assign(Collapse, {
 	title: 'Collapse',

@@ -57,9 +57,8 @@ export default {
 				"6051d2d6c8e036001ed13bc6",
 				"605b41432b962f001e7435c5",
 				"60631b1588a644001fa9baae",
-				"60633c2288a644001fa9bb78",
-				"6064981b2b962f001e743cbf",
-				"6064981cc8e036001ed147ad"
+				"6065f3d3652a1e001e0773c1",
+				"6065f4ecc8e036001ed14911"
 			]
 		},
 		"60474504627982001eb71a54": {
@@ -323,20 +322,15 @@ export default {
 			"pageUrl": "counter",
 			"name": "Counter"
 		},
-		"60633c2288a644001fa9bb78": {
-			"id": "60633c2288a644001fa9bb78",
+		"6065f3d3652a1e001e0773c1": {
+			"id": "6065f3d3652a1e001e0773c1",
 			"pageUrl": "scrollindicator",
 			"name": "Scroll Indicator"
 		},
-		"6064981b2b962f001e743cbf": {
-			"id": "6064981b2b962f001e743cbf",
-			"pageUrl": "sfsd11111111111111111111111111111111111111111",
-			"name": "STANDART"
-		},
-		"6064981cc8e036001ed147ad": {
-			"id": "6064981cc8e036001ed147ad",
-			"pageUrl": "sfsd11111111111111111111111111111111111111111",
-			"name": "STANDART"
+		"6065f4ecc8e036001ed14911": {
+			"id": "6065f4ecc8e036001ed14911",
+			"pageUrl": "pdfviewer",
+			"name": "PDF Viewer"
 		}
 	},
 	"mode": "production",

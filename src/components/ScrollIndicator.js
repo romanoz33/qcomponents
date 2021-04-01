@@ -38,6 +38,7 @@ const ScrollIndicator = ({ ...props
 		setPrigress(scrolled);
 	}, [refIndicator.current]);
 	useEffect(() => {
+		onScroll();
 		window.addEventListener('scroll', onScroll);
 		return () => {
 			window.removeEventListener('scroll', onScroll);

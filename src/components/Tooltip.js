@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { useOverrides } from '@quarkly/components';
 import { Box, Text } from "@quarkly/widgets";
+import ComponentNotice from './ComponentNotice';
 const overrides = {
-	'Tooltip wrapper': {
+	'Wrapper': {
 		kind: 'Box',
 		props: {
 			'display': 'flex',
@@ -14,7 +15,7 @@ const overrides = {
 			'transition': 'opacity .8s, visibility .8s'
 		}
 	},
-	'Tooltip text': {
+	'Title': {
 		kind: 'Text',
 		props: {
 			'background': "black",
@@ -27,7 +28,7 @@ const overrides = {
 			'overflow-x': 'hidden'
 		}
 	},
-	'Tooltip arror': {
+	'Arrow': {
 		kind: 'Box',
 		props: {
 			'min-width': '0px',
@@ -37,21 +38,13 @@ const overrides = {
 			'z-index': 1
 		}
 	}
-}; // Функции для рассчета свободного места
+}; // Рассчёт доступного пространства для каждой стороны
 
 const checkDirection = {
-	left: prop => {
-		return prop.tooltip.width + prop.arrowSize + prop.tooltipOffset + prop.offsetToEdge <= prop.component.left;
-	},
-	right: prop => {
-		return prop.tooltip.width + prop.arrowSize + prop.tooltipOffset + prop.offsetToEdge <= window.innerWidth - prop.component.width - prop.component.left;
-	},
-	top: prop => {
-		return prop.tooltip.height + prop.arrowSize + prop.tooltipOffset + prop.offsetToEdge <= prop.component.top;
-	},
-	bottom: prop => {
-		return prop.tooltip.height + prop.arrowSize + prop.tooltipOffset + prop.offsetToEdge <= window.innerHeight - prop.component.height - prop.component.top;
-	}
+	top: prop => prop.tooltip.height + prop.arrowSize + prop.tooltipOffset + prop.offsetToEdge <= prop.component.top,
+	right: prop => prop.tooltip.width + prop.arrowSize + prop.tooltipOffset + prop.offsetToEdge <= window.innerWidth - prop.component.width - prop.component.left,
+	bottom: prop => prop.tooltip.height + prop.arrowSize + prop.tooltipOffset + prop.offsetToEdge <= window.innerHeight - prop.component.height - prop.component.top,
+	left: prop => prop.tooltip.width + prop.arrowSize + prop.tooltipOffset + prop.offsetToEdge <= prop.component.left
 }; // Порядок проверки мест, в зависимости от выбранной стороны
 
 const orderDirection = {
@@ -89,18 +82,17 @@ const TooltipBlock = ({
 			opacity: arrowStatusProp ? 1 : 0
 		};
 	}, [arrowStatusProp]);
-	return <Box ref={wrapperRef} {...override(`Tooltip wrapper`)} {...positionTooltip[tooltipDirection]} {...isShowWrapper}>
+	return <Box ref={wrapperRef} {...override('Wrapper')} {...positionTooltip[tooltipDirection]} {...isShowWrapper}>
 		        
       
-		<Text {...override('Tooltip text')} background-color={tooltipColorProp}>
+		<Text {...override('Title')} background-color={tooltipColorProp}>
 			        
-			{override(`Tooltip text`).children || "Some text"}
-			              
-      
+			{override('Title').children || "Some text"}
+			      
 		</Text>
 		    
       
-		<Box {...override('Tooltip arror')} {...positionArrow[tooltipDirection]} {...isShowArrow} />
+		<Box {...override('Arrow')} {...positionArrow[tooltipDirection]} {...isShowArrow} />
 		 
     
 	</Box>;

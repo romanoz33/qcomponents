@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useOverrides } from '@quarkly/components';
 import { Box, Icon, Button } from '@quarkly/widgets';
+import ComponentNotice from './ComponentNotice';
 import { FiX } from "react-icons/fi";
 const overrides = {
 	'Popup': {
@@ -134,16 +135,7 @@ const Popup = ({
 				<Box {...override('Content')}>
 					{children}
 				</Box>
-				{isEmpty && <Box
-					padding="16px"
-					font="--font-base"
-					font-style="italic"
-					color="--color-grey"
-					background-color="--color-light"
-					border="1px dashed --color-lightD2"
-				>
-					Drag component here
-				</Box>}
+				{isEmpty && <ComponentNotice message="Drag component here" />}
 			</Box>
 		</Box>
 	</Box>;
@@ -153,17 +145,15 @@ const propInfo = {
 	animDuration: {
 		title: 'Animation duration (in seconds)',
 		control: 'input',
-		type: 'number',
+		variants: ['0s', '0.1s', '0.2s', '0.3s', '0.5s', '1s'],
+		type: 'text',
 		category: 'Main',
 		weight: 1
 	},
 	animFunction: {
 		title: 'Animation function',
-		control: 'select',
-		variants: [{
-			title: 'Linear',
-			value: 'linear'
-		}],
+		control: 'input',
+		variants: ['linear', 'ease', 'ease-in', 'ease-out', 'ease-in-out', 'step-start', 'step-end'],
 		type: 'text',
 		category: 'Main',
 		weight: 1

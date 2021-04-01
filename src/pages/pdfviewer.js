@@ -6,7 +6,7 @@ import { GlobalQuarklyPageStyles } from "global-page-styles";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
-		<GlobalQuarklyPageStyles pageUrl={"counter"} />
+		<GlobalQuarklyPageStyles pageUrl={"pdfviewer"} />
 		<Helmet>
 			<title>
 				Quarkly export
@@ -18,34 +18,11 @@ export default (() => {
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
-					Counter
+					PDF Viewer
 				</Text>
 			</Box>
-			<Box min-height="50px" display="flex" justify-content="space-around" flex-wrap="wrap">
-				<Box>
-					<Text text-align="center" font="600 31px sans-serif" height="100px">
-						Количество{" "}
-						<br />
-						сотрудников
-					</Text>
-					<Components.Counter numberSuffix="чел." endingNumber="34" />
-				</Box>
-				<Box>
-					<Text text-align="center" font="600 31px sans-serif" height="100px">
-						Количество{" "}
-						<br />
-						обращений
-					</Text>
-					<Components.Counter numberSuffix="раз" endingNumber="468" />
-				</Box>
-				<Box>
-					<Text text-align="center" font="600 31px sans-serif" height="100px">
-						Лет на рынке
-					</Text>
-					<Components.Counter numberSuffix="лет" endingNumber="11" />
-				</Box>
-			</Box>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
+				<Components.PdfViewer scaleProp="2" />
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
 				</Text>
@@ -99,7 +76,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Starting Number
+						URL-link PDF File
 					</Text>
 					<Text
 						width="100%"
@@ -110,10 +87,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Начальное значение
+						Ссылка на PDF файл
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						0
+						-
 					</Text>
 				</Box>
 				<Box
@@ -132,7 +109,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Ending Number
+						Default Page
 					</Text>
 					<Text
 						width="100%"
@@ -143,10 +120,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Конечное значение
+						Страница, отображаемая по дефолту
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						100
+						1
 					</Text>
 				</Box>
 				<Box
@@ -165,7 +142,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Revers
+						Scale View PDF
 					</Text>
 					<Text
 						width="100%"
@@ -176,10 +153,10 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Возрастание / Убывание
+						Масштаб PDF
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						false
+						1
 					</Text>
 				</Box>
 				<Box
@@ -198,7 +175,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Duration Animation
+						Type View PDF
 					</Text>
 					<Text
 						width="100%"
@@ -209,79 +186,16 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Продолжительность анимации
+						Вид отображения [upward, downward, leftward, rightward]
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						2000
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 5"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Number Suffix
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Символ после числа
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						none
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 6"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Number Prefix
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Символ перед числом
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						none{"\n\n"}
+						upward{" \n\n"}
 					</Text>
 				</Box>
 			</Box>
+			<Text font="600 24px sans-serif" quarkly-title="Title" color="#ff0000">
+				ВАЖНО  Большинство сайтов запрешают запрашивать их ресурсы, с таких сайтов подтягивать файлы технически невозможно на js. Надо либо хранить где то у нас, либо ограничиваться этим.{" "}
+			</Text>
 		</Box>
 		<Link
 			font={"--capture"}

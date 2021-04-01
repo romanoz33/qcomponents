@@ -146,7 +146,7 @@ const Timer = ({
 		override,
 		rest
 	} = useOverrides(props, overrides);
-	return <Box width='100%' display='flex' flex-wrap='wrap' {...rest}>
+	return <Box {...rest} width='100%' display='flex' flex-wrap='wrap'>
 		{!isAlways && !isComplete && showDays && <Box {...override('Timer Item')}>
 			<Text {...override('Timer Value', 'Timer Value Days')}>
 				{dateState.day}
