@@ -68,7 +68,7 @@ const PDFViewer = ({
 	}, [page]);
 	useEffect(() => {
 		setPages(numPages);
-	}, [numPages]);
+	}, []);
 	useEffect(() => {
 		setPage(parseInt(defaultPageProp));
 	}, [defaultPageProp]);
