@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { useOverrides } from '@quarkly/components';
 import { Box, Icon, Button } from '@quarkly/widgets';
 import ComponentNotice from './ComponentNotice';
@@ -116,14 +116,18 @@ const Popup = ({
 		rest
 	} = useOverrides(props, overrides);
 	const [isOpen, setOpen] = useState(true);
-	const [isEmpty, setEmpty] = useState(true);
-	const popupTransition = isOpen ? `visibility ${animDuration} step-start, opacity ${animDuration} ${animFunction}` : `visibility ${animDuration} step-end, opacity ${animDuration} ${animFunction}`;
-	const wrapperTransition = `transform ${animDuration} ${animFunction}`;
+	const [isEmpty, setEmpty] = useState(false);
+	const contentRef = useRef(null);
+	const popupTransition = useMemo(() => isOpen ? `visibility ${animDuration} step-start, opacity ${animDuration} ${animFunction}` : `visibility ${animDuration} step-end, opacity ${animDuration} ${animFunction}`, [isOpen, animFunction, animDuration]);
+	const wrapperTransition = useMemo(() => `transform ${animDuration} ${animFunction}`, [animFunction, animDuration]);
 
 	const onOpen = () => setOpen(true);
 
 	const onClose = () => setOpen(false);
 
+	useEffect(() => {
+		setEmpty(contentRef.current?.innerHTML === '<!--child placeholder-->');
+	}, [children]);
 	return <Box {...rest}>
 		<Button onPointerDown={onOpen} {...override('Button Open')}>
 			{override('Button Open').children}
@@ -132,7 +136,7 @@ const Popup = ({
 			<Box onPointerDown={onClose} {...override('Overlay', `Overlay ${isOpen ? ':open' : ':closed'}`)} />
 			<Box {...override('Wrapper', `Wrapper ${isOpen ? ':open' : ':closed'}`)} transition={wrapperTransition}>
 				<Icon {...override('Button Close')} onPointerDown={onClose} />
-				<Box {...override('Content')}>
+				<Box {...override('Content')} ref={contentRef}>
 					{children}
 				</Box>
 				{isEmpty && <ComponentNotice message="Drag component here" />}

@@ -322,6 +322,16 @@ export default {
 			"pageUrl": "counter",
 			"name": "Counter"
 		},
+		"6064981b2b962f001e743cbf": {
+			"id": "6064981b2b962f001e743cbf",
+			"pageUrl": "sfsd11111111111111111111111111111111111111111",
+			"name": "STANDART"
+		},
+		"6064981cc8e036001ed147ad": {
+			"id": "6064981cc8e036001ed147ad",
+			"pageUrl": "sfsd11111111111111111111111111111111111111111",
+			"name": "STANDART"
+		},
 		"6065f3d3652a1e001e0773c1": {
 			"id": "6065f3d3652a1e001e0773c1",
 			"pageUrl": "scrollindicator",
