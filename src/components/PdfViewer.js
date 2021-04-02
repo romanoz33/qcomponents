@@ -97,7 +97,7 @@ const PDFViewer = ({
 	</Box>;
 	return <Box text-align='center' {...rest}>
 		      
-		<Canvas ref={canvasEl} />
+		<Canvas ref={canvasEl} max-width='100%' height='auto !important' />
 		      
 		{loading ? textLoading : pagination}
 		 

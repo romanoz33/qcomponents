@@ -6,24 +6,24 @@ const overrides = {
 	'Wrapper': {
 		kind: 'Box',
 		props: {
-			'display': 'flex',
-			'text-align': "center",
-			'justify-content': 'center',
-			'align-items': 'center',
-			'position': 'absolute',
 			'width': 'max-content',
-			'transition': 'opacity .8s, visibility .8s'
+			'display': 'flex',
+			'align-items': 'center',
+			'justify-content': 'center',
+			'text-align': 'center',
+			'transition': 'opacity .8s, visibility .8s',
+			'position': 'absolute'
 		}
 	},
 	'Title': {
 		kind: 'Text',
 		props: {
-			'background': "black",
-			'color': "white",
-			'padding': "10px 15px",
-			'margin': 0,
+			'margin': '0px',
+			'padding': '10px 15px',
 			'max-width': '150px',
 			'max-height': '100px',
+			'color': 'white',
+			'background': 'black',
 			'word-break': 'break-word',
 			'overflow-x': 'hidden'
 		}
@@ -31,11 +31,11 @@ const overrides = {
 	'Arrow': {
 		kind: 'Box',
 		props: {
+			'margin': '0px',
 			'min-width': '0px',
 			'min-height': '0px',
-			'margin': 0,
 			'position': 'absolute',
-			'z-index': 1
+			'z-index': '1'
 		}
 	}
 }; // Рассчёт доступного пространства для каждой стороны
@@ -98,7 +98,7 @@ const TooltipBlock = ({
 	</Box>;
 };
 
-const Tooltip = ({
+const TooltipComponent = ({
 	tooltipDirectionProp,
 	tooltipColorProp,
 	tooltipOffsetProp,
@@ -346,9 +346,10 @@ const defaultProps = {
 	arrowSizeProp: 8,
 	arrowStatusProp: true
 };
-export default Object.assign(Tooltip, {
+Object.assign(TooltipComponent, {
 	title: 'Tooltip',
 	propInfo,
 	defaultProps,
 	overrides
 });
+export default TooltipComponent;
