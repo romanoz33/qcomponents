@@ -22,7 +22,7 @@ export default (() => {
 					Tooltip
 				</Text>
 			</Box>
-			<Components.Tooltip arrowStatusProp tooltipStatusProp=":always" />
+			<Components.Tooltip arrowStatusProp tooltipStatusProp="hover" />
 			<Box margin="50px 0px 0px 0px">
 				<Text font="600 24px sans-serif">
 					Пропсы:
@@ -282,38 +282,42 @@ export default (() => {
 				</Text>
 				<Components.Tooltip
 					arrowStatusProp
-					tooltipStatusProp=":always"
+					tooltipStatusProp="always"
 					width="600px"
 					text-align="left"
 					margin="0px auto 0px auto"
 					tooltipAutoChangeProp={false}
+					tooltipPositionProp="top"
 				/>
 				<Components.Tooltip
 					arrowStatusProp
-					tooltipStatusProp=":always"
+					tooltipStatusProp="always"
 					width="600px"
 					text-align="left"
 					margin="0px auto 0px auto"
 					tooltipDirectionProp="left"
 					tooltipAutoChangeProp={false}
+					tooltipPositionProp="left"
 				/>
 				<Components.Tooltip
 					arrowStatusProp
-					tooltipStatusProp=":always"
+					tooltipStatusProp="always"
 					width="600px"
 					text-align="left"
 					margin="0px auto 0px auto"
 					tooltipDirectionProp="right"
 					tooltipAutoChangeProp={false}
+					tooltipPositionProp="right"
 				/>
 				<Components.Tooltip
 					arrowStatusProp
-					tooltipStatusProp=":always"
+					tooltipStatusProp="always"
 					width="600px"
 					text-align="left"
 					margin="0px auto 0px auto"
 					tooltipDirectionProp="bottom"
 					tooltipAutoChangeProp={false}
+					tooltipPositionProp="bottom"
 				/>
 				<Hr border-color="#c4c4c4" margin="16px 0px 40px 0px" />
 			</Box>
@@ -324,7 +328,7 @@ export default (() => {
 				<Hr border-color="#c4c4c4" margin="16px 0px 40px 0px" />
 				<Components.Tooltip
 					arrowStatusProp
-					tooltipStatusProp=":always"
+					tooltipStatusProp="always"
 					width="600px"
 					text-align="left"
 					margin="0px auto 0px auto"
@@ -332,6 +336,8 @@ export default (() => {
 					tooltipColorProp="#21b1f7"
 					arrowSizeProp="28"
 					tooltipOffsetProp="10"
+					arrowOffsetProp="8"
+					tooltipPositionProp="left"
 				>
 					<Override slot="Tooltip text">
 						<Strong>

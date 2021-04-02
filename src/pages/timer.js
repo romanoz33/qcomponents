@@ -28,6 +28,8 @@ export default (() => {
 				showTextDone="complete"
 				showMinutes
 				showSeconds
+				max-width="600px"
+				margin="0px auto 0px auto"
 			>
 				<Override slot="Timer Value" />
 			</Components.Timer>
