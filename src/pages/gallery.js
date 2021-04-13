@@ -40,7 +40,7 @@ export default (() => {
 					fullSrc="https://images.unsplash.com/photo-1493612276216-ee3925520721?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000"
 					previewSrc="https://images.unsplash.com/photo-1618249311687-ec9599381287?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000"
 				/>
-				<Override slot="Item 0" showFullImage={false} fullSrc="https://images.unsplash.com/photo-1617820784160-a18adff1cdc4?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000" previewSrc="https://images.unsplash.com/photo-1603993097397-89c963e325c7?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=2000" />
+				<Override slot="Item 0" showFullImage={false} fullSrc="https://images.unsplash.com/photo-1617820784160-a18adff1cdc4?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000" previewSrc="https://images.unsplash.com/photo-1618248047249-9bb3341fd6b6?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000" />
 				<Override slot="Item 3" showFullImage={false} />
 				<Override slot="Item 1" showFullImage previewSrc="https://images.unsplash.com/photo-1611095564350-2cbe940a8d99?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=2000" />
 				<Override slot="Item 2" showFullImage={false} />

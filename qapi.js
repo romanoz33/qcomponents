@@ -60,7 +60,8 @@ export default {
 				"6065f3d3652a1e001e0773c1",
 				"6065f4ecc8e036001ed14911",
 				"606f0a9063816800228164a9",
-				"607467be0ba79600228c1fec"
+				"607467be0ba79600228c1fec",
+				"6075a2bdb99fb9001fcbc879"
 			]
 		},
 		"60474504627982001eb71a54": {
@@ -353,6 +354,11 @@ export default {
 			"id": "607467be0ba79600228c1fec",
 			"pageUrl": "form1",
 			"name": "YoomoneyDonateForm"
+		},
+		"6075a2bdb99fb9001fcbc879": {
+			"id": "6075a2bdb99fb9001fcbc879",
+			"pageUrl": "slider",
+			"name": "slider"
 		}
 	},
 	"mode": "production",

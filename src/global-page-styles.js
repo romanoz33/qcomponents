@@ -394,6 +394,13 @@ const pageStyles = {
         "display": "",
         "justify-content": "",
         "align-items": ""
+    },
+    "slider": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
     }
 };
 
