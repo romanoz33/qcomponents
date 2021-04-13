@@ -1,396 +1,373 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import { useOverrides } from '@quarkly/components';
 import { Box, Image } from '@quarkly/widgets';
-import Loader from './GalleryLoader';
+import GalleryLoader from './GalleryLoader';
 const overrides = {
 	'Loader': {
-		'kind': 'Icon'
+		kind: 'Icon'
 	}
 };
 
-const Item = ({
-	columsCountProp,
-	rowsCountProp,
-	imagesAutoResizeProp,
-	showImageProp,
-	srcPreview,
-	srcSetPreview,
-	sizesPreview,
-	altPreview,
-	titlePreview,
-	objectFitPreview,
-	objectPositionPreview,
-	loadingPreview,
-	srcFull,
-	srcSetFull,
-	sizesFull,
-	altFull,
-	titleFull,
-	objectFitFull,
-	objectPositionFull,
-	loadingFull,
+const GalleryItem = ({
+	columsNumb,
+	rowsNumb,
+	stretchFull,
+	showFullImage,
+	previewSrc,
+	previewSrcSet,
+	previewSizes,
+	previewAlt,
+	previewTitle,
+	previewObjectFit,
+	previewObjectPosition,
+	previewLoading,
+	fullSrc,
+	fullSrcSet,
+	fullSizes,
+	fullAlt,
+	fullTitle,
+	fullObjectFit,
+	fullObjectPosition,
+	fullLoading,
+	defaultPreviewImageSrc,
 	index,
 	loadImage,
-	addPictureParams,
+	addImageParams,
 	setOpen,
 	galleryItemWidth,
-	ratioSizes,
-	setRatioSizes,
-	setSomePictureParams,
-	setClicked,
-	ratioFormatsProp,
-	imagesMinWidthProp,
-	imagesMaxWidthProp,
+	setSomeImageFullParams,
+	setPreviewClicked,
+	aspectRatioProp,
+	imagesMinWidth,
+	imagesMaxWidth,
 	autoFillInProp,
 	columnsCountProp,
 	borderWidthProp,
-	previewLoaderStatusProp,
-	defaultPreviewSrc,
-	defaultFullSrc,
+	hideLoaderPreviewImage,
 	...props
 }) => {
+	const boxRef = useRef();
+	const [isLoadingPreview, setLoadingPreview] = useState(true);
+	const [aspectRatioStyles, setAspectRatioStyles] = useState({
+		width: 'auto',
+		height: 'auto'
+	});
+	const fullImageParam = useMemo(() => ({
+		'src': fullSrc || previewSrc,
+		'srcset': fullSrcSet,
+		'sizes': fullSizes,
+		'alt': fullAlt,
+		'title': fullTitle,
+		'object-position': fullObjectFit,
+		'object-fit': fullObjectPosition,
+		'loading': fullLoading
+	}), [fullSrc, fullSrcSet, fullSizes, fullAlt, fullTitle, fullObjectFit, fullObjectPosition, fullLoading]);
+	const correctSrcPreview = useMemo(() => previewSrc || defaultPreviewImageSrc, [previewSrc, isLoadingPreview]);
+	useEffect(() => {
+		setPreviewClicked(showFullImage);
+		setSomeImageFullParams(fullImageParam);
+	}, [showFullImage]);
+	useEffect(() => {
+		loadImage(correctSrcPreview).then(() => {
+			setLoadingPreview(false);
+		});
+	}, [hideLoaderPreviewImage]);
+	useEffect(() => {
+		addImageParams(index, {
+			fullSrc,
+			fullSrcSet,
+			fullSizes,
+			fullAlt,
+			fullTitle,
+			fullObjectFit,
+			fullObjectPosition,
+			fullLoading
+		});
+	}, [index]);
+	const openGalleryItem = useCallback(() => {
+		setSomeImageFullParams(fullImageParam);
+		setPreviewClicked(true);
+	}, [fullSrc, fullSrcSet, fullSizes, fullAlt, fullTitle, fullObjectFit, fullObjectPosition, fullLoading]);
+	const changeAspectRatio = useCallback((aspectRatio, itemSize) => {
+		let params = {
+			width: itemSize.width,
+			height: itemSize.height
+		};
+
+		if (aspectRatio === 'auto') {
+			params.height = 'auto';
+			params.width = 'auto';
+		} else {
+			const [width, height] = aspectRatio.split(':');
+			params.height = height * params.width / width;
+		}
+
+		;
+		setAspectRatioStyles(params);
+	}, [aspectRatioProp, columnsCountProp, borderWidthProp, autoFillInProp, galleryItemWidth, imagesMinWidth, imagesMaxWidth]);
+	useEffect(() => {
+		const itemSize = boxRef.current.getBoundingClientRect();
+		changeAspectRatio(aspectRatioProp, itemSize);
+	}, [boxRef.current, aspectRatioProp, columnsCountProp, borderWidthProp, autoFillInProp, galleryItemWidth, imagesMinWidth, imagesMaxWidth]);
 	const {
 		override,
 		rest
 	} = useOverrides(props, overrides);
-	const [isLoading, setLoading] = useState(true);
-	const boxRef = useRef();
-	addPictureParams(index, {
-		srcFull,
-		srcSetFull,
-		sizesFull,
-		altFull,
-		titleFull,
-		objectFitFull,
-		objectPositionFull,
-		loadingFull
-	});
-	useEffect(() => {
-		setOpen(showImageProp);
-	}, [showImageProp]);
-	useEffect(() => {
-		loadImage(srcPreview || defaultPreviewSrc).then(img => {
-			setLoading(false);
-		});
-	}, []);
-	const openGalleryItem = useCallback(() => {
-		setSomePictureParams({
-			'src': srcFull || defaultFullSrc,
-			'srcset': srcSetFull,
-			'sizes': sizesFull,
-			'alt': altFull,
-			'title': titleFull,
-			'object-position': objectFitFull,
-			'object-fit': objectPositionFull,
-			'loading': loadingFull
-		});
-		setClicked(true);
-	});
-	const changeFormat = useCallback((format, sizes) => {
-		const params = {
-			width: galleryItemWidth,
-			height: sizes.height
-		};
-
-		switch (format) {
-			case '16:9':
-				params.height = 9 * params.width / 16;
-				break;
-
-			case '4:3':
-				params.height = 3 * params.width / 4;
-				break;
-
-			case '3:2':
-				params.height = 2 * params.width / 3;
-				break;
-
-			case '1:1':
-				params.height = params.width;
-				break;
-
-			case '2:3':
-				params.height = 3 * params.width / 2;
-				break;
-
-			case '3:4':
-				params.height = 4 * params.width / 3;
-				break;
-
-			case '9:16':
-				params.height = 16 * params.width / 9;
-				break;
-
-			default:
-				params.height = 'auto';
-				params.width = 'auto';
-		}
-
-		setRatioSizes(params);
-	}, [ratioFormatsProp, columnsCountProp, borderWidthProp, imagesMinWidthProp, imagesMaxWidthProp, autoFillInProp, galleryItemWidth]);
-	useEffect(() => {
-		const sizes = boxRef.current.getBoundingClientRect();
-		changeFormat(ratioFormatsProp, sizes);
-	}, [ratioFormatsProp, columnsCountProp, borderWidthProp, imagesMinWidthProp, imagesMaxWidthProp, autoFillInProp, galleryItemWidth]);
 	return <Box
 		ref={boxRef}
+		display="flex"
+		grid-column={`span ${columsNumb}`}
+		grid-row={`span ${rowsNumb}`}
 		{...rest}
-		min-width='auto'
-		min-height='auto'
-		grid-column={`span ${columsCountProp}`}
-		grid-row={`span ${rowsCountProp}`}
-		position='relative'
-		height='auto'
 	>
 		 
 		<Image
 			onClick={openGalleryItem}
-			max-width='100%'
-			max-height='100%'
-			min-width={imagesAutoResizeProp ? '100%' : 'auto'}
-			min-height={imagesAutoResizeProp ? '100%' : 'auto'}
-			object-fit={imagesAutoResizeProp ? 'cover' : objectFitPreview}
-			srcset={srcSetPreview}
-			sizes={sizesPreview}
-			title={titlePreview}
-			object-position={objectPositionPreview}
-			alt={altPreview}
-			loading={loadingPreview}
-			opacity={isLoading ? '0' : '1'}
-			src={isLoading ? '' : srcPreview || defaultPreviewSrc}
-			{...ratioSizes}
+			max-width="100%"
+			max-height="100%"
+			min-width={stretchFull ? '100%' : 'auto'}
+			min-height={stretchFull ? '100%' : 'auto'}
+			object-fit={stretchFull ? 'cover' : previewObjectFit}
+			opacity={isLoadingPreview ? '0' : '1'}
+			src={!isLoadingPreview && correctSrcPreview}
+			srcset={!isLoadingPreview && previewSrcSet}
+			title={!isLoadingPreview && previewTitle}
+			alt={!isLoadingPreview && previewAlt}
+			sizes={!isLoadingPreview && previewSizes}
+			object-position={!isLoadingPreview && previewObjectPosition}
+			loading={!isLoadingPreview && previewLoading}
+			{...aspectRatioStyles}
 		/>
-		  
-		{previewLoaderStatusProp ? '' : <Loader {...override('Loader')} isLoading={isLoading} />}
+		{!hideLoaderPreviewImage && <GalleryLoader {...override('Loader')} isLoading={isLoadingPreview} />}
 	</Box>;
 };
 
 const propInfo = {
-	columsCountProp: {
+	columsNumb: {
 		title: 'Ширина в столбцах',
 		description: {
-			en: 'Количество столбцов, которое должно занимать изображение'
+			en: 'Количество столбцов, которое должно занимать изображение',
+			ru: 'Количество столбцов, которое должно занимать изображение'
 		},
 		control: 'input',
 		category: 'Main',
-		weight: 1
+		weight: .5
 	},
-	rowsCountProp: {
+	rowsNumb: {
 		title: 'Высота в колонках',
 		description: {
-			en: 'Количество колонок, которое должно занимать изображение'
+			en: 'Количество колонок, которое должно занимать изображение',
+			ru: 'Количество колонок, которое должно занимать изображение'
 		},
 		control: 'input',
 		category: 'Main',
-		weight: 1
+		weight: .5
 	},
-	imagesAutoResizeProp: {
+	stretchFull: {
 		title: 'Растянуть на всю ширину и высоту',
 		description: {
-			en: 'Растягивать изображения на всю ширину и высоту, если есть свободное пространство'
+			en: 'Растягивать изображения на всю ширину и высоту, если есть свободное пространство',
+			ru: 'Растягивать изображения на всю ширину и высоту, если есть свободное пространство'
 		},
 		control: 'checkbox',
 		category: 'images',
 		weight: 1
 	},
-	showImageProp: {
+	showFullImage: {
 		title: 'Показать изображение',
 		description: {
+			en: 'Показать полное изображение',
 			ru: 'Показать полное изображение'
 		},
 		control: 'checkbox',
 		category: 'images',
 		weight: 1
 	},
-	srcPreview: {
-		weight: 1,
-		control: "image",
-		category: "Image preview",
-		title: "Src",
+	previewSrc: {
+		title: 'Src',
 		description: {
-			en: "src — image address",
-			ru: "src — aдрес изображения"
-		}
+			en: 'src — image address',
+			ru: 'src — aдрес изображения'
+		},
+		control: 'image',
+		category: 'Image preview',
+		weight: 1
 	},
-	srcSetPreview: {
-		title: "Srcset",
-		weight: 1,
-		type: "string",
-		control: "srcSet",
+	previewSrcSet: {
+		title: 'Srcset',
+		description: {
+			en: 'srcSet — a string which identifies one or more image sources with descriptors',
+			ru: 'srcSet — строка, определяющая один или несколько источников изображений с дескрипторами'
+		},
+		control: 'srcSet',
 		multiply: true,
-		category: "Image preview",
-		description: {
-			en: "srcSet — a string which identifies one or more image sources with descriptors",
-			ru: "srcSet — строка, определяющая один или несколько источников изображений с дескрипторами"
-		}
+		category: 'Image preview',
+		weight: 1
 	},
-	sizesPreview: {
-		title: "Sizes",
-		weight: 1,
-		type: "string",
-		control: "sizes",
+	previewSizes: {
+		title: 'Sizes',
+		description: {
+			en: 'sizes — image slot sizes from srcSet for different breakpoints',
+			ru: 'sizes — размеры контейнера изображения из srcSet для различных брейкпоинтов'
+		},
+		control: 'sizes',
 		multiply: true,
-		category: "Image preview",
-		description: {
-			en: "sizes — image slot sizes from srcSet for different breakpoints",
-			ru: "sizes — размеры контейнера изображения из srcSet для различных брейкпоинтов"
-		}
+		category: 'Image preview',
+		weight: 1
 	},
-	altPreview: {
-		title: "Alt",
-		weight: 1,
-		type: "string",
-		category: "Image preview",
+	previewAlt: {
+		title: 'Alt',
 		description: {
-			en: "alt – a piece of text that appears when an image cannot be displayed",
-			ru: "alt — текст, который будет отображаться когда изображение недоступно"
-		}
+			en: 'alt – a piece of text that appears when an image cannot be displayed',
+			ru: 'alt — текст, который будет отображаться когда изображение недоступно'
+		},
+		control: 'input',
+		category: 'Image preview',
+		weight: 1
 	},
-	titlePreview: {
-		title: "Title",
-		weight: 1,
-		type: "string",
-		category: "Image preview",
+	previewTitle: {
+		title: 'Title',
 		description: {
-			en: "title – additional information for the element that appears as a tooltip",
-			ru: "title — описывает содержимое элемента в виде всплывающей подсказки"
-		}
+			en: 'title – additional information for the element that appears as a tooltip',
+			ru: 'title — описывает содержимое элемента в виде всплывающей подсказки'
+		},
+		control: 'input',
+		category: 'Image preview',
+		weight: 1
 	},
-	objectFitPreview: {
-		title: "Object fit",
-		weight: 1,
-		type: "string",
-		control: "select",
-		variants: ["fill", "contain", "cover", "none", "scale-down"],
-		category: "Image preview",
+	previewObjectFit: {
+		title: 'Object fit',
 		description: {
-			en: "object-fit – defines how the content of the replaced element should be resized to fit its container",
-			ru: "object-fit — определяет, как содержимое заменяемого элемента должно заполнять контейнер"
-		}
+			en: 'object-fit – defines how the content of the replaced element should be resized to fit its container',
+			ru: 'object-fit — определяет, как содержимое заменяемого элемента должно заполнять контейнер'
+		},
+		control: 'select',
+		variants: ['fill', 'contain', 'cover', 'none', 'scale-down'],
+		category: 'Image preview',
+		weight: 1
 	},
-	objectPositionPreview: {
-		title: "Object position",
-		weight: 1,
-		type: "string",
-		category: "Image preview",
+	previewObjectPosition: {
+		title: 'Object position',
 		description: {
-			en: "object-position – specifies the alignment of the selected replaced element contents within the element box relative to the X and Y coordinate axes",
-			ru: "object-position — задаёт положение содержимого замещаемого элемента внутри контейнера относительно координатных осей X и Y"
-		}
+			en: 'object-position – specifies the alignment of the selected replaced element contents within the element box relative to the X and Y coordinate axes',
+			ru: 'object-position — задаёт положение содержимого замещаемого элемента внутри контейнера относительно координатных осей X и Y'
+		},
+		control: 'input',
+		category: 'Image preview',
+		weight: 1
 	},
-	loadingPreview: {
-		title: "Loading",
-		weight: 1,
-		type: "string",
-		category: "Image preview",
-		control: "select",
-		variants: ["eager", "lazy"],
+	previewLoading: {
+		title: 'Loading',
 		description: {
-			en: "loading - indicates how the browser should load the image",
-			ru: "loading — указывает как браузер должен загружать изображение"
-		}
+			en: 'loading - indicates how the browser should load the image',
+			ru: 'loading — указывает как браузер должен загружать изображение'
+		},
+		control: 'select',
+		variants: ['eager', 'lazy'],
+		category: 'Image preview',
+		weight: 1
 	},
-	srcFull: {
-		weight: 1,
-		control: "image",
-		category: "Image Full",
-		title: "Src",
+	fullSrc: {
+		title: 'Src',
 		description: {
-			en: "src — image address",
-			ru: "src — aдрес изображения"
-		}
+			en: 'src — image address',
+			ru: 'src — aдрес изображения'
+		},
+		control: 'image',
+		category: 'Image Full',
+		weight: 1
 	},
-	srcSetFull: {
-		title: "Srcset",
-		weight: 1,
-		type: "string",
-		control: "srcSet",
+	fullSrcSet: {
+		title: 'Srcset',
+		description: {
+			en: 'srcSet — a string which identifies one or more image sources with descriptors',
+			ru: 'srcSet — строка, определяющая один или несколько источников изображений с дескрипторами'
+		},
+		control: 'srcSet',
 		multiply: true,
-		category: "Image Full",
-		description: {
-			en: "srcSet — a string which identifies one or more image sources with descriptors",
-			ru: "srcSet — строка, определяющая один или несколько источников изображений с дескрипторами"
-		}
+		category: 'Image Full',
+		weight: 1
 	},
-	sizesFull: {
-		title: "Sizes",
-		weight: 1,
-		type: "string",
-		control: "sizes",
+	fullSizes: {
+		title: 'Sizes',
+		description: {
+			en: 'sizes — image slot sizes from srcSet for different breakpoints',
+			ru: 'sizes — размеры контейнера изображения из srcSet для различных брейкпоинтов'
+		},
+		control: 'sizes',
 		multiply: true,
-		category: "Image Full",
-		description: {
-			en: "sizes — image slot sizes from srcSet for different breakpoints",
-			ru: "sizes — размеры контейнера изображения из srcSet для различных брейкпоинтов"
-		}
+		category: 'Image Full',
+		weight: 1
 	},
-	altFull: {
-		title: "Alt",
-		weight: 1,
-		type: "string",
-		category: "Image Full",
+	fullAlt: {
+		title: 'Alt',
 		description: {
-			en: "alt – a piece of text that appears when an image cannot be displayed",
-			ru: "alt — текст, который будет отображаться когда изображение недоступно"
-		}
+			en: 'alt – a piece of text that appears when an image cannot be displayed',
+			ru: 'alt — текст, который будет отображаться когда изображение недоступно'
+		},
+		control: 'input',
+		category: 'Image Full',
+		weight: 1
 	},
-	titleFull: {
-		title: "Title",
-		weight: 1,
-		type: "string",
-		category: "Image Full",
+	fullTitle: {
+		title: 'Title',
 		description: {
-			en: "title – additional information for the element that appears as a tooltip",
-			ru: "title — описывает содержимое элемента в виде всплывающей подсказки"
-		}
+			en: 'title – additional information for the element that appears as a tooltip',
+			ru: 'title — описывает содержимое элемента в виде всплывающей подсказки'
+		},
+		control: 'input',
+		category: 'Image Full',
+		weight: 1
 	},
-	objectFitFull: {
-		title: "Object fit",
-		weight: 1,
-		type: "string",
+	fullObjectFit: {
+		title: 'Object fit',
+		description: {
+			en: 'object-fit – defines how the content of the replaced element should be resized to fit its container',
+			ru: 'object-fit — определяет, как содержимое заменяемого элемента должно заполнять контейнер'
+		},
 		control: "select",
-		variants: ["fill", "contain", "cover", "none", "scale-down"],
-		category: "Image Full",
-		description: {
-			en: "object-fit – defines how the content of the replaced element should be resized to fit its container",
-			ru: "object-fit — определяет, как содержимое заменяемого элемента должно заполнять контейнер"
-		}
+		variants: ['fill', 'contain', 'cover', 'none', 'scale-down'],
+		category: 'Image Full',
+		weight: 1
 	},
-	objectPositionFull: {
-		title: "Object position",
-		weight: 1,
-		type: "string",
-		category: "Image Full",
+	fullObjectPosition: {
+		title: 'Object position',
 		description: {
-			en: "object-position – specifies the alignment of the selected replaced element contents within the element box relative to the X and Y coordinate axes",
-			ru: "object-position — задаёт положение содержимого замещаемого элемента внутри контейнера относительно координатных осей X и Y"
-		}
+			en: 'object-position – specifies the alignment of the selected replaced element contents within the element box relative to the X and Y coordinate axes',
+			ru: 'object-position — задаёт положение содержимого замещаемого элемента внутри контейнера относительно координатных осей X и Y'
+		},
+		control: 'input',
+		category: 'Image Full',
+		weight: 1
 	},
-	loadingFull: {
-		title: "Loading",
-		weight: 1,
-		type: "string",
-		category: "Image Full",
-		control: "select",
-		variants: ["eager", "lazy"],
+	fullLoading: {
+		title: 'Loading',
 		description: {
-			en: "loading - indicates how the browser should load the image",
-			ru: "loading — указывает как браузер должен загружать изображение"
-		}
+			en: 'loading - indicates how the browser should load the image',
+			ru: 'loading — указывает как браузер должен загружать изображение'
+		},
+		control: 'select',
+		variants: ['eager', 'lazy'],
+		category: 'Image Full',
+		weight: 1
 	}
 };
 const defaultProps = {
-	columsCountProp: 1,
-	rowsCountProp: 1,
-	imagesAutoResizeProp: true,
-	showImageProp: false
+	columsNumb: 1,
+	rowsNumb: 1,
+	stretchFull: true,
+	showFullImage: false,
+	'height': 'auto',
+	'min-width': 'auto',
+	'min-height': 'auto',
+	'position': 'relative'
 };
-Object.assign(Item, {
+Object.assign(GalleryItem, {
 	overrides,
 	propInfo,
 	defaultProps,
 	effects: {
-		hover: ":hover"
+		hover: ':hover'
 	}
 });
-export default Item;
+export default GalleryItem;

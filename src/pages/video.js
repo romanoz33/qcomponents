@@ -24,9 +24,10 @@ export default (() => {
 					Video
 				</Text>
 			</Box>
-			<Components.Video controls />
-			<Components.Video src=" " poster=" " />
-			<Components.Source />
+			<Components.Video poster=" " src=" ">
+				<Override slot="Video Tag" />
+			</Components.Video>
+			<Components.Source margin="500px 100px 500px 1" />
 			<Components.Track />
 			<Box>
 				<Box margin="50px 0px 0px 0px">

@@ -3,6 +3,7 @@ import theme from "theme";
 import { Theme, Link, Text, Box } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
+import { Override } from "@quarkly/components";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
@@ -21,7 +22,16 @@ export default (() => {
 					Audio
 				</Text>
 			</Box>
-			<Components.Audio controls autoPlay={false} muted={false} loop={false} />
+			<Components.Audio
+				controls
+				autoPlay={false}
+				muted={false}
+				loop={false}
+				src="https://uploads.quarkly.io/molecules/default-audio.mp3"
+				margin="500px au 500px auto"
+			>
+				<Override slot="Audio Tag" margin="500px 0px 500px 0px" />
+			</Components.Audio>
 			<Components.Audio src="  " />
 			<Box margin="50px 0px 0px 0px">
 				<Text font="600 24px sans-serif">
@@ -185,7 +195,7 @@ export default (() => {
 					border-style="solid"
 					border-color="#eaeaea"
 				>
-					Зацикливает воспроизведение аудио, чтобы оно повторялось с начала после завершения.{"\n\n"}
+					Зацикливает воспроизведение аудио, чтобы оно повторялось с начала после завершения.
 				</Text>
 				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 					off

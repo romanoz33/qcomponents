@@ -17,16 +17,37 @@ export default (() => {
 		</Helmet>
 		<Components.HeadMenu />
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
+			<Components.Code width="auto">
+				<Override slot="Code Text" font="20px/18px Consolas, &quot;Andale Mono WT&quot;, &quot;Andale Mono&quot;, &quot;Lucida Console&quot;, &quot;Lucida Sans Typewriter&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Liberation Mono&quot;, &quot;Nimbus Mono L&quot;, Monaco, &quot;Courier New&quot;, Courier, monospace" width="auto" text-align="left">
+					<br />
+					fetch('http://example.com/')
+  .then((response) =&gt; &#123;
+    return response.json();
+  &#125;)
+  .then((data) =&gt; &#123;
+    console.log(data);
+  &#125;);
+					<br />
+					<br />
+					{"\n"}
+				</Override>
+				<Override slot="Code Alert">
+					Код скопирован в буфер обмена!
+				</Override>
+			</Components.Code>
+			<Components.Code width="auto">
+				<Override slot="Code Text" font="20px/18px Consolas, &quot;Andale Mono WT&quot;, &quot;Andale Mono&quot;, &quot;Lucida Console&quot;, &quot;Lucida Sans Typewriter&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Liberation Mono&quot;, &quot;Nimbus Mono L&quot;, Monaco, &quot;Courier New&quot;, Courier, monospace" width="auto">
+					const timerId = setTimeout(() =&gt; console.log('some text'), 1000);{"\n"}
+				</Override>
+				<Override slot="Code Alert">
+					Код скопирован в буфер обмена!
+				</Override>
+			</Components.Code>
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
 					Code
 				</Text>
 			</Box>
-			<Components.Code>
-				<Override slot="Code Text" font="20px/18px Consolas, &quot;Andale Mono WT&quot;, &quot;Andale Mono&quot;, &quot;Lucida Console&quot;, &quot;Lucida Sans Typewriter&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Liberation Mono&quot;, &quot;Nimbus Mono L&quot;, Monaco, &quot;Courier New&quot;, Courier, monospace">
-					let timerId = setTimeout(() =&gt; alert("ничего не происходит"), 1000);{"\n"}
-				</Override>
-			</Components.Code>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:

@@ -3,7 +3,7 @@ import theme from "theme";
 import { Theme, Link, Text, Box } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
-import { Menu } from "@quarkly/components";
+import { Override, Menu } from "@quarkly/components";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
@@ -22,7 +22,17 @@ export default (() => {
 					Menu
 				</Text>
 			</Box>
-			<Menu exact-active-match />
+			<Menu exact-active-match>
+				<Override
+					slot="link"
+					border-color="#777b80"
+					color="#747678"
+					text-decoration-line="initial"
+					font="20px sans-serif"
+					margin="5px 0px 5px 0px"
+				/>
+				<Override slot="item" margin="5px 0px 5px 0px" />
+			</Menu>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:

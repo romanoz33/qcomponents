@@ -6,7 +6,7 @@ import { GlobalQuarklyPageStyles } from "global-page-styles";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
-		<GlobalQuarklyPageStyles pageUrl={"vimeo"} />
+		<GlobalQuarklyPageStyles pageUrl={"form1"} />
 		<Helmet>
 			<title>
 				Quarkly export
@@ -18,20 +18,13 @@ export default (() => {
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
-					Vimeo
+					YoomoneyDonateForm
 				</Text>
 			</Box>
-			<Components.Vimeo
-				controls
-				autopause
-				playBackground={false}
-				responsive
-				video="187987907"
-			/>
-			<Components.Vimeo controls autopause playBackground={false} responsive />
+			<Components.YoomoneyDonateForm account="41001000000000" phone={false} fio={false} />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пропсы:
+					Пропсы YoomoneyDonateForm:
 				</Text>
 				<Box
 					display="flex"
@@ -83,7 +76,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Color
+						Account
 					</Text>
 					<Text
 						width="100%"
@@ -94,29 +87,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Цвета элементов проигрывателя
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						#00ADEF
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 2"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Enable
+						Идентификатор кошелька Yoomoney (обязательное поле){"\n\n"}
 					</Text>
 					<Text
 						width="100%"
@@ -127,257 +98,15 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Показать элементы управления 
-проигрывателя{"\n\n"}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						on
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 3"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Autopause
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Автоматически останавливать при воспроизведении другого видео
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						on
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 4"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Autoplay
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Воспроизвести видео, после загрузки страницы
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						off
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 5"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Show portrait
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Отображать портрет владельца видео
-						<br />
-						{"\n\n"}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						on
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 6"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Show title
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Показать название видео
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						on
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 7"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Show byline
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Отображать имя владельца видео
-						<br />
-						{"\n\n"}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						on
-					</Text>
-					{" "}
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 8"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Responsive
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Растянуть проигрыватель на всю ширину
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						on
-					</Text>
-					{" "}
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 8"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Video ID or URL
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						ID или URL видео{" "}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 						-
 					</Text>
-					{" "}
 				</Box>
 				<Box
 					display="flex"
 					border-width="1px"
 					border-style="solid"
 					border-color="#eaeaea"
-					quarkly-title="Row 8"
+					quarkly-title="Row 1"
 				>
 					<Text
 						width="100%"
@@ -388,7 +117,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Start
+						Targets
 					</Text>
 					<Text
 						width="100%"
@@ -399,19 +128,26 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Старт с определенной секунды
+						Назначение перевода{"\n\n"}
 					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						none
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Помочь проекту{"\n\n"}
 					</Text>
-					{" "}
 				</Box>
 				<Box
 					display="flex"
 					border-width="1px"
 					border-style="solid"
 					border-color="#eaeaea"
-					quarkly-title="Row 8"
+					quarkly-title="Row 1"
 				>
 					<Text
 						width="100%"
@@ -422,7 +158,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Loop
+						Text
 					</Text>
 					<Text
 						width="100%"
@@ -433,19 +169,26 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Воспроизводить видео завного по завершению
+						Текст кнопки
 					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						off
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Перевести
 					</Text>
-					{" "}
 				</Box>
 				<Box
 					display="flex"
 					border-width="1px"
 					border-style="solid"
 					border-color="#eaeaea"
-					quarkly-title="Row 8"
+					quarkly-title="Row 1"
 				>
 					<Text
 						width="100%"
@@ -456,7 +199,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Muted
+						Text
 					</Text>
 					<Text
 						width="100%"
@@ -467,19 +210,26 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Отключить звук видео
+						Текст кнопки
 					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						off
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Перевести
 					</Text>
-					{" "}
 				</Box>
 				<Box
 					display="flex"
 					border-width="1px"
 					border-style="solid"
 					border-color="#eaeaea"
-					quarkly-title="Row 8"
+					quarkly-title="Row 1"
 				>
 					<Text
 						width="100%"
@@ -490,7 +240,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Play background
+						Fixed Target
 					</Text>
 					<Text
 						width="100%"
@@ -501,19 +251,26 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Фоновый режим (скрываются элементы управления воспроизведением, включается автовоспроизведение и зацикливается видео)
+						Фиксированная цель перевода{"\n\n"}
 					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						off
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						true
 					</Text>
-					{" "}
 				</Box>
 				<Box
 					display="flex"
 					border-width="1px"
 					border-style="solid"
 					border-color="#eaeaea"
-					quarkly-title="Row 8"
+					quarkly-title="Row 1"
 				>
 					<Text
 						width="100%"
@@ -524,7 +281,7 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Volume
+						Sum
 					</Text>
 					<Text
 						width="100%"
@@ -535,12 +292,388 @@ export default (() => {
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Громкость звука (диапазон от 0 до 1)
+						Сумма перевода
 					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						1
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						0
 					</Text>
-					{" "}
+				</Box>
+				<Box
+					display="flex"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+					quarkly-title="Row 1"
+				>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Full name
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Запрашивать имя в момент перевода{"\n\n"}
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						false
+					</Text>
+				</Box>
+				<Box
+					display="flex"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+					quarkly-title="Row 1"
+				>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Email
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Запрашивать email в момент перевода{"\n\n"}
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						false
+					</Text>
+				</Box>
+				<Box
+					display="flex"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+					quarkly-title="Row 1"
+				>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Phone
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Запрашивать телефон в момент перевода{"\n\n"}
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						false
+					</Text>
+				</Box>
+				<Box
+					display="flex"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+					quarkly-title="Row 1"
+				>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Address
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Запрашивать адрес в момент перевода{"\n\n"}
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						false
+					</Text>
+				</Box>
+				<Box
+					display="flex"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+					quarkly-title="Row 1"
+				>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Comment
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Запрашивать комментарий в момент перевода{"\n\n"}
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						false
+					</Text>
+				</Box>
+				<Box
+					display="flex"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+					quarkly-title="Row 1"
+				>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Comment hint
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Подсказка для комментария{" \n\n\n\n"}
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						-
+					</Text>
+				</Box>
+				<Box
+					display="flex"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+					quarkly-title="Row 1"
+				>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Success URL
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Ссылка для редиректа{"\n\n"}
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						-
+					</Text>
+				</Box>
+				<Box
+					display="flex"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+					quarkly-title="Row 1"
+				>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Use bank card
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Возможность перевода череpез баноквскую карту{"\n\n"}
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						false
+					</Text>
+				</Box>
+				<Box
+					display="flex"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+					quarkly-title="Row 1"
+				>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Use mobile payment
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Возможность перевода чере cчет телефона Билайн, МТС, Tele2
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						false
+					</Text>
 				</Box>
 			</Box>
 		</Box>

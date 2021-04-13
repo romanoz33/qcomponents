@@ -3,6 +3,7 @@ import theme from "theme";
 import { Theme, Link, Text, Box, Icon } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
+import { Override } from "@quarkly/components";
 import * as Components from "components";
 import { MdKeyboardArrowRight } from "react-icons/md";
 export default (() => {
@@ -22,7 +23,20 @@ export default (() => {
 					TimeLine Full
 				</Text>
 			</Box>
-			<Components.TimelineFull />
+			<Components.TimelineFull margin="0px 100px 0px 100px" width="auto">
+				<Override slot="Descr 0">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
+				</Override>
+				<Override slot="Descr 1">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
+				</Override>
+				<Override slot="Descr 2">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
+				</Override>
+				<Override slot="Descr 3">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
+				</Override>
+			</Components.TimelineFull>
 			<Box height="100px" />
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
@@ -30,11 +44,30 @@ export default (() => {
 TimeLineItem
 				</Text>
 			</Box>
-			<Components.TimelineList>
-				<Components.TimelineItem />
-				<Components.TimelineItem />
-				<Components.TimelineItem />
-				<Components.TimelineItem />
+			<Components.TimelineList margin="500px 0px 500 0px">
+				<Components.TimelineItem>
+					<Override slot="Timeline Dates">
+						18:00 - 20:30
+					</Override>
+					<Override slot="Timeline Descr">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
+					</Override>
+				</Components.TimelineItem>
+				<Components.TimelineItem>
+					<Override slot="Timeline Descr">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
+					</Override>
+				</Components.TimelineItem>
+				<Components.TimelineItem>
+					<Override slot="Timeline Descr">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
+					</Override>
+				</Components.TimelineItem>
+				<Components.TimelineItem>
+					<Override slot="Timeline Descr">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
+					</Override>
+				</Components.TimelineItem>
 			</Components.TimelineList>
 			<Box margin="50px 0px 0px 0px" quarkly-title="Architecture">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
@@ -60,7 +93,7 @@ TimeLineItem
 							height="auto"
 							min-height="20px"
 						>
-							TimeLineList{" \n\n"}
+							TimeLineList{" "}
 						</Text>
 						<Icon category="md" icon={MdKeyboardArrowRight} size="40px" color="#747272" />
 					</Box>
@@ -73,7 +106,7 @@ TimeLineItem
 							height="auto"
 							min-height="20px"
 						>
-							TimeLineItem{"\n\n"}
+							TimeLineItem
 						</Text>
 						<Icon category="md" icon={MdKeyboardArrowRight} size="40px" color="#747272" />
 					</Box>
@@ -214,7 +247,7 @@ from the right, ti the left, to the right]
 						border-style="solid"
 						border-color="#eaeaea"
 					>
-						Способ выравнивания для десктоп from the left [to the left, to the right]{"\n\n"}
+						Способ выравнивания для десктоп from the left [to the left, to the right]
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
 						to the left

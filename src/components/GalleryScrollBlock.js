@@ -1,19 +1,15 @@
-// Кнопки: влево: 37, вверх: 38, вправо: 39, вниз: 40, пробел: 32, таб: 9 
 const keys = [37, 38, 39, 40, 32, 9];
 
-const preventDefault = e => {
-	e.preventDefault();
-};
+const preventDefault = e => e.preventDefault();
 
 const preventDefaultForScrollKeys = e => {
 	if (keys.indexOf(e.keyCode) !== -1) {
 		preventDefault(e);
 		return false;
 	}
-}; // Функция разблокирования
+};
 
-
-const disable = () => {
+export const disableScroll = () => {
 	window.addEventListener('DOMMouseScroll', preventDefault, false);
 	window.addEventListener('wheel', preventDefault, {
 		passive: false
@@ -25,10 +21,8 @@ const disable = () => {
 		passive: false
 	});
 	window.addEventListener('keydown', preventDefaultForScrollKeys, false);
-}; // Функция блокирования
-
-
-const enable = () => {
+};
+export const enableScroll = () => {
 	window.removeEventListener('DOMMouseScroll', preventDefault, false);
 	window.removeEventListener('wheel', preventDefault, {
 		passive: false
@@ -41,8 +35,7 @@ const enable = () => {
 	});
 	window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
 };
-
 export default {
-	disable,
-	enable
+	disableScroll,
+	enableScroll
 };

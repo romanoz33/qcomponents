@@ -3,6 +3,7 @@ import theme from "theme";
 import { Theme, Link, Text, Box } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
+import { Override } from "@quarkly/components";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
@@ -21,7 +22,10 @@ export default (() => {
 					Disqus Some Comment
 				</Text>
 			</Box>
-			<Components.DisqusComment showParrent />
+			<Components.DisqusComment showParrent width="auto" commentIDProp="5336019956">
+				<Override slot="Disqus Content" margin="0px 100px 50px 100px" width="80%" />
+			</Components.DisqusComment>
+			<Components.DisqusComment showParrent width="auto" />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:

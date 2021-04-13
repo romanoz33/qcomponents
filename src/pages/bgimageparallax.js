@@ -20,18 +20,23 @@ export default (() => {
 			<Override slot="mobileMenu" align-items="flex-start" justify-content="flex-start" />
 		</Components.HeadMenu>
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
-			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
+			<Box quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
 					BgImage Parallax
 				</Text>
 			</Box>
 			<Components.BgImageParallax
-				imageURL="https://i.pinimg.com/originals/a4/f8/f9/a4f8f91b31d2c63a015ed34ae8c13bbd.jpg"
-				height="500px"
+				imageURL="https://romanbabad.ucoz.net/src/aba/1/default-picture-1440.png"
+				height="600px"
 				imageRepeat="repeat"
 				imagePosition="center"
 				scrollInertiaProp=".2"
-			/>
+				text-align="center"
+				width="80%"
+				margin="0px auto 0px auto"
+			>
+				<Override slot="Bground" height="1000px" />
+			</Components.BgImageParallax>
 			<Box margin="50px 0px 0px 0px" quarkly-title="Architecture">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Архитектура:

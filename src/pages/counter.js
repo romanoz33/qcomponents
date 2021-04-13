@@ -15,34 +15,118 @@ export default (() => {
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
 		<Components.HeadMenu />
-		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
+		<Box
+			padding="15px 15px 15px 15px"
+			quarkly-title="Wrapper"
+			lg-padding="15px 15px 15px 15px"
+			lg-border-width=".5px"
+			lg-border-style="solid"
+			lg-border-color="#b5b5b5"
+			border-width=".5px"
+			border-style="solid"
+			border-color="#767676"
+		>
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
 					Counter
 				</Text>
 			</Box>
-			<Box min-height="50px" display="flex" justify-content="space-around" flex-wrap="wrap">
-				<Box>
-					<Text text-align="center" font="600 31px sans-serif" height="100px">
-						Количество{" "}
-						<br />
-						сотрудников
+			<Box
+				min-height="50px"
+				display="flex"
+				justify-content="space-around"
+				flex-wrap="wrap"
+				lg-margin="100px 0px 100px 0px"
+				width="80%"
+				margin="500px auto 500px auto"
+				text-align="center"
+			>
+				<Box
+					lg-padding="15px 15px 15px 15px"
+					lg-border-width=".5px"
+					lg-border-style="solid"
+					lg-border-color="#b5b5b5"
+					border-width=".5px"
+					border-style="solid"
+					border-color="#767676"
+					padding="15px 15px 15px 15px"
+				>
+					<Text
+						text-align="center"
+						font="400 31px sans-serif"
+						height="auto"
+						lg-color="#767676"
+						color="#767676"
+					>
+						Clients worldwide
 					</Text>
-					<Components.Counter numberSuffix="чел." endingNumber="34" />
+					<Components.Counter
+						endingNumber="135"
+						revers={false}
+						lg-color="#767676"
+						lg-font="900 58px sans-serif"
+						border-color="#b5b5b5"
+						font="900 58px sans-serif"
+						color="#767676"
+					/>
 				</Box>
-				<Box>
-					<Text text-align="center" font="600 31px sans-serif" height="100px">
-						Количество{" "}
-						<br />
-						обращений
+				<Box
+					lg-padding="15px 15px 15px 15px"
+					lg-border-width=".5px"
+					lg-border-style="solid"
+					lg-border-color="#b5b5b5"
+					border-width=".5px"
+					border-style="solid"
+					border-color="#767676"
+					padding="15px 15px 15px 15px"
+				>
+					<Text
+						text-align="center"
+						font="400 31px sans-serif"
+						height="auto"
+						lg-color="#767676"
+						color="#767676"
+					>
+						Organic likes
 					</Text>
-					<Components.Counter numberSuffix="раз" endingNumber="468" />
+					<Components.Counter
+						endingNumber="5000"
+						revers={false}
+						lg-color="#767676"
+						lg-font="900 58px sans-serif"
+						border-color="#b5b5b5"
+						font="900 58px sans-serif"
+						color="#767676"
+					/>
 				</Box>
-				<Box>
-					<Text text-align="center" font="600 31px sans-serif" height="100px">
-						Лет на рынке
+				<Box
+					lg-padding="15px 15px 15px 15px"
+					lg-border-width=".5px"
+					lg-border-style="solid"
+					lg-border-color="#b5b5b5"
+					border-width=".5px"
+					border-style="solid"
+					border-color="#767676"
+					padding="15px 15px 15px 15px"
+				>
+					<Text
+						text-align="center"
+						font="400 31px sans-serif"
+						height="auto"
+						lg-color="#767676"
+						color="#767676"
+					>
+						Active employees
 					</Text>
-					<Components.Counter numberSuffix="лет" endingNumber="11" />
+					<Components.Counter
+						endingNumber="1100"
+						revers={false}
+						lg-color="#767676"
+						lg-font="900 58px sans-serif"
+						border-color="#b5b5b5"
+						font="900 58px sans-serif"
+						color="#767676"
+					/>
 				</Box>
 			</Box>
 			<Box quarkly-title="Props" height="auto" min-height="20px">

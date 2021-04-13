@@ -1,8 +1,20 @@
-import React, { useMemo, useState, useEffect } from 'react';
-import atomize from '@quarkly/atomize';
-import { Box } from '@quarkly/widgets';
+import React, { useState, useEffect } from 'react';
 import Vimeo from '@u-wave/react-vimeo';
+import { useOverrides } from '@quarkly/components';
+import atomize from '@quarkly/atomize';
+import ComponentNotice from './ComponentNotice';
+const overrides = {
+	'Vimeo Content': {
+		kind: 'Vimeo Content',
+		props: {
+			width: '100%',
+			height: 'auto'
+		}
+	}
+};
 const StyledVimeo = atomize(Vimeo)();
+const Wrapper = atomize.div();
+const Content = atomize.div();
 
 const useDebounce = (value, timeout) => {
 	const [state, setState] = useState(value);
@@ -20,7 +32,7 @@ const convertToVolume = x => {
 	return v;
 };
 
-const VimeoVideo = ({
+const VimeoComponent = ({
 	video,
 	width,
 	height,
@@ -39,39 +51,49 @@ const VimeoVideo = ({
 	responsive,
 	...props
 }) => {
+	const {
+		override,
+		rest
+	} = useOverrides(props, overrides);
 	const dStart = useDebounce(parseFloat(start), 1000);
-	const key = useMemo(() => 'vimeo-' + video + muted + controls + playBackground + showByline + dStart + autoplay + showTitle + responsive, [muted, controls, playBackground, showByline, dStart, autoplay, showTitle, responsive]);
-	return <Box
-		d="flex"
-		jc="center"
-		ai="center"
+	const key = `vimeo-${video}${muted}${controls}${playBackground}${showByline}${dStart}${autoplay}${showTitle}${responsive}`;
+	return <Wrapper
 		width={width}
 		height={height}
-		data-qid={props["data-qid"]}
+		align-items="center"
+		justify-content="center"
+		display="flex"
+		{...rest}
 	>
-		    
-		<StyledVimeo
-			key={key}
-			start={dStart}
-			background={playBackground}
-			video={video}
-			width={width}
-			height={height}
-			autopause={autopause}
-			autoplay={autoplay}
-			showByline={showByline}
-			color={color}
-			controls={controls}
-			loop={loop}
-			showPortrait={showPortrait}
-			showTitle={showTitle}
-			muted={muted}
-			responsive={responsive}
-			volume={!muted && convertToVolume(volume)}
-			{...props}
-		/>
-		  
-	</Box>;
+		            
+		<Content {...override('Vimeo Content')} display={!video && 'none'}>
+			                
+			<StyledVimeo
+				key={key}
+				start={dStart}
+				background={playBackground}
+				video={video}
+				width={width}
+				height={height}
+				autopause={autopause}
+				autoplay={autoplay}
+				showByline={showByline}
+				color={color}
+				controls={controls}
+				loop={loop}
+				showPortrait={showPortrait}
+				showTitle={showTitle}
+				muted={muted}
+				responsive={responsive}
+				volume={!muted && convertToVolume(volume)}
+				{...props}
+			/>
+			            
+		</Content>
+		            
+		{!video && <ComponentNotice message="Добавьте ID видео на панели Props" />}
+		        
+	</Wrapper>;
 };
 
 const propInfo = {
@@ -189,7 +211,6 @@ const propInfo = {
 	}
 };
 const defaultProps = {
-	video: 187987907,
 	width: '100%',
 	height: '100%',
 	volume: 1,
@@ -206,10 +227,9 @@ const defaultProps = {
 	playBackground: false,
 	responsive: true
 };
-export default atomize(VimeoVideo)({
-	name: "VimeoVideo",
-	description: {
-		en: "Vimeo player component"
-	},
-	propInfo
-}, defaultProps);
+Object.assign(VimeoComponent, {
+	propInfo,
+	defaultProps,
+	overrides
+});
+export default VimeoComponent;

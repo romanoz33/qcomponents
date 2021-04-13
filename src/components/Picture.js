@@ -1,27 +1,41 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import atomize from '@quarkly/atomize';
+import { useOverrides } from '@quarkly/components';
 import ComponentNotice from './ComponentNotice';
+const overrides = {
+	'Picture Tag': {
+		kind: 'Picture Tag',
+		props: {
+			'width': '100%',
+			'height': 'auto'
+		}
+	}
+};
 const Picture = atomize.picture();
+const Wrapper = atomize.div();
 const Content = atomize.div();
-const Empty = atomize.div();
 
 const PictureComponent = ({
 	children,
 	...props
 }) => {
-	const contentRef = useRef(null);
+	const {
+		override,
+		rest
+	} = useOverrides(props, overrides);
 	const [isEmpty, setEmpty] = useState(false);
+	const contentRef = useRef(null);
 	useEffect(() => {
 		setEmpty(contentRef.current?.innerHTML === '<!--child placeholder-->');
 	}, [children]);
-	const Wrapper = !isEmpty ? Picture : Empty;
-	console.log(ComponentNotice);
-	return <Wrapper width='100%' height='auto' {...props}>
-		<Content ref={contentRef}>
-			{React.Children.map(children, child => React.isValidElement(child) && React.cloneElement(child, {
-				container: 'picture'
-			}))}
-		</Content>
+	return <Wrapper {...rest}>
+		<Picture {...override('Picture Tag')} display={isEmpty && 'none'}>
+			<Content ref={contentRef}>
+				{React.Children.map(children, child => React.isValidElement(child) && React.cloneElement(child, {
+					container: 'picture'
+				}))}
+			</Content>
+		</Picture>
 		{isEmpty && <ComponentNotice message={'Перетащите сюда компоненты "Image" и "Source" (опционально)'} />}
 	</Wrapper>;
 };

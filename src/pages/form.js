@@ -23,9 +23,8 @@ export default (() => {
 				</Text>
 			</Box>
 			<Components.Form>
-				<Components.FormLabel />
-				<Components.FormInput />
-				<Components.FormSelect width="100%" variants=", , " />
+				<Components.FormLabel width="5%" display="inline-block" />
+				<Components.FormSelect width="95%" variants=", , " display="inline-block" />
 				<Components.FormTextarea width="100%" autocomplete={false} spellcheck="true" />
 			</Components.Form>
 			<Box margin="50px 0px 0px 0px" quarkly-title="Architecture">

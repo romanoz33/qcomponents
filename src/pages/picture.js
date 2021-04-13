@@ -1,6 +1,6 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Link, Text, Box, Image } from "@quarkly/widgets";
+import { Theme, Link, Text, Box } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
 import * as Components from "components";
@@ -21,9 +21,6 @@ export default (() => {
 					Picture
 				</Text>
 			</Box>
-			<Components.Picture>
-				<Image width="364px" height="564px" hover-width="200px" hover-height="200px" />
-			</Components.Picture>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Components.Picture />
 				<Text font="600 24px sans-serif" quarkly-title="Title">

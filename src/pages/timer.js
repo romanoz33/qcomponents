@@ -32,6 +32,7 @@ export default (() => {
 				margin="0px auto 0px auto"
 			>
 				<Override slot="Timer Value" />
+				<Override slot="Item" background="#f0f0f0" margin="0px 5px 0px 5px" box-shadow="inset 2px 2px 5px rgba(154, 147, 140, 0.5)" />
 			</Components.Timer>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">

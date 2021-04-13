@@ -1,7 +1,7 @@
-import React, { useMemo, useEffect, useRef } from 'react';
+import React, { useCallback, useMemo, useEffect, useRef } from 'react';
+import atomize from '@quarkly/atomize';
 import { useOverrides } from '@quarkly/components';
 import { Box } from '@quarkly/widgets';
-import atomize from '@quarkly/atomize';
 const overrides = {
 	'Bground': {
 		kind: 'Bground'
@@ -78,7 +78,7 @@ const BgImageParallax = ({
 		bgroundPos.current.scrollTop = scrollShift - windowShift;
 	};
 
-	const setParallaxHeight = () => {
+	const setParallaxHeight = useCallback(() => {
 		const {
 			height
 		} = wrapperRef.current.getBoundingClientRect();
@@ -86,8 +86,7 @@ const BgImageParallax = ({
 		const shiftHeight = windowHeight * Math.abs(1 - scrollSpeed);
 		const imageHeight = height * scrollSpeed + shiftHeight;
 		bgroundRef.current.style.height = `${imageHeight}px`;
-	};
-
+	}, [wrapperRef.current]);
 	useEffect(() => {
 		document.addEventListener('scroll', updateParallaxTop);
 		return function cleanup() {

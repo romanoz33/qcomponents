@@ -5,223 +5,395 @@ import { createGlobalStyle } from "styled-components";
 const pageStyles = {
     "404": {
         "padding": "",
-        "margin": ""
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
     },
     "index": {
         "padding": "",
-        "margin": ""
-    },
-    "audio": {
-        "padding": "",
-        "margin": ""
-    },
-    "video": {
-        "padding": "",
-        "margin": ""
-    },
-    "burgermenu": {
-        "padding": "",
-        "margin": ""
-    },
-    "mobilemenu": {
-        "padding": "",
-        "margin": ""
-    },
-    "popup": {
-        "padding": "",
-        "margin": ""
-    },
-    "tooltip": {
-        "padding": "",
-        "margin": ""
-    },
-    "collapse": {
-        "padding": "",
-        "margin": ""
-    },
-    "table": {
-        "padding": "",
-        "margin": ""
-    },
-    "сode": {
-        "padding": "",
-        "margin": ""
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
     },
     "accordion": {
         "padding": "",
-        "margin": ""
-    },
-    "backtotop": {
-        "padding": "",
-        "margin": ""
-    },
-    "vkpage": {
-        "padding": "",
-        "margin": ""
-    },
-    "vkcomments": {
-        "padding": "",
-        "margin": ""
-    },
-    "fblike": {
-        "padding": "",
-        "margin": ""
-    },
-    "fbcomments": {
-        "padding": "",
-        "margin": ""
-    },
-    "vimeo": {
-        "padding": "",
-        "margin": ""
-    },
-    "card": {
-        "padding": "",
-        "margin": ""
-    },
-    "youtube": {
-        "padding": "",
-        "margin": ""
-    },
-    "yandexmap": {
-        "padding": "",
-        "margin": ""
-    },
-    "svgshape": {
-        "padding": "",
-        "margin": ""
-    },
-    "soundcloud": {
-        "padding": "",
-        "margin": ""
-    },
-    "slidersimple": {
-        "padding": "",
-        "margin": ""
-    },
-    "pricelist": {
-        "padding": "",
-        "margin": ""
-    },
-    "progressbar": {
-        "padding": "",
-        "margin": ""
-    },
-    "looptext": {
-        "padding": "",
-        "margin": ""
-    },
-    "tickertext": {
-        "padding": "",
-        "margin": ""
-    },
-    "livechat": {
-        "padding": "",
-        "margin": ""
-    },
-    "lightbox": {
-        "padding": "",
-        "margin": ""
-    },
-    "bgimageparallax": {
-        "padding": "",
-        "margin": ""
-    },
-    "gallery": {
-        "padding": "",
-        "margin": ""
-    },
-    "tabsfull": {
-        "padding": "",
-        "margin": ""
-    },
-    "tabssimpllist": {
-        "padding": "",
-        "margin": ""
-    },
-    "timelinefull": {
-        "padding": "",
-        "margin": ""
-    },
-    "form": {
-        "padding": "",
-        "margin": ""
-    },
-    "formspree": {
-        "padding": "",
-        "margin": ""
-    },
-    "googlemap": {
-        "padding": "",
-        "margin": ""
-    },
-    "menu": {
-        "padding": "",
-        "margin": ""
-    },
-    "section": {
-        "padding": "",
-        "margin": ""
-    },
-    "socialmedia": {
-        "padding": "",
-        "margin": ""
-    },
-    "stack": {
-        "padding": "",
-        "margin": ""
-    },
-    "picture": {
-        "padding": "",
-        "margin": ""
-    },
-    "mobilesidepanel": {
-        "padding": "",
-        "margin": ""
-    },
-    "menuwith": {
-        "padding": "",
-        "margin": ""
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
     },
     "animation": {
         "padding": "",
-        "margin": ""
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "audio": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "backtotop": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
     },
     "beforeafterimage": {
         "padding": "",
-        "margin": ""
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "bgimageparallax": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "burgermenu": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "card": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "сode": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "collapse": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "fblike": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "fbcomments": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "form": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "formspree": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "gallery": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "googlemap": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "livechat": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "lightbox": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "looptext": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "menu": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "menuwith": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "mobilemenu": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "mobilesidepanel": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "pricelist": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "popup": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "progressbar": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "picture": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "section": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "soundcloud": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "socialmedia": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "slidersimple": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "stack": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "svgshape": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "video": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "table": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "tabsfull": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "tabssimpllist": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "tooltip": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "tickertext": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "timelinefull": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "youtube": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "vkpage": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "vkcomments": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "vimeo": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "yandexmap": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
     },
     "disqus": {
         "padding": "",
-        "margin": ""
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
     },
     "disquscomment": {
         "padding": "",
-        "margin": ""
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
     },
     "timer": {
         "padding": "",
-        "margin": ""
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
     },
     "cardflip": {
         "padding": "",
-        "margin": ""
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
     },
     "counter": {
         "padding": "",
-        "margin": ""
-    },
-    "sfsd11111111111111111111111111111111111111111": {
-        "padding": "",
-        "margin": ""
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
     },
     "scrollindicator": {
         "padding": "",
-        "margin": ""
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
     },
     "pdfviewer": {
         "padding": "",
-        "margin": ""
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "screen-page": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "form1": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
     }
 };
 

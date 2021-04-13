@@ -23,6 +23,9 @@ export default (() => {
 			typeSelectorContol
 			trafficControl
 			zoomValue="6"
+			height="500px"
+			width="auto"
+			margin="0px 100px 0px 100px"
 		/>
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">

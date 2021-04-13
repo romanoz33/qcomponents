@@ -1,9 +1,11 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Link, Text, Box } from "@quarkly/widgets";
+import { Theme, Link, Icon, Text, Box } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
+import { Override } from "@quarkly/components";
 import * as Components from "components";
+import { MdKeyboardArrowLeft } from "react-icons/md";
 export default (() => {
 	return <Theme theme={theme}>
 		<GlobalQuarklyPageStyles pageUrl={"beforeafterimage"} />
@@ -16,12 +18,16 @@ export default (() => {
 		</Helmet>
 		<Components.HeadMenu />
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
+			<Icon category="md" icon={MdKeyboardArrowLeft} />
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
 					Before After Image
 				</Text>
 			</Box>
-			<Components.BeforeAfterImage aspectRatio="16:9" activationType="onDrag" />
+			<Components.BeforeAfterImage aspectRatio="16:9" activationType="onDrag" margin="500px 100px 500px 100px">
+				<Override slot="Slider" border-width="2px" />
+				<Override slot="Image" />
+			</Components.BeforeAfterImage>
 			<Box margin="50px 0px 0px 0px" quarkly-title="Architecture" />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">

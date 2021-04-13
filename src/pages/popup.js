@@ -1,6 +1,6 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Link, Text, Box } from "@quarkly/widgets";
+import { Theme, Link, Text, Box, Image, Strong } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
 import { Override } from "@quarkly/components";
@@ -22,8 +22,43 @@ export default (() => {
 					Mobile menu
 				</Text>
 			</Box>
-			<Components.Popup>
+			<Components.Popup text-align="center">
 				<Override slot="button" />
+				<Override slot="Wrapper" width="70%" height="600px" />
+				<Box display="flex" padding="50px 50px 50px 50px">
+					<Image width="600px" src="https://images.unsplash.com/photo-1587554801471-37976a256db0?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000" />
+					<Box width="100%">
+						<Text font="--headline2">
+							<Strong
+								overflow-wrap="normal"
+								word-break="normal"
+								white-space="normal"
+								text-indent="0"
+								text-overflow="clip"
+								hyphens="manual"
+								display="inline-block"
+								text-align="center"
+							>
+								Title
+							</Strong>
+						</Text>
+						<Text font="normal 300 18px/1.7 --fontFamily-sansHelvetica" text-align="left" color="#5d5959">
+							<Strong
+								overflow-wrap="normal"
+								word-break="normal"
+								white-space="normal"
+								text-indent="0"
+								text-overflow="clip"
+								hyphens="manual"
+								display="inline-block"
+								text-align="left"
+								margin="28px 0px 0px 36px"
+							>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</Strong>
+						</Text>
+					</Box>
+				</Box>
 			</Components.Popup>
 			<Box margin="50px 0px 0px 0px">
 				<Text font="600 24px sans-serif">

@@ -3,6 +3,7 @@ import theme from "theme";
 import { Theme, Link, Text, Box } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
+import { Override } from "@quarkly/components";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
@@ -22,12 +23,25 @@ export default (() => {
 				</Text>
 			</Box>
 			<Components.Card
-				margin="5px auto 5px auto"
 				showTitle
 				showText
 				showButton
 				showImage
-			/>
+				width="350px"
+			>
+				<Override slot="Card Image AspectRatio" src="https://romanbabad.ucoz.net/src/aba/1/default-picture-1440.png" />
+				<Override slot="Card Title">
+					The mountains{"\n\n"}
+				</Override>
+				<Override slot="Card Text" font="300 20px/100% sans-serif">
+					Great view...
+					<br />
+					{"\n\n"}
+				</Override>
+				<Override slot="Card Button">
+					More
+				</Override>
+			</Components.Card>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:

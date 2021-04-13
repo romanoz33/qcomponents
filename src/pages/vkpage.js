@@ -20,7 +20,7 @@ export default (() => {
 				<Text text-align="center" font="--headline1">
 					VK Page
 				</Text>
-				<Components.VkPage />
+				<Components.VkPage groupId="175635117" />
 			</Box>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
@@ -325,7 +325,321 @@ export default (() => {
 					{" "}
 				</Box>
 			</Box>
-			<Components.VkPage wide={false} viewMode="News" />
+			<Components.VkPage wide={false} viewMode="Members" margin="30px 0px 0px 0px" />
+			<Components.VkPage wide={false} viewMode="News" margin="30px 0px 0px 0px" />
+		</Box>
+		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
+			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
+				<Text text-align="center" font="--headline1">
+					VK Page
+				</Text>
+				<Components.VkPage groupId="175635117" />
+			</Box>
+			<Box quarkly-title="Props" height="auto" min-height="20px">
+				<Text font="600 24px sans-serif" quarkly-title="Title">
+					Пропсы:
+				</Text>
+				<Box
+					display="flex"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+					quarkly-title="Header row"
+				>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Название
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Описание
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						Значение по дефолту
+					</Text>
+				</Box>
+				<Box quarkly-title="Space" />
+				<Box
+					display="flex"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+					quarkly-title="Row 1"
+				>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Color
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Цвет кнопки
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						#5181B8
+					</Text>
+				</Box>
+				<Box
+					display="flex"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+					quarkly-title="Row 2"
+				>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Element ID
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						??????????
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						vk_groups
+					</Text>
+				</Box>
+				<Box
+					display="flex"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+					quarkly-title="Row 3"
+				>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Group ID
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						ID группы
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						-
+					</Text>
+				</Box>
+				<Box
+					display="flex"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+					quarkly-title="Row 4"
+				>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Background color
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Фон компонента
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						#fff
+					</Text>
+				</Box>
+				<Box
+					display="flex"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+					quarkly-title="Row 5"
+				>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Color
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Цвет текста
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						#000
+					</Text>
+				</Box>
+				<Box
+					display="flex"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+					quarkly-title="Row 6"
+				>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						View
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Что отображать [members, news, only name]
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						Members{"\n\n"}
+					</Text>
+				</Box>
+				<Box
+					display="flex"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+					quarkly-title="Row 7"
+				>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Dont use cover
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Не использовать обложку
+					</Text>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						off
+					</Text>
+					{" "}
+				</Box>
+				<Box
+					display="flex"
+					border-width="1px"
+					border-style="solid"
+					border-color="#eaeaea"
+					quarkly-title="Row 8"
+				>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					>
+						Extended mode
+					</Text>
+					<Text
+						width="100%"
+						font="18px sans-serif"
+						padding="15px 15px 15px 15px"
+						margin="0 0 0 0"
+						border-width="1px"
+						border-style="solid"
+						border-color="#eaeaea"
+					/>
+					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+						off
+					</Text>
+					{" "}
+				</Box>
+			</Box>
+			<Components.VkPage wide={false} viewMode="News" margin="30px 0px 0px 0px" />
+			<Components.VkPage wide={false} viewMode="News" margin="30px 0px 0px 0px" />
 		</Box>
 		<Link
 			font={"--capture"}

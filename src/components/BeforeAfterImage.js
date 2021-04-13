@@ -1,24 +1,43 @@
-import React, { useState, useCallback } from 'react';
-import atomize from '@quarkly/atomize';
-import { Box, Image, Text } from '@quarkly/widgets';
+import React, { useState, useCallback, useMemo } from 'react';
+import { Box, Text, Icon, Image } from '@quarkly/widgets';
 import { useOverrides } from '@quarkly/components';
 const overrides = {
-	Label: {
-		kind: 'Box'
-	},
-	'Label Text': {
-		kind: 'Text'
-	},
-	'Before Label Text': {
+	'Label': {
 		kind: 'Text',
 		props: {
-			children: 'Before'
+			'margin': '0px',
+			'padding': '8px 6px',
+			'background': 'white',
+			'border-radius': '4px',
+			'position': 'absolute',
+			'display': 'inline-block'
 		}
 	},
-	'After Label Text': {
+	'Before Label': {
 		kind: 'Text',
 		props: {
-			children: 'After'
+			children: 'Before',
+			'left': '10px',
+			'bottom': '10px'
+		}
+	},
+	'After Label': {
+		kind: 'Text',
+		props: {
+			children: 'After',
+			'right': '10px',
+			'bottom': '10px'
+		}
+	},
+	'Image': {
+		kind: 'Image',
+		props: {
+			'top': '0',
+			'left': '0',
+			'width': '100%',
+			'height': '100%',
+			'object-fit': 'cover',
+			'position': 'absolute'
 		}
 	},
 	'Before Image': {
@@ -33,84 +52,35 @@ const overrides = {
 			src: 'https://images.unsplash.com/photo-1511407397940-d57f68e81203?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=2000'
 		}
 	},
-	Slider: {
+	'Slider': {
 		kind: 'Box',
 		props: {
-			width: '10px'
+			'width': '4px',
+			'min-width': '0',
+			'height': '100%',
+			'background': 'white'
 		}
 	},
-	Arrow: {
-		kind: 'Box'
+	'Arrow': {
+		kind: 'Icon',
+		props: {
+			size: '36px',
+			category: 'md',
+			color: '#FFFFFF',
+			'position': 'absolute',
+			'z-index': '1'
+		}
+	},
+	'Before Arrow': {
+		props: {
+			icon: 'MdKeyboardArrowLeft'
+		}
+	},
+	'After Arrow': {
+		props: {
+			icon: 'MdKeyboardArrowRight'
+		}
 	}
-};
-
-const parseAspectRatio = aspectRatio => {
-	const aspect = {
-		square: '1:1'
-	}[aspectRatio] || aspectRatio;
-	const [width, height] = aspect.split(':');
-	return {
-		height,
-		width
-	};
-};
-
-const aspectProps = (aspectRatio, displayMode) => {
-	if (displayMode === 'Horizontal') {
-		return {
-			h: '100%',
-			fl: 'left'
-		};
-	}
-
-	const {
-		height,
-		width
-	} = parseAspectRatio(aspectRatio);
-	return {
-		pb: height / width * 100 + '%'
-	};
-};
-
-const Canvas = atomize.canvas();
-
-const AspectRatioWrapper = ({
-	aspectRatio = 'none',
-	displayMode,
-	children,
-	...props
-}) => {
-	if (aspectRatio === 'none' || displayMode === 'none') {
-		return <Box {...props}>
-			{children}
-		</Box>;
-	}
-
-	return <Box
-		pos="relative"
-		h="0"
-		mih="0"
-		miw="0"
-		{...aspectProps(aspectRatio, displayMode)}
-		{...props}
-	>
-		    
-		{displayMode === 'Horizontal' && <Canvas {...parseAspectRatio(aspectRatio)} h="100%" d="block" />}
-		    
-		<Box
-			ov="hidden"
-			pos="absolute"
-			t="0"
-			r="0"
-			b="0"
-			l="0"
-		>
-			      
-			{children}
-			    
-		</Box>
-		  
-	</Box>;
 };
 
 const preventEvent = e => {
@@ -119,36 +89,49 @@ const preventEvent = e => {
 	}
 };
 
-const Arrow = props => <Box
-	mih="0"
-	miw="0"
-	border-style="solid"
-	border-width="0 3px 3px 0"
-	display="inline-block"
-	padding="3px"
-	border-color="white"
-	{...props}
-/>;
+const imageStyles = {
+	'top': '0',
+	'left': '0',
+	'width': '100%',
+	'height': '100%',
+	'position': 'absolute'
+};
 
-const Label = props => <Box
-	pos="absolute"
-	display="inline-block"
-	background="white"
-	padding="5px"
-	border-radius="5px"
-	{...props}
-/>;
-
-const getDisplayMode = (height, width) => {
-	let mode = 'none';
-
-	if (!height) {
-		mode = 'Vertical';
-	} else if (width === 'auto') {
-		mode = 'Horizontal';
+const AspectRatioWrapper = ({
+	aspectRatio = 'none',
+	children,
+	...props
+}) => {
+	if (aspectRatio === 'none') {
+		return <Box {...props}>
+			{children}
+		</Box>;
 	}
 
-	return mode;
+	const [width, height] = aspectRatio.split(':');
+	return <Box
+		padding-bottom={`${height / width * 100}%`}
+		height="0"
+		min-width="0"
+		min-height="0"
+		position="relative"
+		{...props}
+	>
+		    
+		<Box
+			top="0"
+			right="0"
+			bottom="0"
+			left="0"
+			position="absolute"
+			overflow="hidden"
+		>
+			      
+			{children}
+			    
+		</Box>
+		  
+	</Box>;
 };
 
 const BeforeAfterImage = ({
@@ -164,8 +147,7 @@ const BeforeAfterImage = ({
 	} = useOverrides(props, overrides);
 	const [isDrag, setDrag] = useState(activationType !== 'onDrag');
 	const [pos, setPos] = useState('50%');
-	const displayMode = getDisplayMode(height, width);
-	const isOnDrag = activationType === 'onDrag';
+	const isOnDrag = useMemo(() => activationType === 'onDrag', [activationType]);
 	const mouseDown = useCallback(e => {
 		preventEvent(e);
 
@@ -185,25 +167,13 @@ const BeforeAfterImage = ({
 		if (isOnDrag && !isDrag) return;
 		const rect = e.currentTarget.getBoundingClientRect();
 		const target = e.type === 'touchmove' ? e.touches[0] : e;
-		let newPos = target.clientX - rect.left;
-		newPos = Math.min(Math.max(newPos, 0), rect.width);
-		setPos(newPos + 'px');
+		const curPos = target.clientX - rect.left;
+		const newPos = Math.min(Math.max(curPos, 0), rect.width);
+		setPos(`${newPos}px`);
 	}, [isOnDrag, isDrag]);
-	return <Box
-		display={displayMode === 'Horizontal' && 'inline-block'}
-		pos="relative"
-		h="100%"
-		ov="hidden"
-		{...rest}
-	>
-		    
+	return <Box pos="relative" h="100%" ov="hidden" {...rest}>
+		      
 		<AspectRatioWrapper
-			pos="relative"
-			mih="0"
-			miw="0"
-			w="100%"
-			h="100%"
-			displayMode={displayMode}
 			aspectRatio={aspectRatio}
 			onMouseDown={mouseDown}
 			onMouseMove={mouseMove}
@@ -212,139 +182,110 @@ const BeforeAfterImage = ({
 			onTouchMove={mouseMove}
 			onTouchEnd={mouseUp}
 		>
-			      
-			<Box
-				pos="absolute"
-				t="0"
-				l="0"
-				w="100%"
-				style={{
-					clipPath: `polygon(
-            0% 0%, 
-            0% 100%, 
-            ${pos} 100%, 
-            ${pos} 0%
-          )`
-				}}
-				h="100%"
-			>
-				        
-				<Image
-					pos="absolute"
-					t="0"
-					l="0"
-					w="100%"
-					h="100%"
-					of="cover"
-					{...override('Before Image')}
-				/>
-				        
-				<Label l="10px" b="10px" {...override('Label', 'Before Label')}>
-					          
-					<Text m="0" {...override('Label Text', 'Before Label Text')} />
-					        
-				</Label>
-				      
-			</Box>
-			      
-			<Box
-				pos="absolute"
-				t="0"
-				l="0"
-				w="100%"
-				h="100%"
-				style={{
-					clipPath: `polygon(
-            100% 0%, 
-            100% 100%, 
+			        
+			<Box {...imageStyles} style={{
+				clipPath: `polygon(
+              0% 0%, 
+              0% 100%, 
               ${pos} 100%, 
               ${pos} 0%
             )`
+			}}>
+				          
+				<Image {...override('Image', 'Before Image')} />
+				          
+				<Text {...override('Label', 'Before Label')} />
+				        
+			</Box>
+			        
+			<Box {...imageStyles} style={{
+				clipPath: `polygon(
+              100% 0%, 
+              100% 100%, 
+                ${pos} 100%, 
+                ${pos} 0%
+              )`
+			}}>
+				          
+				<Image {...override('Image', 'After Image')} />
+				          
+				<Text {...override('Label', 'After Label')} />
+				        
+			</Box>
+			        
+			<Box
+				min-width="0px"
+				height="100%"
+				align-items="center"
+				justify-content="center"
+				position="absolute"
+				display="flex"
+				style={{
+					left: `calc(${pos} - ${override('Slider').width} / 2`,
+					cursor: 'col-resize'
 				}}
 			>
+				          
+				<Box {...override('Slider')} />
+				          
+				<Icon left={`-${override('Arrow').size}`} {...override('Arrow', 'Before Arrow')} />
+				          
+				<Icon right={`-${override('Arrow').size}`} {...override('Arrow', 'After Arrow')} />
 				        
-				<Image
-					pos="absolute"
-					t="0"
-					l="0"
-					w="100%"
-					h="100%"
-					of="cover"
-					{...override('After Image')}
-				/>
-				        
-				<Label r="10px" b="10px" {...override('Label', 'After Label')}>
-					          
-					<Text m="0" {...override('Label Text', 'After Label Text')} />
-					        
-				</Label>
-				      
 			</Box>
 			      
-			<Box position="absolute" height="100%" style={{
-				left: `calc(${pos} 
-              - (${override('Slider').width} + 20px) / 2
-            `,
-				cursor: 'col-resize'
-			}}>
-				        
-				<Box
-					mih="0"
-					miw="0"
-					h="100%"
-					background="white"
-					m="0 10px"
-					{...override('Slider')}
-				/>
-				        
-				<Box
-					m="0 10px"
-					t="50%"
-					pos="absolute"
-					transform="translate(0%,-25%);"
-					h="15px"
-					w={override('Slider').width}
-				>
-					          
-					<Arrow position="absolute" left="-15px" transform="translate(0, -25%) rotate(135deg)" {...override('Arrow', 'Left Arrow')} />
-					          
-					<Arrow position="absolute" right="-10px" transform="translate(0, -25%) rotate(-45deg)" {...override('Arrow', 'Right Arrow')} />
-					        
-				</Box>
-				      
-			</Box>
-			    
 		</AspectRatioWrapper>
-		  
+		    
 	</Box>;
 };
 
 const propInfo = {
 	activationType: {
-		title: 'Activation type',
-		decritption: {
-			en: ''
-		},
+		title: 'Способ активации',
 		control: 'radio-group',
-		variants: ['onDrag', 'onMove']
+		variants: [{
+			title: {
+				en: 'On Drag',
+				ru: 'При перемещении'
+			},
+			value: 'onDrag'
+		}, {
+			title: {
+				en: 'On Move',
+				ru: 'При движении'
+			},
+			value: 'onMove'
+		}],
+		category: 'Main',
+		weight: 1
 	},
 	aspectRatio: {
-		title: 'Aspect Ratio',
-		category: 'Image',
+		title: 'Соотношение сторон',
 		control: 'select',
-		variants: ['none', 'square', '4:3', '3:4', '16:9', '9:16']
+		variants: [{
+			title: {
+				en: 'None',
+				ru: 'Не применять'
+			},
+			value: 'none'
+		}, '16:9', '4:3', '1:1', '3:4', '9:16'],
+		category: 'Main',
+		weight: 1
 	}
 };
 const defaultProps = {
-	width: 'auto',
+	activationType: 'onDrag',
 	aspectRatio: '16:9',
-	activationType: 'onDrag'
+	'width': 'auto'
 };
-export default atomize(BeforeAfterImage)({
-	name: 'BeforeAfterImage',
-	overrides,
+Object.assign(BeforeAfterImage, {
+	title: 'BeforeAfterImage',
 	description: {
-		en: 'Before and after slider is a visual diff tool, makes it easy to highlight the differences between two images.'
+		en: 'Слайдер "до" и "после" позволяет легко выделить различия между двумя изображениями.',
+		ru: 'Слайдер "до" и "после" позволяет легко выделить различия между двумя изображениями.'
 	},
-	propInfo
-}, defaultProps);
+	propInfo,
+	defaultProps,
+	overrides
+});
+export default BeforeAfterImage;

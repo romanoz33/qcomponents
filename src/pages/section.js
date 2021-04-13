@@ -24,12 +24,18 @@ export default (() => {
 			</Box>
 			<Section border-width=".5px" border-style="solid" border-color="rgba(0, 0, 0, 0.18)">
 				<Text font="--headline3">
-					Where can I get some?
-					<br />
-					{"\n\n"}
+					Section
 				</Text>
 				<Text font="18px/1.7 sans-serif">
-					There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.{"\n\n"}
+				</Text>
+			</Section>
+			<Section border-width=".5px" border-style="solid" border-color="rgba(0, 0, 0, 0.18)" lg-margin="10px 0 0 0">
+				<Text font="--headline3">
+					Section
+				</Text>
+				<Text font="18px/1.7 sans-serif">
+					In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
 					<br />
 					{"\n\n"}
 				</Text>

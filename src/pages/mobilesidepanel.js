@@ -25,7 +25,6 @@ export default (() => {
 			<Components.MobileSidePanel menuPosition="near">
 				<Text lg-font="18px/1.7 sans-serif" font="18px/1.7 sans-serif">
 					<Strong
-						data-q-widget-type="PRIMITIVE"
 						overflow-wrap="normal"
 						word-break="normal"
 						white-space="normal"

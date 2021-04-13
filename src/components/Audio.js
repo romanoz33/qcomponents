@@ -1,9 +1,20 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import atomize from '@quarkly/atomize';
+import { useOverrides } from '@quarkly/components';
 import ComponentNotice from './ComponentNotice';
+const overrides = {
+	'Audio Tag': {
+		kind: 'Audio Tag',
+		props: {
+			'width': '100%',
+			'height': '0px',
+			'min-height': '48px'
+		}
+	}
+};
 const Audio = atomize.audio();
+const Wrapper = atomize.div();
 const Content = atomize.div();
-const Empty = atomize.div();
 
 const AudioComponent = ({
 	src,
@@ -14,30 +25,36 @@ const AudioComponent = ({
 	children,
 	...props
 }) => {
-	const contentRef = useRef(null);
+	const {
+		override,
+		rest
+	} = useOverrides(props, overrides);
 	const [isEmpty, setEmpty] = useState(false);
-	const srcVal = src.trim();
+	const contentRef = useRef(null);
+	const srcVal = useMemo(() => src.trim(), [src]);
+	const showNotice = useMemo(() => isEmpty && !srcVal, [isEmpty, srcVal]);
 	useEffect(() => {
 		setEmpty(contentRef.current?.innerHTML === '<!--child placeholder-->');
 	}, [children]);
-	const Wrapper = !isEmpty || srcVal ? Audio : Empty;
-	return <Wrapper
-		width='100%'
-		height='auto'
-		min-height="48px"
-		src={srcVal}
-		autoPlay={autoPlay}
-		controls={controls}
-		muted={muted}
-		loop={loop}
-		{...props}
-	>
-		<Content ref={contentRef}>
-			{React.Children.map(children, child => React.isValidElement(child) && React.cloneElement(child, {
-				container: 'audio'
-			}))}
-		</Content>
-		{isEmpty && !srcVal && <ComponentNotice message={'Добавьте свойство SRC или перетащите сюда компонент "Source"'} />}
+	return <Wrapper {...rest}>
+		      
+		<Audio
+			src={srcVal}
+			autoPlay={autoPlay}
+			controls={controls}
+			muted={muted}
+			loop={loop}
+			{...override('Audio Tag')}
+			display={showNotice && 'none'}
+		>
+			<Content ref={contentRef}>
+				{React.Children.map(children, child => React.isValidElement(child) && React.cloneElement(child, {
+					container: 'audio'
+				}))}
+			</Content>
+		</Audio>
+		{showNotice && <ComponentNotice message={'Добавьте свойство SRC или перетащите сюда компонент "Source"'} />}
+		    
 	</Wrapper>;
 };
 
@@ -49,7 +66,7 @@ const propInfo = {
 			ru: 'Адрес аудио файла'
 		},
 		control: 'input',
-		type: 'string',
+		type: 'text',
 		category: 'Main',
 		weight: 1
 	},
@@ -60,7 +77,6 @@ const propInfo = {
 			ru: 'Автоматическое воспроизведение аудио, как только это будет возможно'
 		},
 		control: 'checkbox',
-		type: 'boolean',
 		category: 'Main',
 		weight: .5
 	},
@@ -71,7 +87,6 @@ const propInfo = {
 			ru: 'Отображение элементов управления воспроизведения аудио'
 		},
 		control: 'checkbox',
-		type: 'boolean',
 		category: 'Main',
 		weight: .5
 	},
@@ -82,7 +97,6 @@ const propInfo = {
 			ru: 'Отключение воспроизведения аудиодорожки'
 		},
 		control: 'checkbox',
-		type: 'boolean',
 		category: 'Main',
 		weight: .5
 	},
@@ -93,14 +107,14 @@ const propInfo = {
 			ru: 'Воспроизведение аудио с начала по окончании проигрывания'
 		},
 		control: 'checkbox',
-		type: 'boolean',
 		category: 'Main',
 		weight: .5
 	}
 };
 const defaultProps = {
-	src: 'https://uploads.quarkly.io/molecules/default-audio.mp3',
-	controls: true
+	src: '',
+	controls: true,
+	display: 'flex'
 };
 export default atomize(AudioComponent)({
 	name: 'Audio',
@@ -108,5 +122,6 @@ export default atomize(AudioComponent)({
 		en: 'Container for embedding audio content',
 		ru: 'Контейнер для встраивания аудио контента'
 	},
-	propInfo
+	propInfo,
+	overrides
 }, defaultProps);

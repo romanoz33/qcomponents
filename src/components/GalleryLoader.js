@@ -15,7 +15,7 @@ const rotate = keyframes`
   } 
 `;
 
-const animation = props => css`
+const animation = () => css`
 	${rotate} 2s linear infinite
 `;
 
@@ -24,7 +24,7 @@ const Animate = styled(Icon)`
 `;
 
 const Rotate = ({
-	isLoading,
+	isLoading = false,
 	children,
 	...props
 }) => <Animate
@@ -32,23 +32,16 @@ const Rotate = ({
 	icon={AiOutlineLoading}
 	category="ai"
 	size="30px"
-	position="absolute"
+	display={isLoading ? 'block' : 'none'}
 	top="calc(50% - 15px)"
 	left="calc(50% - 15px)"
+	position="absolute"
 	z-index="125"
-	display={isLoading ? 'block' : 'none'}
 >
 	{children}
 	 
 </Animate>;
 
 export default atomize(Rotate)({
-	name: "Loader",
-	normalize: true,
-	mixins: true,
-	description: {
-		en: "Loader component"
-	}
-}, {
-	isLoading: false
+	name: 'Loader'
 });

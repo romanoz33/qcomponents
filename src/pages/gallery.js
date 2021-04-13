@@ -3,6 +3,7 @@ import theme from "theme";
 import { Theme, Link, Text, Box, Icon, Strong } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
+import { Override } from "@quarkly/components";
 import * as Components from "components";
 import { MdKeyboardArrowRight } from "react-icons/md";
 export default (() => {
@@ -22,7 +23,28 @@ export default (() => {
 					Gallery
 				</Text>
 			</Box>
-			<Components.Gallery />
+			<Components.Gallery
+				autoFillInProp
+				offScrollProp
+				hideLoaderFullImage={false}
+				aspectRatioProp="auto"
+				galleryItemNumbProp="20"
+			>
+				<Override
+					slot="Item"
+					stretchFull
+					showFullImage={false}
+					border-color="#690b0b"
+					border-width="2px"
+					border-style="red"
+					fullSrc="https://images.unsplash.com/photo-1493612276216-ee3925520721?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000"
+					previewSrc="https://images.unsplash.com/photo-1618249311687-ec9599381287?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000"
+				/>
+				<Override slot="Item 0" showFullImage={false} fullSrc="https://images.unsplash.com/photo-1617820784160-a18adff1cdc4?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000" previewSrc="https://images.unsplash.com/photo-1603993097397-89c963e325c7?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=2000" />
+				<Override slot="Item 3" showFullImage={false} />
+				<Override slot="Item 1" showFullImage previewSrc="https://images.unsplash.com/photo-1611095564350-2cbe940a8d99?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=2000" />
+				<Override slot="Item 2" showFullImage={false} />
+			</Components.Gallery>
 			<Box margin="50px 0px 0px 0px" quarkly-title="Architecture">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Архитектура:
@@ -371,7 +393,6 @@ export default (() => {
 						border-color="#eaeaea"
 					>
 						<Strong
-							data-q-widget-type="PRIMITIVE"
 							overflow-wrap="normal"
 							word-break="normal"
 							white-space="normal"
@@ -387,7 +408,6 @@ export default (() => {
 						- При выборе "По клику" - Загружаются и показываются кол-во изображений, помещающиеся в полтора экрана. Снизу появляется кнопка "Загрузить еще". По клику, подгружаются столько же изображений.
 						<br />
 						<Strong
-							data-q-widget-type="PRIMITIVE"
 							overflow-wrap="normal"
 							word-break="normal"
 							white-space="normal"
@@ -440,7 +460,6 @@ export default (() => {
 						border-color="#eaeaea"
 					>
 						<Strong
-							data-q-widget-type="PRIMITIVE"
 							overflow-wrap="normal"
 							word-break="normal"
 							white-space="normal"

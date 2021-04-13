@@ -1,6 +1,19 @@
 import React from 'react';
-import { Box } from '@quarkly/widgets';
 import { CommentEmbed } from 'disqus-react';
+import { useOverrides } from '@quarkly/components';
+import atomize from '@quarkly/atomize';
+import ComponentNotice from './ComponentNotice';
+const overrides = {
+	'Disqus Content': {
+		kind: 'Video Tag',
+		props: {
+			width: '100%',
+			height: 'auto'
+		}
+	}
+};
+const Wrapper = atomize.div();
+const Content = atomize.div();
 
 const DisqusComment = ({
 	commentIDProp,
@@ -9,10 +22,18 @@ const DisqusComment = ({
 	heightProp,
 	...props
 }) => {
-	return <Box width='100%' max-height='298px' {...props}>
-		      
-		<CommentEmbed commentId={commentIDProp} showParentComment={showParrent} width={widthProp} height={heightProp} />
-	</Box>;
+	const {
+		override,
+		rest
+	} = useOverrides(props, overrides);
+	return <Wrapper {...rest}>
+		<Content {...override('Disqus Content')} display={!commentIDProp && 'none'}>
+			        
+			<CommentEmbed commentId={commentIDProp} showParentComment={showParrent} width={widthProp} height={heightProp} />
+		</Content>
+		{!commentIDProp && <ComponentNotice message="Добавьте ID комментария на панели Props" />}
+		    
+	</Wrapper>;
 };
 
 const propInfo = {
@@ -22,7 +43,7 @@ const propInfo = {
 			en: 'ID Комментария'
 		},
 		control: 'input',
-		weight: .5
+		weight: 0.5
 	},
 	showParrent: {
 		title: 'Show Parrent Comment',
@@ -30,7 +51,7 @@ const propInfo = {
 			en: 'Show Parrent Comment'
 		},
 		control: 'checkbox',
-		weight: .5
+		weight: 0.5
 	},
 	widthProp: {
 		title: 'Ширина блока',
@@ -38,7 +59,7 @@ const propInfo = {
 			en: 'Ширина блока'
 		},
 		control: 'input',
-		weight: .5
+		weight: 0.5
 	},
 	heightProp: {
 		title: 'Высота блока',
@@ -46,11 +67,11 @@ const propInfo = {
 			en: 'Высота блока'
 		},
 		control: 'input',
-		weight: .5
+		weight: 0.5
 	}
 };
 const defaultProps = {
-	commentIDProp: '5306141969',
+	commentIDProp: '',
 	showParrent: false,
 	widthProp: '100%',
 	heightProp: '200px'

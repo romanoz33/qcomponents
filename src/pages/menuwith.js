@@ -3,6 +3,7 @@ import theme from "theme";
 import { Theme, Link, Text, Box } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
+import { Override } from "@quarkly/components";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
@@ -21,9 +22,19 @@ export default (() => {
 					Menu with Group | Dropdown
 				</Text>
 			</Box>
-			<Components.MenuWithGroups />
-			<Components.MenuWithDropdown collapse={false} />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
+				<Components.MenuWithGroups />
+				<Components.MenuWithDropdown>
+					<Override
+						slot="Link"
+						border-color="#dddada"
+						box-shadow="0 0 0 0 blue"
+						color="#7c8082"
+						text-decoration-line="initial"
+						font="20px sans-serif"
+					/>
+					<Override slot="Item" box-shadow="0" />
+				</Components.MenuWithDropdown>
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
 				</Text>

@@ -22,7 +22,7 @@ export default (() => {
 					GoogleMap{"\n\n"}
 				</Text>
 			</Box>
-			<GoogleMap query="Москва, Пушкинская  1" />
+			<GoogleMap query="Москва, Пушкинская  1" width="auto" />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
@@ -91,7 +91,6 @@ export default (() => {
 						Индивидуальный ключ api (
 						<Link
 							href="https://developers.google.com/maps/documentation/javascript/get-api-key"
-							data-q-widget-type="PRIMITIVE"
 							overflow-wrap="normal"
 							word-break="normal"
 							white-space="normal"

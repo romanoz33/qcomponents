@@ -3,6 +3,7 @@ import theme from "theme";
 import { Theme, Link, Text, Box } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
+import { Override } from "@quarkly/components";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
@@ -21,7 +22,77 @@ export default (() => {
 					Table
 				</Text>
 			</Box>
-			<Components.Table margin="0px auto 0px auto" showHeader showFooter showHeader2="Show" />
+			<Components.Table
+				showHeader
+				showFooter
+				showHeader2="Show"
+				colsProp="4"
+				rowsProp="3"
+			>
+				<Override slot="Text THead Col-0">
+					Name
+				</Override>
+				<Override slot="Text THead Col-1">
+					City
+				</Override>
+				<Override slot="Text THead Col-2">
+					Phone
+				</Override>
+				<Override slot="Text THead Col-3">
+					Sex
+				</Override>
+				<Override slot="Text TBody Row-0 Col-0">
+					Roman
+				</Override>
+				<Override slot="Text TBody Row-1 Col-0">
+					Alex
+				</Override>
+				<Override slot="Text TBody Row-2 Col-0">
+					David
+				</Override>
+				<Override slot="Text TFoot Col-0">
+					Sofia
+				</Override>
+				<Override slot="Text TBody Row-0 Col-1">
+					Moscow
+				</Override>
+				<Override slot="Text TBody Row-1 Col-1">
+					London
+				</Override>
+				<Override slot="Text TBody Row-2 Col-1">
+					Berlin{" \n\n"}
+				</Override>
+				<Override slot="Text TFoot Col-1">
+					Sydney{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-0 Col-2">
+					+7 999 000 00 00
+				</Override>
+				<Override slot="Text TBody Row-1 Col-2">
+					+44 20 0000 0000
+				</Override>
+				<Override slot="Text TBody Row-2 Col-2">
+					+49 3000 0000
+				</Override>
+				<Override slot="Text TFoot Col-2">
+					{" "}+61 28 000000
+				</Override>
+				<Override slot="Text TBody Row-0 Col-3">
+					male
+				</Override>
+				<Override slot="Text TBody Row-1 Col-3">
+					male
+				</Override>
+				<Override slot="Text TBody Row-2 Col-3">
+					male
+				</Override>
+				<Override slot="Text TFoot Col-3">
+					female
+				</Override>
+				<Override slot="Cell" background="#ffffff" />
+				<Override slot="Cell TBody Row-1" background="#ffffff" />
+				<Override slot="Cell THead" background="#ffffff" />
+			</Components.Table>
 			<Box margin="50px 0px 0px 0px">
 				<Text font="600 24px sans-serif">
 					Пропсы:

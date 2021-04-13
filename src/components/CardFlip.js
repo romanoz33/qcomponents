@@ -3,42 +3,42 @@ import { useOverrides } from '@quarkly/components';
 import { Box, Image } from '@quarkly/widgets';
 const overrides = {
 	'Flip Wrapper': {
-		'kind': 'Box',
-		'props': {
-			'position': 'relative',
+		kind: 'Box',
+		props: {
 			'width': '400px',
+			'position': 'relative',
 			'perspective': '600px'
 		}
 	},
 	'Flip Card Content': {
-		'kind': 'Box'
+		kind: 'Box'
 	},
 	'Flip Card Image': {
-		'kind': 'Image',
-		'props': {
-			'src': 'https://images.unsplash.com/photo-1615921773341-e87e0771e323?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000',
+		kind: 'Image',
+		props: {
 			'width': '100%',
 			'height': '100%',
+			'src': 'https://images.unsplash.com/photo-1615921773341-e87e0771e323?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000',
 			'object-fit': 'cover',
 			'object-position': '50% 50%'
 		}
 	},
 	'Flip Card Item': {
-		'kind': 'Box',
-		'props': {
+		kind: 'Box',
+		props: {
 			'position': 'absolute',
 			'top': '0',
+			'right': '0',
 			'bottom': '0',
 			'left': '0',
-			'right': '0',
 			'backface-visibility': 'hidden'
 		}
 	},
-	'Flip Card Item :Face': {
-		'kind': 'Box'
+	'Flip Card Item :face': {
+		kind: 'Box'
 	},
-	'Flip Card Item :Back': {
-		'kind': 'Box'
+	'Flip Card Item :back': {
+		kind: 'Box'
 	}
 };
 const flipStyles = {
@@ -114,8 +114,6 @@ const FlipCard = ({
 		override,
 		rest
 	} = useOverrides(props, overrides);
-	console.log({ ...override('Flip Card Content')
-	});
 	return <Box
 		{...override(`Flip Wrapper`)}
 		height={aspectRatioPercent === 'auto' ? '500px' : 'auto'}
@@ -137,10 +135,10 @@ const FlipCard = ({
 			{...override('Flip Card Content')}
 			{...isFlipped && currentStyles}
 		>
-			<Box {...override(`Flip Card Item`, `Flip Card Item :Face`)}>
+			<Box {...override(`Flip Card Item`, `Flip Card Item :face`)}>
 				<Image {...override('Flip Card Image')} />
 			</Box>
-			<Box {...override(`Flip Card Item`, `Flip Card Item :Back`)} {...currentStyles}>
+			<Box {...override(`Flip Card Item`, `Flip Card Item :back`)} {...currentStyles}>
 				{children}
 			</Box>
 		</Box>

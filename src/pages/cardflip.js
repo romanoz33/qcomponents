@@ -23,18 +23,38 @@ export default (() => {
 					Card Flip
 				</Text>
 			</Box>
-			<Components.CardFlip aspectRatioProp="auto" margin="0px auto 0px auto">
-				<Override slot="Flip Card Item" />
-				<Text font="--headline2">
-					Glasgow Street Art{"\n\n"}
-				</Text>
-				<Text font="20px/1.7 --fontFamily-sans">
-					<Strong>
-						Lorem Ipsum
-					</Strong>
-					{" "}is simply dummy text of the prthe leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum{"\n\n"}
-				</Text>
-			</Components.CardFlip>
+			<Text font="--headline3" text-align="justify" color="#a4a3a3">
+				{" "}Face                                                                        Back
+			</Text>
+			<Box display="flex">
+				<Components.CardFlip margin="0px auto 0px auto" width="600px" flipTriggerProp="Hover">
+					<Override slot="Flip Card Item" />
+					<Override slot="Flip Card Image" src="https://images.unsplash.com/photo-1618251824638-050380b200b5?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000" />
+					<Override slot="Flip Wrapper" display="inline-block" />
+					<Text font="--headline2">
+						Glasgow Street Art{"\n\n"}
+					</Text>
+					<Text font="20px/1.7 --fontFamily-sans">
+						<Strong>
+							Lorem Ipsum
+						</Strong>
+						{" "}is simply dummy text of the prthe leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum{"\n\n"}
+					</Text>
+				</Components.CardFlip>
+				<Components.CardFlip margin="0px auto 0px auto" width="600px" display="inline-block" flipTriggerProp="Hover">
+					<Override slot="Flip Card Item" />
+					<Override slot="Flip Card Image" src="https://images.unsplash.com/photo-1618249311687-ec9599381287?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000" />
+					<Text font="--headline2">
+						Glasgow Street Art{"\n\n"}
+					</Text>
+					<Text font="20px/1.7 --fontFamily-sans">
+						<Strong>
+							Lorem Ipsum
+						</Strong>
+						{" "}is simply dummy text of the prthe leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum{"\n\n"}
+					</Text>
+				</Components.CardFlip>
+			</Box>
 			<Box margin="50px 0px 0px 0px" quarkly-title="Architecture">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Архитектура:

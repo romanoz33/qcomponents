@@ -1,6 +1,19 @@
 import React, { useMemo } from 'react';
-import { Box } from '@quarkly/widgets';
 import { DiscussionEmbed } from 'disqus-react';
+import { useOverrides } from '@quarkly/components';
+import atomize from '@quarkly/atomize';
+import ComponentNotice from './ComponentNotice';
+const overrides = {
+	'Disqus Content': {
+		kind: 'Disqus Content',
+		props: {
+			width: '100%',
+			height: 'auto'
+		}
+	}
+};
+const Wrapper = atomize.div();
+const Content = atomize.div();
 
 const Disqus = ({
 	shortnameProp,
@@ -10,35 +23,26 @@ const Disqus = ({
 	titleProp,
 	...props
 }) => {
+	const {
+		override,
+		rest
+	} = useOverrides(props, overrides);
 	const commentsParams = useMemo(() => ({
 		identifier: identifierProp,
 		url: urlProp,
 		title: titleProp,
 		language: languageProp
 	}), [identifierProp, urlProp, titleProp, languageProp]);
-	return <Box width="100%" {...props}>
-		<DiscussionEmbed shortname={shortnameProp} config={commentsParams} />
-	</Box>;
+	return <Wrapper width="100%" {...props}>
+		<Content {...override('Disqus Content')} display={!identifierProp && 'none'}>
+			<DiscussionEmbed shortname={shortnameProp} config={commentsParams} />
+		</Content>
+		      
+		{!identifierProp && <ComponentNotice message="Добавьте ID обсуждения на панели Props" />}
+	</Wrapper>;
 };
 
 const propInfo = {
-	shortnameProp: {
-		title: 'Shortname',
-		description: {
-			en: 'Имя вашей ленты. Узнать можно здесь: https://disqus.com/admin/settings/general/'
-		},
-		control: 'input',
-		weight: .5
-	},
-	languageProp: {
-		title: 'Language',
-		description: {
-			en: 'Выберите язык'
-		},
-		control: 'select',
-		variants: ['ru', 'en', 'zh', 'fr', 'de'],
-		weight: .5
-	},
 	identifierProp: {
 		title: 'Идентификатор обсуждения',
 		description: {
@@ -65,6 +69,23 @@ const propInfo = {
 		control: 'input',
 		category: 'Discussions params',
 		weight: 1
+	},
+	shortnameProp: {
+		title: 'Shortname',
+		description: {
+			en: 'Имя вашей ленты. Узнать можно здесь: https://disqus.com/admin/settings/general/'
+		},
+		control: 'input',
+		weight: .5
+	},
+	languageProp: {
+		title: 'Language',
+		description: {
+			en: 'Выберите язык'
+		},
+		control: 'select',
+		variants: ['ru', 'en', 'zh', 'fr', 'de'],
+		weight: .5
 	}
 };
 const defaultProps = {

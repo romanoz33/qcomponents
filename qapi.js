@@ -58,7 +58,9 @@ export default {
 				"605b41432b962f001e7435c5",
 				"60631b1588a644001fa9baae",
 				"6065f3d3652a1e001e0773c1",
-				"6065f4ecc8e036001ed14911"
+				"6065f4ecc8e036001ed14911",
+				"606f0a9063816800228164a9",
+				"607467be0ba79600228c1fec"
 			]
 		},
 		"60474504627982001eb71a54": {
@@ -341,6 +343,16 @@ export default {
 			"id": "6065f4ecc8e036001ed14911",
 			"pageUrl": "pdfviewer",
 			"name": "PDF Viewer"
+		},
+		"606f0a9063816800228164a9": {
+			"id": "606f0a9063816800228164a9",
+			"pageUrl": "screen-page",
+			"name": "Screen Page"
+		},
+		"607467be0ba79600228c1fec": {
+			"id": "607467be0ba79600228c1fec",
+			"pageUrl": "form1",
+			"name": "YoomoneyDonateForm"
 		}
 	},
 	"mode": "production",
@@ -348,7 +360,10 @@ export default {
 	"site": {
 		"styles": {
 			"padding": "",
-			"margin": ""
+			"margin": "",
+			"display": "",
+			"justify-content": "",
+			"align-items": ""
 		},
 		"seo": {}
 	}

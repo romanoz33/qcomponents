@@ -28,7 +28,7 @@ export default (() => {
 					Submit
 				</Button>
 			</Formspree>
-			<Formspree text-align="center" endpoint="https://formspree.io/f/xnqoelje">
+			<Formspree text-align="center" endpoint="https://formspree.io/f/xnqoelje" margin="500px 0px 500px 0px">
 				<Input name="email" placeholder="Email" margin-right="4px" />
 				<Button>
 					Submit

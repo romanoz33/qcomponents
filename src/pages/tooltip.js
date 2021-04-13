@@ -22,7 +22,12 @@ export default (() => {
 					Tooltip
 				</Text>
 			</Box>
-			<Components.Tooltip arrowStatusProp tooltipStatusProp="hover" />
+			<Components.Tooltip arrowStatusProp tooltipStatusProp="always">
+				<Override slot="Title">
+					Hello
+				</Override>
+				<Override slot="Content" />
+			</Components.Tooltip>
 			<Box margin="50px 0px 0px 0px">
 				<Text font="600 24px sans-serif">
 					Пропсы:

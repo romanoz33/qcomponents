@@ -156,7 +156,6 @@ export default (() => {
 						Указывает, размещать ли{" "}
 						<Link
 							href="https://developers.facebook.com/docs/plugins/share-button/"
-							data-q-widget-type="PRIMITIVE"
 							overflow-wrap="normal"
 							word-break="normal"
 							white-space="normal"
@@ -271,7 +270,6 @@ button_count, button, box_count]{"   "}
 						Размер кнопки
 						<Link
 							href="https://developers.facebook.com/docs/plugins/like-button/#"
-							data-q-widget-type="PRIMITIVE"
 							overflow-wrap="normal"
 							word-break="normal"
 							white-space="normal"

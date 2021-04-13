@@ -130,7 +130,6 @@ export default (() => {
 						<Link
 							href="https://www.livechat.com/help/dividing-live-chat-by-group/"
 							target="_blank"
-							data-q-widget-type="PRIMITIVE"
 							overflow-wrap="normal"
 							word-break="normal"
 							white-space="normal"
@@ -163,7 +162,6 @@ export default (() => {
 					>
 						Chat sessions between{" "}
 						<Span
-							data-q-widget-type="PRIMITIVE"
 							overflow-wrap="normal"
 							word-break="normal"
 							white-space="normal"
@@ -189,7 +187,6 @@ enable, disable]
 						(В случае, если установлены несколько чатов из разных групп, сеанс будет один)
 						<Link
 							href="https://beta.quarkly.io/preview#/livechat"
-							data-q-widget-type="PRIMITIVE"
 							overflow-wrap="normal"
 							word-break="normal"
 							white-space="normal"

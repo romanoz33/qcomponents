@@ -27,9 +27,11 @@ export default (() => {
 			</Components.Collapse>
 			<Box />
 			<Components.Collapse animFunction="ease-in">
+				<Override slot="Button">
+					Toggle
+				</Override>
 				<Text font="18px/1.7 sans-serif" padding="10px 15px 10px 15px">
 					<Strong
-						data-q-widget-type="PRIMITIVE"
 						overflow-wrap="normal"
 						word-break="normal"
 						white-space="normal"
@@ -43,7 +45,6 @@ export default (() => {
 					<br />
 					<br />
 					<Strong
-						data-q-widget-type="PRIMITIVE"
 						overflow-wrap="normal"
 						word-break="normal"
 						white-space="normal"

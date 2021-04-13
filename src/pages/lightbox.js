@@ -23,16 +23,16 @@ export default (() => {
 					LightBox Image
 				</Text>
 			</Box>
-			<Components.LIghtBoxImage showImageProp={false} offLightboxProp={false}>
-				<Override slot="Lightbox image" src="https://images.unsplash.com/photo-1616628950295-d3288bd7a96d?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000" />
-				<Image width="300px" height="450px" src="https://images.unsplash.com/photo-1616628950295-d3288bd7a96d?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000" />
+			<Components.LIghtBoxImage showImageProp={false} offLightboxProp={false} text-align="center">
+				<Override slot="Lightbox image" src="https://romanbabad.ucoz.net/src/aba/1/default-picture-1440.png" />
+				<Image width="300px" src="https://romanbabad.ucoz.net/src/aba/1/default-picture-1440.png" text-align="center" />
 			</Components.LIghtBoxImage>
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
 					LightBox Map
 				</Text>
 			</Box>
-			<Components.LighBoxMap offLightboxProp={false}>
+			<Components.LighBoxMap offLightboxProp={false} text-align="center">
 				<Button>
 					Открыть карту
 				</Button>
@@ -42,7 +42,8 @@ export default (() => {
 					LightBox Video
 				</Text>
 			</Box>
-			<Components.LightBoxVideo>
+			<Components.LightBoxVideo text-align="center">
+				<Override slot="Lightbox video" src="https://uploads.quarkly.io/molecules/default-video.mp4" />
 				<Box>
 					<Icon
 						category="md"

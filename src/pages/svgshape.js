@@ -21,7 +21,37 @@ export default (() => {
 					Svg Shape
 				</Text>
 			</Box>
-			<Components.SvgShape width="300px" height="200px" margin="0px auto 0px auto" strokeWidth="8" />
+			<Box display="flex" margin="500px 10 500px 100px">
+				<Components.SvgShape
+					width="300px"
+					height="200px"
+					margin="0px auto 0px auto"
+					strokeWidth="8"
+					type="Circle"
+					stroke="#7df7e0"
+					fill="#194968"
+				/>
+				<Components.SvgShape
+					width="300px"
+					height="200px"
+					margin="0px auto 0px auto"
+					strokeWidth="8"
+					fill="#0094ff"
+					stroke="#393838"
+					strokeLinecap="round"
+					strokeDasharray="31"
+					type="Square"
+				/>
+				<Components.SvgShape
+					width="300px"
+					height="200px"
+					margin="0px auto 0px auto"
+					strokeWidth="8"
+					type="Ellipse"
+					fill="#f76363"
+					stroke="#c4c8c8"
+				/>
+			</Box>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:

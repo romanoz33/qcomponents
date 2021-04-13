@@ -1,274 +1,314 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useOverrides } from '@quarkly/components';
 import { Box, Text, Icon } from '@quarkly/widgets';
 import { BsDot } from "react-icons/bs";
-let overrides = {
-	'Timeline Line': {
-		kind: 'Box'
+const overrides = {
+	'Line': {
+		kind: 'Box',
+		props: {
+			'top': '0px',
+			'width': '2px',
+			'min-width': '0px',
+			'height': '100%',
+			'background-color': '--color-dark',
+			'position': 'absolute',
+			'opacity': '.1'
+		}
 	},
-	'Timeline Item': {
-		kind: 'Box'
+	'Item': {
+		kind: 'Box',
+		props: {
+			'box-sizing': 'border-box',
+			'position': 'relative'
+		}
 	},
-	'Timeline Point': {
-		kind: 'Icon'
+	'Point': {
+		kind: 'Icon',
+		props: {
+			size: '40px',
+			category: 'bs',
+			icon: BsDot,
+			'top': '-8px',
+			'width': '40px',
+			'height': '40px',
+			'color': '--color-dark',
+			'position': 'absolute'
+		}
 	},
-	'Timeline Dates': {
-		kind: 'Text'
+	'Dates': {
+		kind: 'Text',
+		props: {
+			children: '18:00 - 20:30',
+			'margin': '0 0 8px',
+			'font': '--font-base',
+			'color': '--color-darkL1'
+		}
 	},
-	'Timeline Title': {
-		kind: 'Text'
+	'Title': {
+		kind: 'Text',
+		props: {
+			children: 'Desktop vs mobile',
+			'margin': '0 0 6px',
+			'font': '--font-headline3',
+			'color': '--color-dark'
+		}
 	},
-	'Timeline Descr': {
-		kind: 'Text'
+	'Descr': {
+		kind: 'Text',
+		props: {
+			children: 'Fusce dapibus, tellus ac cursus commodo, tondor mauris condimentum fermentum.',
+			'margin': '0px',
+			'font': '--font-base',
+			'color': '--color-darkL2'
+		}
 	}
+};
+const getItemStyles = {
+	fromLeft: numb => ({
+		'padding-left': numb % 2 ? '30px' : '',
+		'padding-right': numb % 2 ? '' : '30px',
+		'padding-bottom': '15px',
+		'width': '50%',
+		'align-self': numb % 2 ? 'flex-end' : 'flex-start',
+		'text-align': numb % 2 ? 'left' : 'right'
+	}),
+	fromRight: numb => ({
+		'padding-left': numb % 2 ? '' : '30px',
+		'padding-right': numb % 2 ? '30px' : '',
+		'padding-bottom': '15px',
+		'width': '50%',
+		'align-self': numb % 2 ? 'flex-start' : 'flex-end',
+		'text-align': numb % 2 ? 'right' : 'left'
+	}),
+	toLeft: () => ({
+		'padding-left': '30px',
+		'padding-right': '0px',
+		'padding-bottom': '30px',
+		'width': '100%',
+		'align-self': 'flex-start',
+		'text-align': 'left'
+	}),
+	toRight: () => ({
+		'padding-left': '0px',
+		'padding-right': '30px',
+		'padding-bottom': '30px',
+		'width': '100%',
+		'align-self': 'flex-end',
+		'text-align': 'right'
+	})
+};
+const getPointStyles = {
+	fromLeft: numb => ({
+		'left': numb % 2 ? '-20px' : '',
+		'right': numb % 2 ? '' : '-20px'
+	}),
+	fromRight: numb => ({
+		'left': numb % 2 ? '' : '-20px',
+		'right': numb % 2 ? '-20px' : ''
+	}),
+	toLeft: () => ({
+		'left': '0',
+		'right': 'auto'
+	}),
+	toRight: () => ({
+		'left': 'auto',
+		'right': '0'
+	})
+};
+const getLineStyles = {
+	fromLeft: () => ({
+		'left': '50%',
+		'right': 'auto',
+		'transform': 'translateX(-50%)'
+	}),
+	fromRight: () => ({
+		'left': 'auto',
+		'right': '50%',
+		'transform': 'translateX(50%)'
+	}),
+	toLeft: () => ({
+		'left': '2px',
+		'right': 'auto',
+		'transform': 'none'
+	}),
+	toRight: () => ({
+		'left': 'auto',
+		'right': '2px',
+		'transform': 'none'
+	})
 };
 
 const TimelineLine = ({
 	alignDesktop,
 	alignMobile,
-	media,
+	breakpoint,
 	override
 }) => {
-	const styles = {
-		'from the left': {
-			lineLeft: '50%',
-			lineRight: 'auto',
-			lineTransform: 'translateX(-50%)'
-		},
-		'from the right': {
-			lineLeft: 'auto',
-			lineRight: '50%',
-			lineTransform: 'translateX(50%)'
-		},
-		'to the left': {
-			lineLeft: '2px',
-			lineRight: 'auto',
-			lineTransform: 'none'
-		},
-		'to the right': {
-			lineLeft: 'auto',
-			lineRight: '2px',
-			lineTransform: 'none'
-		}
-	};
-	overrides[`Timeline Line`].props = {
-		[`${media}-left`]: styles[alignMobile].lineLeft,
-		[`${media}-right`]: styles[alignMobile].lineRight,
-		[`${media}-transform`]: styles[alignMobile].lineTransform
-	};
-	return <Box
-		top="0"
-		width="2px"
-		min-width="auto"
-		height="100%"
-		background-color="--color-dark"
-		position="absolute"
-		opacity=".1"
-		left={styles[alignDesktop].lineLeft}
-		right={styles[alignDesktop].lineRight}
-		transform={styles[alignDesktop].lineTransform}
-		{...override('Timeline Line')}
-	/>;
+	const desktopLineStyles = useMemo(() => {
+		return getLineStyles[alignDesktop]();
+	}, [alignDesktop]);
+	const mobileLineStyles = useMemo(() => {
+		const styles = getLineStyles[alignMobile]();
+		return {
+			[`${breakpoint}-left`]: styles.left,
+			[`${breakpoint}-right`]: styles.right,
+			[`${breakpoint}-transform`]: styles.transform
+		};
+	}, [alignMobile, breakpoint]);
+	return <Box {...desktopLineStyles} {...mobileLineStyles} {...override('Line')} />;
 };
 
 const TimelineItem = ({
 	numb,
 	alignDesktop,
 	alignMobile,
-	media,
+	breakpoint,
 	override
 }) => {
-	const styles = {
-		'from the left': {
-			itemPaddingLeft: numb % 2 ? '30px' : '',
-			itemPaddingRight: numb % 2 ? '' : '30px',
-			itemPaddingBottom: '15px',
-			itemWidth: '50%',
-			itemAlignSelf: numb % 2 ? 'flex-end' : 'flex-start',
-			itemTextAlign: numb % 2 ? 'left' : 'right',
-			pointLeft: numb % 2 ? '-20px' : '',
-			pointRight: numb % 2 ? '' : '-20px'
-		},
-		'from the right': {
-			itemPaddingLeft: numb % 2 ? '' : '30px',
-			itemPaddingRight: numb % 2 ? '30px' : '',
-			itemPaddingBottom: '15px',
-			itemWidth: '50%',
-			itemAlignSelf: numb % 2 ? 'flex-start' : 'flex-end',
-			itemTextAlign: numb % 2 ? 'right' : 'left',
-			pointLeft: numb % 2 ? '' : '-20px',
-			pointRight: numb % 2 ? '-20px' : ''
-		},
-		'to the left': {
-			itemPaddingLeft: '30px',
-			itemPaddingRight: '0px',
-			itemPaddingBottom: '30px',
-			itemWidth: '100%',
-			itemAlignSelf: 'flex-start',
-			itemTextAlign: 'left',
-			pointLeft: '0',
-			pointRight: 'auto'
-		},
-		'to the right': {
-			itemPaddingLeft: '0px',
-			itemPaddingRight: '30px',
-			itemPaddingBottom: '30px',
-			itemWidth: '100%',
-			itemAlignSelf: 'flex-end',
-			itemTextAlign: 'right',
-			pointLeft: 'auto',
-			pointRight: '0'
-		}
-	};
-	overrides['Timeline Item'].props = {
-		[`${media}-padding-left`]: styles[alignMobile].itemPaddingLeft,
-		[`${media}-padding-right`]: styles[alignMobile].itemPaddingRight,
-		[`${media}-padding-bottom`]: styles[alignMobile].itemPaddingBottom,
-		[`${media}-width`]: styles[alignMobile].itemWidth,
-		[`${media}-align-self`]: styles[alignMobile].itemAlignSelf,
-		[`${media}-text-align`]: styles[alignMobile].itemTextAlign
-	};
-	overrides['Timeline Point'].props = {
-		[`${media}-left`]: styles[alignMobile].pointLeft,
-		[`${media}-right`]: styles[alignMobile].pointRight
-	};
-	return <Box
-		padding-left={styles[alignDesktop].itemPaddingLeft}
-		padding-right={styles[alignDesktop].itemPaddingRight}
-		padding-bottom={styles[alignDesktop].itemPaddingBottom}
-		width={styles[alignDesktop].itemWidth}
-		align-self={styles[alignDesktop].itemAlignSelf}
-		text-align={styles[alignDesktop].itemTextAlign}
-		box-sizing="border-box"
-		position="relative"
-		{...override('Timeline Item', `Timeline ${numb} Item`)}
-	>
+	const desktopItemStyles = useMemo(() => {
+		return getItemStyles[alignDesktop](numb);
+	}, [alignDesktop]);
+	const mobileItemStyles = useMemo(() => {
+		const styles = getItemStyles[alignMobile](numb);
+		return {
+			[`${breakpoint}-padding-left`]: styles['padding-left'],
+			[`${breakpoint}-padding-right`]: styles['padding-right'],
+			[`${breakpoint}-padding-bottom`]: styles['padding-bottom'],
+			[`${breakpoint}-width`]: styles['width'],
+			[`${breakpoint}-align-self`]: styles['align-self'],
+			[`${breakpoint}-text-align`]: styles['text-align']
+		};
+	}, [alignMobile, breakpoint]);
+	const desktopPointStyles = useMemo(() => {
+		return getPointStyles[alignDesktop](numb);
+	}, [alignDesktop]);
+	const mobilePointStyles = useMemo(() => {
+		const styles = getPointStyles[alignMobile](numb);
+		return {
+			[`${breakpoint}-left`]: styles.left,
+			[`${breakpoint}-right`]: styles.right
+		};
+	}, [alignMobile, breakpoint]);
+	const order = useMemo(() => numb % 2 ? ':odd' : ':even', [numb]);
+	return <Box {...desktopItemStyles} {...mobileItemStyles} {...override('Item', `Item ${order}`, `Item ${numb}`)}>
 		      
-		<Icon
-			top="-8px"
-			left={styles[alignDesktop].pointLeft}
-			right={styles[alignDesktop].pointRight}
-			width="40px"
-			height="40px"
-			color="--color-dark"
-			position="absolute"
-			size="40px"
-			category="bs"
-			icon={BsDot}
-			{...override('Timeline Point', `Timeline ${numb} Point`)}
-		/>
+		<Icon {...desktopPointStyles} {...mobilePointStyles} {...override('Point', `Point ${order}`, `Point ${numb}`)} />
 		      
-		<Text margin="0 0 8px" font="--font-base" color="--color-darkL1" {...override('Timeline Dates', `Timeline ${numb} Dates`)}>
-			        
-			{override(`Timeline ${numb} Dates`).children || '18:00 - 20:30'}
-			      
-		</Text>
+		<Text {...override('Dates', `Dates ${order}`, `Dates ${numb}`)} />
 		      
-		<Text margin="0 0 6px" font="--font-headline3" color="--color-dark" {...override('Timeline Title', `Timeline ${numb} Title`)}>
-			        
-			{override(`Timeline ${numb} Title`).children || 'Desktop vs mobile'}
-			      
-		</Text>
+		<Text {...override('Title', `Title ${order}`, `Title ${numb}`)} />
 		      
-		<Text margin="0" font="--font-base" color="--color-darkL2" {...override('Timeline Descr', `Timeline ${numb} Descr`)}>
-			        
-			{override(`Timeline ${numb} Descr`).children || 'Fusce dapibus, tellus ac cursus commodo, tondor mauris condimentum fermentum.'}
-			      
-		</Text>
+		<Text {...override('Descr', `Descr ${order}`, `Descr ${numb}`)} />
 		    
 	</Box>;
 };
 
 const Timeline = ({
-	items,
+	itemsProp,
 	alignDesktop,
 	alignMobile,
-	media,
+	breakpoint,
 	...props
 }) => {
-	items = +items;
-	Array(items || 0).fill().map((item, numb) => {
-		overrides[`Timeline ${numb} Item`] = {
-			kind: 'Box'
-		};
-		overrides[`Timeline ${numb} Point`] = {
-			kind: 'Icon'
-		};
-		overrides[`Timeline ${numb} Dates`] = {
-			kind: 'Text'
-		};
-		overrides[`Timeline ${numb} Title`] = {
-			kind: 'Text'
-		};
-		overrides[`Timeline ${numb} Descr`] = {
-			kind: 'Text'
-		};
-	});
 	const {
 		override,
 		rest
 	} = useOverrides(props, overrides);
-	return <Box
-		width="100%"
-		max-width="100%"
-		flex-direction="column"
-		box-sizing="border-box"
-		position="relative"
-		display="flex"
-		overflow-x="hidden"
-		overflow-y="visible"
-		{...rest}
-	>
+	const items = useMemo(() => parseInt(itemsProp) > 1 ? parseInt(itemsProp) : 1, [itemsProp]);
+	return <Box {...rest}>
 		      
-		<TimelineLine alignDesktop={alignDesktop} alignMobile={alignMobile} media={media} override={override} />
+		<TimelineLine alignDesktop={alignDesktop} alignMobile={alignMobile} breakpoint={breakpoint} override={override} />
 		      
-		{Array(items || 1).fill().map((item, numb) => <TimelineItem
+		{Array(items).fill().map((item, numb) => <TimelineItem
 			numb={numb}
 			alignDesktop={alignDesktop}
 			alignMobile={alignMobile}
-			media={media}
+			breakpoint={breakpoint}
 			override={override}
 		/>)}
 	</Box>;
 };
 
 const propInfo = {
-	items: {
-		title: 'Number of items',
-		control: 'number',
+	itemsProp: {
+		title: 'Количество карточек',
+		control: 'input',
 		type: 'number',
 		category: 'Main',
 		weight: 1
 	},
 	alignDesktop: {
-		title: 'Alignment of items on the desktop',
+		title: 'Выравнивание карточек на десктопе',
 		control: 'select',
-		variants: ['from the left', 'from the right', 'to the left', 'to the right'],
-		type: 'string',
+		variants: [{
+			title: {
+				en: 'Начиная с левой стороны',
+				ru: 'Начиная с левой стороны'
+			},
+			value: 'fromLeft'
+		}, {
+			title: {
+				en: 'Начиная с правой стороны',
+				ru: 'Начиная с правой стороны'
+			},
+			value: 'fromRight'
+		}, {
+			title: {
+				en: 'По левой стороне',
+				ru: 'По левой стороне'
+			},
+			value: 'toLeft'
+		}, {
+			title: {
+				en: 'По правой стороне',
+				ru: 'По правой стороне'
+			},
+			value: 'toRight'
+		}],
 		category: 'Main',
 		weight: 1
 	},
 	alignMobile: {
-		title: 'Alignment of items on the mobile',
+		title: 'Выравнивание карточек на мобильных',
 		control: 'select',
-		variants: ['to the left', 'to the right'],
-		type: 'string',
+		variants: [{
+			title: {
+				en: 'По левой стороне',
+				ru: 'По левой стороне'
+			},
+			value: 'toLeft'
+		}, {
+			title: {
+				en: 'По правой стороне',
+				ru: 'По правой стороне'
+			},
+			value: 'toRight'
+		}],
 		category: 'Main',
 		weight: 1
 	},
-	media: {
-		title: 'Mobile starts with the breakpoint',
-		control: 'text',
-		type: 'string',
+	breakpoint: {
+		title: 'Мобильный вид начинается с breakpoint',
+		control: 'input',
+		variants: ['sm', 'md', 'lg'],
+		type: 'text',
 		category: 'Main',
 		weight: 1
 	}
 };
 const defaultProps = {
-	items: 4,
-	alignDesktop: 'from the left',
-	alignMobile: 'to the left',
-	media: 'sm'
+	itemsProp: 4,
+	alignDesktop: 'fromLeft',
+	alignMobile: 'toLeft',
+	breakpoint: 'sm',
+	'width': '100%',
+	'max-width': '100%',
+	'flex-direction': 'column',
+	'box-sizing': 'border-box',
+	'position': 'relative',
+	'display': 'flex',
+	'overflow-x': 'hidden',
+	'overflow-y': 'visible'
 };
 export default Object.assign(Timeline, {
 	title: 'Timeline',

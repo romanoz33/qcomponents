@@ -25,7 +25,6 @@ export default (() => {
 						Ошибка при публикации:{" "}
 						<Link
 							href="https://app.netlify.com/sites/hungry-wozniak-7150fd/deploys/604b8f9a39bba01cb86cdbc9"
-							data-q-widget-type="PRIMITIVE"
 							overflow-wrap="normal"
 							word-break="normal"
 							white-space="normal"

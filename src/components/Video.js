@@ -1,9 +1,19 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import atomize from '@quarkly/atomize';
+import { useOverrides } from '@quarkly/components';
 import ComponentNotice from './ComponentNotice';
+const overrides = {
+	'Video Tag': {
+		kind: 'Video Tag',
+		props: {
+			'width': '100%',
+			'height': 'auto'
+		}
+	}
+};
 const Video = atomize.video();
+const Wrapper = atomize.div();
 const Content = atomize.div();
-const Empty = atomize.div();
 
 const VideoComponent = ({
 	src,
@@ -16,32 +26,37 @@ const VideoComponent = ({
 	children,
 	...props
 }) => {
-	const contentRef = useRef(null);
+	const {
+		override,
+		rest
+	} = useOverrides(props, overrides);
 	const [isEmpty, setEmpty] = useState(false);
-	const srcVal = src.trim();
+	const contentRef = useRef(null);
+	const srcVal = useMemo(() => src.trim(), [src]);
+	const showNotice = useMemo(() => isEmpty && !srcVal, [isEmpty, srcVal]);
 	useEffect(() => {
 		setEmpty(contentRef.current?.innerHTML === '<!--child placeholder-->');
 	}, [children]);
-	const Wrapper = !isEmpty || srcVal ? Video : Empty;
-	return <Wrapper
-		width='100%'
-		height='auto'
-		src={srcVal}
-		poster={poster}
-		autoPlay={autoPlay}
-		controls={controls}
-		muted={muted}
-		loop={loop}
-		onMouseEnter={playOnHover ? e => e.target.play() : undefined}
-		onMouseLeave={playOnHover ? e => e.target.pause() : undefined}
-		{...props}
-	>
-		<Content ref={contentRef}>
-			{React.Children.map(children, child => React.isValidElement(child) && React.cloneElement(child, {
-				container: 'video'
-			}))}
-		</Content>
-		{isEmpty && !srcVal && <ComponentNotice message={'Добавьте свойство SRC или перетащите сюда компонент "Source"'} />}
+	return <Wrapper {...rest}>
+		<Video
+			src={srcVal}
+			poster={poster}
+			autoPlay={autoPlay}
+			controls={controls}
+			muted={muted}
+			loop={loop}
+			onMouseEnter={playOnHover ? e => e.target.play() : undefined}
+			onMouseLeave={playOnHover ? e => e.target.pause() : undefined}
+			{...override('Video Tag')}
+			display={showNotice && 'none'}
+		>
+			<Content ref={contentRef}>
+				{React.Children.map(children, child => React.isValidElement(child) && React.cloneElement(child, {
+					container: 'video'
+				}))}
+			</Content>
+		</Video>
+		{showNotice && <ComponentNotice message={'Добавьте свойство SRC или перетащите сюда компонент "Source"'} />}
 	</Wrapper>;
 };
 
@@ -125,8 +140,8 @@ const propInfo = {
 	}
 };
 const defaultProps = {
-	src: 'https://uploads.quarkly.io/molecules/default-video.mp4',
-	poster: 'https://uploads.quarkly.io/molecules/default-video-poster.png',
+	src: '',
+	poster: '',
 	controls: true
 };
 export default atomize(VideoComponent)({

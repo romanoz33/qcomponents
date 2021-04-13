@@ -295,7 +295,6 @@ export default (() => {
 						Внутренний идентификатор страницы. 
 Используйте{" "}
 						<Strong
-							data-q-widget-type="PRIMITIVE"
 							overflow-wrap="normal"
 							word-break="normal"
 							white-space="normal"
@@ -341,7 +340,6 @@ export default (() => {
 					>
 						Максимальное число комментариев на странице. (мин:{" "}
 						<Em
-							data-q-widget-type="PRIMITIVE"
 							overflow-wrap="normal"
 							word-break="normal"
 							white-space="normal"
@@ -353,7 +351,6 @@ export default (() => {
 						</Em>
 						, мак:{" "}
 						<Em
-							data-q-widget-type="PRIMITIVE"
 							overflow-wrap="normal"
 							word-break="normal"
 							white-space="normal"
