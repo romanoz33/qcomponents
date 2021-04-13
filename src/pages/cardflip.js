@@ -20,7 +20,7 @@ export default (() => {
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
-					Card Flip
+					Slider
 				</Text>
 			</Box>
 			<Text font="--headline3" text-align="justify" color="#a4a3a3">

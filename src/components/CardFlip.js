@@ -18,7 +18,7 @@ const overrides = {
 		props: {
 			'width': '100%',
 			'height': '100%',
-			'src': 'https://images.unsplash.com/photo-1615921773341-e87e0771e323?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000',
+			'src': 'https://uploads.quarkly.io/molecules/default-picture-1200.png',
 			'object-fit': 'cover',
 			'object-position': '50% 50%'
 		}
