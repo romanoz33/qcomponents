@@ -38,7 +38,7 @@ const TextLoop = ({
 		rest
 	} = useOverrides(props, overrides);
 	const list = slides.length > 0 ? slides.split(',').reverse() : [];
-	return <Box {...rest} margin="40px 0" font="--headline2">
+	return <Box {...rest} padding="40px 0" font="--headline2">
 		      
 		<Text {...override('Before Text')}>
 			        

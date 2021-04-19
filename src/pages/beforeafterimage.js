@@ -16,7 +16,6 @@ export default (() => {
 			<meta name={"description"} content={"Web site created using quarkly.io"} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
-		<Components.HeadMenu />
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Icon category="md" icon={MdKeyboardArrowLeft} />
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
@@ -24,7 +23,7 @@ export default (() => {
 					Before After Image
 				</Text>
 			</Box>
-			<Components.BeforeAfterImage aspectRatio="16:9" activationType="onDrag" margin="500px 100px 500px 100px">
+			<Components.BeforeAfterImage aspectRatio="16:9" activationType="onDrag">
 				<Override slot="Slider" border-width="2px" />
 				<Override slot="Image" />
 			</Components.BeforeAfterImage>
@@ -135,6 +134,7 @@ export default (() => {
 				</Box>
 			</Box>
 		</Box>
+		<Components.HeadMenu />
 		<Link
 			font={"--capture"}
 			font-size={"10px"}

@@ -3,6 +3,7 @@ import theme from "theme";
 import { Theme, Link, Text, Box } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
+import { Override } from "@quarkly/components";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
@@ -21,7 +22,11 @@ export default (() => {
 					Loop Text{"\n\n"}
 				</Text>
 			</Box>
-			<Components.LoopText fade mask display="block" />
+			<Components.LoopText fade mask display="block">
+				<Override slot="After Text" />
+				<Override slot="Before Text" />
+				<Override slot="Looped Text" />
+			</Components.LoopText>
 			<Box quarkly-title="Props" height="auto" min-height="20px" margin="500 0px 0px 0px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:

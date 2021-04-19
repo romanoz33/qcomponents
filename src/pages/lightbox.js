@@ -23,7 +23,7 @@ export default (() => {
 					LightBox Image
 				</Text>
 			</Box>
-			<Components.LIghtBoxImage showImageProp={false} offLightboxProp={false} text-align="center">
+			<Components.LIghtBoxImage showImageProp={false} offLightboxProp={false} text-align="center" margin="500px 0px 500px 0px">
 				<Override slot="Lightbox image" src="https://romanbabad.ucoz.net/src/aba/1/default-picture-1440.png" />
 				<Image width="300px" src="https://romanbabad.ucoz.net/src/aba/1/default-picture-1440.png" text-align="center" />
 			</Components.LIghtBoxImage>
@@ -32,9 +32,9 @@ export default (() => {
 					LightBox Map
 				</Text>
 			</Box>
-			<Components.LighBoxMap offLightboxProp={false} text-align="center">
+			<Components.LighBoxMap offLightboxProp={false} text-align="center" margin="500px 0px 500px 0px">
 				<Button>
-					Открыть карту
+					Open Map
 				</Button>
 			</Components.LighBoxMap>
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
@@ -42,20 +42,26 @@ export default (() => {
 					LightBox Video
 				</Text>
 			</Box>
-			<Components.LightBoxVideo text-align="center">
+			<Components.LightBoxVideo text-align="center" margin="500px 0px 500px 0px">
 				<Override slot="Lightbox video" src="https://uploads.quarkly.io/molecules/default-video.mp4" />
 				<Box>
 					<Icon
 						category="md"
 						icon={MdPlayCircleFilled}
-						size="50px"
+						size="100px"
 						display="flex"
 						width="300px"
 						text-align="center"
 						justify-content="center"
 					/>
-					<Text display="flex" width="300px" text-align="center" justify-content="center">
-						Click Play
+					<Text
+						display="flex"
+						width="300px"
+						text-align="center"
+						justify-content="center"
+						font="700 20px sans-serif"
+					>
+						Play
 					</Text>
 				</Box>
 			</Components.LightBoxVideo>

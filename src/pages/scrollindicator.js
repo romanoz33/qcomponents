@@ -17,9 +17,8 @@ export default (() => {
 			<meta name={"description"} content={"Web site created using quarkly.io"} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
-		<Components.ScrollIndicator />
-		<Components.ScrollIndicator />
 		<Components.HeadMenu />
+		<Components.ScrollIndicator />
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">

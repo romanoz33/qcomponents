@@ -17,7 +17,7 @@ export default (() => {
 		</Helmet>
 		<Components.HeadMenu />
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
-			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
+			<Box margin="50px 0px 70px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
 					Timer
 				</Text>
@@ -28,11 +28,20 @@ export default (() => {
 				showTextDone="complete"
 				showMinutes
 				showSeconds
-				max-width="600px"
+				max-width="880px"
+				justify-content="center"
 				margin="0px auto 0px auto"
 			>
-				<Override slot="Timer Value" />
-				<Override slot="Item" background="#f0f0f0" margin="0px 5px 0px 5px" box-shadow="inset 2px 2px 5px rgba(154, 147, 140, 0.5)" />
+				<Override
+					slot="Item"
+					background="--color-lightD1"
+					margin="0px 24px 0px 5px"
+					box-shadow="inset 2px 2px 5px rgba(154, 147, 140, 0.5)"
+					padding="28px 32px 36px 32px"
+					border-radius="32px"
+				/>
+				<Override slot="Value" font="--headline2" color="--dark" />
+				<Override slot="Title" font="--headline3" color="--greyD2" />
 			</Components.Timer>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">

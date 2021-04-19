@@ -51,7 +51,7 @@ const ScrollIndicator = props => {
 		override,
 		rest
 	} = useOverrides(props, overrides);
-	return <Box {...rest} {...override('Wrapper Indicator')}>
+	return <Box {...override('Wrapper Indicator')} {...rest}>
 		<Box {...override('Indicator')} width={`${progress}%`}></Box>
 	</Box>;
 };

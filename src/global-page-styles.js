@@ -401,6 +401,13 @@ const pageStyles = {
         "display": "",
         "justify-content": "",
         "align-items": ""
+    },
+    "test": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
     }
 };
 

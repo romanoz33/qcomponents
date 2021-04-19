@@ -1,6 +1,6 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Link, Text, Box, Hr, Strong } from "@quarkly/widgets";
+import { Theme, Link, Text, Box, Button, Hr, Strong } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
 import { Override } from "@quarkly/components";
@@ -22,11 +22,14 @@ export default (() => {
 					Tooltip
 				</Text>
 			</Box>
-			<Components.Tooltip arrowStatusProp tooltipStatusProp="always">
+			<Components.Tooltip arrowStatusProp tooltipStatusProp="hover" arrowOffsetProp="12px" margin="500px 0px 500px 0px">
 				<Override slot="Title">
 					Hello
 				</Override>
-				<Override slot="Content" />
+				<Override slot="Content" text-align="center" />
+				<Button>
+					Button
+				</Button>
 			</Components.Tooltip>
 			<Box margin="50px 0px 0px 0px">
 				<Text font="600 24px sans-serif">

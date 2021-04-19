@@ -187,7 +187,7 @@ const overrides = {
 		}
 	},
 	'Point Icon': {
-		kind: 'Box',
+		kind: 'Icon',
 		props: {
 			category: 'go',
 			icon: GoPrimitiveDot,
@@ -302,7 +302,7 @@ const Point = ({
 
 let animateTimer;
 
-const SliderComponent = ({
+const CarouselComponent = ({
 	slidesProp,
 	aspectRatio,
 	durationProp,
@@ -529,12 +529,10 @@ const defaultProps = {
 	showLink: true,
 	'position': 'relative'
 };
-export default Object.assign(SliderComponent, {
-	title: 'Slider',
-	description: {
-		en: 'Awesome swipe slider!'
-	},
+Object.assign(CarouselComponent, {
+	title: 'Carousel',
 	propInfo,
 	defaultProps,
 	overrides
 });
+export default CarouselComponent;

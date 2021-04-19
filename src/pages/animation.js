@@ -1,6 +1,6 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Link, Text, Box, Strong, Icon } from "@quarkly/widgets";
+import { Theme, Link, Text, Box, Icon } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
 import * as Components from "components";
@@ -28,12 +28,12 @@ export default (() => {
 				timingFunction="ease"
 				duration="2s"
 				animation="↑ Slide In"
+				lg-margin="500px 0px 500px 0px"
 			>
 				<Text quarkly-title="Lorem" font="normal 20px/150% sans-serif">
-					<Strong>
-						Lorem Ipsum
-					</Strong>
-					{" "}is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+					<br />
+					<br />
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.{"\n\n\n"}
 				</Text>
 			</Components.Animation>
 			<Box margin="50px 0px 0px 0px" quarkly-title="Architecture">

@@ -22,7 +22,7 @@ export default (() => {
 					Mobile Side Panel
 				</Text>
 			</Box>
-			<Components.MobileSidePanel menuPosition="near">
+			<Components.MobileSidePanel menuPosition="near" md-margin="500px 0px 50 0px">
 				<Text lg-font="18px/1.7 sans-serif" font="18px/1.7 sans-serif">
 					<Strong
 						overflow-wrap="normal"

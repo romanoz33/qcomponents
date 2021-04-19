@@ -41,6 +41,7 @@ const overrides = {
 		}
 	}
 };
+let toggleTimeout;
 
 const Collapse = ({
 	minDuration,
@@ -54,54 +55,72 @@ const Collapse = ({
 		rest
 	} = useOverrides(props, overrides);
 	const contentRef = useRef(null);
-	const [params, setParams] = useState({
+	const [{
+		isOpen,
+		isEmpty,
+		height,
+		duration,
+		transition,
+		isLock
+	}, setParams] = useState({
 		isOpen: false,
 		isEmpty: false,
 		height: 0,
 		duration: 0,
-		transition: 'none'
+		transition: 'none',
+		isLock: false
 	});
 	const updateParams = useCallback(({
-		isOpen,
-		isEmpty
+		open,
+		empty
 	}) => {
+		if (isLock) return;
 		const {
 			offsetHeight
 		} = contentRef.current;
-		const height = isOpen && !isEmpty ? offsetHeight : isEmpty ? 'auto' : 0;
-		let duration = parseFloat(minDuration) + offsetHeight / 4000;
+		const newHeight = open && !empty ? offsetHeight : empty ? 'auto' : 0;
+		let newDuration = parseFloat(minDuration) + offsetHeight / 4000;
 
 		if (duration > maxDuration) {
 			duration = maxDuration;
 		}
 
-		setParams({
-			isOpen,
-			isEmpty,
-			height,
-			duration,
-			transition: isOpen ? `
-				max-height ${duration}s ${animFunction} 0s,
+		const newParams = {
+			isOpen: open,
+			isEmpty: empty,
+			height: newHeight,
+			duration: newDuration,
+			transition: open ? `
+				max-height ${newDuration}s ${animFunction} 0s,
 				visibility 0s ${animFunction} 0s,
-				opacity ${duration}s ${animFunction} 0s
+				opacity ${newDuration}s ${animFunction} 0s
 			` : `
-				max-height ${duration}s ${animFunction} 0s,
-				visibility 0s ${animFunction} ${duration}s,
-				opacity ${duration}s ${animFunction} 0s
+				max-height ${newDuration}s ${animFunction} 0s,
+				visibility 0s ${animFunction} ${newDuration}s,
+				opacity ${newDuration}s ${animFunction} 0s
 			`
+		};
+		setParams({ ...newParams,
+			isLock: true
 		});
-	}, []);
+		clearTimeout(toggleTimeout);
+		toggleTimeout = setTimeout(() => {
+			setParams({ ...newParams,
+				isLock: false
+			});
+		}, duration * 1000);
+	}, [isOpen, isEmpty, isLock]);
 	const toggleOpen = useCallback(() => {
 		updateParams({
-			isOpen: !params.isOpen,
-			isEmpty: params.isEmpty
+			open: !isOpen,
+			empty: isEmpty
 		});
-	}, [params.isOpen, params.isEmpty]);
+	}, [isOpen, isEmpty, isLock]);
 	useEffect(() => {
 		const observer = new ResizeObserver(() => {
 			updateParams({
-				isOpen: params.isOpen,
-				isEmpty: params.isEmpty
+				open: isOpen,
+				empty: isEmpty
 			});
 		});
 		observer.observe(contentRef.current);
@@ -114,17 +133,17 @@ const Collapse = ({
 		if (!contentRef.current) return;
 		const isEmpty = contentRef.current?.innerHTML === '<!--child placeholder-->';
 		updateParams({
-			isOpen: params.isOpen || isEmpty,
-			isEmpty
+			open: isOpen || isEmpty,
+			empty: isEmpty
 		});
 	}, [children.length]);
 	return <Box {...rest}>
-		<Button {...override('Button')} onPointerDown={toggleOpen} disabled={params.isEmpty} />
-		<Box {...override('Wrapper', `Wrapper ${params.isOpen ? ':open' : ':close'}`)} max-height={params.height} transition={params.transition}>
+		<Button {...override('Button')} onPointerDown={toggleOpen} disabled={isEmpty} />
+		<Box {...override('Wrapper', `Wrapper ${isOpen ? ':open' : ':close'}`)} max-height={height} transition={transition}>
 			<Box {...override('Content')} ref={contentRef}>
 				{children}
 			</Box>
-			{params.isEmpty && <ComponentNotice message="Drag component here" />}
+			{isEmpty && <ComponentNotice message="Drag component here" />}
 		</Box>
 	</Box>;
 };

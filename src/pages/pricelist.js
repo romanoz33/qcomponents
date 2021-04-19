@@ -21,7 +21,7 @@ export default (() => {
 					Pricelist{"\n\n"}
 				</Text>
 			</Box>
-			<Components.Pricelist design="horizontal" active="2" />
+			<Components.Pricelist design="horizontal" active="2" margin="500px 0px 500px 0px" />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:

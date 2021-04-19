@@ -144,7 +144,7 @@ const SVGShape = ({
 	}, [strokeWidth, type, size]);
 	return <Box
 		position="relative"
-		height="100%"
+		height="200px"
 		width="100%"
 		ref={mainRef}
 		{...props}
@@ -236,11 +236,12 @@ const propInfo = {
 	}
 };
 const defaultProps = {
-	type: 'Rectangle',
+	type: 'Circle',
 	stroke: '#000000',
-	strokeWidth: '1',
+	strokeWidth: '8',
 	strokeOpacity: '1',
-	strokeLinecap: 'butt',
+	strokeLinecap: 'round',
+	strokeDasharray: '30',
 	fill: '--color-primary',
 	fillOpacity: '1'
 };

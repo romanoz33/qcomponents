@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
-import atomize from '@quarkly/atomize';
 import { Box } from '@quarkly/widgets';
+const yoomoneyUrl = new URL('https://yoomoney.ru/quickpay/shop-widget');
 
 const YoomoneyDonateForm = ({
 	account,
@@ -21,7 +21,6 @@ const YoomoneyDonateForm = ({
 	successURL,
 	...props
 }) => {
-	const yoomoneyUrl = new URL('https://yoomoney.ru/quickpay/shop-widget');
 	const searchParams = new URLSearchParams({
 		account,
 		successURL,
@@ -44,22 +43,21 @@ const YoomoneyDonateForm = ({
 		'writer': fixedTarget ? 'seller' : 'buyer',
 		'quickpay': 'shop'
 	});
-	const width = '100%';
 	const height = useMemo(() => {
 		const conditions = [[fixedTarget, 7], [!fixedTarget && targets !== '', 12], [comment, 79], [hint, 12]];
 		return conditions.reduce((acc, [c, v]) => acc + (Boolean(c) && v), 215);
 	}, [fixedTarget, targets, comment, hint]);
 	return <Box width="100%" height={height} {...props}>
-		    
+		      
 		{account ? <iframe
 			src={`${yoomoneyUrl}?${searchParams.toString()}`}
 			frameBorder="0"
 			allowtransparency="true"
 			scrolling="no"
-			width={width}
+			width="100%"
 			height={height}
 		/> : 'Insert account id in props panel'}
-		  
+		    
 	</Box>;
 };
 
@@ -191,7 +189,7 @@ const defaultProps = {
 	fixedTarget: true,
 	hint: ''
 };
-export default Object.assign(YoomoneyDonateForm, {
+Object.assign(YoomoneyDonateForm, {
 	title: 'YoomoneyDonateForm',
 	description: {
 		ru: 'Форма поможет собрать деньги на кошелек Yoomoney'
@@ -199,3 +197,4 @@ export default Object.assign(YoomoneyDonateForm, {
 	propInfo,
 	defaultProps
 });
+export default YoomoneyDonateForm;

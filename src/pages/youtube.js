@@ -21,7 +21,8 @@ export default (() => {
 					YouTube
 				</Text>
 			</Box>
-			<Components.YouTube variant="Fast and low traffic (recomended)" margin="500px 100 500px 100px" />
+			<Components.YouTube variant="Fast and low traffic (recomended)" margin="500px 100 500px 100px" videoId="Rzgdz1mbLbE" url="https://www.youtube.com/watch?v=Rzgdz1mbLbE" />
+			<Box />
 			<Components.YouTube variant="Fast and low traffic (recomended)" margin="500px 100 500px 100px" />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">

@@ -24,6 +24,9 @@ export default (() => {
 			</Box>
 			<Components.Collapse>
 				<Override slot="Button" disabled />
+				<Text>
+					Some text
+				</Text>
 			</Components.Collapse>
 			<Box />
 			<Components.Collapse animFunction="ease-in">

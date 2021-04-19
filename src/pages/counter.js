@@ -26,7 +26,8 @@ export default (() => {
 			border-style="solid"
 			border-color="#767676"
 		>
-			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
+			{" "}
+			<Box margin="50px 0px 48px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
 					Counter
 				</Text>
@@ -37,37 +38,39 @@ export default (() => {
 				justify-content="space-around"
 				flex-wrap="wrap"
 				lg-margin="100px 0px 100px 0px"
-				width="80%"
-				margin="500px auto 500px auto"
+				width="75%"
 				text-align="center"
+				padding="32px 0px 48px 0px"
+				margin="0px auto 0px auto"
 			>
 				<Box
 					lg-padding="15px 15px 15px 15px"
 					lg-border-width=".5px"
 					lg-border-style="solid"
 					lg-border-color="#b5b5b5"
-					border-width=".5px"
-					border-style="solid"
-					border-color="#767676"
-					padding="15px 15px 15px 15px"
+					border-width="0px"
+					border-style="none"
+					padding="28px 32px 36px 32px"
+					background="--color-lightD1"
+					border-radius="32px"
 				>
 					<Text
 						text-align="center"
-						font="400 31px sans-serif"
+						font="--headline3"
 						height="auto"
 						lg-color="#767676"
-						color="#767676"
+						color="--greyD2"
 					>
 						Clients worldwide
 					</Text>
 					<Components.Counter
 						endingNumber="135"
-						revers={false}
+						revers
 						lg-color="#767676"
 						lg-font="900 58px sans-serif"
 						border-color="#b5b5b5"
-						font="900 58px sans-serif"
-						color="#767676"
+						font="--headline2"
+						color="--dark"
 					/>
 				</Box>
 				<Box
@@ -75,28 +78,29 @@ export default (() => {
 					lg-border-width=".5px"
 					lg-border-style="solid"
 					lg-border-color="#b5b5b5"
-					border-width=".5px"
-					border-style="solid"
-					border-color="#767676"
-					padding="15px 15px 15px 15px"
+					border-width="0px"
+					border-style="none"
+					padding="28px 32px 36px 32px"
+					background="--color-lightD1"
+					border-radius="32px"
 				>
 					<Text
 						text-align="center"
-						font="400 31px sans-serif"
+						font="--headline3"
 						height="auto"
 						lg-color="#767676"
-						color="#767676"
+						color="--greyD2"
 					>
 						Organic likes
 					</Text>
 					<Components.Counter
 						endingNumber="5000"
-						revers={false}
+						revers
 						lg-color="#767676"
 						lg-font="900 58px sans-serif"
 						border-color="#b5b5b5"
-						font="900 58px sans-serif"
-						color="#767676"
+						font="--headline2"
+						color="--dark"
 					/>
 				</Box>
 				<Box
@@ -104,28 +108,29 @@ export default (() => {
 					lg-border-width=".5px"
 					lg-border-style="solid"
 					lg-border-color="#b5b5b5"
-					border-width=".5px"
-					border-style="solid"
-					border-color="#767676"
-					padding="15px 15px 15px 15px"
+					border-width="0px"
+					border-style="none"
+					padding="28px 32px 36px 32px"
+					background="--color-lightD1"
+					border-radius="32px"
 				>
 					<Text
 						text-align="center"
-						font="400 31px sans-serif"
+						font="--headline3"
 						height="auto"
 						lg-color="#767676"
-						color="#767676"
+						color="--greyD2"
 					>
 						Active employees
 					</Text>
 					<Components.Counter
 						endingNumber="1100"
-						revers={false}
+						revers
 						lg-color="#767676"
 						lg-font="900 58px sans-serif"
 						border-color="#b5b5b5"
-						font="900 58px sans-serif"
-						color="#767676"
+						font="--headline2"
+						color="--dark"
 					/>
 				</Box>
 			</Box>
@@ -362,7 +367,7 @@ export default (() => {
 						Символ перед числом
 					</Text>
 					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						none{"\n\n"}
+						none
 					</Text>
 				</Box>
 			</Box>

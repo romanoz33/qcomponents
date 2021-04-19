@@ -20,6 +20,7 @@ export default (() => {
 				<Text text-align="center" font="--headline1">
 					Svg Shape
 				</Text>
+				<Components.SvgShape />
 			</Box>
 			<Box display="flex" margin="500px 10 500px 100px">
 				<Components.SvgShape
@@ -30,6 +31,8 @@ export default (() => {
 					type="Circle"
 					stroke="#7df7e0"
 					fill="#194968"
+					strokeLinecap="butt"
+					strokeDasharray="0"
 				/>
 				<Components.SvgShape
 					width="300px"
@@ -50,6 +53,8 @@ export default (() => {
 					type="Ellipse"
 					fill="#f76363"
 					stroke="#c4c8c8"
+					strokeLinecap="butt"
+					strokeDasharray="0"
 				/>
 			</Box>
 			<Box quarkly-title="Props" height="auto" min-height="20px">

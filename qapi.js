@@ -61,7 +61,8 @@ export default {
 				"6065f4ecc8e036001ed14911",
 				"606f0a9063816800228164a9",
 				"607467be0ba79600228c1fec",
-				"6075a2bdb99fb9001fcbc879"
+				"6075a2bdb99fb9001fcbc879",
+				"6076fb62eb6a2d001f28106e"
 			]
 		},
 		"60474504627982001eb71a54": {
@@ -359,6 +360,11 @@ export default {
 			"id": "6075a2bdb99fb9001fcbc879",
 			"pageUrl": "slider",
 			"name": "slider"
+		},
+		"6076fb62eb6a2d001f28106e": {
+			"id": "6076fb62eb6a2d001f28106e",
+			"pageUrl": "test",
+			"name": "Test"
 		}
 	},
 	"mode": "production",

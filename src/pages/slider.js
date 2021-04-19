@@ -3,6 +3,7 @@ import theme from "theme";
 import { Theme, Link, Text, Box } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
+import { Override } from "@quarkly/components";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
@@ -22,7 +23,77 @@ export default (() => {
 				</Text>
 			</Box>
 			<Box margin="50px 0px 0px 0px" quarkly-title="Architecture">
-				<Components.Slider />
+				<Components.Slider height="600px" margin="500px 0px 500 0px">
+					<Override slot="Slide Image" filter="brightness(40%) saturate(80%)" />
+					<Override slot="Arrow" background="none" />
+					<Override slot="Point Icon :active" border-color="none" color="#ffffff" />
+					<Override slot="Point Icon" padding="4px 5px 4px 5px" />
+					<Override slot="Point" opacity="0.4" />
+					<Override slot="Arrow Next" background="none" />
+					<Override slot="Arrow Prev" background="none" />
+					<Override slot="Points" height="60px" />
+				</Components.Slider>
+				<Components.Slider>
+					<Override slot="Slide Image" />
+					<Override slot="Arrow" background="none" />
+					<Override slot="Point Icon" padding="4px 5px 4px 5px" />
+					<Override slot="Point Icon :active" border-color="none" color="#ffffff" />
+					<Override slot="Point" opacity="0.4" />
+					<Override slot="Arrow Next" background="none" />
+					<Override slot="Arrow Prev" background="none" />
+					<Override slot="Slide Content" display="none" />
+					<Override
+						slot="Arrow Icon"
+						background="--color-light"
+						border-radius="50%"
+						color="--darkL2"
+						font="38px sans-serif"
+						size="38px"
+						width="48px"
+						height="48px"
+						padding="0px 0px 0px 0px"
+					/>
+				</Components.Slider>
+				<Components.Slider>
+					<Override slot="Slide Image" position="relative" display="block" flex="1 1 auto" />
+					<Override slot="Arrow" background="none" />
+					<Override slot="Point Icon" padding="4px 5px 4px 5px" />
+					<Override slot="Point Icon :active" border-color="none" color="#ffffff" />
+					<Override slot="Point" opacity="0.4" />
+					<Override slot="Arrow Next" background="none" />
+					<Override slot="Arrow Prev" background="none" />
+					<Override
+						slot="Slide Content"
+						width="100%"
+						display="flex"
+						position="relative"
+						top="0px"
+						left={0}
+						right={0}
+						bottom={0}
+						transform="none"
+						background="--color-lightD1"
+						justify-content="space-between"
+						align-items="flex-start"
+						padding="0px 16px 12px 16px"
+					/>
+					<Override
+						slot="Arrow Icon"
+						background="--color-light"
+						border-radius="50%"
+						color="--darkL2"
+						font="38px sans-serif"
+						size="38px"
+						width="48px"
+						height="48px"
+						padding="0px 0px 0px 0px"
+					/>
+					<Override slot="Slide" display="flex" flex-direction="column" />
+					<Override slot="Slide Head" color="--darkL2" width="100%" text-align="left" />
+					<Override slot="Slide Text" color="--darkL2" text-align="left" />
+					<Override slot="Slide Link" margin="16px 2px 16px 2px" />
+					<Override slot="Points" top="75%" />
+				</Components.Slider>
 			</Box>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">

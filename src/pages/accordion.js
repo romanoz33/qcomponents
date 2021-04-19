@@ -24,15 +24,23 @@ export default (() => {
 				</Text>
 			</Box>
 			<Components.Accordion allowMultiple allowToggle>
-				<Components.AccordionItem isOpen={false} disabled={false} border-width="0px" box-shadow="inset 2px 2px 5px rgba(154, 147, 140, 0.5)">
-					<Components.AccordionItemSummary>
-						<Override slot="Accordion Summary" margin="0px 0px 5px 0px" box-shadow="inset 2px 2px 5px rgba(154, 147, 140, 0.5)" />
-						<Text font="20px sans-serif" margin="0 0px 0 0px">
+				<Components.AccordionItem isOpen={false} disabled={false} border-width="0px">
+					<Components.AccordionItemSummary box-shadow="none" margin="0px 0px 0px 0px" font="--lead">
+						<Override slot="Accordion Summary" margin="0px 0px 5px 0px" background="white" box-shadow="inset 2px 2px 5px rgba(154, 147, 140, 0.5)" />
+						<Override slot="Accordion Summary :open" border-width="0px" border-style="none" />
+						<Override
+							slot="Accordion Summary Icon"
+							size="34px"
+							width="32px"
+							height="32px"
+							color="--darkL2"
+						/>
+						<Text font="--headline3" margin="0 0px 0 0px" color="--darkL2">
 							First
 						</Text>
 					</Components.AccordionItemSummary>
 					<Components.AccordionItemDetails>
-						<Text font="18px/1.7 sans-serif">
+						<Text font="--lead" margin="0px 0px 32px 0px" color="--darkL2">
 							<Strong>
 								Lorem Ipsum
 							</Strong>
@@ -40,45 +48,53 @@ export default (() => {
 						</Text>
 					</Components.AccordionItemDetails>
 				</Components.AccordionItem>
-				<Components.AccordionItem>
-					<Components.AccordionItemSummary>
+				<Components.AccordionItem isOpen={false} disabled={false} border-width="0px">
+					<Components.AccordionItemSummary box-shadow="none" margin="0px 0px 0px 0px" font="--lead">
+						<Override slot="Accordion Summary" margin="0px 0px 5px 0px" background="white" box-shadow="inset 2px 2px 5px rgba(154, 147, 140, 0.5)" />
+						<Override slot="Accordion Summary :open" border-width="0px" border-style="none" />
 						<Override
-							slot="Accordion Summary"
-							margin="0px 0px 5px 0px"
-							border-width="0px"
-							border-color="#868686"
-							box-shadow="inset 2px 2px 5px rgba(154, 147, 140, 0.5)"
+							slot="Accordion Summary Icon"
+							size="34px"
+							width="32px"
+							height="32px"
+							color="--darkL2"
 						/>
-						<Text font="20px sans-serif" margin="0 0px 0 0px">
+						<Text font="--headline3" margin="0 0px 0 0px" color="--darkL2">
 							Second
 						</Text>
 					</Components.AccordionItemSummary>
 					<Components.AccordionItemDetails>
-						<Text font="18px/1.7 sans-serif">
-							It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-							<br />
-							{"\n\n"}
+						<Text font="--lead" margin="0px 0px 32px 0px" color="--darkL2">
+							<Strong
+								overflow-wrap="normal"
+								word-break="normal"
+								white-space="normal"
+								text-indent="0"
+								text-overflow="clip"
+								hyphens="manual"
+							/>
+							It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).{"\n\n"}
 						</Text>
 					</Components.AccordionItemDetails>
 				</Components.AccordionItem>
-				<Components.AccordionItem>
-					<Components.AccordionItemSummary>
+				<Components.AccordionItem isOpen={false} disabled={false} border-width="0px">
+					<Components.AccordionItemSummary box-shadow="none" margin="0px 0px 0px 0px" font="--lead">
+						<Override slot="Accordion Summary" margin="0px 0px 5px 0px" background="white" box-shadow="inset 2px 2px 5px rgba(154, 147, 140, 0.5)" />
+						<Override slot="Accordion Summary :open" border-width="0px" border-style="none" />
 						<Override
-							slot="Accordion Summary"
-							margin="0px 0px 5px 0px"
-							border-width="0px"
-							border-color="#868686"
-							box-shadow="inset 2px 2px 5px rgba(154, 147, 140, 0.5)"
+							slot="Accordion Summary Icon"
+							size="34px"
+							width="32px"
+							height="32px"
+							color="--darkL2"
 						/>
-						<Text font="20px sans-serif" margin="0 0px 0 0px">
+						<Text font="--headline3" margin="0 0px 0 0px" color="--darkL2">
 							Third
 						</Text>
 					</Components.AccordionItemSummary>
 					<Components.AccordionItemDetails>
-						<Text font="18px/1.7 sans-serif">
+						<Text font="--lead" margin="0px 0px 32px 0px" color="--darkL2">
 							Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-							<br />
-							{"\n\n"}
 						</Text>
 					</Components.AccordionItemDetails>
 				</Components.AccordionItem>

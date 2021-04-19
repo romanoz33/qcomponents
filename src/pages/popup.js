@@ -22,11 +22,11 @@ export default (() => {
 					Mobile menu
 				</Text>
 			</Box>
-			<Components.Popup text-align="center">
+			<Components.Popup text-align="center" margin="500px 0px 500 0px">
 				<Override slot="button" />
 				<Override slot="Wrapper" width="70%" height="600px" />
 				<Box display="flex" padding="50px 50px 50px 50px">
-					<Image width="600px" src="https://images.unsplash.com/photo-1587554801471-37976a256db0?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000" />
+					<Image width="600px" src="https://images.unsplash.com/photo-1587554801471-37976a256db0?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000" height="469px" />
 					<Box width="100%">
 						<Text font="--headline2">
 							<Strong

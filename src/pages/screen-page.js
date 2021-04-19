@@ -3,7 +3,7 @@ import theme from "theme";
 import { Theme, Link, Text, Box, Image, Icon, Input, Button } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
-import { StackItem, Stack, Section, Menu, Override, Formspree } from "@quarkly/components";
+import { StackItem, Stack, Section, Override, Formspree } from "@quarkly/components";
 import * as Components from "components";
 import { MdLocationOn, MdEmail, MdPhone } from "react-icons/md";
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
@@ -72,9 +72,6 @@ export default (() => {
 				</StackItem>
 			</Stack>
 		</Section>
-		<Components.MobileSidePanel menuPosition="right">
-			<Menu />
-		</Components.MobileSidePanel>
 		<Section text-align="center" padding="100px 0" sm-padding="40px 0" margin="0 10 0 100px">
 			<Text as="h1" font="--headline1" md-font="--headline2" margin="20px 0 0 0">
 				About Us

@@ -21,7 +21,15 @@ export default (() => {
 					YoomoneyDonateForm
 				</Text>
 			</Box>
-			<Components.YoomoneyDonateForm account="41001000000000" phone={false} fio={false} />
+			<Components.YoomoneyDonateForm
+				account="41001000000000"
+				phone={false}
+				fio={false}
+				payment
+				mobilePayment
+				address={false}
+				comment
+			/>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы YoomoneyDonateForm:
