@@ -61,7 +61,8 @@ export default {
 				"604b4f86652a1e001e075d2d",
 				"604b6938652a1e001e075df7",
 				"604b6546652a1e001e075db3",
-				"607467be0ba79600228c1fec"
+				"607467be0ba79600228c1fec",
+				"607ff75eb99fb9001fcbd405"
 			]
 		},
 		"60474504627982001eb71a54": {
@@ -359,6 +360,11 @@ export default {
 			"id": "607e82c36381680022817027",
 			"pageUrl": "lightboxvideo",
 			"name": "LightboxVideo"
+		},
+		"607ff75eb99fb9001fcbd405": {
+			"id": "607ff75eb99fb9001fcbd405",
+			"pageUrl": "pdfviewer",
+			"name": "pdfviewer"
 		}
 	},
 	"mode": "production",
