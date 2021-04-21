@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect, useCallback, useRef } from 'react'
 import atomize from '@quarkly/atomize';
 import styles, { css } from 'styled-components';
 import presets from './AnimationPresets';
+import ComponentNotice from './ComponentNotice';
 
 const getAnimationStyle = ({
 	animation,
@@ -46,6 +47,7 @@ const Animation = ({
 }) => {
 	const [isPlay, togglePlay] = useState(trigger === 'Onload' || test);
 	const wrapperRef = useRef({});
+	const childrenRef = useRef(null);
 	const onEnterEvent = useMemo(() => trigger === 'Hover' ? () => togglePlay(true) : undefined, [trigger]);
 	const onLeaveEvent = useMemo(() => trigger === 'Hover' ? () => togglePlay(false) : undefined, [trigger]);
 	const onClickEvent = useCallback(() => trigger === 'Click' && togglePlay(!isPlay), [trigger, isPlay]);
