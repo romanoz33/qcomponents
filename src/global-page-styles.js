@@ -395,7 +395,7 @@ const pageStyles = {
         "justify-content": "",
         "align-items": ""
     },
-    "form1": {
+    "yoomoneydonateform": {
         "padding": "",
         "margin": "",
         "display": "",

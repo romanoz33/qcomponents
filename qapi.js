@@ -337,7 +337,7 @@ export default {
 		},
 		"607467be0ba79600228c1fec": {
 			"id": "607467be0ba79600228c1fec",
-			"pageUrl": "form1",
+			"pageUrl": "yoomoneydonateform",
 			"name": "YoomoneyDonateForm"
 		},
 		"6075a2bdb99fb9001fcbc879": {
