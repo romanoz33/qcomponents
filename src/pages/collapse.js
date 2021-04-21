@@ -15,7 +15,6 @@ export default (() => {
 			<meta name={"description"} content={"Web site created using quarkly.io"} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
-		<Components.HeadMenu />
 		<Box padding="0px 30px 0px 30px">
 			<Box margin="50px 0px 100px 0px">
 				<Text text-align="center" font="--headline1">
@@ -67,117 +66,47 @@ export default (() => {
 					Пропсы:
 				</Text>
 			</Box>
-			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Название
-				</Text>
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Описание
-				</Text>
-				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-					Значение по дефолту
-				</Text>
-			</Box>
-			<Box />
-			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Min animation duration (in seconds)
-				</Text>
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Минимальная продолжительность анимации раскрытия / сворачивания
-				</Text>
-				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-					0.1s
-				</Text>
-			</Box>
-			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Max animation duration (in seconds)
-				</Text>
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					-
-				</Text>
-				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-					1s
-				</Text>
-			</Box>
-			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Animation function
-				</Text>
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Cкорость течения анимации
-					<br />
-					{"\n\n"}
-				</Text>
-				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-					Linear
-				</Text>
-			</Box>
+			<Components.Table showHeader colsProp="3" width="100%" rowsProp="3">
+				<Override slot="Text THead Col-0">
+					Название{"\n\n"}
+				</Override>
+				<Override slot="Text THead Col-1">
+					Описание{"\n\n"}
+				</Override>
+				<Override slot="Text THead Col-2">
+					Значение по дефолту{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-0 Col-0">
+					Min animation duration (in seconds){"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-1 Col-0">
+					Max animation duration (in seconds){"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-2 Col-0">
+					Animation function{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-3 Col-0">
+					Animation function{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-0 Col-1">
+					Минимальная продолжительность анимации раскрытия / сворачивания{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-3 Col-1">
+					Cell 3-1
+				</Override>
+				<Override slot="Text TBody Row-2 Col-1">
+					Cкорость течения анимации{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-2 Col-2">
+					Linear{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-1 Col-2">
+					1s{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-0 Col-2">
+					0.1s{"\n\n"}
+				</Override>
+			</Components.Table>
 			<Box height="100px" />
 		</Box>
 		<Link

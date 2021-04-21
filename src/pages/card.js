@@ -15,7 +15,6 @@ export default (() => {
 			<meta name={"description"} content={"Web site created using quarkly.io"} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
-		<Components.HeadMenu />
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
@@ -46,272 +45,80 @@ export default (() => {
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
 				</Text>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Header row"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Название
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Описание
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						Значение по дефолту
-					</Text>
-				</Box>
-				<Box quarkly-title="Space" />
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 1"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						View
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Отображение{" "}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						vertical
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 2"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Show title
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Показать Заголовок
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						on
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 3"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Show text
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Показать Описание
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						on
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 4"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Show button
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Показать кнопку
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						on
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 5"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Show image
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
+				<Components.Table width="100%" showHeader colsProp="3" rowsProp="7">
+					<Override slot="Text THead Col-0">
+						Название{"\n\n"}
+					</Override>
+					<Override slot="Text THead Col-1">
+						Описание{"\n\n"}
+					</Override>
+					<Override slot="Text THead Col-2">
+						Значение по дефолту{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-0 Col-0">
+						View{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-0 Col-1">
+						Отображение{" \n\n"}
+					</Override>
+					<Override slot="Text TBody Row-0 Col-2">
+						vertical{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-1 Col-0">
+						Show title{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-2 Col-0">
+						Show text{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-3 Col-0">
+						Show button{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-4 Col-0">
+						Show image{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-5 Col-0">
+						Image type{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-6 Col-0">
+						Aspect ratio{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-1 Col-1">
+						Показать Заголовок{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-2 Col-1">
+						Показать Описание{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-3 Col-1">
+						Показать кнопку{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-4 Col-1">
 						Показать изображение{"\n\n"}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						on
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 6"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Image type
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Тип изображения [image, icon]
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						image
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 7"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Aspect ratio
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Формат изображения [none, square, circle, 4:3, 3:4]
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						square
-					</Text>
-					{" "}
-				</Box>
+					</Override>
+					<Override slot="Text TBody Row-5 Col-1">
+						Тип изображения [image, icon]{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-6 Col-1">
+						Формат изображения [none, square, circle, 4:3, 3:4]{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-1 Col-2">
+						true
+					</Override>
+					<Override slot="Text TBody Row-3 Col-2">
+						true{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-2 Col-2">
+						true{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-4 Col-2">
+						true{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-5 Col-2">
+						image{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-6 Col-2">
+						square{"\n\n"}
+					</Override>
+				</Components.Table>
 			</Box>
 		</Box>
 		<Link

@@ -3,6 +3,7 @@ import theme from "theme";
 import { Theme, Link, Text, Box } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
+import { Override } from "@quarkly/components";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
@@ -14,7 +15,6 @@ export default (() => {
 			<meta name={"description"} content={"Web site created using quarkly.io"} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
-		<Components.HeadMenu />
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
@@ -28,278 +28,80 @@ export default (() => {
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
 				</Text>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Header row"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Название
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Описание
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						Значение по дефолту
-					</Text>
-				</Box>
-				<Box quarkly-title="Space" />
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 1"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						variant
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						[fast and low traffic, standart]
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						fast and low traffic
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 2"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Src
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Ссылка на видео ролик из YouTube
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+				<Components.Table width="100%" showHeader colsProp="3" rowsProp="7">
+					<Override slot="Text THead Col-0">
+						Название{"\n\n"}
+					</Override>
+					<Override slot="Text THead Col-1">
+						Описание{"\n\n"}
+					</Override>
+					<Override slot="Text THead Col-2">
+						Значение по дефолту{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-0 Col-0">
+						variant{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-1 Col-0">
+						Src{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-2 Col-0">
+						Alt{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-3 Col-0">
+						Loop{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-4 Col-0">
+						Autoplay{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-5 Col-0">
+						Start{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-6 Col-0">
+						End{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-0 Col-1">
+						[fast and low traffic, standart]{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-1 Col-1">
+						Ссылка на видео ролик из YouTube{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-2 Col-1">
 						-
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 3"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Alt
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						????????
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+					</Override>
+					<Override slot="Text TBody Row-3 Col-1">
+						Ссылка на видео ролик из YouTube{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-4 Col-1">
+						Автоматически воспроизвести видео, после загрузки страницы{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-5 Col-1">
+						Начать воспроизведение с определенной секунды{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-6 Col-1">
+						Количество секунд, после которой видео остановится (Время измеряется с начала видео, а не со значения параметра start ){" \n\n"}
+					</Override>
+					<Override slot="Text TBody Row-6 Col-2">
+						none{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-5 Col-2">
+						0{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-4 Col-2">
+						false
+					</Override>
+					<Override slot="Text TBody Row-3 Col-2">
+						false{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-2 Col-2">
 						My video
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 4"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Loop
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Воспроизводить видео повторно, после завершения
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						off
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 5"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Autoplay
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Автоматически воспроизвести видео, после загрузки страницы
-						<br />
-						{"\n\n"}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						off
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 6"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Start
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Начать воспроизведение с определенной секунды
-						<br />
-						{"\n\n"}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						0
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 7"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						End
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Количество секунд, после которой видео остановится (Время измеряется с начала видео, а не со значения параметра start
-
-){" "}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						none
-					</Text>
-					{" "}
-				</Box>
+					</Override>
+					<Override slot="Text TBody Row-1 Col-2">
+						--
+					</Override>
+					<Override slot="Text TBody Row-0 Col-2">
+						fast and low traffic{"\n\n"}
+					</Override>
+				</Components.Table>
 			</Box>
 		</Box>
 		<Link

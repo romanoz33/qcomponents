@@ -3,7 +3,7 @@ import theme from "theme";
 import { Theme, Link, Text, Box, Strong } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
-import { Menu } from "@quarkly/components";
+import { Override } from "@quarkly/components";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
@@ -15,7 +15,6 @@ export default (() => {
 			<meta name={"description"} content={"Web site created using quarkly.io"} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
-		<Components.HeadMenu />
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
@@ -39,187 +38,59 @@ export default (() => {
 					{"\n\n"}
 				</Text>
 			</Components.MobileSidePanel>
+			<Components.MobileSidePanel />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
-				<Components.MobileSidePanel />
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
 				</Text>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Header row"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Название
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Описание
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						Значение по дефолту
-					</Text>
-				</Box>
-				<Box quarkly-title="Space" />
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 1"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Show/Hide duration
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Продолжительность анимации показа и скрытия
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						0.3s{"\n\n"}
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 2"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Show/Hide duration Easing Function
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
+				<Components.Table lg-width="100%">
+					<Override slot="Text THead Col-0">
+						Название{"\n\n"}
+					</Override>
+					<Override slot="Text THead Col-1">
+						Описание{"\n\n"}
+					</Override>
+					<Override slot="Text THead Col-2">
+						Значение по дефолту{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-0 Col-0">
+						Show/Hide duration{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-1 Col-0">
+						Show/Hide duration Easing Function{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-2 Col-0">
+						Mobile version breackpoint{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-3 Col-0">
+						Mobile panel position{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-0 Col-1">
+						Продолжительность анимации показа и скрытия{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-1 Col-1">
 						Скорость течения анимации{"\n\n"}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						ease{" "}
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 3"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Mobile version breackpoint
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Брейкпоинт с которого изменять на мобильный вид
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						md{" "}
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 4"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Mobile panel position
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Позиция панели в мобильной версии [full, left, right, near]
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						near
-					</Text>
-				</Box>
+					</Override>
+					<Override slot="Text TBody Row-2 Col-1">
+						Брейкпоинт с которого изменять на мобильный вид{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-3 Col-1">
+						Позиция панели в мобильной версии [full, left, right, near]{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-0 Col-2">
+						0.3s{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-1 Col-2">
+						ease{" \n\n"}
+					</Override>
+					<Override slot="Text TBody Row-2 Col-2">
+						md{" \n\n"}
+					</Override>
+					<Override slot="Text TBody Row-3 Col-2">
+						near{"\n\n"}
+					</Override>
+				</Components.Table>
 			</Box>
-			<Box quarkly-title="Props" height="auto" min-height="20px">
-				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Вариант с вложенным menu
-				</Text>
-				<Box quarkly-title="Space" />
-			</Box>
-			<Components.MobileSidePanel menuPosition="full">
-				<Menu />
-			</Components.MobileSidePanel>
 		</Box>
 		<Link
 			font={"--capture"}

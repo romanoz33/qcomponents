@@ -1,26 +1,66 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import { useOverrides } from '@quarkly/components';
-import { Box, Text, Icon } from '@quarkly/widgets'; // В компоненте несколько иконок,
-// чтобы не дублировать вынес отдельно
+import { Box, Text, Icon } from '@quarkly/widgets';
+import ComponentNotice from './ComponentNotice'; // There are several icons in the component
+// to less duplicate wrote separately
 
 import { FiMenu, FiX } from "react-icons/fi";
 const iconProps = {
 	normal: {
-		'category': 'fi',
-		'icon': FiMenu,
-		'size': '24px',
-		'color': '--dark'
+		category: 'fi',
+		icon: FiMenu,
+		size: '24px',
+		color: '--dark'
 	},
 	closed: {
-		'category': 'fi',
-		'icon': FiMenu
+		category: 'fi',
+		icon: FiMenu
 	},
 	open: {
-		'category': 'fi',
-		'icon': FiX
+		category: 'fi',
+		icon: FiX
 	}
-}; // Дизайны стилями отличаются 50/50,
-// чтобы меньше дублировать вынес отдельно
+};
+const overrides = {
+	Button: {
+		kind: 'Box'
+	},
+	'Button Text': {
+		kind: 'Text',
+		props: {
+			children: 'menu'
+		}
+	},
+	'Button Icon': {
+		kind: 'Icon',
+		props: iconProps.normal
+	},
+	'Button Icon :open': {
+		kind: 'Icon',
+		props: iconProps.open
+	},
+	'Button Icon :closed': {
+		kind: 'Icon',
+		props: iconProps.closed
+	},
+	Wrapper: {
+		kind: 'Box'
+	},
+	Overlay: {
+		kind: 'Box'
+	},
+	Content: {
+		kind: 'Box'
+	},
+	Children: {
+		kind: 'Box'
+	},
+	Cross: {
+		kind: 'Icon',
+		props: iconProps.open
+	}
+}; // Design styles differ 50/50,
+// to less duplicate wrote separately
 
 const getContentStyles = ({
 	breakpoint,
@@ -29,8 +69,8 @@ const getContentStyles = ({
 	animFunction
 }) => {
 	const baseStyles = {
-		'padding': menuPosition === 'near' ? '16px' : '48px 16px 24px',
-		'width': '100%',
+		padding: menuPosition === 'near' ? '16px' : '48px 16px 24px',
+		width: '100%',
 		'align-items': 'center',
 		'justify-content': 'space-between',
 		'flex-direction': 'row',
@@ -112,146 +152,120 @@ const getContentStyles = ({
 				open: animStyles.appear.open,
 				closed: animStyles.appear.closed
 			};
+
+		default:
+			return {};
 	}
-}; // Будет собираться по факту
+}; // Get all styles by properties
 
 
-let overrides = {}; // Собираем оверрайды по пропсам
-
-const setOverrides = ({
+const getStyles = ({
 	breakpoint,
 	menuPosition,
 	animDuration,
 	animFunction
 }) => ({
-	'Button': {
-		kind: 'Box',
-		props: {
-			display: 'none',
-			[`${breakpoint}-display`]: 'inline-flex',
-			[`${breakpoint}-flex`]: '0 0 auto',
-			[`${breakpoint}-z-index`]: menuPosition === 'near' ? '2' : '1'
-		}
-	},
-	'Button :open': {
-		kind: 'Box'
-	},
-	'Button :closed': {
-		kind: 'Box'
+	Button: {
+		'padding-right': '3px',
+		'min-height': '0',
+		'align-items': 'center',
+		'align-self': 'flex-end',
+		position: 'relative',
+		cursor: 'pointer',
+		display: 'none',
+		[`${breakpoint}-display`]: 'inline-flex',
+		[`${breakpoint}-flex`]: '0 0 auto',
+		[`${breakpoint}-z-index`]: menuPosition === 'near' ? '2' : '1'
 	},
 	'Button Text': {
-		kind: 'Text'
+		margin: '0 .35em 0 0',
+		'font-size': '14px',
+		'user-select': 'none'
 	},
-	'Button Text :open': {
-		kind: 'Text'
-	},
-	'Button Text :closed': {
-		kind: 'Text'
-	},
-	'Button Icon': {
-		kind: 'Icon',
-		props: iconProps.normal
-	},
-	'Button Icon :open': {
-		kind: 'Icon',
-		props: iconProps.open
-	},
-	'Button Icon :closed': {
-		kind: 'Icon',
-		props: iconProps.closed
-	},
-	'Wrapper': {
-		kind: 'Box',
-		props: {
-			'width': '100%',
-			'height': '100%',
-			'position': 'relative',
-			[`${breakpoint}-top`]: '0',
-			[`${breakpoint}-left`]: '0',
-			[`${breakpoint}-position`]: menuPosition === 'near' ? 'absolute' : 'fixed'
-		}
+	Wrapper: {
+		width: '100%',
+		height: '100%',
+		position: 'relative',
+		display: 'flex',
+		'z-index': '1',
+		[`${breakpoint}-top`]: '0',
+		[`${breakpoint}-left`]: '0',
+		[`${breakpoint}-position`]: menuPosition === 'near' ? 'absolute' : 'fixed'
 	},
 	'Wrapper :open': {
-		kind: 'Box',
-		props: {
-			[`${breakpoint}-transition`]: `visibility ${animDuration} step-start`,
-			[`${breakpoint}-visibility`]: 'visible'
-		}
+		[`${breakpoint}-transition`]: `visibility ${animDuration} step-start`,
+		[`${breakpoint}-visibility`]: 'visible'
 	},
 	'Wrapper :closed': {
-		kind: 'Box',
-		props: {
-			[`${breakpoint}-transition`]: `visibility ${animDuration} step-end`,
-			[`${breakpoint}-visibility`]: 'hidden'
-		}
+		[`${breakpoint}-transition`]: `visibility ${animDuration} step-end`,
+		[`${breakpoint}-visibility`]: 'hidden'
 	},
-	'Overlay': {
-		kind: 'Box',
-		props: {
-			'background-color': menuPosition === 'near' ? 'transparent' : 'rgba(0,0,0, .5)',
-			'position': 'relative',
-			'display': 'none',
-			[`${breakpoint}-top`]: '0',
-			[`${breakpoint}-left`]: '0',
-			[`${breakpoint}-position`]: 'fixed',
-			[`${breakpoint}-display`]: 'block'
-		}
+	Overlay: {
+		width: '100%',
+		height: '100%',
+		'background-color': menuPosition === 'near' ? 'transparent' : 'rgba(0,0,0, .5)',
+		position: 'relative',
+		display: 'none',
+		'z-index': '1',
+		[`${breakpoint}-top`]: '0',
+		[`${breakpoint}-left`]: '0',
+		[`${breakpoint}-position`]: 'fixed',
+		[`${breakpoint}-display`]: 'block'
 	},
 	'Overlay :open': {
-		kind: 'Box',
-		props: {
-			[`${breakpoint}-transition`]: `
-				visibility ${animDuration} step-start,
-				opacity ${animDuration} ${animFunction}
-			`,
-			[`${breakpoint}-visibility`]: 'visible',
-			[`${breakpoint}-opacity`]: '1'
-		}
+		[`${breakpoint}-transition`]: `
+      visibility ${animDuration} step-start,
+      opacity ${animDuration} ${animFunction}
+    `,
+		[`${breakpoint}-visibility`]: 'visible',
+		[`${breakpoint}-opacity`]: '1'
 	},
 	'Overlay :closed': {
-		kind: 'Box',
-		props: {
-			[`${breakpoint}-transition`]: `
-				visibility ${animDuration} step-end,
-				opacity ${animDuration} ${animFunction}
-			`,
-			[`${breakpoint}-visibility`]: 'hidden',
-			[`${breakpoint}-opacity`]: '0'
-		}
+		[`${breakpoint}-transition`]: `
+      visibility ${animDuration} step-end,
+      opacity ${animDuration} ${animFunction}
+    `,
+		[`${breakpoint}-visibility`]: 'hidden',
+		[`${breakpoint}-opacity`]: '0'
 	},
-	'Content': {
-		kind: 'Box',
-		props: getContentStyles({
+	Content: {
+		'max-width': '100vw',
+		'max-height': '100vh',
+		'background-color': 'white',
+		'box-sizing': 'border-box',
+		display: 'flex',
+		'z-index': '2',
+		...getContentStyles({
 			breakpoint,
 			menuPosition,
 			animDuration,
 			animFunction
 		}).normal
 	},
-	'Content :open': {
-		kind: 'Box',
-		props: getContentStyles({
+	'Content :open': { ...getContentStyles({
 			breakpoint,
 			menuPosition,
 			animDuration,
 			animFunction
 		}).open
 	},
-	'Content :closed': {
-		kind: 'Box',
-		props: getContentStyles({
+	'Content :closed': { ...getContentStyles({
 			breakpoint,
 			menuPosition,
 			animDuration,
 			animFunction
 		}).closed
 	},
-	'Cross': {
-		kind: 'Icon',
-		props: { ...iconProps.open,
-			display: 'none',
-			[`${breakpoint}-display`]: menuPosition === 'near' ? 'none' : 'block'
-		}
+	Children: {
+		width: '100%'
+	},
+	Cross: {
+		top: '16px',
+		right: '16px',
+		position: 'absolute',
+		cursor: 'pointer',
+		display: 'none',
+		[`${breakpoint}-display`]: menuPosition === 'near' ? 'none' : 'block'
 	}
 });
 
@@ -262,110 +276,122 @@ const MobileSidePanel = ({
 	animFunction,
 	...props
 }) => {
-	const [isOpen, setOpen] = useState(false);
-	const onToggle = useCallback(() => setOpen(!isOpen), [isOpen]);
-
-	const onOpen = () => setOpen(true);
-
-	const onClose = () => setOpen(false);
-
-	overrides = setOverrides({
-		breakpoint,
-		menuPosition,
-		animDuration,
-		animFunction
-	});
 	const {
 		override,
 		children,
 		rest
 	} = useOverrides(props, overrides);
-	const statusOpen = menuPosition === 'near' && isOpen ? ':open' : ':closed';
-	return <Box
-		min-width="100%"
-		min-height="0"
-		align-items="center"
-		position="relative"
-		display="flex"
-		z-index="5"
-		{...rest}
-	>
-		<Box
-			padding-right="3px"
-			min-height="0"
-			align-items="center"
-			align-self="flex-end"
-			position="relative"
-			cursor="pointer"
-			onPointerDown={menuPosition === 'near' ? onToggle : onOpen}
-			{...override('Button', `Button ${statusOpen}`)}
-		>
-			<Text margin="0 .35em 0 0" font-size="14px" user-select="none" {...override('Button Text', `Button Text ${statusOpen}`)}>
-				{override(`Button Text ${statusOpen}`).children || override('Button Text').children || 'menu'}
-			</Text>
-			<Icon {...override('Button Icon', `Button Icon ${statusOpen}`)} />
-			      
+	const [isOpen, setOpen] = useState(false);
+	const [isEmpty, setEmpty] = useState(false);
+	const childrenRef = useRef(null);
+	const onToggle = useCallback(() => setOpen(prev => !prev), []);
+	const onOpen = useCallback(() => setOpen(true), []);
+	const onClose = useCallback(() => setOpen(false), []);
+	const styles = useMemo(() => getStyles({
+		breakpoint,
+		menuPosition,
+		animDuration,
+		animFunction
+	}), [breakpoint, menuPosition, animDuration, animFunction]);
+	const statusOpen = isOpen || isEmpty ? ':open' : ':closed';
+	const statusButtonOpen = menuPosition === 'near' && (isOpen || isEmpty) ? ':open' : ':closed';
+	const childrenLength = Array.isArray(children) ? children.length : 0;
+	useEffect(() => {
+		if (!childrenRef.current) return;
+		const empty = childrenRef.current?.innerHTML.endsWith('<!--child placeholder-->');
+		setOpen(isOpen || empty);
+		setEmpty(empty);
+	}, [childrenLength]);
+	return <Box {...rest}>
+		            
+		<Box onPointerDown={menuPosition === 'near' ? onToggle : onOpen} {...styles.Button} {...override('Button', `Button ${statusButtonOpen}`)}>
+			                
+			<Text {...styles['Button Text']} {...override('Button Text', `Button Text ${statusButtonOpen}`)} />
+			                
+			<Icon {...override('Button Icon', `Button Icon ${statusButtonOpen}`)} />
+			            
 		</Box>
-		<Box display="flex" z-index="1" {...override('Wrapper', `Wrapper ${isOpen ? ':open' : ':closed'}`)}>
-			<Box
-				width="100%"
-				height="100%"
-				z-index="1"
-				onPointerDown={onClose}
-				{...override('Overlay', `Overlay ${isOpen ? ':open' : ':closed'}`)}
-			/>
-			<Box
-				max-width="100vw"
-				max-height="100vh"
-				background-color="white"
-				box-sizing="border-box"
-				display="flex"
-				z-index="2"
-				{...override('Content', `Content ${isOpen ? ':open' : ':closed'}`)}
-			>
-				<Icon
-					top="16px"
-					right="16px"
-					position="absolute"
-					cursor="pointer"
-					onPointerDown={onClose}
-					{...override('Cross')}
-				/>
-				{children}
+		            
+		<Box {...styles.Wrapper} {...styles[`Wrapper ${statusOpen}`]} {...override('Wrapper', `Wrapper ${statusOpen}`)}>
+			                
+			<Box onPointerDown={onClose} {...styles.Overlay} {...styles[`Overlay ${statusOpen}`]} {...override('Overlay', `Overlay ${statusOpen}`)} />
+			                
+			<Box {...styles.Content} {...styles[`Content ${statusOpen}`]} {...override('Content', `Content ${statusOpen}`)}>
+				                    
+				<Icon onPointerDown={onClose} {...styles.Cross} {...override('Cross')} />
+				                    
+				<Box ref={childrenRef} {...styles.Children} {...override('Children', `Children ${statusOpen}`)} display={isEmpty ? 'none' : undefined}>
+					                        
+					{children}
+					                    
+				</Box>
+				                    
+				{isEmpty && <ComponentNotice message="Drag component here" />}
+				                
 			</Box>
+			            
 		</Box>
-		    
+		        
 	</Box>;
 };
 
 const propInfo = {
 	breakpoint: {
-		title: 'Mobile version breakpoint',
-		control: 'text',
-		type: 'string',
-		category: 'Main',
+		title: 'Переключать мобильный вид на breakpoint',
+		control: 'input',
+		type: 'text',
+		variants: ['all', 'sm', 'md', 'lg'],
+		category: 'Position',
 		weight: 1
 	},
 	menuPosition: {
-		title: 'Mobile panel position',
-		control: 'radio-group',
-		variants: ['full', 'left', 'right', 'near'],
+		title: {
+			en: 'Положение панели в мобильном виде 2',
+			ru: 'Положение панели в мобильном виде 1'
+		},
+		control: 'select',
+		variants: [{
+			title: {
+				en: 'На весь экран',
+				ru: 'На весь экран'
+			},
+			value: 'full'
+		}, {
+			title: {
+				en: 'По левому краю',
+				ru: 'По левому краю'
+			},
+			value: 'left'
+		}, {
+			title: {
+				en: 'По правому краю',
+				ru: 'По правому краю'
+			},
+			value: 'right'
+		}, {
+			title: {
+				en: 'Возле кнопки',
+				ru: 'Возле кнопки'
+			},
+			value: 'near'
+		}],
 		type: 'string',
-		category: 'Main',
+		category: 'Position',
 		weight: 1
 	},
 	animDuration: {
-		title: 'Show/hide Duration',
-		control: 'text',
-		type: 'string',
+		title: 'Длительность появления и скрытия',
+		control: 'input',
+		type: 'text',
+		variants: ['0s', '0.1s', '0.2s', '0.3s', '0.5s', '1s'],
 		category: 'Animation',
 		weight: 1
 	},
 	animFunction: {
-		title: 'Show/hide Easing Function',
-		control: 'select',
-		variants: ['ease', 'ease-in', 'ease-out', 'ease-in-out', 'linear'],
-		type: 'string',
+		title: 'Функция анимации появления и скрытия',
+		control: 'input',
+		variants: ['linear', 'ease', 'ease-in', 'ease-out', 'ease-in-out', 'step-start', 'step-end'],
+		type: 'text',
 		category: 'Animation',
 		weight: 1
 	}
@@ -374,14 +400,19 @@ const defaultProps = {
 	breakpoint: 'md',
 	menuPosition: 'near',
 	animDuration: '.3s',
-	animFunction: 'ease'
+	animFunction: 'ease',
+	'min-width': '100%',
+	'min-height': '0',
+	'align-items': 'center',
+	'justify-content': 'flex-end',
+	position: 'relative',
+	display: 'flex',
+	'z-index': '5'
 };
-export default Object.assign(MobileSidePanel, {
+Object.assign(MobileSidePanel, {
 	title: 'Mobile Side Panel',
-	description: {
-		en: 'Awesome Mobile Side Panel'
-	},
-	overrides,
 	propInfo,
-	defaultProps
+	defaultProps,
+	overrides
 });
+export default MobileSidePanel;

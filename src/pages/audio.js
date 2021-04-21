@@ -15,7 +15,6 @@ export default (() => {
 			<meta name={"description"} content={"Web site created using quarkly.io"} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
-		<Components.HeadMenu />
 		<Box padding="0px 30px 0px 30px">
 			<Box margin="50px 0px 100px 0px">
 				<Text text-align="center" font="--headline1">
@@ -37,171 +36,64 @@ export default (() => {
 				<Text font="600 24px sans-serif">
 					Пропсы:
 				</Text>
+				<Components.Table showHeader width="100%" colsProp="3" rowsProp="5">
+					<Override slot="Text THead Col-0">
+						Название{"\n\n"}
+					</Override>
+					<Override slot="Text THead Col-1">
+						Описание{"\n\n"}
+					</Override>
+					<Override slot="Text THead Col-2">
+						Значение по дефолту{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-0 Col-0">
+						Src{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-1 Col-0">
+						Autoplay{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-2 Col-0">
+						Show controls{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-3 Col-0">
+						Muted{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-4 Col-0">
+						Loop{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-0 Col-1">
+						Прямая ссылка на аудиофайл{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-1 Col-1">
+						Автоматическое воспроизведение аудио, после загрузки страницы{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-2 Col-1">
+						Показать плеер{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-3 Col-1">
+						Отключить звук{" \n\n"}
+					</Override>
+					<Override slot="Text TBody Row-4 Col-1">
+						Зацикливает воспроизведение аудио, чтобы оно повторялось с начала после завершения
+					</Override>
+					<Override slot="Text TBody Row-0 Col-2">
+						-
+					</Override>
+					<Override slot="Text TBody Row-1 Col-2">
+						false
+					</Override>
+					<Override slot="Text TBody Row-2 Col-2">
+						false{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-3 Col-2">
+						false{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-4 Col-2">
+						false{"\n\n"}
+					</Override>
+				</Components.Table>
+				<Box height="100px" />
 			</Box>
-			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Название
-				</Text>
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Описание
-				</Text>
-				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-					Значение по дефолту
-				</Text>
-			</Box>
-			<Box />
-			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Src
-				</Text>
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Прямая ссылка на аудио-файл
-				</Text>
-				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-					-
-				</Text>
-			</Box>
-			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Autoplay
-				</Text>
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Автоматическое воспроизведение аудио, после загрузки страницы
-				</Text>
-				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-					off
-				</Text>
-			</Box>
-			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Show controls
-				</Text>
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Показать плеер
-				</Text>
-				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-					on
-				</Text>
-			</Box>
-			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Muted
-				</Text>
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Отключить звук{" "}
-				</Text>
-				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-					off
-				</Text>
-			</Box>
-			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Loop
-				</Text>
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Зацикливает воспроизведение аудио, чтобы оно повторялось с начала после завершения.
-				</Text>
-				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-					off
-				</Text>
-			</Box>
-			<Box height="100px" />
 		</Box>
 		<Link
 			font={"--capture"}

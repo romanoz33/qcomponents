@@ -73,6 +73,13 @@ const pageStyles = {
         "justify-content": "",
         "align-items": ""
     },
+    "cardflip": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
     "сode": {
         "padding": "",
         "margin": "",
@@ -81,6 +88,27 @@ const pageStyles = {
         "align-items": ""
     },
     "collapse": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "counter": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "disqus": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "disquscomment": {
         "padding": "",
         "margin": "",
         "display": "",
@@ -129,14 +157,28 @@ const pageStyles = {
         "justify-content": "",
         "align-items": ""
     },
-    "livechat": {
+    "lightboximage": {
         "padding": "",
         "margin": "",
         "display": "",
         "justify-content": "",
         "align-items": ""
     },
-    "lightbox": {
+    "lightboxmap": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "lightboxvideo": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "livechat": {
         "padding": "",
         "margin": "",
         "display": "",
@@ -213,6 +255,13 @@ const pageStyles = {
         "justify-content": "",
         "align-items": ""
     },
+    "scrollindicator": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
     "soundcloud": {
         "padding": "",
         "margin": "",
@@ -221,6 +270,13 @@ const pageStyles = {
         "align-items": ""
     },
     "socialmedia": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
+    "slider": {
         "padding": "",
         "margin": "",
         "display": "",
@@ -242,13 +298,6 @@ const pageStyles = {
         "align-items": ""
     },
     "svgshape": {
-        "padding": "",
-        "margin": "",
-        "display": "",
-        "justify-content": "",
-        "align-items": ""
-    },
-    "video": {
         "padding": "",
         "margin": "",
         "display": "",
@@ -283,6 +332,13 @@ const pageStyles = {
         "justify-content": "",
         "align-items": ""
     },
+    "timer": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
     "tickertext": {
         "padding": "",
         "margin": "",
@@ -291,13 +347,6 @@ const pageStyles = {
         "align-items": ""
     },
     "timelinefull": {
-        "padding": "",
-        "margin": "",
-        "display": "",
-        "justify-content": "",
-        "align-items": ""
-    },
-    "youtube": {
         "padding": "",
         "margin": "",
         "display": "",
@@ -318,6 +367,13 @@ const pageStyles = {
         "justify-content": "",
         "align-items": ""
     },
+    "video": {
+        "padding": "",
+        "margin": "",
+        "display": "",
+        "justify-content": "",
+        "align-items": ""
+    },
     "vimeo": {
         "padding": "",
         "margin": "",
@@ -332,56 +388,7 @@ const pageStyles = {
         "justify-content": "",
         "align-items": ""
     },
-    "disqus": {
-        "padding": "",
-        "margin": "",
-        "display": "",
-        "justify-content": "",
-        "align-items": ""
-    },
-    "disquscomment": {
-        "padding": "",
-        "margin": "",
-        "display": "",
-        "justify-content": "",
-        "align-items": ""
-    },
-    "timer": {
-        "padding": "",
-        "margin": "",
-        "display": "",
-        "justify-content": "",
-        "align-items": ""
-    },
-    "cardflip": {
-        "padding": "",
-        "margin": "",
-        "display": "",
-        "justify-content": "",
-        "align-items": ""
-    },
-    "counter": {
-        "padding": "",
-        "margin": "",
-        "display": "",
-        "justify-content": "",
-        "align-items": ""
-    },
-    "scrollindicator": {
-        "padding": "",
-        "margin": "",
-        "display": "",
-        "justify-content": "",
-        "align-items": ""
-    },
-    "pdfviewer": {
-        "padding": "",
-        "margin": "",
-        "display": "",
-        "justify-content": "",
-        "align-items": ""
-    },
-    "screen-page": {
+    "youtube": {
         "padding": "",
         "margin": "",
         "display": "",
@@ -389,20 +396,6 @@ const pageStyles = {
         "align-items": ""
     },
     "form1": {
-        "padding": "",
-        "margin": "",
-        "display": "",
-        "justify-content": "",
-        "align-items": ""
-    },
-    "slider": {
-        "padding": "",
-        "margin": "",
-        "display": "",
-        "justify-content": "",
-        "align-items": ""
-    },
-    "test": {
         "padding": "",
         "margin": "",
         "display": "",

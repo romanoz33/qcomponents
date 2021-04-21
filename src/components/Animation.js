@@ -106,6 +106,7 @@ const Animation = ({
 		wrapperRef.current.trigered = test;
 		togglePlay(test);
 	}, [trigger, animation, iteration, duration, delay, test]);
+	console.log('---', children);
 	return <Wrapper
 		ref={wrapperRef}
 		onMouseEnter={onEnterEvent}

@@ -15,16 +15,22 @@ export default {
 				"604f29dac8e036001ed136a3",
 				"604a2ace501e5800228d0183",
 				"604b50ee88a644001fa9a872",
+				"605b41432b962f001e7435c5",
 				"604b1e92c8e036001ed13069",
 				"604b172688a644001fa9a58f",
+				"60631b1588a644001fa9baae",
+				"605073392b962f001e743029",
+				"6051c4c3652a1e001e076677",
 				"604b4c8e2b962f001e74291f",
 				"604b4d5b2b962f001e74293f",
 				"604f54e0652a1e001e076210",
 				"604f585788a644001fa9ad0e",
 				"604f2ab9c8e036001ed136b5",
 				"604f6898652a1e001e076270",
+				"607e7f850ba79600228c269a",
+				"607e81c7eb6a2d001f2814fb",
+				"607e82c36381680022817027",
 				"604f0f292b962f001e742cae",
-				"604f129b652a1e001e0760d6",
 				"604f08eac8e036001ed13605",
 				"604f6b0d652a1e001e076286",
 				"60505fc588a644001fa9ae4c",
@@ -35,34 +41,27 @@ export default {
 				"604b80a4c8e036001ed1345b",
 				"604f7134c8e036001ed13876",
 				"604f6ca088a644001fa9ad6e",
+				"6065f3d3652a1e001e0773c1",
 				"604b6ebc2b962f001e742a67",
 				"604f6ebec8e036001ed1385a",
+				"6075a2bdb99fb9001fcbc879",
 				"604b7b15652a1e001e075e9f",
 				"604f705488a644001fa9ad98",
 				"604b6b36652a1e001e075e27",
-				"604a1c6f627982001eb72614",
 				"604b1a532b962f001e7426cd",
 				"604f448cc8e036001ed13752",
 				"604f503b652a1e001e0761e2",
 				"604a33d5627982001eb72705",
+				"6051d2d6c8e036001ed13bc6",
 				"604f0b61652a1e001e0760a2",
 				"604f51ea88a644001fa9ace4",
-				"604b6546652a1e001e075db3",
 				"604b30a888a644001fa9a72b",
 				"604b47a4c8e036001ed1322b",
+				"604a1c6f627982001eb72614",
 				"604b4f86652a1e001e075d2d",
 				"604b6938652a1e001e075df7",
-				"605073392b962f001e743029",
-				"6051c4c3652a1e001e076677",
-				"6051d2d6c8e036001ed13bc6",
-				"605b41432b962f001e7435c5",
-				"60631b1588a644001fa9baae",
-				"6065f3d3652a1e001e0773c1",
-				"6065f4ecc8e036001ed14911",
-				"606f0a9063816800228164a9",
-				"607467be0ba79600228c1fec",
-				"6075a2bdb99fb9001fcbc879",
-				"6076fb62eb6a2d001f28106e"
+				"604b6546652a1e001e075db3",
+				"607467be0ba79600228c1fec"
 			]
 		},
 		"60474504627982001eb71a54": {
@@ -210,11 +209,6 @@ export default {
 			"pageUrl": "livechat",
 			"name": "LiveChat"
 		},
-		"604f129b652a1e001e0760d6": {
-			"id": "604f129b652a1e001e0760d6",
-			"pageUrl": "lightbox",
-			"name": "LightBox"
-		},
 		"604f29dac8e036001ed136a3": {
 			"id": "604f29dac8e036001ed136a3",
 			"pageUrl": "bgimageparallax",
@@ -341,16 +335,6 @@ export default {
 			"pageUrl": "scrollindicator",
 			"name": "Scroll Indicator"
 		},
-		"6065f4ecc8e036001ed14911": {
-			"id": "6065f4ecc8e036001ed14911",
-			"pageUrl": "pdfviewer",
-			"name": "PDF Viewer"
-		},
-		"606f0a9063816800228164a9": {
-			"id": "606f0a9063816800228164a9",
-			"pageUrl": "screen-page",
-			"name": "Screen Page"
-		},
 		"607467be0ba79600228c1fec": {
 			"id": "607467be0ba79600228c1fec",
 			"pageUrl": "form1",
@@ -359,12 +343,22 @@ export default {
 		"6075a2bdb99fb9001fcbc879": {
 			"id": "6075a2bdb99fb9001fcbc879",
 			"pageUrl": "slider",
-			"name": "slider"
+			"name": "Slider"
 		},
-		"6076fb62eb6a2d001f28106e": {
-			"id": "6076fb62eb6a2d001f28106e",
-			"pageUrl": "test",
-			"name": "Test"
+		"607e7f850ba79600228c269a": {
+			"id": "607e7f850ba79600228c269a",
+			"pageUrl": "lightboximage",
+			"name": "LightboxImage"
+		},
+		"607e81c7eb6a2d001f2814fb": {
+			"id": "607e81c7eb6a2d001f2814fb",
+			"pageUrl": "lightboxmap",
+			"name": "LightboxMap"
+		},
+		"607e82c36381680022817027": {
+			"id": "607e82c36381680022817027",
+			"pageUrl": "lightboxvideo",
+			"name": "LightboxVideo"
 		}
 	},
 	"mode": "production",

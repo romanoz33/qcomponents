@@ -3,6 +3,7 @@ import theme from "theme";
 import { Theme, Link, Text, Box } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
+import { Override } from "@quarkly/components";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
@@ -14,7 +15,6 @@ export default (() => {
 			<meta name={"description"} content={"Web site created using quarkly.io"} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
-		<Components.HeadMenu />
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
@@ -33,514 +33,144 @@ export default (() => {
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
 				</Text>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Header row"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Название
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Описание
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						Значение по дефолту
-					</Text>
-				</Box>
-				<Box quarkly-title="Space" />
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 1"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Color
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Цвета элементов проигрывателя
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						#00ADEF
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 2"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Enable
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Показать элементы управления 
-проигрывателя{"\n\n"}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						on
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 3"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Autopause
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Автоматически останавливать при воспроизведении другого видео
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						on
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 4"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Autoplay
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Воспроизвести видео, после загрузки страницы
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						off
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 5"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Show portrait
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Отображать портрет владельца видео
-						<br />
-						{"\n\n"}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						on
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 6"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Show title
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Показать название видео
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						on
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 7"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Show byline
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Отображать имя владельца видео
-						<br />
-						{"\n\n"}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						on
-					</Text>
-					{" "}
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 8"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Responsive
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Растянуть проигрыватель на всю ширину
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						on
-					</Text>
-					{" "}
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 8"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Video ID or URL
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						ID или URL видео{" "}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						-
-					</Text>
-					{" "}
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 8"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Start
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Старт с определенной секунды
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						none
-					</Text>
-					{" "}
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 8"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Loop
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Воспроизводить видео завного по завершению
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						off
-					</Text>
-					{" "}
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 8"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Muted
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Отключить звук видео
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						off
-					</Text>
-					{" "}
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 8"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Play background
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Фоновый режим (скрываются элементы управления воспроизведением, включается автовоспроизведение и зацикливается видео)
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						off
-					</Text>
-					{" "}
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 8"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Volume
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Громкость звука (диапазон от 0 до 1)
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						1
-					</Text>
-					{" "}
+				<Box quarkly-title="Space">
+					<Components.Table width="100%" showHeader colsProp="3" rowsProp="14">
+						<Override slot="Text THead Col-0">
+							Название{"\n\n"}
+						</Override>
+						<Override slot="Text THead Col-1">
+							Описание{"\n\n"}
+						</Override>
+						<Override slot="Text THead Col-2">
+							Значение по дефолту{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-0 Col-0">
+							Color{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-1 Col-0">
+							Enable{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-2 Col-0">
+							Autopause{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-3 Col-0">
+							Autoplay{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-4 Col-0">
+							Show portrait{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-5 Col-0">
+							Show title{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-6 Col-0">
+							Show byline{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-7 Col-0">
+							Responsive{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-8 Col-0">
+							Video ID or URL{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-9 Col-0">
+							Start{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-10 Col-0">
+							Loop{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-11 Col-0">
+							Muted{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-12 Col-0">
+							Play background{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-13 Col-0">
+							Volume{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-0 Col-1">
+							Цвета элементов проигрывателя{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-1 Col-1">
+							Показать элементы управления проигрывателя{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-2 Col-1">
+							Автоматически останавливать при воспроизведении другого видео{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-3 Col-1">
+							Воспроизвести видео, после загрузки страницы{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-4 Col-1">
+							Отображать портрет владельца видео{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-5 Col-1">
+							Показать название видео{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-6 Col-1">
+							Отображать имя владельца видео{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-7 Col-1">
+							Растянуть проигрыватель на всю ширину{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-8 Col-1">
+							ID или URL видео{" \n\n"}
+						</Override>
+						<Override slot="Text TBody Row-9 Col-1">
+							Старт с определенной секунды{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-10 Col-1">
+							Воспроизводить видео завного по завершению{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-11 Col-1">
+							Отключить звук видео{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-12 Col-1">
+							Фоновый режим (скрываются элементы управления воспроизведением, включается автовоспроизведение и зацикливается видео){"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-13 Col-1">
+							Громкость звука (диапазон от 0 до 1){"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-0 Col-2">
+							#00ADEF{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-1 Col-2">
+							true
+						</Override>
+						<Override slot="Text TBody Row-2 Col-2">
+							true{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-4 Col-2">
+							true{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-5 Col-2">
+							true{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-6 Col-2">
+							true{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-7 Col-2">
+							true{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-8 Col-2">
+							-
+						</Override>
+						<Override slot="Text TBody Row-3 Col-2">
+							false
+						</Override>
+						<Override slot="Text TBody Row-9 Col-2">
+							none{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-10 Col-2">
+							false
+						</Override>
+						<Override slot="Text TBody Row-11 Col-2">
+							false{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-12 Col-2">
+							false{"\n\n"}
+						</Override>
+						<Override slot="Text TBody Row-13 Col-2">
+							1
+						</Override>
+					</Components.Table>
 				</Box>
 			</Box>
 		</Box>

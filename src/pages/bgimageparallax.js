@@ -16,11 +16,8 @@ export default (() => {
 			<meta name={"description"} content={"Web site created using quarkly.io"} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
-		<Components.HeadMenu>
-			<Override slot="mobileMenu" align-items="flex-start" justify-content="flex-start" />
-		</Components.HeadMenu>
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
-			<Box quarkly-title="Header">
+			<Box quarkly-title="Header" margin="50px 0px 100px 0px">
 				<Text text-align="center" font="--headline1">
 					BgImage Parallax
 				</Text>
@@ -99,238 +96,71 @@ export default (() => {
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
 				</Text>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Header row"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Название
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Описание
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						Значение по дефолту
-					</Text>
-				</Box>
-				<Box quarkly-title="Space" />
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 1"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Ссылка на изображение
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Ссылка на изображение
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						none
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 2"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Размер изображения
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Размер изображения
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						cover{" "}
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 3"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Выравнивание изображения
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Выравнивание изображения, если оно меньше блока
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						center
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 4"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Повтор изображения
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Повторять изображения по вертикали и горизонтали
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						no-repeat
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 5"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Скорость прокрутки
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Скорость прокрутки изображения{" "}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						0.5
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 6"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Инерция прокрутки
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Прокрутка, после остановки
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						1
-					</Text>
-				</Box>
+				<Components.Table colsProp="3" showHeader rowsProp="6" width="100%">
+					<Override slot="Text THead Col-0">
+						Название{"\n\n"}
+					</Override>
+					<Override slot="Text THead Col-1">
+						Описание{"\n\n"}
+					</Override>
+					<Override slot="Text THead Col-2">
+						Значение по дефолту{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-0 Col-0">
+						Ссылка на изображение{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-0 Col-1">
+						Ссылка на изображение{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-0 Col-2">
+						none{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-1 Col-0">
+						Размер изображения{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-2 Col-0">
+						Выравнивание изображения{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-3 Col-0">
+						Повтор изображения{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-4 Col-0">
+						Скорость прокрутки{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-5 Col-0">
+						Инерция прокрутки{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-1 Col-1">
+						Размер изображения{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-2 Col-1">
+						Выравнивание изображения, если оно меньше блока{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-3 Col-1">
+						Повторять изображения по вертикали и горизонтали{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-4 Col-1">
+						Скорость прокрутки изображения{" \n\n"}
+					</Override>
+					<Override slot="Text TBody Row-5 Col-1">
+						Прокрутка, после остановки{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-1 Col-2">
+						cover{" \n\n"}
+					</Override>
+					<Override slot="Text TBody Row-2 Col-2">
+						center{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-3 Col-2">
+						no-repeat{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-4 Col-2">
+						0.5{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-5 Col-2">
+						1{"\n\n"}
+					</Override>
+				</Components.Table>
 			</Box>
 		</Box>
 		<Link

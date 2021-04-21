@@ -15,9 +15,6 @@ export default (() => {
 			<meta name={"description"} content={"Web site created using quarkly.io"} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
-		<Components.HeadMenu sm-position="relative" sm-top={0}>
-			<Override slot="mobileMenu" sm-position="sticky" sm-top={0} />
-		</Components.HeadMenu>
 		<Box padding="0px 30px 0px 30px">
 			<Box margin="50px 0px 100px 0px">
 				<Text text-align="center" font="--headline1">
@@ -35,224 +32,80 @@ export default (() => {
 						Пропсы video:
 					</Text>
 				</Box>
-				<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Loop
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Зацикливает воспроизведение видео, чтобы оно повторялось с начала после завершения.
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						off
-					</Text>
-					{" "}
-				</Box>
-				<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Show controls
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Показать плеер
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						on
-					</Text>
-				</Box>
-				<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Muted
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Отключить звук{" "}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						off
-					</Text>
-				</Box>
-				<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Autoplay
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Автоматическое воспроизведение видео, после загрузки страницы
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						off
-					</Text>
-				</Box>
-				<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Poster
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Ссылка на изображение постера
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+				<Components.Table width="100%" showHeader colsProp="3" rowsProp="7">
+					<Override slot="Text THead Col-0">
+						Название{"\n\n"}
+					</Override>
+					<Override slot="Text THead Col-1">
+						Описание{"\n\n"}
+					</Override>
+					<Override slot="Text THead Col-2">
+						Значение по дефолту{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-0 Col-0">
+						Loop{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-1 Col-0">
+						Show controls{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-2 Col-0">
+						Muted{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-3 Col-0">
+						Autoplay{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-4 Col-0">
+						Poster{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-5 Col-0">
+						Src{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-6 Col-0">
+						PlayOnHover{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-0 Col-1">
+						Зацикливает воспроизведение видео, чтобы оно повторялось с начала после завершения.{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-1 Col-1">
+						Показать плеер{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-2 Col-1">
+						Отключить звук{" \n\n"}
+					</Override>
+					<Override slot="Text TBody Row-3 Col-1">
+						Автоматическое воспроизведение видео, после загрузки страницы{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-4 Col-1">
+						Ссылка на изображение постера{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-5 Col-1">
+						Прямая ссылка на видеофайл{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-6 Col-1">
+						Воспроизводить при наведении на видео{" \n\n"}
+					</Override>
+					<Override slot="Text TBody Row-0 Col-2">
+						false
+					</Override>
+					<Override slot="Text TBody Row-2 Col-2">
+						false{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-3 Col-2">
+						false{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-6 Col-2">
+						false{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-5 Col-2">
 						-
-					</Text>
-				</Box>
-				<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Src
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Прямая ссылка на видеофайл
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+					</Override>
+					<Override slot="Text TBody Row-4 Col-2">
 						-
-					</Text>
-				</Box>
-				<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						PlayOnHover
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Воспроизводить при наведении на видео{" "}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						off
-					</Text>
-				</Box>
-				<Box />
-				<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Название
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Описание
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						Значение по дефолту
-					</Text>
-				</Box>
+					</Override>
+					<Override slot="Text TBody Row-1 Col-2">
+						true
+					</Override>
+				</Components.Table>
 			</Box>
 			<Box>
 				<Box margin="50px 0px 0px 0px">
@@ -260,254 +113,89 @@ export default (() => {
 						Пропсы source:
 					</Text>
 				</Box>
-				<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Название
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Описание
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						Значение по дефолту
-					</Text>
-				</Box>
-				<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Src
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Ссылка на видео или аудио файл
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+				<Components.Table width="100%" colsProp="3" rowsProp="8" showHeader>
+					<Override slot="Text TBody Row-0 Col-0">
+						Src{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-0 Col-1">
+						Ссылка на видео или аудио файл{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-0 Col-2">
 						-
-					</Text>
-					{" "}
-				</Box>
-				<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Type
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						MIME-тип видео или аудио
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						-
-					</Text>
-				</Box>
-				<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Codesc
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
+					</Override>
+					<Override slot="Text TBody Row-1 Col-0">
+						Type{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-2 Col-0">
+						Codesc{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-3 Col-0">
+						Srcset{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-4 Col-0">
+						Sizes{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-5 Col-0">
+						Device{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-6 Col-0">
+						Media query{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-7 Col-0">
+						Type{"\n\n"}
+					</Override>
+					<Override slot="Text THead Col-0">
+						Название{"\n\n"}
+					</Override>
+					<Override slot="Text THead Col-1">
+						Описание{"\n\n"}
+					</Override>
+					<Override slot="Text THead Col-2">
+						Значение по дефолту{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-1 Col-1">
+						MIME-тип видео или аудио{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-2 Col-1">
 						Значение видео или аудиокодека{"\n\n"}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+					</Override>
+					<Override slot="Text TBody Row-3 Col-1">
+						Ссылка на изображение{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-4 Col-1">
+						Размеры изображения при разных размерах экрана{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-5 Col-1">
+						Тип устройства для медиа запроса{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-6 Col-1">
+						Mедиа-запрос, согласно которому будет выводиться изображение. (Работает только в элементе Picture.){"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-7 Col-1">
+						MIME-тип изображения{" \n\n"}
+					</Override>
+					<Override slot="Text TBody Row-1 Col-2">
+						-
+					</Override>
+					<Override slot="Text TBody Row-2 Col-2">
 						none
-					</Text>
-				</Box>
-				<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Srcset
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Ссылка на изображение
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						none{" "}
-					</Text>
-				</Box>
-				<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Sizes
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Размеры изображения при разных размерах экрана{"\n\n\n\n"}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						none{" \n\n"}
-					</Text>
-				</Box>
-				<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Device
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Тип устройства для медиа запроса
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+					</Override>
+					<Override slot="Text TBody Row-3 Col-2">
+						none{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-4 Col-2">
+						none{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-5 Col-2">
 						all
-					</Text>
-				</Box>
-				<Box>
-					<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-						<Text
-							width="100%"
-							font="18px sans-serif"
-							padding="15px 15px 15px 15px"
-							margin="0 0 0 0"
-							border-width="1px"
-							border-style="solid"
-							border-color="#eaeaea"
-						>
-							Media query
-						</Text>
-						<Text
-							width="100%"
-							font="18px sans-serif"
-							padding="15px 15px 15px 15px"
-							margin="0 0 0 0"
-							border-width="1px"
-							border-style="solid"
-							border-color="#eaeaea"
-						>
-							Mедиа-запрос, согласно которому будет выводиться изображение. (Работает только в элементе Picture.)
-						</Text>
-						<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-							none
-						</Text>
-					</Box>
-				</Box>
-				<Box>
-					<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-						<Text
-							width="100%"
-							font="18px sans-serif"
-							padding="15px 15px 15px 15px"
-							margin="0 0 0 0"
-							border-width="1px"
-							border-style="solid"
-							border-color="#eaeaea"
-						>
-							Type
-						</Text>
-						<Text
-							width="100%"
-							font="18px sans-serif"
-							padding="15px 15px 15px 15px"
-							margin="0 0 0 0"
-							border-width="1px"
-							border-style="solid"
-							border-color="#eaeaea"
-						>
-							MIME-тип изображения{" "}
-						</Text>
-						<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-							none
-						</Text>
-					</Box>
-				</Box>
+					</Override>
+					<Override slot="Text TBody Row-6 Col-2">
+						none{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-7 Col-2">
+						none{"\n\n"}
+					</Override>
+				</Components.Table>
 			</Box>
 			<Box margin="50px 0px 30px 0px">
 				<Text font="600 24px sans-serif">

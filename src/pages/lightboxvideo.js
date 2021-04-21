@@ -1,13 +1,14 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Link, Text, Box, Hr } from "@quarkly/widgets";
+import { Theme, Link, Text, Box, Icon } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
 import { Override } from "@quarkly/components";
 import * as Components from "components";
+import { MdPlayCircleFilled } from "react-icons/md";
 export default (() => {
 	return <Theme theme={theme}>
-		<GlobalQuarklyPageStyles pageUrl={"pricelist"} />
+		<GlobalQuarklyPageStyles pageUrl={"lightboxvideo"} />
 		<Helmet>
 			<title>
 				Quarkly export
@@ -16,17 +17,21 @@ export default (() => {
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
-			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
+			<Box margin="0 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
-					Pricelist{"\n\n"}
+					Lightbox Video
 				</Text>
 			</Box>
-			<Components.Pricelist design="horizontal" active="2" />
-			<Box quarkly-title="Props" height="auto" min-height="20px">
+			<Components.LightBoxVideo text-align="center">
+				<Box>
+					<Icon category="md" icon={MdPlayCircleFilled} size="60px" />
+				</Box>
+			</Components.LightBoxVideo>
+			<Box quarkly-title="Props" height="auto" min-height="20px" margin="500 0px 0px 0px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
 				</Text>
-				<Components.Table width="100%" showHeader colsProp="3" rowsProp="5">
+				<Components.Table width="100%" colsProp="3" rowsProp="3" showHeader>
 					<Override slot="Text THead Col-0">
 						Название{"\n\n"}
 					</Override>
@@ -37,59 +42,46 @@ export default (() => {
 						Значение по дефолту{"\n\n"}
 					</Override>
 					<Override slot="Text TBody Row-0 Col-0">
-						Products{"\n\n"}
+						Показать изображение{"\n\n"}
 					</Override>
 					<Override slot="Text TBody Row-1 Col-0">
-						Active column{"\n\n"}
+						Отключить скролл{"\n\n"}
 					</Override>
 					<Override slot="Text TBody Row-2 Col-0">
-						Design{"\n\n"}
+						Деактивировать Lightbox{"\n\n"}
 					</Override>
-					<Override slot="Text TBody Row-3 Col-0">
-						Show on screen (for horizontal design){"\n\n"}
-					</Override>
-					<Override slot="Text TBody Row-4 Col-0">
-						Show on screen (for vertical design){"\n\n"}
-					</Override>
+					<Override slot="Text TBody Row-3 Col-0" />
+					<Override slot="Text TBody Row-4 Col-0" />
+					<Override slot="Text TBody Row-5 Col-0" />
+					<Override slot="Text TBody Row-6 Col-0" />
 					<Override slot="Text TBody Row-0 Col-1">
-						Количество продуктов{"\n\n"}
+						Показать полное изображение Lightbox{"\n\n"}
 					</Override>
 					<Override slot="Text TBody Row-1 Col-1">
-						Активная колонка{"\n\n"}
+						Запретить возможность прокрутки при открытии Lightbox{"\n\n"}
 					</Override>
 					<Override slot="Text TBody Row-2 Col-1">
-						Дизайн компонента{"\n\n"}
+						Запретить открытие Lightbox{"\n\n"}
 					</Override>
-					<Override slot="Text TBody Row-3 Col-1">
-						Высота компонента в px (Все остальные строки доступны по скролу){"\n\n"}
-					</Override>
-					<Override slot="Text TBody Row-4 Col-1">
-						Количество отображаемых колонок (Все остальные колонки доступны по скролу){"\n\n"}
-					</Override>
+					<Override slot="Text TBody Row-3 Col-1" />
+					<Override slot="Text TBody Row-4 Col-1" />
+					<Override slot="Text TBody Row-5 Col-1" />
+					<Override slot="Text TBody Row-6 Col-1" />
 					<Override slot="Text TBody Row-0 Col-2">
-						4{"\n\n"}
+						false
 					</Override>
 					<Override slot="Text TBody Row-1 Col-2">
-						2{"\n\n"}
+						false{"\n\n"}
 					</Override>
 					<Override slot="Text TBody Row-2 Col-2">
-						vertical [horizontal]{"\n\n"}
+						false{"\n\n"}
 					</Override>
-					<Override slot="Text TBody Row-3 Col-2">
-						517{"\n\n"}
-					</Override>
-					<Override slot="Text TBody Row-4 Col-2">
-						4{"\n\n"}
-					</Override>
+					<Override slot="Text TBody Row-3 Col-2" />
+					<Override slot="Text TBody Row-4 Col-2" />
+					<Override slot="Text TBody Row-5 Col-2" />
+					<Override slot="Text TBody Row-6 Col-2" />
 				</Components.Table>
 			</Box>
-			<Box margin="50px 0px 30px 0px" quarkly-title="Example 1 ">
-				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пример с вертикальным положением:
-				</Text>
-				<Hr border-color="#c4c4c4" margin="16px 0px 40px 0px" />
-			</Box>
-			<Components.Pricelist design="vertical" active="1" size="7" show="6" />
 		</Box>
 		<Link
 			font={"--capture"}

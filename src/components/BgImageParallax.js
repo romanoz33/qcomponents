@@ -114,7 +114,13 @@ const BgImageParallax = ({
 			bgroundRef.current.style.transform = `translate3d(0, ${bgroundPos.current.bgroundTop}px, 0)`;
 		}
 	});
-	return <Box ref={wrapperRef} overflow="hidden" position="relative" {...rest}>
+	return <Box
+		ref={wrapperRef}
+		min-height="48px"
+		overflow="hidden"
+		position="relative"
+		{...rest}
+	>
 		      
 		<Bground
 			ref={bgroundRef}

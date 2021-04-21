@@ -15,11 +15,10 @@ export default (() => {
 			<meta name={"description"} content={"Web site created using quarkly.io"} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
-		<Components.HeadMenu />
 		<Box padding="0px 30px 0px 30px">
 			<Box margin="50px 0px 100px 0px">
 				<Text text-align="center" font="--headline1">
-					Mobile menu
+					Popup
 				</Text>
 			</Box>
 			<Components.Popup text-align="center" margin="500px 0px 500 0px">
@@ -62,37 +61,38 @@ export default (() => {
 			</Components.Popup>
 			<Box margin="50px 0px 0px 0px">
 				<Text font="600 24px sans-serif">
-					Вложенный элемент "Menu" имеет пропсы:
+					Пропсы:
 				</Text>
 			</Box>
-			<Box display="flex" border-width="1px" border-style="solid" border-color="#eaeaea">
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Название
-				</Text>
-				<Text
-					width="100%"
-					font="18px sans-serif"
-					padding="15px 15px 15px 15px"
-					margin="0 0 0 0"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-				>
-					Описание
-				</Text>
-				<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-					Значение по дефолту
-				</Text>
-			</Box>
-			<Box />
+			<Components.Table width="100%" showHeader rowsProp="2" colsProp="3">
+				<Override slot="Text THead Col-0">
+					Название{"\n\n"}
+				</Override>
+				<Override slot="Text THead Col-1">
+					Описание{"\n\n"}
+				</Override>
+				<Override slot="Text THead Col-2">
+					Значение по дефолту{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-0 Col-0">
+					Animation Duration (in seconds)
+				</Override>
+				<Override slot="Text TBody Row-1 Col-0">
+					Animation function
+				</Override>
+				<Override slot="Text TBody Row-0 Col-1">
+					Продолжительность анимации
+				</Override>
+				<Override slot="Text TBody Row-1 Col-1">
+					Скорость течения анимации
+				</Override>
+				<Override slot="Text TBody Row-1 Col-2">
+					linear
+				</Override>
+				<Override slot="Text TBody Row-0 Col-2">
+					0.15s
+				</Override>
+			</Components.Table>
 			<Box height="100px" />
 		</Box>
 		<Link

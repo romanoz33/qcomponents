@@ -3,7 +3,7 @@ import theme from "theme";
 import { Theme, Link, Text, Box, Image } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
-import { Section } from "@quarkly/components";
+import { Override, StackItem, Stack, Section } from "@quarkly/components";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
@@ -15,205 +15,141 @@ export default (() => {
 			<meta name={"description"} content={"Web site created using quarkly.io"} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
-		<Components.HeadMenu />
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
 					Back to top
 				</Text>
 			</Box>
+			<Text font="600 24px sans-serif" quarkly-title="Title">
+				Пропсы:
+			</Text>
+			<Components.Table showHeader colsProp="3" width="100%">
+				<Override slot="Text THead Col-0">
+					Название{"\n\n"}
+				</Override>
+				<Override slot="Text THead Col-1">
+					Описание{"\n\n"}
+				</Override>
+				<Override slot="Text THead Col-2">
+					Значение по дефолту{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-0 Col-0">
+					Animation duration{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-0 Col-1">
+					Продолжительность анимации (миллисекунды){"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-0 Col-2">
+					1000{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-1 Col-0">
+					Animation easing preset{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-1 Col-1">
+					Скорость течения анимации{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-1 Col-2">
+					easeInOutQuad{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-2 Col-0">
+					Show button after (in pixel){"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-2 Col-1">
+					Показать кнопку, после скрола на{" \n\n"}
+				</Override>
+				<Override slot="Text TBody Row-2 Col-2">
+					100{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-3 Col-0">
+					Show button always{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-3 Col-1">
+					Показывать кнопку всегда{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-3 Col-2">
+					false
+				</Override>
+			</Components.Table>
 			<Components.BackToTop showAlways={false} />
-			<Box quarkly-title="Props" height="auto" min-height="20px">
-				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пропсы:
-				</Text>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Header row"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Название
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Описание
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						Значение по дефолту
-					</Text>
-				</Box>
-				<Box quarkly-title="Space" />
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 1"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Animation duration
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Продолжительность анимации (миллисекунды)
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						1000
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 2"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Animation easing preset
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Скорость течения анимации{"\n\n"}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						easeInOutQuad
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 3"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Show button after (in pixel)
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Показать кнопку, после скрола на{" "}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						100
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 4"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Show button always
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Показывать кнопку всегда
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						off
-					</Text>
-				</Box>
-			</Box>
 		</Box>
-		<Section padding="140px 0" sm-padding="40px 0" background="url(https://images.unsplash.com/photo-1515600051222-a3c338ff16f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80) center/cover">
-			<Box max-width="240px" padding="50px 80px 80px 50px" background="--color-light" color="--dark">
-				<Text
-					as="h4"
-					font="--base"
-					color="--grey"
-					letter-spacing="1px"
-					text-transform="uppercase"
-					margin="6px 0"
-				>
-					About me
-				</Text>
-				<Text as="h2" font="--headline2" margin="0 0 12px 0">
-					Hey I’m David
-				</Text>
-				<Text font="--base">
-					My name is David R. Moore, born and raised in France, worked as a professional photographer and videographer for more than 10 years, awarded the CDS Documentary Essay Prize in 2018 and Best Photographer of The Year 2019 by Sony World Photography Awards.
-				</Text>
-			</Box>
+		<Section padding="64px 0" sm-padding="40px 0" font="--base" color="--dark">
+			<Text
+				as="h1"
+				font="--headline1"
+				md-font="--headline2"
+				max-width="520px"
+				margin="0 auto 5px auto"
+				text-align="center"
+			>
+				We are cute
+			</Text>
+			<Text
+				as="p"
+				color="--grey"
+				max-width="520px"
+				margin="0 auto"
+				text-align="center"
+				font="--lead"
+			>
+				The smartest people work every day to provide the best service and to make our clients happy
+			</Text>
+			<Stack margin-top="40px">
+				<StackItem width="25%" lg-width="50%" sm-width="100%">
+					<Override slot="StackItemContent" flex-direction="column" />
+					<Box height="0" margin="0 0 20px 0" padding-bottom="100%" background="url(https://images.unsplash.com/photo-1503443207922-dff7d543fd0e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=582&q=80) 50% 0/cover no-repeat" />
+					<Text color="--grey" margin="0">
+						CEO
+					</Text>
+					<Text as="h3" font="--headline3" margin="5px 0 20px 0">
+						Nathan K. Joe
+					</Text>
+					<Text as="p" margin="20px 0 5px 0">
+						This space is 100% editable. Use it to introduce a team member, describe their work experience and role within the company. This is also a great place to highlight a team member's strong sides.
+					</Text>
+				</StackItem>
+				<StackItem width="25%" lg-width="50%" sm-width="100%" sm-margin-top="24px">
+					<Override slot="StackItemContent" flex-direction="column" />
+					<Box height="0" margin="0 0 20px 0" padding-bottom="100%" background="url(https://images.unsplash.com/photo-1546672741-d327539d5f13?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80) 50% 0/cover no-repeat" />
+					<Text color="--grey" margin="0">
+						Developer
+					</Text>
+					<Text as="h3" font="--headline3" margin="5px 0 20px 0">
+						David R. Lema
+					</Text>
+					<Text as="p" margin="20px 0 5px 0">
+						This space is 100% editable. Use it to introduce a team member, describe their work experience and role within the company. This is also a great place to highlight a team member's strong sides.
+					</Text>
+				</StackItem>
+				<StackItem width="25%" lg-width="50%" sm-width="100%" sm-margin-top="24px">
+					<Override slot="StackItemContent" flex-direction="column" />
+					<Box height="0" margin="0 0 20px 0" padding-bottom="100%" background="url(https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80) 50% 0/cover no-repeat" />
+					<Text color="--grey" margin="0">
+						Marketing
+					</Text>
+					<Text as="h3" font="--headline3" margin="5px 0 20px 0">
+						Janet E. Morey
+					</Text>
+					<Text as="p" margin="20px 0 5px 0">
+						This space is 100% editable. Use it to introduce a team member, describe their work experience and role within the company. This is also a great place to highlight a team member's strong sides.
+					</Text>
+				</StackItem>
+				<StackItem width="25%" lg-width="50%" sm-width="100%" sm-margin-top="24px">
+					<Override slot="StackItemContent" flex-direction="column" />
+					<Box height="0" margin="0 0 20px 0" padding-bottom="100%" background="url(https://images.unsplash.com/photo-1510227272981-87123e259b17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=666&q=80) 50% 0/cover no-repeat" />
+					<Text color="--grey" margin="0">
+						Designer
+						<br />
+					</Text>
+					<Text as="h3" font="--headline3" margin="5px 0 20px 0">
+						Claire R. Peery
+						<br />
+					</Text>
+					<Text as="p" margin="20px 0 5px 0">
+						This space is 100% editable. Use it to introduce a team member, describe their work experience and role within the company. This is also a great place to highlight a team member's strong sides.
+					</Text>
+				</StackItem>
+			</Stack>
 		</Section>
 		<Section text-align="center" padding="100px 0" sm-padding="40px 0">
 			<Text as="h1" font="--headline1" md-font="--headline2" margin="20px 0 0 0">

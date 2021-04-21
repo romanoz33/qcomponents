@@ -1,6 +1,6 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Link, Text, Box, Strong, Button, Icon } from "@quarkly/widgets";
+import { Theme, Link, Text, Box, Button, Icon } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
 import { Override } from "@quarkly/components";
@@ -16,38 +16,11 @@ export default (() => {
 			<meta name={"description"} content={"Web site created using quarkly.io"} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
-		<Components.HeadMenu />
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
 					Slider
 				</Text>
-			</Box>
-			<Box display="flex" margin="500px 0px 50 0px">
-				<Components.CardFlip margin="0px auto 0px auto" flipTriggerProp="Click">
-					<Override slot="Flip Card Item" />
-					<Override slot="Flip Card Image" src="https://romanbabad.ucoz.net/src/aba/1/default-picture-1440.png" />
-					<Override slot="Flip Wrapper" display="inline-block" />
-					<Text font="--headline2">
-						<Strong>
-							Lorem Ipsum
-						</Strong>
-						{" \n\n"}
-					</Text>
-					<Text font="20px/1.7 --fontFamily-sans">
-						<Strong
-							overflow-wrap="normal"
-							word-break="normal"
-							white-space="normal"
-							text-indent="0"
-							text-overflow="clip"
-							hyphens="manual"
-						>
-							Lorem Ipsum
-						</Strong>
-						{" "}is simply dummy text of the prthe leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum{"\n\n"}
-					</Text>
-				</Components.CardFlip>
 			</Box>
 			<Components.CardFlip flipTriggerProp="Click">
 				<Text>
@@ -104,207 +77,62 @@ export default (() => {
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
 				</Text>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Header row"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Название
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Описание
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						Значение по дефолту
-					</Text>
-				</Box>
-				<Box quarkly-title="Space" />
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 1"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Flip Duration{" "}
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Продолжительность анимации разворота
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						1000
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 2"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Timing Function
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Cкорость течения анимации
-						<br />
-						{"\n\n"}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+				<Components.Table width="100%" showHeader colsProp="3" rowsProp="5">
+					<Override slot="Text THead Col-0">
+						Название{"\n\n"}
+					</Override>
+					<Override slot="Text THead Col-1">
+						Описание{"\n\n"}
+					</Override>
+					<Override slot="Text THead Col-2">
+						Значение по дефолту{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-0 Col-0">
+						Flip Duration{" \n\n"}
+					</Override>
+					<Override slot="Text TBody Row-1 Col-0">
+						Timing Function{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-2 Col-0">
+						Flip Trigger{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-3 Col-0">
+						Flip Direction{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-4 Col-0">
+						Aspect Ratio{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-0 Col-1">
+						Продолжительность анимации разворота{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-1 Col-1">
+						Cкорость течения анимации{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-2 Col-1">
+						Действие, вызывающее анимацию [Click, Hover]{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-3 Col-1">
+						Направление разворота [toRight, toLeft, ToUp, toDown]{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-4 Col-1">
+						Размер изображения в пропорциях [auto, 16:9, 4:3, 1:1, 3:4, 9:16 ]{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-0 Col-2">
+						1000{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-1 Col-2">
 						-
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 3"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Flip Trigger
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Действие, вызывающее анимацию [Click, Hover]
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						Click
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 4"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Flip Direction
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Направление разворота [toRight, toLeft, ToUp, toDown]
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+					</Override>
+					<Override slot="Text TBody Row-2 Col-2">
+						Click{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-3 Col-2">
 						toRight{"\n\n"}
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 5"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Aspect Ratio
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Размер изображения в пропорциях [auto, 16:9, 4:3, 1:1, 3:4, 9:16 ]
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
+					</Override>
+					<Override slot="Text TBody Row-4 Col-2">
 						auto{"\n\n"}
-					</Text>
-				</Box>
+					</Override>
+				</Components.Table>
 			</Box>
 		</Box>
 		<Link

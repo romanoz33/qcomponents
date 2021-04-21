@@ -84,15 +84,16 @@ const FlipCard = ({
 		rest
 	} = useOverrides(props, overrides);
 	const [isFlipped, setFlipped] = useState(isFlippedProp);
-	const flipTrigger = useMemo(() => flipTriggerProp === 'Click', [flipTriggerProp]);
+	const flipTrigger = flipTriggerProp === 'Click';
+	console.log(flipTrigger);
 	const flipDuration = useMemo(() => flipDurationProp.replace(/\s+/g, ''), [flipDurationProp]);
 	const currentStyles = useMemo(() => flipStyles[flipDirectionProp], [flipDirectionProp]);
 	const onClickFlip = useCallback(() => {
-		if (flipTrigger) setFlipped(!isFlipped);
-	}, [isFlipped]);
+		if (flipTrigger) setFlipped(isFlipped => !isFlipped);
+	}, [flipTrigger]);
 	const onHoverFlip = useCallback(() => {
-		if (!flipTrigger) setFlipped(!isFlipped);
-	}, [isFlipped]);
+		if (!flipTrigger) setFlipped(isFlipped => !isFlipped);
+	}, [flipTrigger]);
 	useEffect(() => {
 		setFlipped(isFlippedProp);
 	}, [isFlippedProp]);

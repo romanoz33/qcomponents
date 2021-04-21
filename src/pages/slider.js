@@ -15,15 +15,14 @@ export default (() => {
 			<meta name={"description"} content={"Web site created using quarkly.io"} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
-		<Components.HeadMenu />
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
 					Slider
 				</Text>
 			</Box>
-			<Box margin="50px 0px 0px 0px" quarkly-title="Architecture">
-				<Components.Slider height="600px" margin="500px 0px 500 0px">
+			<Box margin="50px 0px 0px 10" quarkly-title="Architecture">
+				<Components.Slider height="600px">
 					<Override slot="Slide Image" filter="brightness(40%) saturate(80%)" />
 					<Override slot="Arrow" background="none" />
 					<Override slot="Point Icon :active" border-color="none" color="#ffffff" />
@@ -32,6 +31,10 @@ export default (() => {
 					<Override slot="Arrow Next" background="none" />
 					<Override slot="Arrow Prev" background="none" />
 					<Override slot="Points" height="60px" />
+					<Override slot="Slide Image 1" src="https://images.unsplash.com/photo-1618759047667-ef9bf8828d98?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=2000" />
+					<Override slot="Slide Image 2" src="https://images.unsplash.com/photo-1618762058219-e8928e457b3c?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=2000" />
+					<Override slot="Slide Image 3" src="https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=2000" />
+					<Override slot="Slide Image 4" src="https://images.unsplash.com/photo-1603993097397-89c963e325c7?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=2000" />
 				</Components.Slider>
 				<Components.Slider>
 					<Override slot="Slide Image" />
@@ -99,338 +102,99 @@ export default (() => {
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
 				</Text>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Header row"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Название
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Описание
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						Значение по дефолту
-					</Text>
-				</Box>
-				<Box quarkly-title="Space" />
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 1"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Показать заголовок
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Показать заголовок{"\n\n"}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						true{" "}
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 1"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Показать описание
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Показать описание{"\n\n"}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						true{"\n\n"}
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 1"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Показать кнопку
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Показать кнопку{"\n\n"}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						true{"\n\n"}
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 1"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Показать стрелки{" "}
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Показать стрелки{" \n\n"}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						true{" "}
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 1"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Показать точки
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Показать точки{"\n\n"}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						true{" "}
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 1"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Длительность анимации
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Длительность анимации{"\n\n"}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						0.5s
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 1"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Функция анимации
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Скорость течения анимации
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						linear
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 1"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Количество слайдов
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Количество слайдов{" "}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						4
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Row 1"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Соотношение сторон
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Соотношение сторон слайдов
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						16:9
-					</Text>
-				</Box>
 			</Box>
+			<Components.Table width="100%" showHeader colsProp="3" rowsProp="9">
+				<Override slot="Text THead Col-0">
+					Название{"\n\n"}
+				</Override>
+				<Override slot="Text THead Col-1">
+					Описание{"\n\n"}
+				</Override>
+				<Override slot="Text THead Col-2">
+					Значение по дефолту{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-0 Col-0">
+					Показать заголовок{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-0 Col-1">
+					Показать заголовок{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-0 Col-2">
+					true{" \n\n"}
+				</Override>
+				<Override slot="Text TBody Row-1 Col-0">
+					Показать описание{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-1 Col-1">
+					Показать описание{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-1 Col-2">
+					true{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-2 Col-0">
+					Показать кнопку{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-2 Col-1">
+					Показать кнопку{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-2 Col-2">
+					true
+				</Override>
+				<Override slot="Text TBody Row-3 Col-0">
+					Показать стрелки{" \n\n"}
+				</Override>
+				<Override slot="Text TBody Row-4 Col-0">
+					Показать точки{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-3 Col-1">
+					Показать стрелки{" \n\n"}
+				</Override>
+				<Override slot="Text TBody Row-4 Col-1">
+					Показать точки{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-3 Col-2">
+					true{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-4 Col-2">
+					true{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-5 Col-0">
+					Длительность анимации{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-6 Col-0">
+					Функция анимации{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-7 Col-0">
+					Количество слайдов{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-8 Col-0">
+					Соотношение сторон{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-5 Col-1">
+					Длительность анимации{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-5 Col-2">
+					0.5s{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-6 Col-1">
+					Скорость течения анимации{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-6 Col-2">
+					linear{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-7 Col-1">
+					Количество слайдов{" \n\n"}
+				</Override>
+				<Override slot="Text TBody Row-7 Col-2">
+					4{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-8 Col-1">
+					Соотношение сторон слайдов{"\n\n"}
+				</Override>
+				<Override slot="Text TBody Row-8 Col-2">
+					16:9{"\n\n"}
+				</Override>
+			</Components.Table>
 		</Box>
 		<Link
 			font={"--capture"}

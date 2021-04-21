@@ -15,7 +15,6 @@ export default (() => {
 			<meta name={"description"} content={"Web site created using quarkly.io"} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
-		<Components.HeadMenu />
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 70px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
@@ -36,7 +35,6 @@ export default (() => {
 					slot="Item"
 					background="--color-lightD1"
 					margin="0px 24px 0px 5px"
-					box-shadow="inset 2px 2px 5px rgba(154, 147, 140, 0.5)"
 					padding="28px 32px 36px 32px"
 					border-radius="32px"
 				/>
@@ -47,276 +45,86 @@ export default (() => {
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:
 				</Text>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Header row"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Название
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Описание
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						Значение по дефолту
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Item"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						To Date
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Дата окончания таймера (в формате дд-мм-гггг)
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						-
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Item"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						To Time
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Время окончания таймера (в формате чч:мм)
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						-
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Item"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Show Days
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Показать Дни
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						true{" "}
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Item"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Show Hours
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Показать Часы
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						true{" "}
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Item"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Show Minutes
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Показать Минуты{" "}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						true{" "}
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Item"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Show Seconds
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						Показать Секунды{" "}
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						true{" "}
-					</Text>
-				</Box>
-				<Box
-					display="flex"
-					border-width="1px"
-					border-style="solid"
-					border-color="#eaeaea"
-					quarkly-title="Item"
-				>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
-						When Show Text
-					</Text>
-					<Text
-						width="100%"
-						font="18px sans-serif"
-						padding="15px 15px 15px 15px"
-						margin="0 0 0 0"
-						border-width="1px"
-						border-style="solid"
-						border-color="#eaeaea"
-					>
+				<Components.Table width="100%" showHeader colsProp="3" rowsProp="7">
+					<Override slot="Text THead Col-0">
+						Название{"\n\n"}
+					</Override>
+					<Override slot="Text THead Col-1">
+						Описание{"\n\n"}
+					</Override>
+					<Override slot="Text THead Col-2">
+						Значение по дефолту{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-0 Col-0">
+						To Date{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-0 Col-1">
+						Дата окончания таймера (в формате дд-мм-гггг){"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-0 Col-2">
+						-{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-1 Col-0">
+						To Time{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-1 Col-1">
+						Время окончания таймера (в формате чч:мм){"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-1 Col-2">
+						-{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-2 Col-0">
+						Show Days{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-2 Col-1">
+						Показать Дни{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-2 Col-2">
+						true{" \n\n"}
+					</Override>
+					<Override slot="Text TBody Row-3 Col-0">
+						Show Hours{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-3 Col-1">
+						Показать Дни{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-3 Col-2">
+						true{" \n\n"}
+					</Override>
+					<Override slot="Text TBody Row-4 Col-0">
+						Show Minutes{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-4 Col-1">
+						Показать Часы{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-5 Col-0">
+						Show Seconds{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-6 Col-0">
+						When Show Text{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-6 Col-1">
 						Когда показать текст об окончании таймера
 						<br />
 						- Always - всегда
 						<br />
 						- Complete - когда время закончится
 						<br />
-						- Never - Никогда
-					</Text>
-					<Text width="100%" font="18px sans-serif" padding="15px 15px 15px 15px" margin="0 0 0 0">
-						complete
-					</Text>
-				</Box>
+						- Never - Никогда{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-5 Col-1">
+						Показать Секунды{" \n\n"}
+					</Override>
+					<Override slot="Text TBody Row-6 Col-2">
+						complete{"\n\n"}
+					</Override>
+					<Override slot="Text TBody Row-5 Col-2">
+						true{" \n\n"}
+					</Override>
+					<Override slot="Text TBody Row-4 Col-2">
+						true{" \n\n"}
+					</Override>
+				</Components.Table>
 				<Box quarkly-title="Space" />
 			</Box>
 		</Box>
