@@ -24,7 +24,7 @@ export default (() => {
 			<Components.ProgressBar />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пропсы:
+					Props{" "}
 				</Text>
 				<Components.Table width="100%" showHeader colsProp="3" rowsProp="8">
 					<Override slot="Text THead Col-0">

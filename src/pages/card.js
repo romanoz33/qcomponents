@@ -27,6 +27,7 @@ export default (() => {
 				showButton
 				showImage
 				width="350px"
+				margin="5px auto 5px auto"
 			>
 				<Override slot="Card Image AspectRatio" src="https://romanbabad.ucoz.net/src/aba/1/default-picture-1440.png" />
 				<Override slot="Card Title">
@@ -43,7 +44,7 @@ export default (() => {
 			</Components.Card>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пропсы:
+					Props{" "}
 				</Text>
 				<Components.Table width="100%" showHeader colsProp="3" rowsProp="7">
 					<Override slot="Text THead Col-0">

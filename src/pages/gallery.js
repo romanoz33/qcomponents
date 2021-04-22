@@ -69,7 +69,7 @@ export default (() => {
 			</Components.Gallery>
 			<Box margin="50px 0px 0px 0px" quarkly-title="Architecture">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Архитектура:
+					Structure{" "}
 				</Text>
 				<Box
 					margin="0px 0px 50px 0px"
@@ -153,7 +153,7 @@ export default (() => {
 			</Box>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пропсы Gallery:
+					Props Gallery
 				</Text>
 				<Components.Table width="100%" colsProp="3" rowsProp="11" showHeader>
 					<Override slot="Text THead Col-0">
@@ -295,7 +295,7 @@ export default (() => {
 			</Box>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пропсы GalleryItem:
+					Props GalleryItem
 				</Text>
 				<Components.Table showHeader width="100%" colsProp="3" rowsProp="6">
 					<Override slot="Text THead Col-0">

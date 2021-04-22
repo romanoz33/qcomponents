@@ -30,7 +30,7 @@ export default (() => {
 			</Components.TabsFull>
 			<Box margin="50px 0px 0px 0px" quarkly-title="Architecture">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Архитектура:
+					Structure{" "}
 				</Text>
 				<Box
 					margin="0px 0px 50px 0px"

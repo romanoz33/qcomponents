@@ -15,7 +15,7 @@ export default (() => {
 			<meta name={"description"} content={"Web site created using quarkly.io"} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
-		<Box padding="0px 30px 0px 30px">
+		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px">
 				<Text text-align="center" font="--headline1">
 					Audio
@@ -34,7 +34,7 @@ export default (() => {
 			<Components.Audio src="  " />
 			<Box margin="50px 0px 0px 0px">
 				<Text font="600 24px sans-serif">
-					Пропсы:
+					Props{" "}
 				</Text>
 				<Components.Table showHeader width="100%" colsProp="3" rowsProp="5">
 					<Override slot="Text THead Col-0">
@@ -92,7 +92,6 @@ export default (() => {
 						false{"\n\n"}
 					</Override>
 				</Components.Table>
-				<Box height="100px" />
 			</Box>
 		</Box>
 		<Link

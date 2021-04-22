@@ -1,11 +1,10 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Link, Icon, Text, Box } from "@quarkly/widgets";
+import { Theme, Link, Text, Box } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
 import { Override } from "@quarkly/components";
 import * as Components from "components";
-import { MdKeyboardArrowLeft } from "react-icons/md";
 export default (() => {
 	return <Theme theme={theme}>
 		<GlobalQuarklyPageStyles pageUrl={"beforeafterimage"} />
@@ -17,7 +16,6 @@ export default (() => {
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
 		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
-			<Icon category="md" icon={MdKeyboardArrowLeft} />
 			<Box margin="50px 0px 100px 0px" quarkly-title="Header">
 				<Text text-align="center" font="--headline1">
 					Before After Image
@@ -30,7 +28,7 @@ export default (() => {
 			<Box margin="50px 0px 0px 0px" quarkly-title="Architecture" />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пропсы:
+					Props{" "}
 				</Text>
 				<Components.Table showHeader colsProp="3" rowsProp="2" width="100%">
 					<Override slot="Text THead Col-0">

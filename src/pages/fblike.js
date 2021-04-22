@@ -30,7 +30,7 @@ export default (() => {
 				kidDirectedSite={false}
 			/>
 			<Text font="600 24px sans-serif" quarkly-title="Title">
-				Пропсы:
+				Props{" "}
 			</Text>
 			<Components.Table colsProp="3" rowsProp="11" width="100%" showHeader={false}>
 				<Override slot="Text TBody Row-0 Col-0">

@@ -26,7 +26,7 @@ export default (() => {
 			</Components.Disqus>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title" margin="76px 0px 16px 0px">
-					Пропсы:
+					Props{" "}
 				</Text>
 				<Components.Table width="100%" showHeader colsProp="3" rowsProp="5">
 					<Override slot="Text THead Col-0">

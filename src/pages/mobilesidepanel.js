@@ -41,9 +41,9 @@ export default (() => {
 			<Components.MobileSidePanel />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пропсы:
+					Props{" "}
 				</Text>
-				<Components.Table lg-width="100%">
+				<Components.Table lg-width="100%" colsProp="3" showHeader width="100%">
 					<Override slot="Text THead Col-0">
 						Название{"\n\n"}
 					</Override>

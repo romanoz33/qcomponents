@@ -33,7 +33,7 @@ export default (() => {
 			/>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пропсы YoomoneyDonateForm:
+					Props YoomoneyDonateForm
 				</Text>
 				<Box quarkly-title="Space">
 					<Components.Table showHeader width="100%" colsProp="3" rowsProp="14">

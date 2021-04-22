@@ -28,7 +28,7 @@ export default (() => {
 			</Components.LoopText>
 			<Box quarkly-title="Props" height="auto" min-height="20px" margin="500 0px 0px 0px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пропсы:
+					Props{" "}
 				</Text>
 				<Components.Table width="100%" colsProp="3" rowsProp="7" showHeader>
 					<Override slot="Text THead Col-0">

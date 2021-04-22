@@ -3,7 +3,7 @@ import theme from "theme";
 import { Theme, Link, Text, Box } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
-import { Section, Override } from "@quarkly/components";
+import { StackItem, Stack, Section, Override } from "@quarkly/components";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
@@ -20,28 +20,72 @@ export default (() => {
 				<Text text-align="center" font="--headline1">
 					Section
 				</Text>
+				<Section
+					padding="60px 0"
+					sm-padding="40px 0"
+					background="--color-light"
+					display="flex"
+					flex-direction="column"
+				>
+					<Stack color="--grey" font="--base" flex-wrap="wrap" align-items="center">
+						<StackItem flex-grow="1" md-width="100%">
+							<Text
+								as="h1"
+								margin="0px"
+								font="--headline1"
+								md-font="--headline2"
+								color="--dark"
+							>
+								Heading
+							</Text>
+						</StackItem>
+						<StackItem md-width="100%">
+							<Text margin="0px" max-width="260px">
+								Hi! I'm a paragraph. Click here to add your own text and edit me. It’s a piece of cake.
+							</Text>
+						</StackItem>
+						<StackItem md-width="100%">
+							<Text margin="0px" font="--headline1" md-font="--headline2" color="--dark">
+								17
+							</Text>
+						</StackItem>
+					</Stack>
+				</Section>
+				<Box />
+				<Section
+					padding="60px 0"
+					sm-padding="40px 0"
+					background="--color-light"
+					display="flex"
+					flex-direction="column"
+				>
+					<Stack color="--grey" font="--base">
+						<StackItem width="25%" md-width="50%" sm-width="100%">
+							<Text margin="0px" font="--headline1" md-font="--headline2" color="--dark">
+								17
+							</Text>
+						</StackItem>
+						<StackItem width="25%" md-width="50%" sm-width="100%">
+							<Text margin="0px">
+								Hi! I'm a paragraph. Click here to add your own text and edit me. It’s a piece of cake.
+							</Text>
+						</StackItem>
+						<StackItem width="25%" md-width="50%" sm-width="100%">
+							<Text margin="0px">
+								Hi! I'm a paragraph. Click here to add your own text and edit me. It’s a piece of cake.
+							</Text>
+						</StackItem>
+						<StackItem width="25%" md-width="50%" sm-width="100%">
+							<Text margin="0px">
+								Hi! I'm a paragraph. Click here to add your own text and edit me. It’s a piece of cake.
+							</Text>
+						</StackItem>
+					</Stack>
+				</Section>
 			</Box>
-			<Section border-width=".5px" border-style="solid" border-color="rgba(0, 0, 0, 0.18)">
-				<Text font="--headline3">
-					Section
-				</Text>
-				<Text font="18px/1.7 sans-serif">
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.{"\n\n"}
-				</Text>
-			</Section>
-			<Section border-width=".5px" border-style="solid" border-color="rgba(0, 0, 0, 0.18)" lg-margin="10px 0 0 0">
-				<Text font="--headline3">
-					Section
-				</Text>
-				<Text font="18px/1.7 sans-serif">
-					In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
-					<br />
-					{"\n\n"}
-				</Text>
-			</Section>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пропсы:
+					Props{" "}
 				</Text>
 				<Components.Table width="100%" showHeader colsProp="3" rowsProp="4">
 					<Override slot="Text THead Col-0">

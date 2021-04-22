@@ -35,7 +35,7 @@ export default (() => {
 			</Formspree>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пропсы:
+					Props{" "}
 				</Text>
 				<Components.Table showHeader width="100%" colsProp="3" rowsProp="3">
 					<Override slot="Text THead Col-0">

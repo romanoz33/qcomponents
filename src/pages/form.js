@@ -29,7 +29,7 @@ export default (() => {
 			</Components.Form>
 			<Box margin="50px 0px 0px 0px" quarkly-title="Architecture">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Архитектура:
+					Structure{" "}
 				</Text>
 				<Box
 					margin="0px 0px 50px 0px"
@@ -113,7 +113,7 @@ export default (() => {
 			</Box>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пропсы FormLabel:
+					Props FormLabel:
 				</Text>
 				<Components.Table showHeader width="100%" colsProp="3" rowsProp="2">
 					<Override slot="Text THead Col-0">
@@ -147,7 +147,7 @@ export default (() => {
 			</Box>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пропсы FormInput:
+					Props FormInput:
 				</Text>
 				<Components.Table showHeader width="100%" colsProp="3" rowsProp="1">
 					<Override slot="Text THead Col-0">
@@ -181,7 +181,7 @@ export default (() => {
 			</Box>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пропсы FormSelect:
+					Props FormSelect:
 				</Text>
 				<Components.Table showHeader width="100%" colsProp="3" rowsProp="1">
 					<Override slot="Text THead Col-0">
@@ -215,7 +215,7 @@ export default (() => {
 			</Box>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пропсы FormTextarea:
+					Props FormTextarea:
 				</Text>
 				<Components.Table showHeader width="100%" colsProp="3" rowsProp="13">
 					<Override slot="Text THead Col-0">

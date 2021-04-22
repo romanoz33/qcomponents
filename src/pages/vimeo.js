@@ -31,7 +31,7 @@ export default (() => {
 			<Components.Vimeo controls autopause playBackground={false} responsive />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пропсы:
+					Props{" "}
 				</Text>
 				<Box quarkly-title="Space">
 					<Components.Table width="100%" showHeader colsProp="3" rowsProp="14">

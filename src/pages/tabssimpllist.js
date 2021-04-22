@@ -74,7 +74,7 @@ export default (() => {
 			</Components.TabsSimpleList>
 			<Box margin="50px 0px 0px 0px" quarkly-title="Architecture">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Архитектура:
+					Structure{" "}
 				</Text>
 				<Box
 					margin="0px 0px 50px 0px"
@@ -130,7 +130,7 @@ export default (() => {
 			</Box>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пропсы TabsSimpleList:
+					Props TabsSimpleList
 				</Text>
 				<Components.Table width="100%" showHeader colsProp="3" rowsProp="1">
 					<Override slot="Text THead Col-0">
@@ -155,7 +155,7 @@ export default (() => {
 			</Box>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пропсы TabsSimpleItem:
+					Props TabsSimpleItem
 				</Text>
 				<Components.Table width="100%" showHeader colsProp="3" rowsProp="1">
 					<Override slot="Text THead Col-0">

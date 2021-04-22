@@ -24,7 +24,7 @@ export default (() => {
 			<GoogleMap query="Москва, Пушкинская  1" width="auto" />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пропсы:
+					Props{" "}
 				</Text>
 				<Components.Table showHeader colsProp="3" rowsProp="2" width="100%">
 					<Override slot="Text THead Col-0">

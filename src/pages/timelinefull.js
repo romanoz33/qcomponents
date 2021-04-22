@@ -70,7 +70,7 @@ TimeLineItem
 			</Components.TimelineList>
 			<Box margin="50px 0px 0px 0px" quarkly-title="Architecture">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Архитектура:
+					Structure{" "}
 				</Text>
 				<Box
 					margin="0px 0px 50px 0px"
@@ -113,10 +113,8 @@ TimeLineItem
 			</Box>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пропсы 
+					Props 
 TimeLine Full
-
-:
 				</Text>
 				<Components.Table width="100%" showHeader colsProp="3">
 					<Override slot="Text THead Col-0">

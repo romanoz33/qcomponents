@@ -15,21 +15,21 @@ export default (() => {
 			<meta name={"description"} content={"Web site created using quarkly.io"} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
-		<Box padding="0px 30px 0px 30px">
+		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px">
 				<Text text-align="center" font="--headline1">
 					Video
 				</Text>
 			</Box>
-			<Components.Video poster=" " src=" https://uploads.quarkly.io/molecules/default-video.mp4">
+			<Components.Video poster=" ">
 				<Override slot="Video Tag" />
 			</Components.Video>
 			<Components.Source sm-margin="500px 0px 0px 0px" />
-			<Components.Track margin="500px 0px 500px 0px" />
+			<Components.Track />
 			<Box>
 				<Box margin="50px 0px 0px 0px">
 					<Text font="600 24px sans-serif">
-						Пропсы video:
+						Props video
 					</Text>
 				</Box>
 				<Components.Table width="100%" showHeader colsProp="3" rowsProp="7">
@@ -110,7 +110,7 @@ export default (() => {
 			<Box>
 				<Box margin="50px 0px 0px 0px">
 					<Text font="600 24px sans-serif">
-						Пропсы source:
+						Props source
 					</Text>
 				</Box>
 				<Components.Table width="100%" colsProp="3" rowsProp="8" showHeader>
@@ -219,7 +219,6 @@ export default (() => {
 					<Components.Source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4" />
 				</Components.Video>
 			</Box>
-			<Box height="100px" />
 		</Box>
 		<Link
 			font={"--capture"}

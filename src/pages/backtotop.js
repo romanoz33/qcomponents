@@ -22,7 +22,7 @@ export default (() => {
 				</Text>
 			</Box>
 			<Text font="600 24px sans-serif" quarkly-title="Title">
-				Пропсы:
+				Props{" "}
 			</Text>
 			<Components.Table showHeader colsProp="3" width="100%">
 				<Override slot="Text THead Col-0">

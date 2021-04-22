@@ -15,7 +15,7 @@ export default (() => {
 			<meta name={"description"} content={"Web site created using quarkly.io"} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
-		<Box padding="0px 30px 0px 30px">
+		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px">
 				<Text text-align="center" font="--headline1">
 					Tooltip
@@ -32,7 +32,7 @@ export default (() => {
 			</Components.Tooltip>
 			<Box margin="50px 0px 0px 0px">
 				<Text font="600 24px sans-serif">
-					Пропсы:
+					Props{" "}
 				</Text>
 			</Box>
 			<Components.Table width="100%" showHeader colsProp="3" rowsProp="8">
@@ -190,7 +190,6 @@ export default (() => {
 					</Override>
 				</Components.Tooltip>
 			</Box>
-			<Box height="100px" />
 		</Box>
 		<Link
 			font={"--capture"}

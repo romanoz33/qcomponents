@@ -35,7 +35,7 @@ export default (() => {
 					<Override slot="Item" box-shadow="0" />
 				</Components.MenuWithDropdown>
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пропсы:
+					Props{" "}
 				</Text>
 				<Box quarkly-title="Space">
 					<Components.Table width="100%" colsProp="3" rowsProp="3" showHeader>

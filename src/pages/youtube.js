@@ -26,7 +26,7 @@ export default (() => {
 			<Components.YouTube variant="Fast and low traffic (recomended)" margin="500px 100 500px 100px" />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пропсы:
+					Props{" "}
 				</Text>
 				<Components.Table width="100%" showHeader colsProp="3" rowsProp="7">
 					<Override slot="Text THead Col-0">

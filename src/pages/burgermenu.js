@@ -15,7 +15,7 @@ export default (() => {
 			<meta name={"description"} content={"Web site created using quarkly.io"} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
-		<Box padding="0px 30px 0px 30px">
+		<Box padding="0px 30px 50px 30px" quarkly-title="Wrapper">
 			<Box margin="50px 0px 100px 0px">
 				<Text text-align="center" font="--headline1">
 					Burger menu
@@ -29,7 +29,7 @@ export default (() => {
 			</Components.BurgerMenu>
 			<Box margin="50px 0px 0px 0px">
 				<Text font="600 24px sans-serif">
-					Вложенный элемент "Menu" имеет пропсы:
+					Structure  Menu{" "}
 				</Text>
 			</Box>
 			<Components.Table showHeader colsProp="3" rowsProp="3" width="100%">
@@ -84,7 +84,6 @@ export default (() => {
 					При добавлении автоматически подтягиваются все имеющиеся страницы сайта{"\n\n"}
 				</Text>
 			</Box>
-			<Box height="100px" />
 		</Box>
 		<Link
 			font={"--capture"}

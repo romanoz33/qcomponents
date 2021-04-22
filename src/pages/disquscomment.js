@@ -27,7 +27,7 @@ export default (() => {
 			<Components.DisqusComment showParrent width="auto" />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пропсы:
+					Props{" "}
 				</Text>
 				<Components.Table width="100%" showHeader colsProp="3">
 					<Override slot="Text THead Col-0">

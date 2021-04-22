@@ -22,10 +22,9 @@ export default (() => {
 				</Text>
 				<Components.VkPage groupId="175635117" />
 			</Box>
-			<Components.VkPage wide={false} viewMode="Members" margin="30px 0px 0px 0px" />
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
-					Пропсы:
+					Props{"  "}
 				</Text>
 				<Box quarkly-title="Space">
 					<Components.Table width="100%" showHeader colsProp="3" rowsProp="8">
@@ -114,7 +113,6 @@ export default (() => {
 				</Box>
 			</Box>
 		</Box>
-		<Box />
 		<Link
 			font={"--capture"}
 			font-size={"10px"}

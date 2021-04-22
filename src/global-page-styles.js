@@ -395,7 +395,7 @@ const pageStyles = {
         "justify-content": "",
         "align-items": ""
     },
-    "fff": {
+    "slidersimple": {
         "padding": "",
         "margin": "",
         "display": "",
