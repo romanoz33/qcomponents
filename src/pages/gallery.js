@@ -28,9 +28,9 @@ export default (() => {
 				hideLoaderFullImage={false}
 				aspectRatioProp="auto"
 				columnsCountProp="6"
-				galleryItemNumbProp="146"
 				hideLoaderPreviewImage={false}
 				loaderFormatProp="click"
+				galleryItemNumbProp="6"
 			>
 				<Override
 					slot="Item"
