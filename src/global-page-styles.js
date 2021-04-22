@@ -394,13 +394,6 @@ const pageStyles = {
         "display": "",
         "justify-content": "",
         "align-items": ""
-    },
-    "slidersimple": {
-        "padding": "",
-        "margin": "",
-        "display": "",
-        "justify-content": "",
-        "align-items": ""
     }
 };
 

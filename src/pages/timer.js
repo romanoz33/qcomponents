@@ -86,7 +86,8 @@ export default (() => {
 						Show Hours{"\n\n"}
 					</Override>
 					<Override slot="Text TBody Row-3 Col-1">
-						Показать Дни{"\n\n"}
+						Показать 
+Часы{"\n\n\n\n"}
 					</Override>
 					<Override slot="Text TBody Row-3 Col-2">
 						true{" \n\n"}
@@ -95,7 +96,7 @@ export default (() => {
 						Show Minutes{"\n\n"}
 					</Override>
 					<Override slot="Text TBody Row-4 Col-1">
-						Показать Часы{"\n\n"}
+						Показать Минуты
 					</Override>
 					<Override slot="Text TBody Row-5 Col-0">
 						Show Seconds{"\n\n"}

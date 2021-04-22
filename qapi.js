@@ -60,8 +60,7 @@ export default {
 				"604b4f86652a1e001e075d2d",
 				"604b6938652a1e001e075df7",
 				"604b6546652a1e001e075db3",
-				"607467be0ba79600228c1fec",
-				"608160840ba79600228c2a98"
+				"607467be0ba79600228c1fec"
 			]
 		},
 		"60474504627982001eb71a54": {
@@ -354,11 +353,6 @@ export default {
 			"id": "607e82c36381680022817027",
 			"pageUrl": "lightboxvideo",
 			"name": "LightboxVideo"
-		},
-		"608160840ba79600228c2a98": {
-			"id": "608160840ba79600228c2a98",
-			"pageUrl": "slidersimple",
-			"name": "slidersimple"
 		}
 	},
 	"mode": "production",
