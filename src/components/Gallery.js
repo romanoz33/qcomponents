@@ -159,13 +159,16 @@ const Gallery = ({
 			setButtonVisible(false);
 		}
 	}, [galleryItemNumbProp]);
-	const loadOnClick = useCallback(() => {
+
+	const loadOnClick = () => {
 		const galleryRect = galleryRef.current.getBoundingClientRect();
 
 		if (galleryRect.bottom - window.innerHeight / 2 < window.innerHeight) {
 			loadMore('click');
 		}
-	}, [galleryRef.current]);
+	}; // }, [galleryRef.current, galleryItemNumbProp]);
+
+
 	const loadOnScroll = useCallback(() => {
 		const galleryRect = galleryRef.current.getBoundingClientRect();
 		const itemsCount = getItemCountOnView(galleryRect.width);
