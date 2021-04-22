@@ -23,6 +23,7 @@ export default (() => {
 				</Text>
 			</Box>
 			<Components.LightBoxVideo text-align="center">
+				<Override slot="Lightbox video" src="https://uploads.quarkly.io/molecules/default-video.mp4" />
 				<Box>
 					<Icon category="md" icon={MdPlayCircleFilled} size="60px" />
 				</Box>

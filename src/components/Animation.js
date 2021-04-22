@@ -2,7 +2,6 @@ import React, { useState, useMemo, useEffect, useCallback, useRef } from 'react'
 import atomize from '@quarkly/atomize';
 import styles, { css } from 'styled-components';
 import presets from './AnimationPresets';
-import ComponentNotice from './ComponentNotice';
 
 const getAnimationStyle = ({
 	animation,
@@ -11,17 +10,16 @@ const getAnimationStyle = ({
 	delay,
 	iteration
 }) => {
-	console.log(animation, presets[animation]);
 	return css`
-  ${presets[animation].keyframes} ${duration} ${timingFunction || presets[animation].timingFunction} ${delay} ${iteration === 'infinite' && 'infinite'} normal forwards
-`;
+        ${presets[animation].keyframes} ${duration} ${timingFunction || presets[animation].timingFunction} ${delay} ${iteration === 'infinite' && 'infinite'} normal forwards
+    `;
 };
 
 const getParams = (e, currentElement) => {
-	const currentTarget = e ? e.currentTarget : window,
-	      windowHeight = currentTarget.innerHeight,
-	      componentRect = currentElement.getBoundingClientRect(),
-	      scrollBottom = currentElement.previousTop > componentRect.top;
+	const currentTarget = e ? e.currentTarget : window;
+	const windowHeight = currentTarget.innerHeight;
+	const componentRect = currentElement.getBoundingClientRect();
+	const scrollBottom = currentElement.previousTop > componentRect.top;
 	return {
 		windowHeight,
 		componentRect,
@@ -45,14 +43,14 @@ const Animation = ({
 	children,
 	...props
 }) => {
-	const [isPlay, togglePlay] = useState(trigger === 'Onload' || test);
+	const [isPlay, togglePlay] = useState(trigger === 'onload' || test);
 	const wrapperRef = useRef({});
-	const childrenRef = useRef(null);
-	const onEnterEvent = useMemo(() => trigger === 'Hover' ? () => togglePlay(true) : undefined, [trigger]);
-	const onLeaveEvent = useMemo(() => trigger === 'Hover' ? () => togglePlay(false) : undefined, [trigger]);
-	const onClickEvent = useCallback(() => trigger === 'Click' && togglePlay(!isPlay), [trigger, isPlay]);
+	const onEnterEvent = useMemo(() => trigger === 'hover' ? () => togglePlay(true) : undefined, [trigger]);
+	const onLeaveEvent = useMemo(() => trigger === 'hover' ? () => togglePlay(false) : undefined, [trigger]);
+	const onClickEvent = useCallback(() => trigger === 'click' && togglePlay(!isPlay), [trigger, isPlay]);
 
 	const onAboveEvent = e => {
+		if (!wrapperRef.current) return;
 		const {
 			componentRect,
 			scrollBottom
@@ -67,6 +65,7 @@ const Animation = ({
 	};
 
 	const onBelowEvent = e => {
+		if (!wrapperRef.current) return;
 		const {
 			windowHeight,
 			componentRect,
@@ -82,6 +81,7 @@ const Animation = ({
 	};
 
 	useEffect(() => {
+		if (!wrapperRef.current) return;
 		const {
 			windowHeight,
 			componentRect
@@ -91,24 +91,23 @@ const Animation = ({
 		if (!inViewport) {
 			wrapperRef.current.previousTop = componentRect.top;
 
-			if (trigger === 'Appearance from above') {
+			if (trigger === 'above') {
 				window.addEventListener('scroll', onAboveEvent);
-			} else if (trigger === 'Appearance from below') {
+			} else if (trigger === 'below') {
 				window.addEventListener('scroll', onBelowEvent);
 			}
 		}
 
-		;
 		return function cleanup() {
 			window.removeEventListener('scroll', onAboveEvent);
 			window.removeEventListener('scroll', onBelowEvent);
 		};
 	}, [wrapperRef.current, trigger]);
 	useEffect(() => {
+		if (!wrapperRef.current) return;
 		wrapperRef.current.trigered = test;
 		togglePlay(test);
 	}, [trigger, animation, iteration, duration, delay, test]);
-	console.log('---', children);
 	return <Wrapper
 		ref={wrapperRef}
 		onMouseEnter={onEnterEvent}
@@ -116,7 +115,7 @@ const Animation = ({
 		onClick={onClickEvent}
 		{...props}
 	>
-		      
+		            
 		<Content
 			animation={isPlay ? animation : 'none'}
 			iteration={iteration}
@@ -124,74 +123,157 @@ const Animation = ({
 			duration={duration}
 			delay={delay}
 		>
-			        
+			                
 			{children}
-			      
+			            
 		</Content>
-		    
+		        
 	</Wrapper>;
 };
 
 export default atomize(Animation)({
 	propInfo: {
 		trigger: {
-			title: 'Trigger',
+			title: {
+				en: 'Триггер анимации',
+				ru: 'Триггер анимации'
+			},
 			control: 'select',
-			variants: ['Onload', 'Click', 'Hover', 'Appearance from above', 'Appearance from below'],
+			variants: [{
+				title: {
+					en: 'При загрузке',
+					ru: 'При загрузке'
+				},
+				value: 'onload'
+			}, {
+				title: {
+					en: 'По клику',
+					ru: 'По клику'
+				},
+				value: 'click'
+			}, {
+				title: {
+					en: 'По навадению',
+					ru: 'По наведению'
+				},
+				value: 'hover'
+			}, {
+				title: {
+					en: 'Появление сверху',
+					ru: 'Появление сверху'
+				},
+				value: 'above'
+			}, {
+				title: {
+					en: 'Появление снизу',
+					ru: 'Появление снизу'
+				},
+				value: 'below'
+			}],
+			category: 'Animation',
 			weight: 1
 		},
 		animation: {
-			title: 'Animation Type',
+			title: {
+				en: 'Тип анимации',
+				ru: 'Тип анимации'
+			},
 			control: 'select',
 			variants: [{
-				label: 'Appear & Disappear',
+				label: {
+					en: 'Appear & Disappear',
+					ru: 'Появление и скрытие'
+				},
 				options: ['Fade In', 'Fade Out', 'Flip In', 'Flip Out', 'Grow In', 'Grow Out', 'Shrink In', 'Shrink Out', 'Spin In', 'Spin Out', 'Fly In', 'Fly Out', 'Drop In', 'Drop Out']
 			}, {
-				label: 'Slide',
+				label: {
+					en: 'Slide',
+					ru: 'Перемещение'
+				},
 				options: ['→ Slide In', '↓ Slide In', '← Slide In', '↑ Slide In', '→ Slide Out', '↓ Slide Out', '← Slide Out', '↑ Slide Out']
 			}, {
-				label: 'Emphasis',
+				label: {
+					en: 'Emphasis',
+					ru: 'Акцент'
+				},
 				options: ['Pop', 'Juggle', 'Blink', 'Bounce', 'Jello', 'Rubber']
 			}, {
-				label: 'Continuous',
+				label: {
+					en: 'Continuous',
+					ru: 'Непрерывный'
+				},
 				options: ['Rotate', 'Vibrate 1', 'Vibrate 2', 'Flicker', 'Shake', 'Ping', 'Beat']
 			}],
-			weight: .5
+			category: 'Animation',
+			weight: 0.5
 		},
 		iteration: {
-			title: 'Iteration Count',
+			title: {
+				en: 'Количество итераций',
+				ru: 'Количество итераций'
+			},
 			control: 'radio-group',
-			variants: ['once', 'infinite'],
-			weight: .5
+			variants: [{
+				title: {
+					en: 'Один раз',
+					ru: 'Один раз'
+				},
+				value: 'once'
+			}, {
+				title: {
+					en: 'Бесконечно',
+					ru: 'Бесконечно'
+				},
+				value: 'infinite'
+			}],
+			category: 'Animation',
+			weight: 0.5
 		},
 		timingFunction: {
-			title: 'Timing function',
+			title: {
+				en: 'Функция сглаживания анимации',
+				ru: 'Функция сглаживания анимации'
+			},
 			control: 'input',
 			variants: ['linear', 'ease', 'ease-in', 'ease-out', 'ease-in-out', 'step-start', 'step-end'],
+			category: 'Animation',
 			weight: 1
 		},
 		duration: {
-			title: 'Duration',
+			title: {
+				en: 'Длительность появления и скрытия',
+				ru: 'Длительность появления и скрытия'
+			},
 			control: 'input',
 			variants: ['0s', '0.1s', '0.2s', '0.3s', '0.5s', '1s'],
-			weight: .5
+			category: 'Animation',
+			weight: 1
 		},
 		delay: {
-			title: 'Delay before start',
+			title: {
+				en: 'Задержка перед началом анимации',
+				ru: 'Задержка перед началом анимации'
+			},
 			control: 'input',
 			variants: ['0s', '0.1s', '0.2s', '0.3s', '0.5s', '1s'],
-			weight: .5
+			category: 'Animation',
+			weight: 1
 		},
 		test: {
-			title: 'Play animation (не забывай снимать галочку!)',
+			title: {
+				en: 'Включить анимацию принудительно',
+				ru: 'Включить анимацию принудительно'
+			},
 			control: 'checkbox',
+			category: 'Test',
 			weight: 1
 		}
 	}
 }, {
-	trigger: 'hover',
+	trigger: 'onload',
 	animation: 'Fade Out',
 	iteration: 'infinite',
+	timingFunction: 'linear',
 	duration: '1s',
 	delay: '0s'
 });

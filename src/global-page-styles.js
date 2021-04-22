@@ -276,14 +276,7 @@ const pageStyles = {
         "justify-content": "",
         "align-items": ""
     },
-    "slider": {
-        "padding": "",
-        "margin": "",
-        "display": "",
-        "justify-content": "",
-        "align-items": ""
-    },
-    "slidersimple": {
+    "carousel": {
         "padding": "",
         "margin": "",
         "display": "",
@@ -402,7 +395,7 @@ const pageStyles = {
         "justify-content": "",
         "align-items": ""
     },
-    "pdfviewer": {
+    "fff": {
         "padding": "",
         "margin": "",
         "display": "",

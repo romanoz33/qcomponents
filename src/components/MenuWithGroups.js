@@ -2,14 +2,14 @@ import React, { useState, useEffect, useCallback } from 'react';
 import atomize from '@quarkly/atomize';
 import { Box, Text, Link, Icon } from '@quarkly/widgets';
 import { useOverrides } from '@quarkly/components';
-import { useRouteMatch } from "react-router-dom";
-import { useMatch } from "@reach/router";
+import { useRouteMatch } from 'react-router-dom';
+import { useMatch } from '@reach/router';
 import { MdKeyboardArrowDown } from "react-icons/md";
 const overrides = {
-	'List': {
+	List: {
 		kind: 'Ul'
 	},
-	'Item': {
+	Item: {
 		kind: 'Li'
 	},
 	'Sub Head': {
@@ -44,7 +44,7 @@ const overrides = {
 			display: 'none'
 		}
 	},
-	'Link': {
+	Link: {
 		kind: 'Link',
 		props: {
 			color: '--primary'
@@ -58,11 +58,11 @@ const overrides = {
 };
 
 const getAPI = () => {
-	if (typeof window !== "undefined") {
+	if (typeof window !== 'undefined') {
 		return window.QAPI || {};
 	}
 
-	if (typeof global !== "undefined") {
+	if (typeof global !== 'undefined') {
 		return global.QAPI || {};
 	}
 
@@ -87,33 +87,33 @@ const Sub = ({
 	const {
 		tabState,
 		override
-	} = common,
-	      {
+	} = common;
+	const {
 		id,
 		name,
 		pageUrl
-	} = item,
-	      {
+	} = item;
+	const {
 		pagePath,
 		href,
 		match,
 		expanded
-	} = other,
-	      isClickable = tabState !== 'Keep all tabs expanded',
-	      isSubOpenForce = tabState === 'Keep all tabs expanded' || tabState === 'Expand all tabs',
-	      isSubCloseForce = tabState === 'Collapse all tabs',
-	      [isSubOpen, setSubOpen] = useState(expanded && !isSubCloseForce || isSubOpenForce),
-	      onSubToggle = useCallback(() => {
+	} = other;
+	const isClickable = tabState !== 'keepExpanded';
+	const isSubOpenForce = tabState === 'keepExpanded' || tabState === 'expandAll';
+	const isSubCloseForce = tabState === 'collapseAll';
+	const [isSubOpen, setSubOpen] = useState(expanded && !isSubCloseForce || isSubOpenForce);
+	const onSubToggle = useCallback(() => {
 		setSubOpen(!isSubOpen);
-	}, [isSubOpen]),
-	      subOpenStatus = isSubOpen ? ':open' : ':closed';
+	}, [isSubOpen]);
+	const subOpenStatus = isSubOpen ? ':open' : ':closed';
 	useEffect(() => {
-		const isSubOpenForce = tabState === 'Keep all tabs expanded' || tabState === 'Expand all tabs';
-		const isSubCloseForce = tabState === 'Collapse all tabs';
-		setSubOpen(expanded && !isSubCloseForce || isSubOpenForce);
+		const subOpenForce = tabState === 'keepExpanded' || tabState === 'expandAll';
+		const subCloseForce = tabState === 'collapseAll';
+		setSubOpen(expanded && !subCloseForce || subOpenForce);
 	}, [tabState]);
 	return <>
-		      
+		            
 		<Box
 			padding="6px 12px"
 			align-items="center"
@@ -122,19 +122,19 @@ const Sub = ({
 			onClick={isClickable && onSubToggle}
 			{...override('Sub Head', `Sub Head-${pageUrl}`, match && 'Sub Head :active', `Sub Head ${subOpenStatus}`)}
 		>
-			        
+			                
 			<Text margin="0" white-space="nowrap" {...override('Sub Head Text', match && 'Sub Head Text :active', `Sub Head Text ${subOpenStatus}`, `Sub Head Text-${pageUrl}`)}>
-				          
+				                    
 				{override(`Sub Head Text-${pageUrl}`).children || 'Group Name'}
-				        
+				                
 			</Text>
-			        
+			                
 			{isClickable && <Icon category="md" icon={MdKeyboardArrowDown} size="16px" {...override('Sub Head Icon', `Sub Head Icon-${pageUrl}`, match && 'Sub Head Icon :active', `Sub Head Icon ${subOpenStatus}`)} />}
-			      
+			            
 		</Box>
-		      
+		            
 		<Box padding="6px 12px" {...override('Sub Body', `Sub Body-${pageUrl}`, match && 'Sub Body :active', `Sub Body ${subOpenStatus}`)}>
-			        
+			                
 			<Link
 				padding="6px 12px"
 				white-space="nowrap"
@@ -142,11 +142,11 @@ const Sub = ({
 				href={href}
 				{...override('Link', `Link-${pageUrl}`, match && 'Link :active', `Link ${subOpenStatus}`)}
 			>
-				          
+				                    
 				{override(`Link-${pageUrl}`).children || name}
-				        
+				                
 			</Link>
-			        
+			                
 			<List
 				list-style="none"
 				rootId={id}
@@ -154,9 +154,9 @@ const Sub = ({
 				{...common}
 				{...override('List', `List-${pageUrl}`, match && 'List :active', `List ${subOpenStatus}`)}
 			/>
-			      
+			            
 		</Box>
-		    
+		        
 	</>;
 };
 
@@ -168,24 +168,24 @@ const Item = ({
 	const {
 		mode,
 		projectType
-	} = getAPI(),
-	      {
+	} = getAPI();
+	const {
 		depth,
 		level,
 		tabState,
 		override
-	} = common,
-	      {
+	} = common;
+	const {
 		name,
 		pageUrl,
 		children
-	} = item,
-	      hasSub = !!(children && children.length && level < depth),
-	      expand = tabState === 'Expand before active item',
-	      pagePath = [...path, mode === "production" && pageUrl === "index" ? "" : pageUrl],
-	      href = `/${pagePath.join('/')}`;
-	let match = null,
-	    expanded = false;
+	} = item;
+	const hasSub = !!(children && children.length && level < depth);
+	const expand = tabState === 'expandActive';
+	const pagePath = [...path, mode === 'production' && pageUrl === 'index' ? '' : pageUrl];
+	const href = `/${pagePath.join('/')}`;
+	let match = null;
+	let expanded = false;
 
 	if (projectType === 'gatsby') {
 		match = useMatch(href) && true;
@@ -201,7 +201,7 @@ const Item = ({
 	}
 
 	return <Li {...override('Item', `Item-${pageUrl}`, match && 'Item :active')}>
-		      
+		            
 		{hasSub ? <Sub
 			path={path}
 			common={common}
@@ -221,11 +221,11 @@ const Item = ({
 			href={href}
 			{...override('Link', `Link-${pageUrl}`, match && 'Link :active')}
 		>
-			          
+			                    
 			{override(`Link-${pageUrl}`).children || name}
-			        
+			                
 		</Link>}
-		    
+		        
 	</Li>;
 };
 
@@ -251,13 +251,13 @@ const List = ({
 	};
 	const list = rootPage?.children?.map(id => pages[id]) ?? [];
 	return <Ul padding="0" list-style="none" {...rest}>
-		      
+		            
 		{list.map(item => <Item key={item.id} path={path} common={common} item={item} />)}
-		    
+		        
 	</Ul>;
 };
 
-const Menu = ({
+const MenuWithGroups = ({
 	depth,
 	rootId,
 	expand,
@@ -299,31 +299,58 @@ const Menu = ({
 
 const propInfo = {
 	depth: {
-		title: 'Depth',
+		title: 'Максимальная вложенность',
 		control: 'input',
+		type: 'text',
 		category: 'Main',
 		weight: 1
 	},
 	rootId: {
-		title: 'Root ID',
+		title: 'ID корневой страницы',
 		control: 'input',
+		type: 'text',
 		category: 'Main',
 		weight: 1
 	},
 	tabState: {
-		title: 'Tab state by default',
+		title: 'Состояние групп по умолчанию',
 		control: 'select',
-		variants: ['Collapse all tabs', 'Expand before active item', 'Expand all tabs', 'Keep all tabs expanded'],
+		variants: [{
+			title: {
+				en: 'Свернуть все группы',
+				ru: 'Свернуть все группы'
+			},
+			value: 'collapseAll'
+		}, {
+			title: {
+				en: 'Раскрыть перед активным пунктом',
+				ru: 'Раскрыть перед активным пунктом'
+			},
+			value: 'expandActive'
+		}, {
+			title: {
+				en: 'Раскрыть все группы',
+				ru: 'Раскрыть все группы'
+			},
+			value: 'expandAll'
+		}, {
+			title: {
+				en: 'Держать все вкладки раскрытыми',
+				ru: 'Держать все вкладки раскрытыми'
+			},
+			value: 'keepExpanded'
+		}],
 		weight: 1
 	}
 };
 const defaultProps = {
 	rootId: 'root',
-	depth: 1,
-	tabState: 'Expand before active item'
+	depth: 10,
+	tabState: 'expandActive'
 };
-export default Object.assign(Menu, {
+Object.assign(MenuWithGroups, {
 	propInfo,
 	defaultProps,
 	overrides
 });
+export default MenuWithGroups;

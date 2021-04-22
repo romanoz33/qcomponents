@@ -22,7 +22,14 @@ export default (() => {
 					Gallery
 				</Text>
 			</Box>
-			<Components.Gallery autoFillInProp offScrollProp hideLoaderFullImage={false} aspectRatioProp="auto">
+			<Components.Gallery
+				autoFillInProp
+				offScrollProp
+				hideLoaderFullImage={false}
+				aspectRatioProp="auto"
+				columnsCountProp="6"
+				galleryItemNumbProp="6"
+			>
 				<Override
 					slot="Item"
 					stretchFull
@@ -30,13 +37,35 @@ export default (() => {
 					border-color="#690b0b"
 					border-width="2px"
 					border-style="red"
-					fullSrc="https://images.unsplash.com/photo-1493612276216-ee3925520721?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000"
-					previewSrc="https://images.unsplash.com/photo-1618249311687-ec9599381287?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000"
+					columsNumb="1"
 				/>
-				<Override slot="Item 0" showFullImage={false} fullSrc="https://images.unsplash.com/photo-1617820784160-a18adff1cdc4?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000" previewSrc="https://images.unsplash.com/photo-1618248047249-9bb3341fd6b6?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000" />
-				<Override slot="Item 3" showFullImage={false} />
-				<Override slot="Item 1" showFullImage previewSrc="https://images.unsplash.com/photo-1611095564350-2cbe940a8d99?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=2000" />
-				<Override slot="Item 2" showFullImage={false} />
+				<Override slot="Item 0" showFullImage={false} fullSrc="https://images.unsplash.com/photo-1618248047249-9bb3341fd6b6?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000" previewSrc="https://images.unsplash.com/photo-1618248047249-9bb3341fd6b6?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000" />
+				<Override
+					slot="Item 3"
+					showFullImage={false}
+					fullSrc="https://images.unsplash.com/photo-1619042823674-4f4ad8484b08?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000"
+					previewSrc="https://images.unsplash.com/photo-1619042823674-4f4ad8484b08?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000"
+					columsNumb="2"
+					rowsNumb="2"
+				/>
+				<Override
+					slot="Item 1"
+					showFullImage
+					previewSrc="https://images.unsplash.com/photo-1611095564350-2cbe940a8d99?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=2000"
+					fullSrc="https://images.unsplash.com/photo-1611095564350-2cbe940a8d99?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=2000"
+					columsNumb="2"
+					rowsNumb="2"
+				/>
+				<Override slot="Item 2" showFullImage={false} previewSrc="https://images.unsplash.com/photo-1523215108660-3fdf7932d7a5?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=2000" fullSrcSet="https://images.unsplash.com/photo-1523215108660-3fdf7932d7a5?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=2000 " />
+				<Override
+					slot="Item 4"
+					fullSrc="https://images.unsplash.com/photo-1619041038964-2410837df011?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000"
+					previewSrc="https://images.unsplash.com/photo-1619041038964-2410837df011?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000"
+					columsNumb="1"
+					rowsNumb="1"
+				/>
+				<Override slot="Item 5" fullSrc="https://images.unsplash.com/photo-1569389397653-c04fe624e663?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000" previewSrc="https://images.unsplash.com/photo-1569389397653-c04fe624e663?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000" />
+				<Override slot="Item 6" previewSrc="https://images.unsplash.com/photo-1619038265796-8c6ce47d257c?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=2000" />
 			</Components.Gallery>
 			<Box margin="50px 0px 0px 0px" quarkly-title="Architecture">
 				<Text font="600 24px sans-serif" quarkly-title="Title">

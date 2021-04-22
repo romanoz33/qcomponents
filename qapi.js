@@ -45,7 +45,6 @@ export default {
 				"604b6ebc2b962f001e742a67",
 				"604f6ebec8e036001ed1385a",
 				"6075a2bdb99fb9001fcbc879",
-				"604b7b15652a1e001e075e9f",
 				"604f705488a644001fa9ad98",
 				"604b6b36652a1e001e075e27",
 				"604b1a532b962f001e7426cd",
@@ -62,7 +61,7 @@ export default {
 				"604b6938652a1e001e075df7",
 				"604b6546652a1e001e075db3",
 				"607467be0ba79600228c1fec",
-				"607ff75eb99fb9001fcbd405"
+				"6080235eeb6a2d001f28186a"
 			]
 		},
 		"60474504627982001eb71a54": {
@@ -179,11 +178,6 @@ export default {
 			"id": "604b6ebc2b962f001e742a67",
 			"pageUrl": "soundcloud",
 			"name": "Sound Cloud"
-		},
-		"604b7b15652a1e001e075e9f": {
-			"id": "604b7b15652a1e001e075e9f",
-			"pageUrl": "slidersimple",
-			"name": "Slider Simple"
 		},
 		"604b7ce82b962f001e742a97": {
 			"id": "604b7ce82b962f001e742a97",
@@ -343,8 +337,8 @@ export default {
 		},
 		"6075a2bdb99fb9001fcbc879": {
 			"id": "6075a2bdb99fb9001fcbc879",
-			"pageUrl": "slider",
-			"name": "Slider"
+			"pageUrl": "carousel",
+			"name": "Carousel"
 		},
 		"607e7f850ba79600228c269a": {
 			"id": "607e7f850ba79600228c269a",
@@ -361,10 +355,10 @@ export default {
 			"pageUrl": "lightboxvideo",
 			"name": "LightboxVideo"
 		},
-		"607ff75eb99fb9001fcbd405": {
-			"id": "607ff75eb99fb9001fcbd405",
-			"pageUrl": "pdfviewer",
-			"name": "pdfviewer"
+		"6080235eeb6a2d001f28186a": {
+			"id": "6080235eeb6a2d001f28186a",
+			"pageUrl": "fff",
+			"name": "fff"
 		}
 	},
 	"mode": "production",

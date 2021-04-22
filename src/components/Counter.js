@@ -2,10 +2,11 @@ import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react'
 import { Box } from '@quarkly/widgets';
 
 const elementInViewport = el => {
-	let top = el.offsetTop,
-	    left = el.offsetLeft,
-	    width = el.offsetWidth,
-	    height = el.offsetHeight;
+	if (!el) return false;
+	let top = el.offsetTop;
+	let left = el.offsetLeft;
+	const width = el.offsetWidth;
+	const height = el.offsetHeight;
 
 	while (el.offsetParent) {
 		el = el.offsetParent;
@@ -13,14 +14,13 @@ const elementInViewport = el => {
 		left += el.offsetLeft;
 	}
 
-	;
 	return top < window.pageYOffset + window.innerHeight && left < window.pageXOffset + window.innerWidth && top + height > window.pageYOffset && left + width > window.pageXOffset;
 };
 
 const Counter = ({
 	startingNumber,
 	endingNumber,
-	revers,
+	direction,
 	duration,
 	numberSuffix,
 	numberPrefix,
@@ -28,7 +28,7 @@ const Counter = ({
 }) => {
 	const refCounter = useRef(null);
 	const [onView, setOnView] = useState(false);
-	const [currentNumber, setCurrentNumber] = useState(revers ? endingNumber : startingNumber);
+	const [currentNumber, setCurrentNumber] = useState(direction === 'reverse' ? endingNumber : startingNumber);
 	const getDurationOneStep = useMemo(() => duration / (endingNumber - startingNumber), [duration, endingNumber, startingNumber]);
 	const checkOnView = useCallback(() => {
 		if (!onView) {
@@ -36,11 +36,7 @@ const Counter = ({
 				setOnView(true);
 				window.removeEventListener('scroll', checkOnView);
 			}
-
-			;
 		}
-
-		;
 	}, [onView]);
 	useEffect(() => {
 		checkOnView();
@@ -52,98 +48,90 @@ const Counter = ({
 	useEffect(() => {
 		const updateCount = setInterval(() => {
 			if (onView) {
-				if (revers) {
+				if (direction === 'reverse') {
 					if (currentNumber > startingNumber) {
-						setCurrentNumber(parseInt(currentNumber) - 1);
+						setCurrentNumber(parseInt(currentNumber, 10) - 1);
 					} else {
 						clearInterval(updateCount);
 					}
-
-					;
+				} else if (currentNumber < endingNumber) {
+					setCurrentNumber(parseInt(currentNumber, 10) + 1);
 				} else {
-					if (currentNumber < endingNumber) {
-						setCurrentNumber(parseInt(currentNumber) + 1);
-					} else {
-						clearInterval(updateCount);
-					}
-
-					;
+					clearInterval(updateCount);
 				}
-
-				;
 			}
 		}, getDurationOneStep);
 		return () => {
 			clearInterval(updateCount);
 		};
-	}, [revers, currentNumber, onView, startingNumber, endingNumber]);
-	return <Box text-align='center' font-size='58px' {...props} ref={refCounter}>
-		      
+	}, [direction, currentNumber, onView, startingNumber, endingNumber]);
+	return <Box text-align="center" font-size="58px" {...props} ref={refCounter}>
+		            
 		{`${numberPrefix}${currentNumber}${numberSuffix}`}
-		 
+		        
 	</Box>;
 };
 
 const propInfo = {
 	startingNumber: {
-		title: 'Starting Number',
-		description: {
-			en: 'Начальное число'
-		},
+		title: 'Начальное число',
 		control: 'input',
+		type: 'text',
 		category: 'Main',
-		weight: .5
+		weight: 0.5
 	},
 	endingNumber: {
-		title: 'Ending Number',
-		description: {
-			en: 'Конечное число'
-		},
+		title: 'Конечное число',
 		control: 'input',
+		type: 'text',
 		category: 'Main',
-		weight: .5
+		weight: 0.5
 	},
-	revers: {
-		title: 'Revers',
-		description: {
-			en: 'Возврастание / Убывание'
-		},
-		control: 'checkbox',
+	direction: {
+		title: 'Направление отсчёта',
+		control: 'radio-group',
+		variants: [{
+			title: {
+				en: 'Возрастание',
+				ru: 'Возрастание'
+			},
+			value: 'normal'
+		}, {
+			title: {
+				en: 'Убывание',
+				ru: 'Убывание'
+			},
+			value: 'reverse'
+		}],
 		category: 'Main',
-		weight: .5
+		weight: 1
 	},
 	duration: {
-		title: 'Duration Animation',
-		description: {
-			en: 'Продолжительность анимации'
-		},
+		title: 'Длительность отсчёта',
 		control: 'input',
+		type: 'number',
 		category: 'Main',
-		weight: .5
+		weight: 1
 	},
 	numberSuffix: {
-		title: 'Number Suffix',
-		description: {
-			en: 'Символ после числа'
-		},
+		title: 'Текст после числа',
 		control: 'input',
+		type: 'text',
 		category: 'Main',
-		weight: .5
+		weight: 1
 	},
 	numberPrefix: {
-		title: 'Number Prefix',
-		description: {
-			en: 'Символ перед числом'
-		},
+		title: 'Текст перед числом',
 		control: 'input',
+		type: 'text',
 		category: 'Main',
-		weight: .5
+		weight: 1
 	}
 };
 const defaultProps = {
 	startingNumber: '0',
 	endingNumber: 100,
-	revers: false,
+	direction: 'normal',
 	duration: 2000,
 	numberSuffix: '',
 	numberPrefix: ''

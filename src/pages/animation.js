@@ -3,7 +3,7 @@ import theme from "theme";
 import { Theme, Link, Text, Box, Icon } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
-import { Override } from "@quarkly/components";
+import { Override, Section } from "@quarkly/components";
 import * as Components from "components";
 import { MdKeyboardArrowRight } from "react-icons/md";
 export default (() => {
@@ -22,21 +22,126 @@ export default (() => {
 					Animation
 				</Text>
 			</Box>
-			<Components.Animation
-				iteration="infinite"
-				test
-				timingFunction="ease"
-				duration="2s"
-				animation="↑ Slide In"
-				lg-margin="500px 0px 500px 0px"
-			>
-				<Text quarkly-title="Lorem" font="normal 20px/150% sans-serif">
-					<br />
-					<br />
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.{"\n\n\n"}
-				</Text>
-			</Components.Animation>
-			<Components.Animation />
+			<Section height="200px">
+				<Override slot="SectionContent" flex-direction="row" />
+				<Components.Animation
+					width="100%"
+					height="300px"
+					overflow-x="hidden"
+					overflow-y="hidden"
+					display="flex"
+					align-items="center"
+					justify-content="center"
+					iteration="infinite"
+					animation="Pop"
+					duration="1s"
+					test
+					trigger="Onload"
+					md-background="--color-lightD2"
+				>
+					<Text text-align="center" font="900 50px --fontFamily-serifTimes">
+						Pop
+					</Text>
+				</Components.Animation>
+				<Components.Animation
+					width="100%"
+					height="300px"
+					overflow-x="hidden"
+					overflow-y="hidden"
+					display="flex"
+					align-items="center"
+					justify-content="center"
+					iteration="infinite"
+					animation="Juggle"
+					duration="1s"
+					test
+					trigger="Onload"
+					md-background="--color-lightD2"
+				>
+					<Text text-align="center" font="900 50px --fontFamily-serifTimes">
+						Juggle
+					</Text>
+				</Components.Animation>
+				<Components.Animation
+					width="100%"
+					height="300px"
+					overflow-x="hidden"
+					overflow-y="hidden"
+					display="flex"
+					align-items="center"
+					justify-content="center"
+					iteration="infinite"
+					animation="Blink"
+					duration="1s"
+					test
+					trigger="Onload"
+					md-background="--color-lightD2"
+				>
+					<Text text-align="center" font="900 50px --fontFamily-serifTimes">
+						Blink
+					</Text>
+				</Components.Animation>
+			</Section>
+			<Section>
+				<Override slot="SectionContent" flex-direction="row" />
+				<Components.Animation
+					width="100%"
+					height="300px"
+					overflow-x="hidden"
+					overflow-y="hidden"
+					display="flex"
+					align-items="center"
+					justify-content="center"
+					iteration="infinite"
+					animation="Bounce"
+					duration="1s"
+					test
+					trigger="Onload"
+					md-background="--color-lightD2"
+				>
+					<Text text-align="center" font="900 50px --fontFamily-serifTimes">
+						Bounce
+					</Text>
+				</Components.Animation>
+				<Components.Animation
+					width="100%"
+					height="300px"
+					overflow-x="hidden"
+					overflow-y="hidden"
+					display="flex"
+					align-items="center"
+					justify-content="center"
+					iteration="infinite"
+					animation="Jello"
+					duration="1s"
+					test
+					trigger="Onload"
+					md-background="--color-lightD2"
+				>
+					<Text text-align="center" font="900 50px --fontFamily-serifTimes">
+						Jello
+					</Text>
+				</Components.Animation>
+				<Components.Animation
+					width="100%"
+					height="300px"
+					overflow-x="hidden"
+					overflow-y="hidden"
+					display="flex"
+					align-items="center"
+					justify-content="center"
+					iteration="infinite"
+					animation="Rubber"
+					duration="1s"
+					test
+					trigger="Onload"
+					md-background="--color-lightD2"
+				>
+					<Text text-align="center" font="900 50px --fontFamily-serifTimes">
+						Rubber
+					</Text>
+				</Components.Animation>
+			</Section>
 			<Box margin="50px 0px 0px 0px" quarkly-title="Architecture">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Архитектура:
@@ -86,73 +191,73 @@ export default (() => {
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Components.Table showHeader colsProp="3" rowsProp="7" width="100%">
 					<Override slot="Text THead Col-0">
-						Название{"\n\n"}
+						Название
 					</Override>
 					<Override slot="Text THead Col-1">
-						Описание{"\n\n"}
+						Описание
 					</Override>
 					<Override slot="Text THead Col-2">
-						Значение по дефолту{"\n\n"}
+						Значение по дефолту
 					</Override>
 					<Override slot="Text TBody Row-0 Col-0">
-						Trigger{"\n\n"}
+						Trigger
 					</Override>
 					<Override slot="Text TBody Row-0 Col-1">
-						Действие, вызывающее анимацию{"\n\n"}
+						Действие, вызывающее анимацию
 					</Override>
 					<Override slot="Text TBody Row-0 Col-2">
 						-
 					</Override>
 					<Override slot="Text TBody Row-1 Col-0">
-						Animation type{"\n\n"}
+						Animation type
 					</Override>
 					<Override slot="Text TBody Row-1 Col-1">
-						Тип анимации{"\n\n"}
+						Тип анимации
 					</Override>
 					<Override slot="Text TBody Row-1 Col-2">
-						Fade Out{"\n\n"}
+						Fade Out
 					</Override>
 					<Override slot="Text TBody Row-2 Col-0">
-						Iteration Count{"\n\n"}
+						Iteration Count
 					</Override>
 					<Override slot="Text TBody Row-2 Col-1">
-						Повторяемость анимации [once, infinity]{"\n\n"}
+						Повторяемость анимации [once, infinity]
 					</Override>
 					<Override slot="Text TBody Row-2 Col-2">
-						once{"\n\n"}
+						once
 					</Override>
 					<Override slot="Text TBody Row-3 Col-0">
-						Timing function{"\n\n"}
+						Timing function
 					</Override>
 					<Override slot="Text TBody Row-3 Col-1">
-						Cкорость течения анимации{"\n\n"}
+						Cкорость течения анимации
 					</Override>
 					<Override slot="Text TBody Row-3 Col-2">
-						none{"\n\n"}
+						none
 					</Override>
 					<Override slot="Text TBody Row-4 Col-0">
-						Duration{"\n\n"}
+						Duration
 					</Override>
 					<Override slot="Text TBody Row-4 Col-1">
-						Продолжительность анимации{"\n\n"}
+						Продолжительность анимации
 					</Override>
 					<Override slot="Text TBody Row-4 Col-2">
-						1s{"\n\n"}
+						1s
 					</Override>
 					<Override slot="Text TBody Row-5 Col-0">
-						Delay before start{"\n\n"}
+						Delay before start
 					</Override>
 					<Override slot="Text TBody Row-5 Col-1">
-						Задержка перед началом анимации{"\n\n"}
+						Задержка перед началом анимации
 					</Override>
 					<Override slot="Text TBody Row-5 Col-2">
-						0s{"\n\n"}
+						0s
 					</Override>
 					<Override slot="Text TBody Row-6 Col-0">
-						Play animation{"\n\n"}
+						Play animation
 					</Override>
 					<Override slot="Text TBody Row-6 Col-1">
-						Включить анимацию для теста.{"\n\n"}
+						Включить анимацию для теста.
 					</Override>
 					<Override slot="Text TBody Row-6 Col-2">
 						ffalse

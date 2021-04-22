@@ -1,22 +1,22 @@
 import React, { useMemo } from 'react';
 import { Text } from '@quarkly/widgets';
 import { useOverrides } from '@quarkly/components';
-import atomize from "@quarkly/atomize";
+import atomize from '@quarkly/atomize';
 const overrides = {
-	'Row': {
+	Row: {
 		kind: 'Row'
 	},
-	'Column': {
+	Column: {
 		kind: 'Column'
 	},
-	'Cell': {
+	Cell: {
 		kind: 'Cell',
 		props: {
 			padding: '0.4rem 1rem',
 			border: '1px solid #E4E8EC'
 		}
 	},
-	'Text': {
+	Text: {
 		kind: 'Text'
 	}
 };
@@ -39,96 +39,100 @@ const TableComponent = ({
 		override,
 		rest
 	} = useOverrides(props, overrides);
-	const cols = useMemo(() => parseInt(colsProp) > 0 ? parseInt(colsProp) : 1, [colsProp]);
-	const rows = useMemo(() => parseInt(rowsProp) > 0 ? parseInt(rowsProp) : 1, [rowsProp]);
+	const cols = useMemo(() => parseInt(colsProp, 10) > 0 ? parseInt(colsProp, 10) : 1, [colsProp]);
+	const rows = useMemo(() => parseInt(rowsProp, 10) > 0 ? parseInt(rowsProp, 10) : 1, [rowsProp]);
 	return <Table cols={cols} summary={summary} {...rest}>
-		      
+		            
 		{showHeader && <THead {...override('THead')}>
-			          
+			                    
 			<Tr {...override('Row', `Row THead`)}>
-				              
-				{Array(cols || 1).fill().map((item, col) => <Td key={`cell-thead-${col}`} {...override('Cell', `Cell Col-${col}`, 'Cell THead', `Cell THead Col-${col}`)}>
-					                  
+				                        
+				{Array(cols || 1).fill().map((_, col) => <Td key={`cell-thead-${col}`} // eslint-disable-line
+				{...override('Cell', `Cell Col-${col}`, 'Cell THead', `Cell THead Col-${col}`)}>
+					                                    
 					<Text {...override('Text', `Text Col-${col}`, 'Text THead', `Text THead Col-${col}`)}>
-						                    
+						                                        
 						{override(`Text THead Col-${col}`).children || `Cell H-${col}`}
-						                  
+						                                    
 					</Text>
-					                
+					                                
 				</Td>)}
-				            
+				                    
 			</Tr>
-			        
+			                
 		</THead>}
-		      
+		            
 		<TBody {...override('TBody')}>
-			        
-			{Array(rows || 1).fill().map((item, row) => <Tr key={`row${row}`} {...override('Row', `Row TBody-${row}`)}>
-				            
-				{Array(cols || 1).fill().map((item, col) => <Td key={`cell-tbody-${row}-${col}`} {...override('Cell', `Cell Col-${col}`, 'Cell TBody', `Cell TBody Col-${col}`, `Cell TBody Row-${row}`, `Cell TBody Row-${row} Col-${col}`)}>
-					                
+			                
+			{Array(rows || 1).fill().map((_, row) => <Tr key={`row${row}`} // eslint-disable-line
+			{...override('Row', `Row TBody-${row}`)}>
+				                            
+				{Array(cols || 1).fill().map((__, col) => <Td key={`cell-tbody-${row}-${col}`} // eslint-disable-line
+				{...override('Cell', `Cell Col-${col}`, 'Cell TBody', `Cell TBody Col-${col}`, `Cell TBody Row-${row}`, `Cell TBody Row-${row} Col-${col}`)}>
+					                                        
 					<Text {...override('Text', `Text Col-${col}`, 'Text TBody', `Text TBody Row-${row}`, `Text TBody Col-${col}`, `Text TBody Row-${row} Col-${col}`)}>
-						                  
+						                                            
 						{override(`Text TBody Row-${row} Col-${col}`).children || `Cell ${row}-${col}`}
-						                
+						                                        
 					</Text>
-					              
+					                                    
 				</Td>)}
-				          
+				                        
 			</Tr>)}
-			      
+			            
 		</TBody>
-		      
+		            
 		{showFooter && <TFoot {...override('TFoot')}>
-			          
+			                    
 			<Tr {...override('Row', `Row TFoot`)}>
-				              
-				{Array(cols || 1).fill().map((item, col) => <Td key={`cell-tfoot-${col}`} {...override('Cell', `Cell Col-${col}`, 'Cell TFoot', `Cell TFoot Col-${col}`)}>
-					                  
+				                        
+				{Array(cols || 1).fill().map((_, col) => <Td key={`cell-tfoot-${col}`} // eslint-disable-line
+				{...override('Cell', `Cell Col-${col}`, 'Cell TFoot', `Cell TFoot Col-${col}`)}>
+					                                    
 					<Text {...override('Text', `Text Col-${col}`, 'Text TFoot', `Text TFoot Col-${col}`)}>
-						                    
+						                                        
 						{override(`Text TFoot Col-${col}`).children || `Cell F-${col}`}
-						                  
+						                                    
 					</Text>
-					                
+					                                
 				</Td>)}
-				            
+				                    
 			</Tr>
-			        
+			                
 		</TFoot>}
-		    
+		        
 	</Table>;
 };
 
 const propInfo = {
 	colsProp: {
-		title: 'Columns',
+		title: 'Количесво колонок',
 		control: 'input',
 		type: 'number',
 		category: 'Size',
-		weight: .5
+		weight: 0.5
 	},
 	rowsProp: {
-		title: 'Rows',
+		title: 'Количесво строк',
 		control: 'input',
 		type: 'number',
 		category: 'Size',
-		weight: .5
+		weight: 0.5
 	},
 	showHeader: {
-		title: 'Show Header',
+		title: 'Отображать шапку',
 		control: 'checkbox',
 		category: 'Groups',
-		weight: .5
+		weight: 0.5
 	},
 	showFooter: {
-		title: 'Show Footer',
+		title: 'Отображать подвал',
 		control: 'checkbox',
 		category: 'Groups',
-		weight: .5
+		weight: 0.5
 	},
 	summary: {
-		title: 'Short Description',
+		title: 'Короткое описание',
 		control: 'input',
 		type: 'text',
 		category: 'SEO',
@@ -139,7 +143,7 @@ const defaultProps = {
 	colsProp: 8,
 	rowsProp: 4,
 	'background-color': '--white',
-	'border': '1px solid #E4E8EC',
+	border: '1px solid #E4E8EC',
 	'border-collapse': 'collapse'
 };
 Object.assign(TableComponent, {

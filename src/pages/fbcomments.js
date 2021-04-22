@@ -21,7 +21,13 @@ export default (() => {
 					FB Comments
 				</Text>
 			</Box>
-			<Components.FbComments languageProp="rus_RU" />
+			<Components.FbComments
+				languageProp="rus_RU"
+				appID="767471200701076"
+				commentsNumberProp="10"
+				appId="767471200701076"
+				href="https://www.facebook.com/cna.net.au/"
+			/>
 			<Box quarkly-title="Props" height="auto" min-height="20px">
 				<Text font="600 24px sans-serif" quarkly-title="Title">
 					Пропсы:

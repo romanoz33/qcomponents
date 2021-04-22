@@ -22,7 +22,13 @@ export default (() => {
 				</Text>
 			</Box>
 			{" "}
-			<Components.FbLike appId="2823809304549124" size="large" href="https://developers.facebook.com/docs/plugins/" />
+			<Components.FbLike
+				appId="2823809304549124"
+				href="https://developers.facebook.com/docs/plugins/"
+				share={false}
+				showShare="hide"
+				kidDirectedSite={false}
+			/>
 			<Text font="600 24px sans-serif" quarkly-title="Title">
 				Пропсы:
 			</Text>

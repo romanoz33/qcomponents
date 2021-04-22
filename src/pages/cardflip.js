@@ -22,7 +22,7 @@ export default (() => {
 					Slider
 				</Text>
 			</Box>
-			<Components.CardFlip flipTriggerProp="Click">
+			<Components.CardFlip flipTriggerProp="Click" isFlippedProp={false}>
 				<Text>
 					Some text
 				</Text>

@@ -21,11 +21,11 @@ export default (() => {
 					Video
 				</Text>
 			</Box>
-			<Components.Video poster=" " src=" ">
+			<Components.Video poster=" " src=" https://uploads.quarkly.io/molecules/default-video.mp4">
 				<Override slot="Video Tag" />
 			</Components.Video>
-			<Components.Source margin="500px 100px 500px 1" />
-			<Components.Track />
+			<Components.Source sm-margin="500px 0px 0px 0px" />
+			<Components.Track margin="500px 0px 500px 0px" />
 			<Box>
 				<Box margin="50px 0px 0px 0px">
 					<Text font="600 24px sans-serif">

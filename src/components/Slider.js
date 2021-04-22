@@ -3,22 +3,22 @@ import { Box, Text, Link, Icon, Image } from '@quarkly/widgets';
 import { useOverrides } from '@quarkly/components';
 import { GoPrimitiveDot } from "react-icons/go";
 const overrides = {
-	'Slides': {
+	Slides: {
 		kind: 'Box',
 		props: {
-			'position': 'relative',
-			'display': 'flex',
-			'overflow': 'visible'
+			position: 'relative',
+			display: 'flex',
+			overflow: 'visible'
 		}
 	},
-	'Slide': {
+	Slide: {
 		kind: 'Box',
 		props: {
-			'height': '100px',
-			'flex': '0 0 100%',
+			height: '100px',
+			flex: '0 0 100%',
 			'box-sizing': 'border-box',
-			'position': 'relative',
-			'display': 'block'
+			position: 'relative',
+			display: 'block'
 		}
 	},
 	'Slide Image': {
@@ -26,29 +26,29 @@ const overrides = {
 		props: {
 			src: 'https://uploads.quarkly.io/molecules/default-picture-1200.png',
 			'object-fit': 'cover',
-			'top': '0',
-			'left': '0',
-			'width': '100%',
-			'height': '100%',
-			'position': 'absolute',
-			'display': 'block',
+			top: '0',
+			left: '0',
+			width: '100%',
+			height: '100%',
+			position: 'absolute',
+			display: 'block',
 			'z-index': '1'
 		}
 	},
 	'Slide Content': {
 		kind: 'Box',
 		props: {
-			'top': '50%',
-			'left': '50%',
-			'width': 'auto',
-			'height': 'auto',
+			top: '50%',
+			left: '50%',
+			width: 'auto',
+			height: 'auto',
 			'max-width': '100%',
 			'max-height': '100%',
-			'transform': 'translate(-50%, -50%)',
+			transform: 'translate(-50%, -50%)',
 			'text-align': 'center',
 			'box-sizing': 'border-box',
-			'position': 'absolute',
-			'display': 'block',
+			position: 'absolute',
+			display: 'block',
 			'z-index': '2'
 		}
 	},
@@ -56,66 +56,66 @@ const overrides = {
 		kind: 'Text',
 		props: {
 			children: 'Header',
-			'font': '--font-headline3',
-			'color': '--color-light'
+			font: '--font-headline3',
+			color: '--color-light'
 		}
 	},
 	'Slide Text': {
 		kind: 'Text',
 		props: {
 			children: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-			'font': '--font-base',
-			'color': '--color-light'
+			font: '--font-base',
+			color: '--color-light'
 		}
 	},
 	'Slide Link': {
 		kind: 'Link',
 		props: {
 			children: 'Link',
-			'margin': '8px 0 16px',
-			'padding': '8px 24px',
-			'font': '--font-base',
+			margin: '8px 0 16px',
+			padding: '8px 24px',
+			font: '--font-base',
 			'text-decoration': 'none',
-			'color': '--color-light',
-			'background': '--color-primary',
+			color: '--color-light',
+			background: '--color-primary',
 			'border-radius': '2px',
-			'outline': 'none',
+			outline: 'none',
 			'box-sizing': 'border-box',
-			'display': 'inline-block',
+			display: 'inline-block',
 			'user-select': 'none',
-			'cursor': 'pointer',
+			cursor: 'pointer',
 			'focus-box-shadow': '0 0 0 2px --color-primary'
 		}
 	},
-	'Arrows': {
+	Arrows: {
 		kind: 'Box',
 		props: {
-			'width': '100%',
-			'height': '0px',
+			width: '100%',
+			height: '0px',
 			'min-height': '0px'
 		}
 	},
-	'Arrow': {
+	Arrow: {
 		kind: 'Box',
 		props: {
-			'top': '0',
-			'width': '33.33%',
-			'height': '100%',
+			top: '0',
+			width: '33.33%',
+			height: '100%',
 			'align-items': 'center',
-			'transition': 'opacity .3s ease',
-			'position': 'absolute',
-			'display': 'flex',
-			'cursor': 'pointer',
+			transition: 'opacity .3s ease',
+			position: 'absolute',
+			display: 'flex',
+			cursor: 'pointer',
 			'z-index': '5',
-			'opacity': '0.67',
+			opacity: '0.67',
 			'hover-opacity': '1'
 		}
 	},
 	'Arrow Prev': {
 		props: {
-			'left': '0',
+			left: '0',
 			'justify-content': 'flex-start',
-			'background': `
+			background: `
 				linear-gradient(
 					to right,
 					rgba(0,0,0,0.33) 0,
@@ -126,9 +126,9 @@ const overrides = {
 	},
 	'Arrow Next': {
 		props: {
-			'right': '0',
+			right: '0',
 			'justify-content': 'flex-end',
-			'background': `
+			background: `
 				linear-gradient(
 					to left,
 					rgba(0,0,0,0.33) 0,
@@ -143,46 +143,46 @@ const overrides = {
 			category: 'md',
 			size: '52px',
 			color: '--color-light',
-			'position': 'relative'
+			position: 'relative'
 		}
 	},
 	'Arrow Icon Prev': {
 		props: {
 			icon: 'MdKeyboardArrowLeft',
-			'left': '7.5%'
+			left: '7.5%'
 		}
 	},
 	'Arrow Icon Next': {
 		props: {
 			icon: 'MdKeyboardArrowRight',
-			'right': '7.5%'
+			right: '7.5%'
 		}
 	},
-	'Points': {
+	Points: {
 		kind: 'Box',
 		props: {
-			'bottom': '0',
-			'left': '0',
-			'width': '100%',
-			'height': '48px',
+			bottom: '0',
+			left: '0',
+			width: '100%',
+			height: '48px',
 			'align-items': 'center',
 			'justify-content': 'center',
-			'position': 'absolute',
-			'display': 'flex',
+			position: 'absolute',
+			display: 'flex',
 			'z-index': '6'
 		}
 	},
-	'Point': {
+	Point: {
 		kind: 'Box',
 		props: {
 			'min-width': '0',
 			'min-height': '0',
-			'transition': 'opacity .3s ease',
+			transition: 'opacity .3s ease',
 			'align-items': 'center',
 			'justify-content': 'center',
-			'display': 'flex',
-			'cursor': 'pointer',
-			'opacity': '0.67',
+			display: 'flex',
+			cursor: 'pointer',
+			opacity: '0.67',
 			'hover-opacity': '1'
 		}
 	},
@@ -192,22 +192,22 @@ const overrides = {
 			category: 'go',
 			icon: GoPrimitiveDot,
 			size: '16px',
-			'padding': '1px',
-			'color': '--color-light',
-			'transition': 'transform .3s ease',
-			'transform': 'scale(1)',
+			padding: '1px',
+			color: '--color-light',
+			transition: 'transform .3s ease',
+			transform: 'scale(1)',
 			'hover-transform': 'scale(1.5)'
 		}
 	},
 	'Point :active': {
 		props: {
-			'opacity': '1'
+			opacity: '1'
 		}
 	},
 	'Point Icon :active': {
 		props: {
-			'transform': 'scale(1.5)',
-			'color': '--color-primary'
+			transform: 'scale(1.5)',
+			color: '--color-primary'
 		}
 	}
 };
@@ -247,29 +247,29 @@ const Slide = ({
 		}
 	};
 	const widthStyles = useMemo(() => ({
-		'width': width,
+		width,
 		'min-width': width,
 		'max-width': width
 	}), [width]);
 	const heightStyles = useMemo(() => height !== 'auto' && {
-		'height': height,
+		height,
 		'min-height': height,
 		'max-height': height
 	}, [height]);
 	return <Box {...slideOverrides.slide} {...widthStyles} {...heightStyles}>
-		      
+		            
 		<Image {...slideOverrides.image} />
-		      
+		            
 		{(showHead || showText || showLink) && <Box {...slideOverrides.content}>
-			          
+			                    
 			{showHead && <Text {...slideOverrides.head} />}
-			          
+			                    
 			{showText && <Text {...slideOverrides.text} />}
-			          
+			                    
 			{showLink && <Link {...slideOverrides.link} />}
-			        
+			                
 		</Box>}
-		    
+		        
 	</Box>;
 };
 
@@ -279,9 +279,9 @@ const Arrow = ({
 	override
 }) => {
 	return <Box {...override('Arrow', `Arrow ${direction}`)} onClick={clickFunc}>
-		      
+		            
 		<Icon {...override('Arrow Icon', `Arrow Icon ${direction}`)} />
-		    
+		        
 	</Box>;
 };
 
@@ -294,9 +294,9 @@ const Point = ({
 	const clickEvent = () => clickFunc(numb);
 
 	return <Box {...override('Point', `Point ${numb}`, numb === active && 'Point :active')} onClick={clickEvent}>
-		      
+		            
 		<Icon {...override('Point Icon', `Point Icon ${numb}`, numb === active && 'Point Icon :active')} />
-		    
+		        
 	</Box>;
 };
 
@@ -322,7 +322,7 @@ const CarouselComponent = ({
 	const [{
 		width,
 		height
-	}, setSizeState] = useState({
+	}, setSize] = useState({
 		width: 'auto',
 		height: 'auto'
 	});
@@ -331,40 +331,32 @@ const CarouselComponent = ({
 		position,
 		animate,
 		lock
-	}, setPositionState] = useState({
+	}, setSlide] = useState({
 		active: 1,
 		position: 100,
 		animate: true,
 		lock: false
 	});
-	const slides = useMemo(() => parseInt(slidesProp) > 0 ? parseInt(slidesProp) : 1, [slidesProp]);
+	const slides = useMemo(() => parseInt(slidesProp, 10) > 0 ? parseInt(slidesProp, 10) : 1, [slidesProp]);
 	const duration = useMemo(() => parseFloat(durationProp) > 0 ? parseFloat(durationProp) * 1000 : 0, [durationProp]);
 	const list = useMemo(() => [slides, ...Array.from({
 		length: slides
 	}, (v, i) => i + 1), 1], [slides]);
-	const setSize = useCallback((width, height) => {
-		setSizeState({
-			width,
-			height
-		});
-	}, []);
-	const setSlide = useCallback((active, position, animate, lock) => {
-		setPositionState({
-			active,
-			position,
-			animate,
-			lock
-		});
-	}, []);
 	const handleResize = useCallback(el => {
 		const sliderWidth = el instanceof Element ? el.offsetWidth : el[0].contentRect.width;
 
 		if (aspectRatio === 'auto') {
-			setSize(`${sliderWidth}px`, 'auto');
+			setSize({
+				width: `${sliderWidth}px`,
+				height: 'auto'
+			});
 		} else {
 			const [aspectWidth, aspectHeight] = aspectRatio.split(':');
 			const sliderHeight = sliderWidth / aspectWidth * aspectHeight;
-			setSize(`${sliderWidth}px`, `${sliderHeight}px`);
+			setSize({
+				width: `${sliderWidth}px`,
+				height: `${sliderHeight}px`
+			});
 		}
 	}, [aspectRatio]);
 	useEffect(() => {
@@ -379,13 +371,28 @@ const CarouselComponent = ({
 		const newActive = active > 1 ? active - 1 : slides;
 
 		if (newActive === slides) {
-			setSlide(newActive, 0, true, true);
+			setSlide({
+				active: newActive,
+				position: 0,
+				animate: true,
+				lock: true
+			});
 			clearTimeout(animateTimer);
 			animateTimer = setTimeout(() => {
-				setSlide(newActive, 100 * slides, false, false);
+				setSlide({
+					active: newActive,
+					position: 100 * slides,
+					animate: false,
+					lock: false
+				});
 			}, duration);
 		} else {
-			setSlide(newActive, 100 * newActive, true, false);
+			setSlide({
+				active: newActive,
+				position: 100 * newActive,
+				animate: true,
+				lock: false
+			});
 		}
 	}, [active, position, animate, lock]);
 	const clickNext = useCallback(() => {
@@ -393,25 +400,46 @@ const CarouselComponent = ({
 		const newActive = active < slides ? active + 1 : 1;
 
 		if (newActive === 1) {
-			setSlide(newActive, 100 * (slides + 1), true, true);
+			setSlide({
+				active: newActive,
+				position: 100 * (slides + 1),
+				animate: true,
+				lock: true
+			});
 			clearTimeout(animateTimer);
 			animateTimer = setTimeout(() => {
-				setSlide(newActive, 100, false, false);
+				setSlide({
+					active: newActive,
+					position: 100,
+					animate: false,
+					lock: false
+				});
 			}, duration);
 		} else {
-			setSlide(newActive, 100 * newActive, true, false);
+			setSlide({
+				active: newActive,
+				position: 100 * newActive,
+				animate: true,
+				lock: false
+			});
 		}
-	}, [active, position, animate]);
+	}, [active, position, animate, lock]);
 	const clickNumb = useCallback(newActive => {
 		if (lock) return;
-		setSlide(newActive, 100 * newActive, true, false);
+		setSlide({
+			active: newActive,
+			position: 100 * newActive,
+			animate: true,
+			lock: false
+		});
 	}, [active, position, animate, lock]);
 	return <Box {...rest} ref={sliderRef} overflow="hidden">
-		      
+		            
 		<Box {...override('Slides')} transform={`translateX(-${position}%)`} transition={`transform ${animate ? duration : 0}ms ${functionProp}`}>
-			        
+			                
 			{list.map((numb, index) => <Slide
-				key={`slide-${index}`}
+				key={`${rest['data-qid']}-slide-${numb}-${index}`} // eslint-disable-line
+
 				index={index}
 				slides={slides}
 				numb={numb}
@@ -423,29 +451,30 @@ const CarouselComponent = ({
 				showLink={showLink}
 				override={override}
 			/>)}
-			      
+			            
 		</Box>
-		      
+		            
 		{showArrows && <Box {...override('Arrows')}>
-			          
+			                    
 			<Arrow direction="Prev" clickFunc={clickPrev} override={override} />
-			          
+			                    
 			<Arrow direction="Next" clickFunc={clickNext} override={override} />
-			        
+			                
 		</Box>}
-		      
+		            
 		{showDots && <Box {...override('Points')}>
-			          
+			                    
 			{list.slice(1, -1).map((numb, idx) => <Point
-				key={`point-${idx}`}
+				key={`point-${idx}`} // eslint-disable-line
+
 				numb={numb}
 				active={active}
 				clickFunc={clickNumb}
 				override={override}
 			/>)}
-			        
+			                
 		</Box>}
-		    
+		        
 	</Box>;
 };
 
@@ -455,7 +484,7 @@ const propInfo = {
 		control: 'input',
 		type: 'text',
 		category: 'Slides',
-		weight: .5
+		weight: 0.5
 	},
 	aspectRatio: {
 		title: 'Соотношение сторон',
@@ -468,19 +497,19 @@ const propInfo = {
 			value: 'auto'
 		}, '16:9', '4:3', '3:2', '1:1', '2:3', '3:4', '9:16'],
 		category: 'Slides',
-		weight: .5
+		weight: 0.5
 	},
 	showArrows: {
 		title: 'Показывать стрелки',
 		control: 'checkbox',
 		category: 'Slider',
-		weight: .5
+		weight: 0.5
 	},
 	showDots: {
 		title: 'Показывать точки',
 		control: 'checkbox',
 		category: 'Slider',
-		weight: .5
+		weight: 0.5
 	},
 	durationProp: {
 		title: 'Длительность анимации',
@@ -491,7 +520,7 @@ const propInfo = {
 		weight: 0.5
 	},
 	functionProp: {
-		title: 'Функция анимации',
+		title: 'Функция сглаживания анимации',
 		control: 'input',
 		variants: ['linear', 'ease', 'ease-in', 'ease-out', 'ease-in-out', 'step-start', 'step-end'],
 		type: 'text',
@@ -502,19 +531,19 @@ const propInfo = {
 		title: 'Показывать заголовок',
 		control: 'checkbox',
 		category: 'Content',
-		weight: .5
+		weight: 0.5
 	},
 	showText: {
 		title: 'Показывать описание',
 		control: 'checkbox',
 		category: 'Content',
-		weight: .5
+		weight: 0.5
 	},
 	showLink: {
 		title: 'Показывать кнопку',
 		control: 'checkbox',
 		category: 'Content',
-		weight: .5
+		weight: 0.5
 	}
 };
 const defaultProps = {
@@ -527,7 +556,8 @@ const defaultProps = {
 	showHead: true,
 	showText: true,
 	showLink: true,
-	'position': 'relative'
+	position: 'relative',
+	'align-self': 'normal'
 };
 Object.assign(CarouselComponent, {
 	title: 'Carousel',

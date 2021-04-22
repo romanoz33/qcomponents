@@ -65,7 +65,7 @@ export default (() => {
 					</Text>
 					<Components.Counter
 						endingNumber="135"
-						revers
+						revers={false}
 						lg-color="#767676"
 						lg-font="900 58px sans-serif"
 						border-color="#b5b5b5"
@@ -95,7 +95,7 @@ export default (() => {
 					</Text>
 					<Components.Counter
 						endingNumber="5000"
-						revers
+						revers={false}
 						lg-color="#767676"
 						lg-font="900 58px sans-serif"
 						border-color="#b5b5b5"
@@ -125,7 +125,7 @@ export default (() => {
 					</Text>
 					<Components.Counter
 						endingNumber="1100"
-						revers
+						revers={false}
 						lg-color="#767676"
 						lg-font="900 58px sans-serif"
 						border-color="#b5b5b5"

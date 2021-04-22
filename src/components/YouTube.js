@@ -109,6 +109,7 @@ const YouTubeComponent = ({
 	};
 
 	const clickButton = useCallback(() => {
+		if (!playerRef.current) return;
 		playerRef.current.internalPlayer.playVideo();
 		setPlay(true);
 	}, []);
@@ -118,9 +119,9 @@ const YouTubeComponent = ({
 	const pauseVideo = useCallback(() => {
 		setPlay(false);
 	}, []);
-	return <Box padding-top={videoId ? '56.25%' : '0'} min-height={videoId && '0'} height={videoId && '0'} {...rest}>
+	return <Box padding-top={videoId ? '56.25%' : '0'} min-height={videoId ? '0' : undefined} height={videoId ? '0' : undefined} {...rest}>
 		            
-		<Box {...override('YouTube Content')} display={(!videoId || !isReady) && 'none'}>
+		<Box {...override('YouTube Content')} display={!videoId || !isReady ? 'none' : undefined}>
 			                
 			{videoId && <YouTube
 				ref={playerRef}
@@ -156,7 +157,9 @@ const YouTubeComponent = ({
 
 const propInfo = {
 	url: {
+		title: 'Ссылка на видео в YouTube',
 		control: 'input',
+		type: 'text',
 		weight: 1
 	}
 };

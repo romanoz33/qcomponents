@@ -2,7 +2,7 @@ import React, { useState, useMemo, useCallback, useEffect, useRef } from 'react'
 import { useOverrides } from '@quarkly/components';
 import { Box, Text, Icon } from '@quarkly/widgets';
 import ComponentNotice from './ComponentNotice'; // There are several icons in the component
-// to less duplicate wrote separately
+// Brought out separately, so that there is less duplication
 
 import { FiMenu, FiX } from "react-icons/fi";
 const iconProps = {
@@ -59,8 +59,8 @@ const overrides = {
 		kind: 'Icon',
 		props: iconProps.open
 	}
-}; // Design styles differ 50/50,
-// to less duplicate wrote separately
+}; // Design styles differ 50/50
+// Brought out separately, so that there is less duplication
 
 const getContentStyles = ({
 	breakpoint,
@@ -345,10 +345,7 @@ const propInfo = {
 		weight: 1
 	},
 	menuPosition: {
-		title: {
-			en: 'Положение панели в мобильном виде 2',
-			ru: 'Положение панели в мобильном виде 1'
-		},
+		title: 'Положение панели в мобильном виде',
 		control: 'select',
 		variants: [{
 			title: {
@@ -388,7 +385,7 @@ const propInfo = {
 		weight: 1
 	},
 	animFunction: {
-		title: 'Функция анимации появления и скрытия',
+		title: 'Функция сглаживания анимации',
 		control: 'input',
 		variants: ['linear', 'ease', 'ease-in', 'ease-out', 'ease-in-out', 'step-start', 'step-end'],
 		type: 'text',
@@ -410,7 +407,6 @@ const defaultProps = {
 	'z-index': '5'
 };
 Object.assign(MobileSidePanel, {
-	title: 'Mobile Side Panel',
 	propInfo,
 	defaultProps,
 	overrides

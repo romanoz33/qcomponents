@@ -1,107 +1,59 @@
-import React, { useEffect, useMemo } from 'react';
+import React from 'react';
 import { Box } from '@quarkly/widgets';
-const FaceBook = {
-	create: ({
-		language,
-		appId
-	}) => {
-		((d, s, id) => {
-			const fjs = d.getElementsByTagName(s)[d.getElementsByTagName(s).length - 1];
-			if (d.getElementById(id)) return;
-			const js = d.createElement(s);
-			js.id = id;
-			js.src = `//connect.facebook.net/${language}/sdk.js#xfbml=1&version=v2.12&appId=${appId}`;
-			console.log(js);
-			fjs.parentNode.insertBefore(js, fjs);
-		})(document, 'script', 'facebook-jssdk');
-	},
-	remove: () => {
-		let elm = document.getElementById('facebook-jssdk');
-		if (elm) elm.outerHTML = '';
-		elm = document.getElementById('fb-root');
-		if (elm) elm.outerHTML = '';
-		window.FB = undefined;
-	},
-	parse: () => {
-		if (window.FB && typeof window.FB !== 'undefined') {
-			window.FB.XFBML.parse();
-		}
-
-		;
-	}
-};
+import { FacebookProvider, Comments } from 'react-facebook';
+import ComponentNotice from './ComponentNotice';
 
 const FacebookComments = ({
-	appID,
-	commentsNumberProp,
-	languageProp,
-	...props
+	appId,
+	language,
+	href,
+	...rest
 }) => {
-	const commentsNumber = useMemo(() => commentsNumberProp <= 0 ? 1 : commentsNumberProp, [commentsNumberProp]);
-	useEffect(() => {
-		FaceBook.create({
-			languageProp,
-			appID
-		});
-		FaceBook.parse();
-	}, [languageProp, appID]);
-	return <Box {...props}>
-		      
-		<Box className="fb-comments" data-href="https://www.facebook.com/cna.net.au/" data-numposts={commentsNumber}>
-			      
-		</Box>
-		    
+	return <Box {...rest}>
+		            
+		{appId && href ? <FacebookProvider appId={appId} key={appId + language} language={language}>
+			                    
+			<Comments href={href} />
+			                
+		</FacebookProvider> : <ComponentNotice message="Add your Facebook App ID and href in the props panel." />}
+		        
 	</Box>;
 };
 
 const propInfo = {
-	appID: {
-		title: 'App ID',
-		description: {
-			en: 'ID приложения FaceBook'
-		},
+	appId: {
+		title: 'ID приложения Facebook',
 		control: 'input',
+		type: 'text',
 		category: 'Main',
-		weight: .5
+		weight: 1
 	},
-	commentsNumberProp: {
-		title: 'Comments number',
-		description: {
-			en: 'Количество комменитариев'
-		},
+	href: {
+		title: 'Ссылка на комментарии',
 		control: 'input',
+		type: 'text',
 		category: 'Main',
-		weight: .5
+		weight: 1
 	},
-	languageProp: {
-		title: 'Язык',
-		description: {
-			en: 'Язык формы'
-		},
+	language: {
+		title: 'Язык загружаемого компонента',
 		control: 'select',
 		variants: [{
-			title: {
-				en: 'English',
-				ru: 'English'
-			},
+			title: 'English',
 			value: 'en_US'
 		}, {
-			title: {
-				en: 'Русский',
-				ru: 'Русский'
-			},
+			title: 'Русский',
 			value: 'ru_RU'
 		}],
 		category: 'Main',
-		weight: .5
+		weight: 1
 	}
 };
 const defaultProps = {
-	appID: 767471200701076,
-	commentsNumberProp: 10,
-	languageProp: 'en_US'
+	language: 'en_US'
 };
 Object.assign(FacebookComments, {
+	title: 'FbComments Component',
 	propInfo,
 	defaultProps
 });
